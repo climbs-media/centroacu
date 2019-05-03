@@ -1,0 +1,70 @@
+<ion-header text-center  padding-top>
+  <ion-toolbar>
+<div class="contiene">
+    <img width="40" height="45"  src="../../../assets/imgs/logo.png" class="logo">
+    <span text-center style="padding-left:48px;padding-right:48px;font-size: 20px;">
+     &nbsp;&nbsp;Seguimiento
+    </span>
+    
+        <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
+  </div>
+  </ion-toolbar>
+   
+</ion-header>
+<ion-content>
+
+  <h4>Mi Peso</h4>
+  <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="pesoIni">
+            <p>Peso inicial</p>
+            <p class="tconsul"><strong>90</strong> Kg</p>
+            <p>IMC xx</p>
+          </div>
+          </ion-col>
+          <div class="pesoPer">
+              <p>Peso Total</p>
+              <p>Perdido</p>
+              <p class="tconsul"><strong>10</strong> Kg</p>
+            </div>
+          </ion-row>
+          <div class="pesoConsul">
+              <p class="tconsul">Peso en Consulta</p>
+              <p class="tconsul"><strong>85</strong> Kg</p>
+              <p class="tconsul">IMC 25,23</p> 
+            </div>
+          </ion-grid>
+          <ion-grid text-center>
+            <ion-row style="margin-top: -20px; text-align: center">
+              <ion-col>
+                  <div class="pesoObj">
+                      <p>Peso</p>
+                      <p>Objetivo</p>
+                      <p class="tconsul"><strong>65</strong> Kg</p>
+                    </div>
+              </ion-col>
+              <div class="pesoEst">
+                  <p>Estás a</p>
+                  <p class="tconsul"><strong>10</strong> Kg</p>
+                  <p class="obje1">De tu</p>
+                  <p class="obje">Objetivo</p>
+                </div>
+            </ion-row>
+            <ion-button color="primary" round class="agregar"> Agregar</ion-button>
+            <h4>Indice IMC</h4>
+            <div class="cont">
+              <div class="pesoIde">Peso ideal</div>
+              <div class="sobrePe"> Sobre Peso</div>
+              <div class="obe">Obesidad</div>
+            </div>
+
+
+            <div style="border: 1px solid grey; width: 90%; margin: 0 auto; margin-top: 20px;">
+              <app-grafica></app-grafica>
+
+            </div>
+          </ion-grid> 
+          
+
+</ion-content>

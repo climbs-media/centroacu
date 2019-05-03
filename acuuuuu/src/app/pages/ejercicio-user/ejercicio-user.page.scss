@@ -1,0 +1,92 @@
+    
+    *{
+        margin:0px;
+        padding:0px;
+    }
+  
+    //CABEZERA
+  
+     .contiene .logo{
+       font-size: 30px;
+       position:absolute;
+       bottom: 1px;
+       left:10px;
+       padding-bottom: 5px;
+      }
+  
+   .contiene .chat{
+    position: absolute;
+    width:70px;
+    height: 70px;
+    margin-top: -20px;
+    margin-left: -10%;
+    }
+  
+   .contiene{
+           padding-top: 5px;
+           padding-bottom: -10px;
+           height: 35px;
+       
+     }
+
+
+     .cont_titulos{
+        text-align:center;
+        width: 100%;
+        margin-top: 10%;
+
+     }
+
+     .cont_titulos div{
+         padding: 25px;
+         display:inline-block;
+         color: #BB1D1D;
+         font-size: 14px;
+         font-weight: bold;
+         border-right: 2px solid rgba(205, 204, 204, 0.5);
+         margin-left: -5px;
+
+     }
+     .dias{
+         border: none;
+     }
+
+     .info{
+        text-align:center;
+        width: 100%;
+
+     }
+     .info div{
+        border-bottom: 2px solid rgba(205, 204, 204, 0.5);
+        margin-left: -5px;
+        padding: 25px;
+        display:inline-block;
+        font-size: 13px;
+        font-style: bold;
+        font-weight: bold;
+        line-height: normal;
+        color: #767676;
+     }
+
+
+
+     footer{
+        margin-top: 5%;
+        font-size: 12px;
+        font-style: bold;
+        font-weight: bold;
+        line-height: normal;
+        color: #767676;
+     }
+     footer div{
+         float: right;
+         color: #767676;
+         font-size: 12px;
+         margin-top: -15px;
+         font-style: bold;
+         font-weight: bold;
+         line-height: normal;
+
+     }
+
+     

@@ -1,0 +1,98 @@
+    
+    *{
+        margin:0px;
+        padding:0px;
+    }
+
+    //CABEZERA
+
+     .contiene .logo{
+       font-size: 30px;
+       position:absolute;
+       bottom: 1px;
+       left:10px;
+       padding-bottom: 5px;
+      }
+
+   .contiene .chat{
+    position: absolute;
+    width:70px;
+    height: 70px;
+    margin-top: -20px;
+    }
+
+   .contiene{
+           padding-top: 5px;
+           padding-bottom: -10px;
+           height: 35px;
+       
+     }
+     //FIN DE LA CABEZERA
+
+     .circular {
+        width: 45px;
+        height: 45px;
+        margin: 0 auto;
+        border-radius: 50% ;
+        position:absolute;
+        bottom: 1px;
+        left:10px;
+        padding-bottom: 5px;
+      }
+      
+      .circular img{
+       width: 100%;
+       height: 100%;
+       border:2px solid #000;
+      
+      }
+
+      .textoBoton{
+        color:white;
+        position: absolute;
+        
+        bottom: 8px;
+      } 
+      
+      .bot{
+      width: 90%;
+      height: 130px;
+      margin: 0 auto;
+      margin-bottom: 10%;
+      background: #BB1D1D;
+      border: 0.5px solid #3B3B3B;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px; 
+      text-align: center;
+      
+      }
+
+      .bot img{
+         width: 40%;
+         height: 90%;
+         margin-left: 10px;
+         float: left;
+         
+      }
+      .bot p{
+         color: #ffffff;
+         padding-top: 15px;
+
+         margin-top: 20px;
+
+      }
+      .fech{
+        margin-top: 5px;
+        font-size: 13px;
+      }
+
+      .bot_ejercicio{
+        background: #EBEBEB;;
+      }
+
+      .kilometros{
+        position: absolute;
+        display: flex;
+        margin-top: 28%;
+        margin-left: 50%;
+      }

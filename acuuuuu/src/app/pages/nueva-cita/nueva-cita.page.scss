@@ -1,0 +1,100 @@
+    
+    *{
+        margin:0px;
+        padding:0px;
+    }
+  
+    //CABEZERA
+  
+     .contiene .logo{
+       font-size: 30px;
+       position:absolute;
+       bottom: 1px;
+       left:10px;
+       padding-bottom: 5px;
+      }
+  
+   .contiene .chat{
+    position: absolute;
+    width:70px;
+    height: 70px;
+    margin-top: -20px;
+    margin-left:8%;
+    }
+
+    ion-back-button{
+        color :#BB1D1D;
+        margin-left: -10px; 
+    }
+  
+   .contiene{
+           padding-top: 5px;
+           padding-bottom: -10px;
+           height: 50px;
+       
+     }
+  //FIN DE LA CABEZERA
+  // FLECHA RETROCESO
+  .flecha{
+  color :#BB1D1D;
+  font-size: 30px;
+  /* top:-5px;
+  position: absolute;*/
+  }
+
+  .meses{
+      position: absolute;
+      margin-top: 5px;
+      border-radius: 20px;
+      border: 1px solid #C4C4C4;
+      background: #BB1D1D;
+      width: 40%;
+      color: white;
+      text-align: center;
+      padding: 5px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+  }
+
+
+
+  .flechas{
+      --color: #BB1D1D;
+  }
+
+  .calendario{
+      margin-top: 100px;
+  }
+
+  ion-card-title{
+      padding: 10px;
+      border-radius: 10px;
+      color: #BB1D1D;
+      background: white;
+  }
+
+  .weekview-allday-table{
+    display: none;
+}
+.weekview-normal-event-container{
+    margin-top: 37px;
+ }
+
+ .dayview-allday-label{
+    display: none;
+  }
+  .dayview-normal-event-container{
+   margin-top: 0px;
+ }
+ .dayview-allday-content-wrapper{
+   height: 0px;
+ }
+
+ .dayview-allday-label{
+     display: none;
+ }
+
+
+
+  

@@ -1,0 +1,68 @@
+<ion-header text-center  padding-top>
+    <ion-toolbar>
+  <div class="contiene">
+      <img width="40" height="45"  src="../../../assets/imgs/logo.png" class="logo">
+      <span text-center style="padding-left:48px;padding-right:48px;font-size: 20px;">
+       &nbsp;&nbsp;Centro ACU 10
+      </span>
+      
+          <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
+    </div>
+    </ion-toolbar>
+     
+</ion-header>
+
+<ion-content padding-top padding-top>
+
+    <ion-grid>
+      <ion-row  >
+          <ion-icon name="ios-add-circle"  name="md-add-circle" routerLink="/proteccion"  class="iconos"></ion-icon>
+
+          <ion-col >
+               
+              <div class="cajatexto" >
+                <ion-input  type="text" class="input_texto" [(ngModel)]="personabuscar" placeholder="Buscador ..."></ion-input>
+                <ion-icon name="search" md="md-search" class="iconBusca" ></ion-icon>
+                
+              </div>
+              
+          </ion-col>
+        </ion-row>
+
+    <ion-row class="conteBoton" margin-top>
+      <ion-col col-4>
+          <ion-button ion-button color="primary" (click)="buscamos()" text-center class="but" style="text-align:rigth;"> Buscar  </ion-button>
+      </ion-col>
+    
+
+       <ion-col col-8>
+          <ion-button ion-button color="primary" icon-end class="but2" style="text-align:center;">
+              Filtrar busqueda
+              <ion-icon ios="ios-funnel" md="md-funnel" class="iconBusque"></ion-icon>
+            </ion-button>
+          
+            <div class="tabla"><img src="../../../assets/imgs/bot_cliente_perfil/recuento.png" class="recuento"></div>
+       </ion-col>
+         </ion-row>
+       <ion-col>
+           <div class="cajabuscador"  routerLink="/cliente-perfil" >
+                <span class="nombreuser"> CARLOS SOTO</span>
+                <div  class="buscado"  >
+                    <span class="num_edad"> Nº 720</span><span>56 años</span> 
+                 </div>
+                
+                 <div class="circular" >
+                        <span class="estado"></span><!-- nos dira si esta activo ,frecuente, no viene -->
+                        <img   class="circular" src="./../../assets/imgs/foto_cliente.jpg" >
+                </div>
+                
+            <span class="bot_bono" (click)="aBono()">0</span>
+        </div>
+           
+           <!-- se pone fuera para que no le afecte el click general -->
+     </ion-col>
+
+    
+        
+    </ion-grid>
+</ion-content>

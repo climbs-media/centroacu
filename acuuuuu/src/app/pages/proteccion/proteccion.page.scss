@@ -1,0 +1,82 @@
+    
+    *{
+        margin:0px;
+        padding:0px;
+    }
+
+    //CABEZERA
+
+     .contiene .logo{
+       font-size: 30px;
+       position:absolute;
+       bottom: 1px;
+       left:10px;
+       padding-bottom: 5px;
+      }
+
+   .contiene .chat{
+    position: absolute;
+    width: 20%;
+    margin-top: -5%;
+    margin-left: -3%;
+    }
+
+   .contiene{
+           padding-top: 5px;
+           padding-bottom: -10px;
+           height: 35px;
+       
+     }
+     //FIN DE LA CABEZERA
+
+
+     //CONTENIDO
+ 
+     
+     .iconos{
+        color:#BB1D1D;
+        font-size:30px;
+        margin-left: 20px;
+        
+     }
+     .flecha{
+        color :red;
+        font-size: 30px;
+       }
+      //-----FIN DE LA FLECHA
+      
+      
+           // BOTON  FINAL
+         .but{
+              
+              text-decoration: none;
+             width:90px;
+             height:25px;
+             float: right;
+             font-size: 13px;
+              color: #ffffff;
+             /* background-color:#9c3535;pondre color en theme/variables.css*/
+              border-radius: 62px 66px 62px 78px;
+              text-transform: none
+            }
+      
+      .ley{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 17px;
+        line-height: normal;
+        text-align: justify;
+        margin: 10%
+      }
+      h6{
+        font-family: Rounded Mplus 1c Bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: normal;
+        margin-top: 10%;
+      }
+      .cFirma{
+          margin-top: 30%;
+      }

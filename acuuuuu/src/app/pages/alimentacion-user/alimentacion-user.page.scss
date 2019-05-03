@@ -1,0 +1,50 @@
+    
+    *{
+        margin:0px;
+        padding:0px;
+    }
+  
+    //CABEZERA
+  
+     .contiene .logo{
+       font-size: 30px;
+       position:absolute;
+       bottom: 1px;
+       left:10px;
+       padding-bottom: 5px;
+      }
+  
+   .contiene .chat{
+    position: absolute;
+    width:70px;
+    height: 70px;
+    margin-top: -20px;
+    }
+  
+   .contiene{
+           padding-top: 5px;
+           padding-bottom: -10px;
+           height: 35px;
+       
+     }
+
+     h3{
+         font-size: 13px;
+         color: #BB1D1D;
+         margin-bottom: 5px;
+     }
+     p{
+        font-style: bold;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 3px;
+        line-height: normal;
+        text-align: justify;
+        color: #767676;
+     }
+
+     h5{
+         font-size: 13px;
+         color: #BB1D1D;
+
+     }

@@ -1,0 +1,75 @@
+<ion-header text-center  padding-top>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+      <ion-back-button defaultHref="cliente-seguimiento"></ion-back-button>
+        </ion-buttons>
+<div class="contiene">
+    <span text-center style="font-size: 26px; margin-left: -70px; font-weight: normal;">
+     &nbsp;&nbsp;Asignar Ejercicio
+    </span>
+    
+        <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
+  </div>
+  </ion-toolbar>
+   
+</ion-header>
+
+<ion-content>
+    <button routerLink="/cliente-seguimiento"><img src="../../../assets/imgs/retroceso.png" style="margin-top: 5%; color: red; position: absolute; margin-left: 5%"></button> 
+      <ion-card>
+        <ion-card-header (click)="collapseCard = !collapseCard">
+          <ion-card-title text-center>Añade Ejercicio</ion-card-title>
+        </ion-card-header>
+        <ion-card-content *ngIf="!collapseCard">
+          <ion-item>
+            <ion-input type="text" placeholder="Ejercicio" [(ngModel)]="event.title"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Descripción de Ejercico" [(ngModel)]="event.desc"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Hora  de Ejercicio</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label>Finaliza </ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
+          </ion-item>
+          <ion-button fill="outline" expand="block" (click)="addEvent()" class="asig" [disabled]="event.title == ''">Asignar</ion-button>
+        </ion-card-content>
+      </ion-card>
+
+      <div class="meses">{{viewTitle}}</div>
+      <ion-row margin-top style="margin-top:40px">
+          <ion-col size="6" text-left>
+            <ion-button fill="clear" (click)="back()" class="flechas">
+              <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+          
+          <!-- Move forward one screen of the slides -->
+          <ion-col size="6" text-right>
+            <ion-button fill="clear" (click)="next()" class="flechas">
+              <ion-icon name="arrow-forward" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+
+
+
+    <calendar
+    [eventSource]="eventSource"
+    [calendarMode]="calendar.mode"
+    [currentDate]="calendar.currentDate"
+    (onCurrentDateChanged)="onCurrentDateChanged($event)"
+    (onRangeChanged)="reloadSource(startTime, endTime)"
+    (onEventSelected)="onEventSelected($event)"
+    (onTitleChanged)="onViewTitleChanged($event)"
+    (onTimeSelected)="onTimeSelected($event)"
+    step="30"
+    >
+  </calendar>
+
+
+</ion-content>

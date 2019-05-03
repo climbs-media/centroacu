@@ -1,0 +1,38 @@
+
+      ion-content{
+          opacity: 0.7;
+          --background: #BB1D1D;
+      
+      }
+
+      .acredi{
+        position: absolute;
+        color: white;
+        top: 60%;
+        left:20%;
+      font-weight: bold;
+      font-size: 25px;
+      }
+   
+         .circulo{
+          position: absolute;
+          border: 8px solid white;
+          border-radius: 50%;
+          width: 150px;
+          padding: 20px;
+          top: 35%;
+          left: 32.1%;
+          text-align: center;
+         }           
+       .check{
+          
+           font-size: 70px;
+            color:white;
+       }
+       .cerrar{
+          position: absolute;
+          font-size: 30px;
+          color:white;
+          right:45px;
+          top: 100px;
+       }

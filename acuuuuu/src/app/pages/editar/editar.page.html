@@ -1,0 +1,118 @@
+<ion-header text-center  padding-top>
+  <ion-toolbar>
+<div class="contiene">
+    <img width="40" height="45"  src="../../../assets/imgs/logo.png" class="logo">
+    <span text-center style="padding-left:48px;padding-right:48px;font-size: 26px; font-weight: normal;">
+     &nbsp;&nbsp;Editar Perfil
+    </span>
+    
+        <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
+  </div>
+  </ion-toolbar>
+   
+</ion-header>
+
+<ion-content padding>
+    <button routerLink="/cliente-perfil"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%; margin-top:-10px;"></button> 
+  <ion-grid>
+     <ion-row  text-center >
+         <ion-col col-4 >
+             <div style="color:#BB1D1D ;margin-top:15px; font-weight: bold;" >
+                Nº Historia
+             </div>
+             <div class="cajatexto" style="width:55px;"><!-- se le pone estilo propio para no afectar alos demas div-->
+                <ion-input  type="text"  class="inputexto" ></ion-input>
+             </div> 
+         </ion-col>
+         <ion-col col-4 >
+              <div class="circular">
+                  <img   class="circular" src="./../../assets/imgs/foto_cliente.jpg" >
+               </div>
+         </ion-col>
+         <ion-col col-4>
+               <div style="color:#BB1D1D; margin-top:15px; font-weight: bold;">
+                 Fecha </div>
+                 <div class="cajatexto" style="width:120px; ">
+                      <ion-datetime class="inputexto" ></ion-datetime>
+                 </div>  
+         </ion-col>
+     </ion-row>
+     <ion-row  >
+            <ion-col text-center > <div style="color:#BB1D1D; font-size: 20px; font-weight: bold; margin-top: 14px;">Datos </div> </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-12>
+              <ion-input class="cajatexto" placeholder="Nombre y Apellido">  </ion-input> 
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-12>
+              <ion-input class="cajatexto" style="margin-left:18px;" placeholder="Fecha de Nacimiento"></ion-input> 
+          </ion-col>
+          <ion-col col-12>
+                  <ion-input class="cajatexto" style="margin-right:16px;" placeholder="Ciudad"> </ion-input> 
+          </ion-col>
+        </ion-row>
+
+      <ion-row >
+              <ion-col col-12>
+                      <ion-input class="cajatexto" placeholder=" Nuevo Correo"></ion-input> 
+              </ion-col>
+      </ion-row>
+      <ion-row>
+              <ion-col col-12>
+                      <ion-input class="cajatexto" placeholder=" Nuevo Teléfono"> </ion-input> 
+              </ion-col>
+            </ion-row>
+          <ion-row>
+              <ion-col col-12>
+                      <ion-input class="cajatexto" placeholder=" Nueva Profesión"> </ion-input> 
+              </ion-col>
+            </ion-row>
+          <ion-row>
+              <ion-col col-12>
+                      <ion-input class="cajatexto" placeholder="Motivo de Consulta"></ion-input> 
+              </ion-col>
+     </ion-row>
+     <ion-row >
+               <ion-col text-center style="color:#BB1D1D; font-weight: bold; margin-top: 5px">Antecedentes</ion-col>
+     </ion-row>
+     <ion-row >
+                <ion-col >
+                    <div style="font-weight: bold; margin: 5px; margin-left: 10px">Intervenciones : </div>
+                    <div class="cajatexto">
+                        <ion-input  type="text" class="inputexto2" placeholder=""></ion-input>
+                   </div> 
+                </ion-col>
+      </ion-row>
+      <ion-row >
+                  <ion-col >
+                     <div  style="font-weight: bold; margin: 5px; margin-left: 10px">Enfermedades Anteriores  : </div>
+                      <div class="cajatexto" >
+                          <ion-input  type="text" class="inputexto2"  placeholder=""></ion-input>
+                     </div> 
+                  </ion-col>
+       </ion-row>
+       <ion-row >
+              <ion-col >
+                   <div style="font-weight: bold; margin: 5px"> Familiares:</div> 
+                 <div style="margin-bottom:5px; display: flex; align-content: center">
+               
+                  <span class='padece'>Diabetes<ion-checkbox [(ngModel)]="diabetes" style="margin-left: 10px" ></ion-checkbox> </span>
+                  <span class='padece'>Cardiopatia<ion-checkbox [(ngModel)]="cardiopatia" style="margin-left: 17px"  ></ion-checkbox></span>
+                  <br><span class='padece'>Obesidad<ion-checkbox [(ngModel)]="obesidad" style="margin-left: 15px"  ></ion-checkbox></span>   
+                </div>
+                 
+              </ion-col>
+   </ion-row>
+     
+       <ion-row style="text-align:center;" padding-top >
+                      <ion-col >
+                          <ion-button ion-button class="but" (click)="confirma()" round>Aceptar
+                        <!-- <ion-icon name="arrow-round-forward" style="color:white;"></ion-icon> -->
+                          </ion-button>
+                      </ion-col>
+       </ion-row>
+   </ion-grid>
+   
+</ion-content>

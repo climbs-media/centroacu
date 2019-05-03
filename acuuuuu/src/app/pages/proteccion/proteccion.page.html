@@ -1,0 +1,46 @@
+<ion-header text-center  padding-top>
+  <ion-toolbar>
+<div class="contiene">
+    <img width="40" height="45"  src="../../../assets/imgs/logo.png" class="logo">
+    <span text-center style="padding-left:48px;padding-right:48px;
+    font-style: bold;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: normal;">
+     &nbsp;&nbsp;Centro ACU 10
+    </span>
+    
+        <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
+  </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+    <button routerLink="/home-admin"><img src="../../../assets/imgs/retroceso.png" style=" position: absolute; margin-left: 2%"></button>
+<ion-grid margin-bottom>
+    <ion-col col-12 text-center>
+        <h6>Ley de Proteccion de Datos</h6>
+    </ion-col>
+  <ion-row >
+      <div>
+      <ion-col col-12>
+        <p text-justify class="ley">
+            La Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos privacidad personal y familiar.
+             Fue aprobada por las Cortes Generales el 13 de diciembre de 1999 y derogada con la entrada en 
+              General de Protección de Datos de la Unión Europea. <a href="#" color="primary">Más info.</a>
+        </p>
+      </ion-col>
+    </div>
+    
+  </ion-row>
+</ion-grid>
+<div class="cFirma">
+<div >Firma :</div>
+<textarea style="margin:3px 0; margin-left: 10%;" rows="7" cols="36"></textarea>
+<div style="text-align: right ;font-size:10px;">Fecha : 28 abril 2019</div>
+<div  style="text-align: center ;margin-top:5px;">
+    <ion-button ion-button color="primary" class="but" (click)="registrar()" round>Adelante</ion-button>
+</div>
+</div>
+
+
+</ion-content>

@@ -1,0 +1,62 @@
+    
+    *{
+        margin:0px;
+        padding:0px;
+    }
+  
+    //CABEZERA
+  
+     .contiene .logo{
+       font-size: 30px;
+       position:absolute;
+       bottom: 1px;
+       left:10px;
+       padding-bottom: 5px;
+      }
+  
+   .contiene .chat{
+    position: absolute;
+    width:70px;
+    height: 70px;
+    margin-top: -20px;
+    }
+  
+   .contiene{
+           padding-top: 5px;
+           padding-bottom: -10px;
+           height: 35px;
+       
+     }
+   //FIN DE LA CABEZERA
+
+
+
+.titulo{
+
+    height: 30px;
+    width: 95%;
+    background: #BB1D1D;
+    color: #fff;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+h1{
+    font-size: 18px;
+    margin-top: 5px;
+    margin-left: 13px;
+}
+
+.agregar{
+    margin-left: 20px;
+    color: #767676;
+    font-size: 14px;
+   // font-weight: bold;
+    margin-top: 5px;
+}
+
+.dias{
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+}

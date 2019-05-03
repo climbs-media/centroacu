@@ -1,0 +1,180 @@
+    
+    *{
+        margin:0px;
+        padding:0px;
+    }
+  
+    //CABEZERA
+  
+     .contiene .logo{
+       font-size: 30px;
+       position:absolute;
+       bottom: 1px;
+       left:10px;
+       padding-bottom: 5px;
+      }
+  
+   .contiene .chat{
+    position: absolute;
+    width:70px;
+    height: 70px;
+    margin-top: -20px;
+    }
+  
+   .contiene{
+           padding-top: 5px;
+           padding-bottom: -10px;
+           height: 35px;
+       
+     }
+   //FIN DE LA CABEZERA
+   // FLECHA RETROCESO
+  .flecha{
+    color :red;
+    font-size: 30px;
+    top:-5px;
+    position: absolute;
+   }
+  //-----FIN DE LA FLECHA
+  
+  // numero de bono
+  
+  
+  .bono{
+  
+     padding: 10px 15px;
+     position: absolute;
+     bottom: 70px;
+     margin-left: -8px;
+     font-style: bold;
+     font-weight: bold;
+     font-size: 10px;
+     line-height: normal;
+     color: #000000;
+    }
+  .bot_bono{
+  
+   padding: 10px 15px;
+  position: absolute;
+     left: 12px;
+   bottom: 40px;
+   background: rgb(219, 219, 219);
+   border: 0.5px solid #3B3B3B;
+   box-sizing: border-box;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 10px;
+   color: black;
+  } // fin numero de bono
+  
+   //IMAGEN
+   .circular {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    
+    border-radius: 50% ;
+  }
+  
+  .circular img{
+   width: 100%;
+   height: 100%;
+   border:4px solid #000;
+  
+  }
+  //FIN DE IMAGEN
+
+  //BOTONES AL LADOD E LA FOTO
+.edi-text{
+    padding: 10px 15px;
+    position: absolute;
+    bottom: 30px;
+    margin-left: -10px;
+    font-style: bold;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: normal;
+    color: #000000;
+ 
+ }
+ .but-ico{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    font-size: 40px;
+    right:10px;
+    bottom:40px;
+    background: rgb(219, 219, 219);
+    border: 0.5px solid #3B3B3B;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    color: black;
+    
+ }
+
+ 
+//CONTENDIO
+.centrar{
+    border-bottom: 0.5px solid grey;
+    
+}
+.fila_abajo{
+
+ border-bottom: 0.5px solid grey;
+}
+.fila_lado{
+  border-right:  0.5px solid grey;
+}
+.fila_medio{
+    border-right:  0.5px solid grey;
+  }
+
+// CAJAS DE TEXTO
+.cajatexto{
+    text-align: justify;
+    outline: none;
+    margin: 0 auto;
+    height: 40px;
+    padding-bottom: 3px;
+   //   background-color: #F9F7F6;
+  
+ 
+  border: 1px solid rgba(0,0,0,.25);
+  border-radius: 10px 10px 10px 10px;
+ box-shadow: 0px 2px rgba(0,0,0,.50);
+}
+
+.input_texto{
+
+    //padding: 5px;
+   //size:20px;
+   text-align: center;
+   height: 30px;
+
+}
+.euro{
+    font-weight:bold;
+    font-size: 20px;
+
+    position: absolute;
+    right: -5px;
+    bottom: 10px;
+}
+
+//FINDE CAJAS DE TEXTO
+.bot_bono2{
+  
+    padding: 20px 25px;
+   position: absolute;
+    margin-left: 30%;
+    background: rgb(240, 240, 240);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   }
