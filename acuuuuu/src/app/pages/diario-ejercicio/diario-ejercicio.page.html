@@ -5,39 +5,44 @@
         </ion-buttons>
 <div class="contiene">
     <span text-center style="font-size: 26px; margin-left: -70px; font-weight: normal;">
-     &nbsp;&nbsp;Asignar Ejercicio
+    &nbsp;&nbsp;Asignar Ejercicio
     </span>
     
         <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
   </div>
   </ion-toolbar>
-   
+
 </ion-header>
 
 <ion-content>
     <button routerLink="/cliente-seguimiento"><img src="../../../assets/imgs/retroceso.png" style="margin-top: 5%; color: red; position: absolute; margin-left: 5%"></button> 
-      <ion-card>
+    <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    <ion-card>
         <ion-card-header (click)="collapseCard = !collapseCard">
           <ion-card-title text-center>Añade Ejercicio</ion-card-title>
         </ion-card-header>
         <ion-card-content *ngIf="!collapseCard">
           <ion-item>
-            <ion-input type="text" placeholder="Ejercicio" [(ngModel)]="event.title"></ion-input>
+            <ion-input type="text" placeholder="Ejercicio" [(ngModel)]="event.titulo" formControlName="titulo"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input type="text" placeholder="Descripción de Ejercico" [(ngModel)]="event.desc"></ion-input>
+            <ion-input type="text" placeholder="Descripción de Ejercico" [(ngModel)]="event.descripcion" formControlName="descripcion"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label>Hora  de Ejercicio</ion-label>
-            <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
+            <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.horaInicio" [min]="minDate" formControlName="horaInicio"></ion-datetime>
           </ion-item>
           <ion-item>
             <ion-label>Finaliza </ion-label>
-            <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
+            <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.horaFinal" [min]="minDate" formControlName="horaFinal"></ion-datetime>
           </ion-item>
-          <ion-button fill="outline" expand="block" (click)="addEvent()" class="asig" [disabled]="event.title == ''">Asignar</ion-button>
+          <ion-button type="submit" fill="outline" expand="block" class="asig"  (click)="addEvent()" [disabled]="!validations_form.valid">Asignar</ion-button>
+          <!--Funcional
+            <ion-button type="submit" fill="outline" expand="block" class="asig" [disabled]="!validations_form.valid" >Asignar</ion-button>
+-->
         </ion-card-content>
       </ion-card>
+      </form>
 
       <div class="meses">{{viewTitle}}</div>
       <ion-row margin-top style="margin-top:40px">

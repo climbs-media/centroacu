@@ -1,7 +1,12 @@
 import { CalendarComponent } from 'ionic2-calendar/calendar';
 import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController, LoadingController } from '@ionic/angular';
 import { formatDate } from '@angular/common';
+import { ImagePicker } from '@ionic-native/image-picker/ngx';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { AnadirEjercicioService } from 'src/app/services/añadir-ejercicio.service';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
 
 
 @Component({
@@ -11,18 +16,22 @@ import { formatDate } from '@angular/common';
 })
 export class DiarioEjercicioPage implements OnInit {
 
+  
+  validations_form: FormGroup;
+  image: any;
+
   event = {
-    title: '',
-    desc: '',
-    startTime: '',
-    endTime: '',
+    titulo: '',
+    descripcion: '',
+    horaInicio: '',
+    horaFinal: '',
     allDay : false
   };
   minDate = new Date().toISOString();
 
   eventSource = [];
 
-  calendar= { 
+  calendar = { 
     mode: 'week',
     currentDate: new Date(),
   }
@@ -31,37 +40,77 @@ export class DiarioEjercicioPage implements OnInit {
 
   @ViewChild(CalendarComponent) myCal: CalendarComponent;
 
-  constructor( private alertCtrl: AlertController, @Inject(LOCALE_ID) private locale: string) { }
+
+  constructor(
+    private alertCtrl: AlertController,
+    @Inject(LOCALE_ID) private locale: string,
+    public toastCtrl: ToastController,
+    public loadingCtrl: LoadingController,
+    public router: Router,
+    private formBuilder: FormBuilder,
+    private firebaseService: AnadirEjercicioService,
+  ) { }
 
   ngOnInit() {
+    this.resetFields();
     this.resetEvent();
   }
 
-  resetEvent(){
+  resetFields() {
+    this.validations_form = this.formBuilder.group({
+      titulo: new FormControl('', Validators.required),
+      descripcion: new FormControl('', Validators.required),
+      horaInicio: new FormControl('', Validators.required),
+      horaFinal: new FormControl('', Validators.required),
+    });
+  }
+
+  onSubmit(value) {
+    const data = {
+      titulo: value.titulo,
+      descripcion: value.descripcion,
+      horaInicio: value.horaInicio,
+      horaFinal: value.horaFinal,
+    };
+    this.firebaseService.crearAnadirEjercicio(data)
+      .then(
+        res => {
+          this.router.navigate(['/home-admin']);
+        }
+      );
+  }
+
+  async presentLoading(loading) {
+    return await loading.present();
+  }
+
+
+
+  resetEvent() {
     this.event = {
-      title: '',
-      desc: '',
-      startTime: new Date().toISOString(),
-      endTime: new Date().toISOString(),
+      titulo : '',
+      descripcion: '',
+      horaInicio: new Date().toISOString(),
+      horaFinal: new Date().toISOString(),
       allDay : false,
     };
     }
 
-    addEvent(){
-      let eventCopy = {
-        title: this.event.title,
-        startTime:  new Date(this.event.startTime),
-        endTime: new Date(this.event.endTime),
+    addEvent() {
+      const eventCopy = {
+        titulo: this.event.titulo,
+        horaInicio:  new Date(this.event.horaInicio),
+        horaFinal: new Date(this.event.horaFinal),
         allDay: this.event.allDay,
-        desc: this.event.desc
+        descripcion: this.event.descripcion
       }
 
       if (eventCopy.allDay) {
-        let start = eventCopy.startTime;
-        let end = eventCopy.endTime;
+        const start = eventCopy.horaInicio;
+        const end = eventCopy.horaFinal;
    
-        eventCopy.startTime = new Date(Date.UTC(start.getUTCDate(), start.getUTCMonth(), start.getUTCFullYear()));
-        eventCopy.endTime = new Date(Date.UTC(end.getUTCDate() + 1, end.getUTCMonth(), end.getUTCFullYear()));
+        eventCopy.horaInicio = new Date(Date.UTC(start.getUTCDate(), start.getUTCMonth(), start.getUTCFullYear()));
+        eventCopy.horaFinal = new Date(Date.UTC(end.getUTCDate() + 1, end.getUTCMonth(), end.getUTCFullYear()));
       }
 
       this.eventSource.push(eventCopy);
@@ -70,11 +119,13 @@ export class DiarioEjercicioPage implements OnInit {
     }
 
     next() {
+      // tslint:disable-next-line:prefer-const
       var swiper = document.querySelector('.swiper-container')['swiper'];
       swiper.slideNext();
     }
      
     back() {
+      // tslint:disable-next-line:prefer-const
       var swiper = document.querySelector('.swiper-container')['swiper'];
       swiper.slidePrev();
     }
@@ -84,18 +135,18 @@ export class DiarioEjercicioPage implements OnInit {
     }
 
 
-    onViewTitleChanged(title) {
-      this.viewTitle = title;
+    onViewTitleChanged(titulo) {
+      this.viewTitle = titulo;
     }
 
     async onEventSelected(event) {
       // Use Angular date pipe for conversion
-      let start = formatDate(event.startTime, 'medium', this.locale);
-      let end = formatDate(event.endTime, 'medium', this.locale);
+      const start = formatDate(event.horaInicio, 'medium', this.locale);
+      const end = formatDate(event.horaFinal, 'medium', this.locale);
      
       const alert = await this.alertCtrl.create({
-        header: event.title,
-        subHeader: event.desc,
+        header: event.titulo,
+        subHeader: event.descripcion,
         message: 'From: ' + start + '<br><br>To: ' + end,
         buttons: ['OK']
       });
@@ -116,10 +167,10 @@ export class DiarioEjercicioPage implements OnInit {
 
 
   onTimeSelected(ev) {
-    let selected = new Date(ev.selectedTime);
-    this.event.startTime = selected.toISOString();
+    const selected = new Date(ev.selectedTime);
+    this.event.horaInicio = selected.toISOString();
     selected.setHours(selected.getHours() + 1);
-    this.event.endTime = (selected.toISOString());
+    this.event.horaFinal = (selected.toISOString());
   }
 
 

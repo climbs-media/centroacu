@@ -1,7 +1,13 @@
 import { CalendarComponent } from 'ionic2-calendar/calendar';
 import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import {AlertController, LoadingController, ToastController} from '@ionic/angular';
 import { formatDate } from '@angular/common';
+import {ImagePicker} from '@ionic-native/image-picker/ngx';
+import {Router} from '@angular/router';
+import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import {HistorialClinicoService} from '../../services/historial-clinico.service';
+import {WebView} from '@ionic-native/ionic-webview/ngx';
+import {NuevaCitaService} from '../../services/nueva-cita.service';
 
 
 @Component({
@@ -10,6 +16,8 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./nueva-cita.page.scss'],
 })
 export class NuevaCitaPage implements OnInit {
+  validations_form: FormGroup;
+  image: any;
 
 
   event = {
@@ -23,7 +31,7 @@ export class NuevaCitaPage implements OnInit {
 
   eventSource = [];
 
-  calendar= { 
+  calendar = {
     mode: 'month',
     currentDate: new Date(),
   }
@@ -32,10 +40,47 @@ export class NuevaCitaPage implements OnInit {
 
   @ViewChild(CalendarComponent) myCal: CalendarComponent;
 
-  constructor( private alertCtrl: AlertController, @Inject(LOCALE_ID) private locale: string) { }
+  constructor( private alertCtrl: AlertController,
+               @Inject(LOCALE_ID) private locale: string,
+               private imagePicker: ImagePicker,
+               public toastCtrl: ToastController,
+               public loadingCtrl: LoadingController,
+               public router: Router,
+               private formBuilder: FormBuilder,
+               private firebaseService: NuevaCitaService,
+  private webview: WebView) { }
 
   ngOnInit() {
     this.resetEvent();
+    this.resetFields();
+  }
+
+  resetFields() {
+    this.validations_form = this.formBuilder.group({
+      titulo: new FormControl('', Validators.required),
+      descripcion: new FormControl('', Validators.required),
+      inicioCita: new FormControl('', Validators.required),
+      finalCita: new FormControl('', Validators.required),
+    });
+  }
+
+  onSubmit(value) {
+    const data = {
+      titulo: value.titulo,
+      descripcion: value.descripcion,
+      inicioCita: value.inicioCita,
+      finalCita: value.finalCita,
+    };
+    this.firebaseService.crearNuevaCita(data)
+        .then(
+            res => {
+              this.router.navigate(['/home-admin']);
+            }
+        );
+  }
+
+  async presentLoading(loading) {
+    return await loading.present();
   }
 
   resetEvent(){
@@ -117,7 +162,7 @@ export class NuevaCitaPage implements OnInit {
 
 
   onTimeSelected(ev) {
-    let selected = new Date(ev.selectedTime);
+    const selected = new Date(ev.selectedTime);
     this.event.startTime = selected.toISOString();
     selected.setHours(selected.getHours() + 1);
     this.event.endTime = (selected.toISOString());

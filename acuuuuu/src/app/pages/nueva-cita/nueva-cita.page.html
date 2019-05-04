@@ -14,28 +14,31 @@
 </ion-header>
 
 <ion-content padding>
+    <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+
     <ion-card>
         <ion-card-header (click)="collapseCard = !collapseCard">
           <ion-card-title text-center>Reservar Cita</ion-card-title>
         </ion-card-header>
         <ion-card-content *ngIf="collapseCard">
           <ion-item>
-            <ion-input type="text" placeholder="Título" [(ngModel)]="event.title"></ion-input>
+            <ion-input type="text" placeholder="Título" [(ngModel)]="event.title" formControlName="titulo"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input type="text" placeholder="Descripción" [(ngModel)]="event.desc"></ion-input>
+            <ion-input type="text" placeholder="Descripción" [(ngModel)]="event.desc" formControlName="descripcion"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label>Inicia Cita</ion-label>
-            <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate" month-names="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Sept, Oct, Nov, Dic"></ion-datetime>
+            <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMMM D:HH:mm" [(ngModel)]="event.startTime" formControlName="inicioCita" [min]="minDate" month-names="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Sept, Oct, Nov, Dic"></ion-datetime>
           </ion-item>
           <ion-item>
             <ion-label>Finaliza Cita</ion-label>
-            <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate" month-names="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agos, Sept, Octubre, Nov, Dic"></ion-datetime>
+            <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMMM D:HH:mm" [(ngModel)]="event.endTime" formControlName="finalCita" [min]="minDate" month-names="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agos, Sept, Octubre, Nov, Dic"></ion-datetime>
           </ion-item>
-    <ion-button fill="outline" expand="block" (click)="addEvent()" [disabled]="event.title == ''">Añadir Cita</ion-button>
+    <ion-button type="submit" fill="outline" expand="block" (click)="addEvent()" [disabled]="!validations_form.valid" >Añadir Cita</ion-button>
         </ion-card-content>
       </ion-card>
+    </form>
 
       <div class="meses">{{viewTitle}}</div>
       <ion-row margin-top style="margin-top:40px">

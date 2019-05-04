@@ -13,7 +13,7 @@ export class HomeAdminPage implements OnInit {
   encontrado = false;
   items: Array<any>;
   searchText = '';
-  
+
 
   constructor(public alertController: AlertController, 
               private loadingCtrl: LoadingController,
@@ -41,17 +41,17 @@ export class HomeAdminPage implements OnInit {
     });
   }
 
-  
+
   async presentLoading(loading) {
     return await loading.present();
   }
 
 
- /* buscamos() {
+/* buscamos() {
     if(this.personabuscar == 'juan') {
 
       this.encontrado = true;
     }
-   }*/
+  }*/
 
 }
