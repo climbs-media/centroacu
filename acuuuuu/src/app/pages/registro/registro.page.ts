@@ -51,6 +51,7 @@ export class RegistroPage implements OnInit {
     this.authService.doRegistrarPaciente(value)
       .then(res => {
         console.log(res);
+        console.log();
         this.errorMessage = '';
         this.successMessage = 'Tu Cuenta fue Creada.';
         this.router.navigate(['/home-admin']);

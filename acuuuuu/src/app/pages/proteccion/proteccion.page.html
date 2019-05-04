@@ -1,6 +1,7 @@
 <ion-header text-center  padding-top>
   <ion-toolbar>
 <div class="contiene">
+
     <img width="40" height="45"  src="../../../assets/imgs/logo.png" class="logo">
     <span text-center style="padding-left:48px;padding-right:48px;
     font-style: bold;
@@ -16,7 +17,9 @@
 </ion-header>
 <ion-content padding>
     <button routerLink="/home-admin"><img src="../../../assets/imgs/retroceso.png" style=" position: absolute; margin-left: 2%"></button>
-<ion-grid margin-bottom>
+<form padding [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+
+    <ion-grid margin-bottom>
     <ion-col col-12 text-center>
         <h6>Ley de Proteccion de Datos</h6>
     </ion-col>
@@ -35,12 +38,25 @@
 </ion-grid>
 <div class="cFirma">
 <div >Firma :</div>
-<textarea style="margin:3px 0; margin-left: 10%;" rows="7" cols="36"></textarea>
-<div style="text-align: right ;font-size:10px;">Fecha : 28 abril 2019</div>
+<!--<textarea style="margin:3px 0; margin-left: 10%;" rows="7" cols="36"></textarea>-->
+<input formControlName="nombre" type="text" placeholder="Nombre Completo">
+<input formControlName="identidad" type="text" placeholder="Nº de identidad">
+<div>
+<ion-label>Fecha</ion-label>
+<ion-datetime display-format="DD-MM-YYYY" picker-format="DD-MM-YYYY" formControlName="fecha"></ion-datetime>
+</div>
 <div  style="text-align: center ;margin-top:5px;">
-    <ion-button ion-button color="primary" class="but" (click)="registrar()" round>Adelante</ion-button>
+  <ion-col size="12">
+    <div>
+      <ion-label class="label label-ios">
+        <ion-checkbox formControlName="check" class="check" color="primary" checked="false"></ion-checkbox>
+        <p class="terminos"> Haciendo click aquì acepto los terminos y condicione..</p>
+      </ion-label>
+    </div>
+  </ion-col>
+    <ion-button type='submit' ion-button color="primary" class="but" [disabled]="!validations_form.valid" round>Adelante</ion-button>
 </div>
 </div>
 
-
+</form>
 </ion-content>

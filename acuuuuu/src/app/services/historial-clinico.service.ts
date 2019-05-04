@@ -17,21 +17,23 @@ export class HistorialClinicoService {
     public afAuth: AngularFireAuth
   ) {}
 
-  getHistorialClinico() {
+  getHistorialClinicoAdmin() {
     return new Promise<any>((resolve, reject) => {
-      this.snapshotChangesSubscription = this.afs.collection('historial-clinico').snapshotChanges();
+      this.snapshotChangesSubscription = this.afs.
+        collection('historial-clinico').snapshotChanges();
       resolve(this.snapshotChangesSubscription);
     });
   }
-
-  getHistorialClinicoId(Id) {
+  
+  getHistorialClinico() {
     return new Promise<any>((resolve, reject) => {
-      this.snapshotChangesSubscription = this.afs.doc<any>('/historial-clinico/' + Id).valueChanges()
-        .subscribe(snapshots => {
-          resolve(snapshots);
-        }, err => {
-          reject(err);
-        });
+      this.afAuth.user.subscribe(currentUser => {
+        if (currentUser) {
+            this.snapshotChangesSubscription = this.afs.
+            collection('historial-clinico', ref => ref.where('userId', '==', currentUser.uid)).snapshotChanges();
+            resolve(this.snapshotChangesSubscription);
+        }
+      });
     });
   }
 
