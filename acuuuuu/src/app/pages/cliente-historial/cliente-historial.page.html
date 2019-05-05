@@ -12,31 +12,30 @@
    
 </ion-header>
 
-<ion-content padding>
+<ion-content padding *ngIf="items">
     <button routerLink="/cliente-perfil"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%; margin-top:-10px;"></button>
-  <ion-grid>
-      <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+  <ion-grid *ngFor="let item of items">
      <ion-row  text-center >
          <ion-col col-4 >
              <div style="color:#BB1D1D ;margin-top:15px; font-weight: bold;" >
                 Nº Historia
              </div>
              <div class="cajatexto" style="width:55px;"><!-- se le pone estilo propio para no afectar alos demas div-->
-                <ion-input formControlName="numeroHistorial"  type="text"  class="inputexto" ></ion-input>
+                <ion-input  type="text"  class="inputexto" >{{item.payload.doc.data().numeroHistorial}}</ion-input>
              </div> 
          </ion-col>
          <ion-col col-4 >
               <div  class="circular">
-                  <a (click)="openImagePicker()">
-                      <img  class="circular" [src]="image" alt="imagen"  >
-                  </a>
+                  
+                      <img   class="circular" src="{{item.payload.doc.data().image}}" >
+                  
                </div>
          </ion-col>
          <ion-col col-4>
                <div style="color:#BB1D1D; margin-top:15px; font-weight: bold;">
                  Fecha </div>
                  <div class="cajatexto" style="width:120px; ">
-                      <ion-datetime formControlName="fecha" class="inputexto" ></ion-datetime>
+                      <ion-datetime class="inputexto" >{{item.payload.doc.data().fecha}}</ion-datetime>
                  </div>  
          </ion-col>
      </ion-row>
@@ -45,36 +44,36 @@
       </ion-row>
       <ion-row>
           <ion-col col-12>
-              <ion-input class="cajatexto" formControlName="nombreApellido" placeholder="Nombre y Apellido">  </ion-input>
+              <ion-input class="cajatexto"  > {{item.payload.doc.data().nombreApellido}} </ion-input>
           </ion-col>
       </ion-row>
       <ion-row>
           <ion-col col-12>
-              <ion-input class="cajatexto" style="margin-left:18px;" formControlName="fechaNacimiento" placeholder="Fecha de Nacimiento"></ion-input>
+              <ion-input class="cajatexto" style="margin-left:18px;"  >{{item.payload.doc.data().email}}</ion-input>
           </ion-col>
           <ion-col col-12>
-                  <ion-input class="cajatexto" formControlName="ciudad" style="margin-right:16px;" placeholder="Ciudad"> </ion-input>
+                  <ion-input class="cajatexto"  style="margin-right:16px;" > {{item.payload.doc.data().ciudad}}</ion-input>
           </ion-col>
         </ion-row>
 
       <ion-row >
               <ion-col col-12>
-                      <ion-input class="cajatexto" formControlName="correo" placeholder=" Nuevo Correo"></ion-input>
+                      <ion-input class="cajatexto"  >{{item.payload.doc.data().correo}}</ion-input>
               </ion-col>
       </ion-row>
       <ion-row>
               <ion-col col-12>
-                      <ion-input class="cajatexto" type="number" formControlName="telefono" placeholder=" Nuevo Teléfono"> </ion-input>
+                      <ion-input class="cajatexto" type="number"  > {{item.payload.doc.data().telefono}}</ion-input>
               </ion-col>
             </ion-row>
           <ion-row>
               <ion-col col-12>
-                      <ion-input class="cajatexto" formControlName="profesion" placeholder=" Nueva Profesión"> </ion-input>
+                      <ion-input class="cajatexto"  >{{item.payload.doc.data().profesion}} </ion-input>
               </ion-col>
             </ion-row>
           <ion-row>
               <ion-col col-12>
-                      <ion-input class="cajatexto" formControlName="motivoConsulta" placeholder="Motivo de Consulta"></ion-input>
+                      <ion-input class="cajatexto"  >{{item.payload.doc.data().motivoConsulta}}</ion-input>
               </ion-col>
      </ion-row>
      <ion-row >
@@ -84,7 +83,7 @@
                 <ion-col >
                     <div style="font-weight: bold; margin: 5px; margin-left: 10px">Intervenciones : </div>
                     <div class="cajatexto">
-                        <ion-input formControlName="interNombre"  type="text" class="inputexto2" placeholder=""></ion-input>
+                        <ion-input  type="text" class="inputexto2" >{{item.payload.doc.data().interNombre}}</ion-input>
                    </div> 
                 </ion-col>
       </ion-row>
@@ -92,34 +91,29 @@
                   <ion-col >
                      <div  style="font-weight: bold; margin: 5px; margin-left: 10px">Enfermedades Anteriores  : </div>
                       <div class="cajatexto" >
-                          <ion-input formControlName="enfermedades"  type="text" class="inputexto2"  placeholder=""></ion-input>
+                          <ion-input  type="text" class="inputexto2"  >{{item.payload.doc.data().enfermedades}}</ion-input>
                      </div> 
                   </ion-col>
        </ion-row>
        <ion-row >
-              <ion-col >
-                   <div style="font-weight: bold; margin: 5px"> Familiares:</div>
-                  <ion-select formControlName="familiares" placeholder="Seleccionar">
-                      <ion-select-option value="diabetes">diabetes</ion-select-option>
-                      <ion-select-option value="cardiopatia">cardiopatia</ion-select-option>
-                      <ion-select-option value="obesidad">obesidad</ion-select-option>
-                      <!--  <span class='padece'>Diabetes<ion-checkbox  [(ngModel)]="diabetes" style="margin-left: 10px" ></ion-checkbox> </span>
-                        <span class='padece'>Cardiopatia<ion-checkbox  [(ngModel)]="cardiopatia" style="margin-left: 17px"  ></ion-checkbox></span>
-                        <br><span class='padece'>Obesidad<ion-checkbox  [(ngModel)]="obesidad" style="margin-left: 15px"  ></ion-checkbox></span>   -->
-                  </ion-select>
-                 
-              </ion-col>
-   </ion-row>
+        <ion-col >
+           <div  style="font-weight: bold; margin: 5px; margin-left: 10px">Familiares  : </div>
+            <div class="cajatexto" >
+                <ion-input  type="text" class="inputexto2"  placeholder="">{{item.payload.doc.data().familiares}}</ion-input>
+           </div> 
+        </ion-col>
+</ion-row>
      <div>
        <ion-row style="text-align:center;" padding-top >
                       <ion-col >
-                          <ion-button type="submit" ion-button class="but" [disabled]="!validations_form.valid" round>Aceptar
+                        <div *ngFor="let item of items" [routerLink]="['/editar', item.payload.doc.id]">
+                          <ion-button ion-button class="but" round>Ajustes
                         <!-- <ion-icon name="arrow-round-forward" style="color:white;"></ion-icon> -->
                           </ion-button>
+                          </div>
                       </ion-col>
        </ion-row>
      </div>
-      </form>
    </ion-grid>
 
    

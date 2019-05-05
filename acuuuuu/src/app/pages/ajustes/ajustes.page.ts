@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-ajustes',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjustesPage implements OnInit {
 
-  constructor() { }
+ 
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit() {
+
+  }
+
+  goEditar() {
+    this.router.navigate(['/cliente-historial']);
   }
 
 }

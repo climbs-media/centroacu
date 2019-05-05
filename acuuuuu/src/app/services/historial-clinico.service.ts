@@ -37,6 +37,17 @@ export class HistorialClinicoService {
     });
   }
 
+  getHistorialClinicoId(historialId) {
+    return new Promise<any>((resolve, reject) => {
+      this.snapshotChangesSubscription = this.afs.doc<any>('/historial-clinico/' + historialId).valueChanges()
+        .subscribe(snapshots => {
+          resolve(snapshots);
+        }, err => {
+          reject(err);
+        });
+    });
+  }
+
 
   unsubscribeOnLogOut() {
     // remember to unsubscribe from the snapshotChanges

@@ -4,7 +4,7 @@ import {AlertController, LoadingController, ToastController} from '@ionic/angula
 import { formatDate } from '@angular/common';
 import {ImagePicker} from '@ionic-native/image-picker/ngx';
 import {Router} from '@angular/router';
-import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {HistorialClinicoService} from '../../services/historial-clinico.service';
 import {WebView} from '@ionic-native/ionic-webview/ngx';
 import {NuevaCitaService} from '../../services/nueva-cita.service';
