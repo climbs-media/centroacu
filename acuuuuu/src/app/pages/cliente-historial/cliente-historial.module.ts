@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: '',
     component: ClienteHistorialPage,
-    resolve:{
+    resolve: {
       data: ClienteHistoricoResolver,
     }
   }
