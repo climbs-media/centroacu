@@ -21,6 +21,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { PopoverHistorialDieteticoPageModule } from './pages/popover-historial-dietetico/popover-historial-dietetico.module';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
     AngularFirestoreModule, // imports firebase/firestore
     AngularFireAuthModule, // imports firebase/auth
     AngularFireStorageModule, // imports firebase/storage],
+    PopoverHistorialDieteticoPageModule
   ],
 providers: [
     StatusBar,

@@ -35,6 +35,7 @@ const routes: Routes = [
   { path: 'alimentacion-user', loadChildren: './pages/alimentacion-user/alimentacion-user.module#AlimentacionUserPageModule' },
   { path: 'mipeso-user', loadChildren: './pages/mipeso-user/mipeso-user.module#MipesoUserPageModule' },
   { path: 'diario-user', loadChildren: './pages/diario-user/diario-user.module#DiarioUserPageModule' },  { path: 'registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' },
+  { path: 'popover-historial-dietetico', loadChildren: './pages/popover-historial-dietetico/popover-historial-dietetico.module#PopoverHistorialDieteticoPageModule' },
 
 
 ];

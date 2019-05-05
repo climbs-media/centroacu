@@ -70,7 +70,7 @@ export class AgregarClienteService {
       this.afs.collection('anadir-cliente').add({
         nombreApellido: value.nombreApellido,
         fechaNacimiento: value.fechaNacimiento,
-        ciudad: value.ciudad,
+        ciudad: value.ciudad, 
         correo: value.correo,
         telefono: value.telefono,
         profesion: value.profesion,

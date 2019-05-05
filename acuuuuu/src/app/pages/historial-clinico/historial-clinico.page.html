@@ -22,70 +22,96 @@
                 Nº Historia
              </div>
              <div class="cajatexto" style="width:55px;"><!-- se le pone estilo propio para no afectar alos demas div-->
-                <ion-input formControlName="numeroHistorial"  type="text"  class="inputexto" ></ion-input>
+                <ion-input formControlName="numeroHistorial"  type="text"  class="inputexto2" placeholder="Añadir" style="margin-left:-10px" ></ion-input>
              </div> 
          </ion-col>
          <ion-col col-4 >
+            <ion-icon name="ios-add-circle"  name="md-add-circle" class="iconos"></ion-icon>
               <div class="circular">
-                  <img   class="circular" src="./../../assets/imgs/foto_cliente.jpg" >
+                  <img   class="circular" src="./../../../assets/imgs/perfil2.png" >
                </div>
          </ion-col>
          <ion-col col-4>
                <div style="color:#BB1D1D; margin-top:15px; font-weight: bold;">
                  Fecha </div>
-                 <div class="cajatexto" style="width:120px; ">
-                      <ion-datetime formControlName="fecha" class="inputexto" ></ion-datetime>
+                 <div class="cajatexto" style="width:100px;">
+                      <ion-datetime formControlName="fecha" class="inputexto" placeholder="Añadir" style="margin-left:-10px" ></ion-datetime>
                  </div>  
          </ion-col>
      </ion-row>
      <ion-row  >
-            <ion-col text-center > <div style="color:#BB1D1D; font-size: 20px; font-weight: bold; margin-top: 14px;">Datos </div> </ion-col>
-      </ion-row>
-      <ion-row>
+        <ion-col text-center > <div style="color:#BB1D1D; font-size: 20px; font-weight: bold; margin-top: 14px;">Datos </div> </ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-col col-12>
+          <div class="cajatexto">    
+          <ion-input placeholder="Nombre Apellido" type="text" formControlName="nombreApellido" class="inputexto2"></ion-input>
+        </div> 
+      </ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-col col-12>
+          <div class="cajatexto" style="margin-left:18px;">
+          <!--
+          <ion-input placeholder="Nombre Restaurante" type="text" formControlName="fechaNacimiento"></ion-input>
+          -->
+              <ion-datetime padding placeholder="Fecha de Nacimiento" type="date" formControlName="fechaNacimiento" class="inputexto" ></ion-datetime>
+            </div>
+        </ion-col>
+      <ion-col col-12>
+              <div class="cajatexto" style="margin-right:16px;">
+              <ion-input placeholder="Ciudad" type="text" formControlName="ciudad" class="inputexto2"></ion-input> 
+            </div>
+      </ion-col>
+    </ion-row>
+
+  <ion-row >
           <ion-col col-12>
-              <div class="cajatexto">  Nombre y Apellido  </div> 
-              <ion-input placeholder="Nombre Apellido" type="text" formControlName="nombreApellido"></ion-input>
+                  <div class="cajatexto">  
+                  <ion-input placeholder="Correo" type="email" formControlName="correo" class="inputexto2"></ion-input>
+                </div>
           </ion-col>
-      </ion-row>
-      <ion-row>
+  </ion-row>
+  <ion-row>
           <ion-col col-12>
-              <div class="cajatexto" style="margin-left:18px;"> Fecha Nacimiento </div>
-              <!--
-              <ion-input placeholder="Nombre Restaurante" type="text" formControlName="fechaNacimiento"></ion-input>
-              --><div>
-                  <ion-datetime padding placeholder="fecha de Nacimiento" formControlName="fechaNacimiento" class="inputexto" ></ion-datetime>
-              </div>
-            </ion-col>
-          <ion-col col-12>
-                  <div class="cajatexto" style="margin-right:16px;"> Ciudad </div>
-                  <ion-input placeholder="Ciudad" type="text" formControlName="ciudad"></ion-input> 
+                  <div class="cajatexto"> 
+                  <ion-input placeholder="Teléfono" type="text" formControlName="telefono" class="inputexto2"></ion-input> 
+                </div>
           </ion-col>
         </ion-row>
-
-      <ion-row >
-              <ion-col col-12>
-                      <div class="cajatexto">  Correo </div>
-                      <ion-input placeholder="Correo" type="text" formControlName="correo"></ion-input>
-              </ion-col>
-      </ion-row>
       <ion-row>
-              <ion-col col-12>
-                      <div class="cajatexto">  Teléfono </div>
-                      <ion-input placeholder="Telefono" type="text" formControlName="telefono"></ion-input> 
-              </ion-col>
-            </ion-row>
+          <ion-col col-12>
+                  <div class="cajatexto">   
+                  <ion-input placeholder="Profesión" type="text" formControlName="profesion" class="inputexto2"></ion-input> 
+                </div>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col col-12>
+                  <div class="cajatexto">
+                  <ion-input placeholder="Motivo de consulta" type="text" formControlName="motivoConsulta" class="inputexto2"></ion-input> 
+                </div>
+          </ion-col>
+          </ion-row>
           <ion-row>
-              <ion-col col-12>
-                      <div class="cajatexto">  Profesión  </div>
-                      <ion-input placeholder="Profesion" type="text" formControlName="profesion"></ion-input> 
-              </ion-col>
-            </ion-row>
-          <ion-row>
-              <ion-col col-12>
-                      <div class="cajatexto">  Motivo de consulta  </div>
-                      <ion-input placeholder="Motivo de consulta" type="text" formControlName="motivoConsulta"></ion-input> 
-              </ion-col>
-     </ion-row>
+            <ion-col col-12>
+                    <div class="cajatexto">
+                    <ion-input placeholder="Referencia" type="text" formControlName="Referencia" class="inputexto2"></ion-input> 
+                  </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+                  <div class="cajatexto"  style="margin-left:18px;"> 
+                  <ion-input placeholder="Altura en CM" type="text" formControlName="Altura" class="inputexto2"></ion-input> 
+                  </div>
+          </ion-col>
+          <ion-col col-12>
+            <div class="cajatexto"  style="margin-right:16px;"> 
+            <ion-input placeholder="Añade Peso" type="text" formControlName="Peso" class="inputexto2"></ion-input> 
+            </div>
+    </ion-col>
+        </ion-row>
      <ion-row >
                <ion-col text-center style="color:#BB1D1D; font-weight: bold; margin-top: 5px">Antecedentes</ion-col>
      </ion-row>
@@ -110,9 +136,9 @@
                    <div style="font-weight: bold; margin: 5px"> Familiares:</div> 
                  <div  style="margin-bottom:5px; display: flex; align-content: center">
                   <ion-select formControlName="familiares" placeholder="Seleccionar">
-                      <ion-select-option value="diabetes">diabetes</ion-select-option>
-                      <ion-select-option value="cardiopatia">cardiopatia</ion-select-option>
-                      <ion-select-option value="obesidad">obesidad</ion-select-option>
+                      <ion-select-option value="diabetes">Diabetes</ion-select-option>
+                      <ion-select-option value="cardiopatia">Cardiopatia</ion-select-option>
+                      <ion-select-option value="obesidad">Obesidad</ion-select-option>
                   <!--  <span class='padece'>Diabetes<ion-checkbox  [(ngModel)]="diabetes" style="margin-left: 10px" ></ion-checkbox> </span>
                     <span class='padece'>Cardiopatia<ion-checkbox  [(ngModel)]="cardiopatia" style="margin-left: 17px"  ></ion-checkbox></span>
                     <br><span class='padece'>Obesidad<ion-checkbox  [(ngModel)]="obesidad" style="margin-left: 15px"  ></ion-checkbox></span>   -->
@@ -124,7 +150,7 @@
      
        <ion-row style="text-align:center;" padding-top >
                       <ion-col >
-                          <ion-button ion-button class="but" type="submit" [disabled]="!validations_form.valid" round>Aceptar
+                          <ion-button ion-button class="but" type="submit" [disabled]="!validations_form.valid" round>Agregar
                         <!-- <ion-icon name="arrow-round-forward" style="color:white;"></ion-icon> -->
                           </ion-button>
                       </ion-col>
