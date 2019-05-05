@@ -31,7 +31,7 @@
     </ion-col>
   
 
-     <ion-col col-8>
+<ion-col col-8>
         <ion-button ion-button color="primary" icon-end class="but2" style="text-align:center;">
             Filtrar busqueda
             <ion-icon ios="ios-funnel" md="md-funnel" class="iconBusque"></ion-icon>
@@ -39,36 +39,36 @@
         
           <div class="tabla"><img src="../../../assets/imgs/bot_cliente_perfil/recuento.png" class="recuento"></div>
         </ion-col>
-       </ion-row>
+      </ion-row>
        <div *ngIf="items.length > 0">
         <ion-list>
             <ion-item *ngFor="let item of items" style="--background:whitesmoke">
            <div *ngIf="item.payload.doc.data().nombreApellido && item.payload.doc.data().nombreApellido.length"  class="contenido">
                 <div *ngIf="item.payload.doc.data().nombreApellido.includes(searchText) ">  
                   <ul>
-     <ion-col>
-         <div class="cajabuscador"  routerLink="/cliente-perfil" >
+    <ion-col>
+        <div class="cajabuscador"  routerLink="/cliente-perfil" >
               <span class="nombreuser">{{item.payload.doc.data().nombreApellido}}</span>
               <div  class="buscado"  >
                   <span class="num_edad">{{item.payload.doc.data().fechaNacimiento}}</span> 
-               </div>
+              </div>
               
-               <div class="circular" >
+              <div class="circular" >
                       <span class="estado"></span><!-- nos dira si esta activo ,frecuente, no viene -->
                       <img   class="circular" src="./../../assets/imgs/foto_cliente.jpg" >
               </div>
               
           <span class="bot_bono" (click)="aBono()">{{item.payload.doc.data().numeroHistorial}}</span>
       </div>
-         
-         <!-- se pone fuera para que no le afecte el click general -->
-   </ion-col>
+        
+        <!-- se pone fuera para que no le afecte el click general -->
+  </ion-col>
   </ul> 
   </div>
-   </div>
-   </ion-item>
-   </ion-list>
-   </div>
-   </ion-grid>
+  </div>
+  </ion-item>
+  </ion-list>
+  </div>
+  </ion-grid>
 
 </ion-content>

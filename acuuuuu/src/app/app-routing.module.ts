@@ -28,14 +28,20 @@ const routes: Routes = [
   { path: 'dietas-hipocaloricas', loadChildren: './pages/dietas-hipocaloricas/dietas-hipocaloricas.module#DietasHipocaloricasPageModule' },
   { path: 'dietas-proteinas', loadChildren: './pages/dietas-proteinas/dietas-proteinas.module#DietasProteinasPageModule' },
   { path: 'dietas-cenas', loadChildren: './pages/dietas-cenas/dietas-cenas.module#DietasCenasPageModule' },
-  { path: 'editar', loadChildren: './pages/editar/editar.module#EditarPageModule' },
+  { path: 'editar/:id', loadChildren: './pages/editar/editar.module#EditarPageModule' },
   { path: 'bonos-acreditados', loadChildren: './pages/bonos-acreditados/bonos-acreditados.module#BonosAcreditadosPageModule' },
   { path: 'home-user', loadChildren: './pages/home-user/home-user.module#HomeUserPageModule' },
   { path: 'ejercicio-user', loadChildren: './pages/ejercicio-user/ejercicio-user.module#EjercicioUserPageModule' },
   { path: 'alimentacion-user', loadChildren: './pages/alimentacion-user/alimentacion-user.module#AlimentacionUserPageModule' },
   { path: 'mipeso-user', loadChildren: './pages/mipeso-user/mipeso-user.module#MipesoUserPageModule' },
+<<<<<<< HEAD
   { path: 'diario-user', loadChildren: './pages/diario-user/diario-user.module#DiarioUserPageModule' },  { path: 'registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' },
   { path: 'popover-historial-dietetico', loadChildren: './pages/popover-historial-dietetico/popover-historial-dietetico.module#PopoverHistorialDieteticoPageModule' },
+=======
+  { path: 'diario-user', loadChildren: './pages/diario-user/diario-user.module#DiarioUserPageModule' },
+  { path: 'registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' },  { path: 'cliente-historial', loadChildren: './pages/cliente-historial/cliente-historial.module#ClienteHistorialPageModule' },
+>>>>>>> 60ab8077030f3ff7a4a348afe40cfdd7b5a58d74
+
 
 
 ];

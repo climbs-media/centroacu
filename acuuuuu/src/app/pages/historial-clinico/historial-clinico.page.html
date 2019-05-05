@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content padding>
-    <form class="animated fadeIn fast" style="font-family: Comfortaa" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
     <button routerLink="/cliente-perfil"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%; margin-top:-10px;"></button> 
   <ion-grid>
      <ion-row  text-center >
@@ -150,7 +150,11 @@
      
        <ion-row style="text-align:center;" padding-top >
                       <ion-col >
+<<<<<<< HEAD
                           <ion-button ion-button class="but" type="submit" [disabled]="!validations_form.valid" round>Agregar
+=======
+                          <ion-button type="submit" ion-button class="but" type="submit" [disabled]="!validations_form.valid" round>Aceptar
+>>>>>>> 60ab8077030f3ff7a4a348afe40cfdd7b5a58d74
                         <!-- <ion-icon name="arrow-round-forward" style="color:white;"></ion-icon> -->
                           </ion-button>
                       </ion-col>

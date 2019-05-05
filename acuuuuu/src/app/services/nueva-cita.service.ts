@@ -63,7 +63,7 @@ export class NuevaCitaService {
     });
   }
 
-  crearBonoCita(value) {
+  crearNuevaCita(value) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
       this.afs.collection('nueva-cita').add({
@@ -72,7 +72,6 @@ export class NuevaCitaService {
         inicioCita: value.inicioCita,
         finalCita: value.finalCita,
         userId: currentUser.uid,
-        image: value.image
       })
       .then(
         res => resolve(res),

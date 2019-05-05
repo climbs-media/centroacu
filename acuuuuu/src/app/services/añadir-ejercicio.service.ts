@@ -7,7 +7,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 @Injectable({
   providedIn: 'root'
 })
-export class AñadirEjercicioService {
+export class AnadirEjercicioService {
 
   private snapshotChangesSubscription: any;
 

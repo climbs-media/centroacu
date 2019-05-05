@@ -5,13 +5,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DiarioEjercicioPage } from './diario-ejercicio.page';
-import { NgCalendarModule } from 'ionic2-calendar';
+import { ClienteHistorialPage } from './cliente-historial.page';
+import { ClienteHistoricoResolver } from './cliente-historial.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: DiarioEjercicioPage
+    component: ClienteHistorialPage,
+    resolve: {
+      data: ClienteHistoricoResolver,
+    }
   }
 ];
 
@@ -21,9 +24,9 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    NgCalendarModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DiarioEjercicioPage]
+  declarations: [ClienteHistorialPage],
+  providers: [ClienteHistoricoResolver]
 })
-export class DiarioEjercicioPageModule {}
+export class ClienteHistorialPageModule {}

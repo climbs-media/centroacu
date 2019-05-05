@@ -1,30 +1,30 @@
 <ion-header text-center  padding-top>
     <ion-toolbar>
-  <div class="contiene">
-      <img width="40" height="45"  src="../../../assets/imgs/logo.png" class="logo">
-      <span text-center style="padding-left:48px;padding-right:48px;font-size: 20px;">
-       &nbsp;&nbsp;Centro ACU 10
-      </span>
-      
-          <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
-    </div>
-    </ion-toolbar>
-     
+        <div class="contiene">
+            <img width="40" height="45"  src="../../../assets/imgs/logo.png" class="logo">
+            <span text-center style="padding-left:48px;padding-right:48px;font-size: 20px;">
+             &nbsp;&nbsp;Centro ACU 10
+            </span>
+            
+                <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
+          </div>
+          </ion-toolbar>
+    
 </ion-header>
 
 <ion-content padding>
 <ion-grid>
   <ion-row >
     <ion-col>
-        <button routerLink="/cliente-perfil"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%"></button> 
+        <button routerLink="/cliente-perfil"><img [src]="image" style="color: red; position: absolute; margin-left: 5%"></button> 
           <div class="circular">
-            <img   class="circular" src="../../../assets/imgs/foto_cliente.jpg" >
-         </div>
+            <img (click)="openImagePicker()"   class="circular" src="../../../assets/imgs/foto_cliente.jpg" >
+        </div>
     </ion-col>
   </ion-row>
+  <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
   <ion-row style='margin-bottom:10px;'>
       <ion-col text-center>
-
           <p style='margin-bottom:5px;font-weight:bold;'>NOMBRE CLIENTE</p>
           <p style='margin-bottom:10%;'> Nº socio &nbsp;&nbsp; x años</p>
           <div>
@@ -32,7 +32,7 @@
           <span class="bot_bono" routerLink="/bono-citas"> 0</span>
         </div>
         
-     </ion-col>
+    </ion-col>
     </ion-row >
     
     <ion-row class="centrar">
@@ -46,31 +46,35 @@
           <ion-col col-5 text-center class="fila_abajo">
               Citas Restantes
             </ion-col>
-   
+  
   
   </ion-row>
 
     <ion-row  >
         <ion-col col-5 class="fila_lado" >
             <div class="cajatexto" style="width:90%;  font-weight: bold; margin: 5% ">
-                <span style="margin-top: -5px; margin-left: 1px">Bono 8<ion-checkbox [(ngModel)]="bono8" style="margin-left: 17px; margin-top: 5px; --border-style:none; "  ></ion-checkbox></span>
+                <span style="margin-top: -5px; margin-left: 1px">Bono 8<ion-checkbox formControlName="bonoOcho" value="8" style="margin-left: 17px; margin-top: 5px; --border-style:none; "  ></ion-checkbox></span>
             </div>
             <div class="cajatexto" style="width:90%; font-weight: bold; margin: 5% ">
-              <span style="margin-top: -5px; margin-left: 1px">Bono 4<ion-checkbox [(ngModel)]="bono4" style="margin-left: 17px; margin-top: 5px; --border-style:none;"  ></ion-checkbox></span>
-             </div>
-             <div class="cajatexto" style="width:90%; margin: 5%">
-                <ion-input type="text" class="input_texto" placeholder="Agregar Manualmente" ></ion-input>
-             </div>
-         </ion-col>
-         <ion-col col-5 class="fila_medio">
-            <div class="cajatexto" style="width:50%;">
-               <ion-input type="text"   class="input_texto"  ></ion-input>
+              <span style="margin-top: -5px; margin-left: 1px">Bono 4<ion-checkbox formControlName="bonoCuatro" value="4" style="margin-left: 17px; margin-top: 5px; --border-style:none;"  ></ion-checkbox></span>
             </div>
-         </ion-col>
-         <ion-col col-5>
-                <div >
-                  <span class="bot_bono2" routerLink="/bono-citas"> 5</span>
-             </div>
+            <div class="cajatexto" style="width:90%; margin: 5%">
+                <ion-input type="number" class="input_texto" formControlName="bonoManual" placeholder="0" ></ion-input>
+            </div>
+        </ion-col>
+        <ion-col col-5 class="fila_medio">
+            <div class="cajatexto" style="width:50%;">
+                <ion-datetime display-format="DD-MM-YYYY" formControlName="fechaBono"></ion-datetime>
+              </div>
+        </ion-col>
+        <ion-col col-5>
+                <div text-center>
+        <ion-input type="number" placeholder="0" formControlName="citasRestantes"></ion-input>
+            </div>
         </ion-col>
       </ion-row>
-      <ion-button color="primary" style="margin-left: 35%;margin-top: 10%; --border-radius: 20px;" round (click)="Acreditados()">Aceptar</ion-button>
+      <ion-button color="primary" type="submit" style="margin-left: 35%;margin-top: 10%; --border-radius: 20px;" [disabled]="!validations_form.valid " (click)="Acreditados()" round >Aceptar</ion-button>
+
+    </form>
+</ion-grid>  
+    </ion-content>

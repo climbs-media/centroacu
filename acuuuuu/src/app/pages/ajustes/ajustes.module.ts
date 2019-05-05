@@ -10,7 +10,7 @@ import { AjustesPage } from './ajustes.page';
 const routes: Routes = [
   {
     path: '',
-    component: AjustesPage
+    component: AjustesPage,
   }
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AjustesPage]
+  declarations: [AjustesPage],
 })
 export class AjustesPageModule {}
