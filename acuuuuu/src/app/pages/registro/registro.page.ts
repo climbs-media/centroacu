@@ -54,7 +54,7 @@ export class RegistroPage implements OnInit {
         console.log();
         this.errorMessage = '';
         this.successMessage = 'Tu Cuenta fue Creada.';
-        this.router.navigate(['/home-admin']);
+        this.router.navigate(['/historial-clinico']);
       }, err => {
         console.log(err);
         this.errorMessage = err.message;

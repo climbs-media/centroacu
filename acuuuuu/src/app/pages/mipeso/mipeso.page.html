@@ -1,3 +1,4 @@
+
 <ion-header text-center  padding-top>
     <ion-toolbar>
   <div class="contiene">
@@ -14,7 +15,7 @@
 <ion-content>
   <button routerLink="/cliente-seguimiento"><img src="../../../assets/imgs/retroceso.png" style="margin-top: 5%; color: red; position: absolute; margin-left: 5%"></button> 
     <h4>Mi Peso</h4>
-    <ion-grid>
+    <ion-grid *ngFor="let item of items">
         <ion-row>
           <ion-col>
             <div class="pesoIni">
@@ -31,7 +32,7 @@
             </ion-row>
             <div class="pesoConsul">
                 <p class="tconsul">Peso en Consulta</p>
-                <p class="tconsul"><strong>{{description}}</strong> Kg</p>
+                <p class="tconsul"><strong>{{item.payload.doc.data().peso}}</strong> Kg</p>
                 <p class="tconsul">IMC 25,23</p> 
               </div>
             </ion-grid>
@@ -58,12 +59,19 @@
                 <div class="sobrePe"> Sobre Peso</div>
                 <div class="obe">Obesidad</div>
               </div>
-
-
-              <div style="border: 1px solid grey; width: 90%; margin: 0 auto; margin-top: 20px;">
               
 
-              </div>
+
+                  <div *ngFor="let item of items">
+                    <div text-center>
+                    <ion-label><h5>{{item.payload.doc.data().peso}}<span>KG</span></h5></ion-label>
+                  </div>
+                      <progress style="margin-top: 5px; width: 90%" value="{{item.payload.doc.data().peso}}" min="40" max="800"></progress>
+                  </div>
+
+              
+
+
             </ion-grid> 
             
 

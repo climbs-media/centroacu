@@ -34,13 +34,10 @@ const routes: Routes = [
   { path: 'ejercicio-user', loadChildren: './pages/ejercicio-user/ejercicio-user.module#EjercicioUserPageModule' },
   { path: 'alimentacion-user', loadChildren: './pages/alimentacion-user/alimentacion-user.module#AlimentacionUserPageModule' },
   { path: 'mipeso-user', loadChildren: './pages/mipeso-user/mipeso-user.module#MipesoUserPageModule' },
-<<<<<<< HEAD
-  { path: 'diario-user', loadChildren: './pages/diario-user/diario-user.module#DiarioUserPageModule' },  { path: 'registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' },
-  { path: 'popover-historial-dietetico', loadChildren: './pages/popover-historial-dietetico/popover-historial-dietetico.module#PopoverHistorialDieteticoPageModule' },
-=======
   { path: 'diario-user', loadChildren: './pages/diario-user/diario-user.module#DiarioUserPageModule' },
-  { path: 'registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' },  { path: 'cliente-historial', loadChildren: './pages/cliente-historial/cliente-historial.module#ClienteHistorialPageModule' },
->>>>>>> 60ab8077030f3ff7a4a348afe40cfdd7b5a58d74
+  { path: 'registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' },
+  { path: 'popover-historial-dietetico', loadChildren: './pages/popover-historial-dietetico/popover-historial-dietetico.module#PopoverHistorialDieteticoPageModule' },
+  { path: 'cliente-historial', loadChildren: './pages/cliente-historial/cliente-historial.module#ClienteHistorialPageModule' },
 
 
 

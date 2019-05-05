@@ -92,6 +92,10 @@ export class HistorialClinicoService {
         familiares: value.familiares,
         numeroHistorial: value.numeroHistorial,
         fecha: value.fecha,
+        peso: value.peso,
+        altura: value.altura,
+        referencia: value.referencia,
+        image: value.image,
         userId: currentUser.uid,
       })
       .then(

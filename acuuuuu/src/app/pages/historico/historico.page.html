@@ -18,10 +18,27 @@
     <div class="titulo">
         <h2 style="color: #BB1D1D; font-weight: bold;">FECHA DE CITAS</h2>
     </div>
-    <div  text-center class='mes' >Febrero</div>
-    <div class="diahora" ><span style="margin-left: 10px; font-weight: bold;">Martes</span><span style="margin-left: 70px; font-weight: bold;">7/11/2019</span></div>
-    
-    <div  text-center class='mes' >Junio</div>
-    <div class="diahora" ><span style="margin-left: 10px; font-weight: bold;">Jueves</span><span style="margin-left: 70px; font-weight: bold;">7/11/2019</span></div>
+    <ion-list *ngFor="let item of items">
+                    <ion-item>
+                        <div  text-center class='mes' >Inicio Cita</div>
+                    </ion-item>
+                    <ion-item>
+                        <div class="diahora" ><span style="margin-left: 10px; font-weight: bold;">{{item.payload.doc.data().inicioCita}}</span></div>
+                    </ion-item>
+                    <ion-item>
+                        <div  text-center class='mes' >Inicio Cita</div>
+                    </ion-item>
+                    <ion-item>
+                        <div class="diahora" ><span style="margin-left: 10px; font-weight: bold;">{{item.payload.doc.data().finalCita}}</span></div>
+                    </ion-item>
+                    <ion-item>
+                        <div text-center class='mes'><h5>Descripcion</h5></div>
+                    </ion-item>
+                    <ion-item>
+                        <div class="diahora" ><span style="margin-left: 10px; font-weight: bold;">{{item.payload.doc.data().descripcion}}</span></div>
+                    </ion-item>
+                    <hr>
+                    <hr>
+    </ion-list>
 </ion-content>
 

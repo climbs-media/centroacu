@@ -6,11 +6,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ClientePerfilPage } from './cliente-perfil.page';
+import { ClientePerfilResolver } from './cliente-perfil.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: ClientePerfilPage
+    component: ClientePerfilPage,
+    resolve: {
+      data: ClientePerfilResolver,
+    }
   }
 ];
 
@@ -21,6 +25,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ClientePerfilPage]
+  declarations: [ClientePerfilPage],
+  providers: [ClientePerfilResolver]
 })
 export class ClientePerfilPageModule {}

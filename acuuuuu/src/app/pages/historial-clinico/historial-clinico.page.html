@@ -9,7 +9,6 @@
         <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
   </div>
   </ion-toolbar>
-   
 </ion-header>
 
 <ion-content padding>
@@ -26,9 +25,9 @@
              </div> 
          </ion-col>
          <ion-col col-4 >
-            <ion-icon name="ios-add-circle"  name="md-add-circle" class="iconos"></ion-icon>
+            <ion-icon name="ios-add-circle"  name="md-add-circle" class="iconos" (click)="openImagePicker()"></ion-icon>
               <div class="circular">
-                  <img   class="circular" src="./../../../assets/imgs/perfil2.png" >
+                  <img   class="circular" [src]="image" >
                </div>
          </ion-col>
          <ion-col col-4>
@@ -96,19 +95,19 @@
           <ion-row>
             <ion-col col-12>
                     <div class="cajatexto">
-                    <ion-input placeholder="Referencia" type="text" formControlName="Referencia" class="inputexto2"></ion-input> 
+                    <ion-input placeholder="Referencia" type="text" formControlName="referencia" class="inputexto2"></ion-input> 
                   </div>
             </ion-col>
         </ion-row>
         <ion-row>
           <ion-col col-12>
                   <div class="cajatexto"  style="margin-left:18px;"> 
-                  <ion-input placeholder="Altura en CM" type="text" formControlName="Altura" class="inputexto2"></ion-input> 
+                  <ion-input placeholder="Altura en CM" type="text" formControlName="altura" class="inputexto2"></ion-input> 
                   </div>
           </ion-col>
           <ion-col col-12>
             <div class="cajatexto"  style="margin-right:16px;"> 
-            <ion-input placeholder="Añade Peso" type="text" formControlName="Peso" class="inputexto2"></ion-input> 
+            <ion-input placeholder="Añade Peso" type="text" formControlName="peso" class="inputexto2"></ion-input> 
             </div>
     </ion-col>
         </ion-row>
@@ -150,11 +149,7 @@
      
        <ion-row style="text-align:center;" padding-top >
                       <ion-col >
-<<<<<<< HEAD
                           <ion-button ion-button class="but" type="submit" [disabled]="!validations_form.valid" round>Agregar
-=======
-                          <ion-button type="submit" ion-button class="but" type="submit" [disabled]="!validations_form.valid" round>Aceptar
->>>>>>> 60ab8077030f3ff7a4a348afe40cfdd7b5a58d74
                         <!-- <ion-icon name="arrow-round-forward" style="color:white;"></ion-icon> -->
                           </ion-button>
                       </ion-col>

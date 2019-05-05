@@ -24,6 +24,18 @@ export class NuevaCitaService {
     });
   }
 
+  getCitaPaciente() {
+    return new Promise<any>((resolve, reject) => {
+      this.afAuth.user.subscribe(currentUser => {
+        if (currentUser) {
+            this.snapshotChangesSubscription = this.afs.
+            collection('nueva-cita', ref => ref.where('userId', '==', currentUser.uid)).snapshotChanges();
+            resolve(this.snapshotChangesSubscription);
+        }
+      });
+    });
+  }
+
   getCitaId(Id) {
     return new Promise<any>((resolve, reject) => {
       this.snapshotChangesSubscription = this.afs.doc<any>('/nueva-cita/' + Id).valueChanges()

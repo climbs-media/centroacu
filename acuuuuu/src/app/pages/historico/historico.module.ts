@@ -6,11 +6,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { HistoricoPage } from './historico.page';
+import { HistoricoResolver } from './historico.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: HistoricoPage
+    component: HistoricoPage,
+    resolve: {
+      data: HistoricoResolver,
+    }
   }
 ];
 
@@ -21,6 +25,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [HistoricoPage]
+  declarations: [HistoricoPage],
+  providers: [HistoricoResolver]
 })
 export class HistoricoPageModule {}

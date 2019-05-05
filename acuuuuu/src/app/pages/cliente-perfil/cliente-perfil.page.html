@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content padding>
-<ion-grid>
+<ion-grid *ngFor="let item of items">
   <ion-row >
     <ion-col>
         <button routerLink="/home-admin"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%"></button> 
@@ -26,11 +26,11 @@
       <ion-col text-center>
 
 
-          <p style='margin-bottom:5px;font-weight:bold;'>NOMBRE CLIENTE</p>
-          <p> Nº socio &nbsp;&nbsp; x años</p>
+          <p style='margin-bottom:5px;font-weight:bold;'><b>{{item.payload.doc.data().nombreApellido}}</b></p>
+       <!--   <p> Nº socio &nbsp;&nbsp; x años</p> -->
           <div>
-            <p class="bono">Bono citas</p>
-          <span class="bot_bono" routerLink="/bono-citas"> 0</span>
+            <p class="bono">Numero Historial</p>
+          <span class="bot_bono" routerLink="/bono-citas"> {{item.payload.doc.data().numeroHistorial}}</span>
         </div>
         
      </ion-col>
@@ -79,7 +79,7 @@
       </ion-button>
   </ion-col>
   <ion-col col-4>
-      <ion-button  routerLink="/historial-clinico" class="bot_impri" round>
+      <ion-button  routerLink="/cliente-historial" class="bot_impri" round>
        <img src="../../../assets/imgs/bot_cliente_seguimiento/imprime.png" class="boton">Vista Previa
       </ion-button>
   </ion-col>

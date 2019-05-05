@@ -3,7 +3,7 @@ import { Resolve, ActivatedRouteSnapshot} from '@angular/router';
 import { HistorialClinicoService } from 'src/app/services/historial-clinico.service';
 
 @Injectable()
-export class ClienteHistoricoResolver implements Resolve<any> {
+export class MiPseResolver implements Resolve<any> {
 
   constructor(private firebaseService: HistorialClinicoService) {}
 

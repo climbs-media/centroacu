@@ -45,6 +45,9 @@ export class HistorialClinicoPage implements OnInit {
       enfermedades: new FormControl('', Validators.required),
       familiares: new FormControl('', Validators.required),
       numeroHistorial: new FormControl('', Validators.required),
+      peso: new FormControl('', Validators.required),
+      altura: new FormControl('', Validators.required),
+      referencia: new FormControl('', ),
       fecha: new FormControl('', Validators.required),
     });
   }
@@ -63,6 +66,9 @@ export class HistorialClinicoPage implements OnInit {
       interNombre: value.interNombre,
       enfermedades: value.enfermedades,
       familiares: value.familiares,
+      peso: value.peso,
+      altura: value.altura,
+      referencia: value.referencia,
       image: this.image
     };
     this.firebaseService.crearHistorialClinico(data)

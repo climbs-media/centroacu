@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { ToastController, LoadingController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { WheelSelector } from '@ionic-native/wheel-selector/ngx';
 import { PopoverController } from '@ionic/angular';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -11,6 +12,8 @@ import { PopoverController } from '@ionic/angular';
   styleUrls: ['./mipeso.page.scss'],
 })
 export class MipesoPage implements OnInit {
+
+  items: Array<any>;
 
   dummyJson = {
     kilos: [
@@ -92,9 +95,36 @@ export class MipesoPage implements OnInit {
   }
 
 // tslint:disable-next-line: max-line-length
-  constructor( private selector: WheelSelector, private toastCtrl: ToastController, private http: HttpClient) { }
+  constructor( private selector: WheelSelector, 
+    private toastCtrl: ToastController,
+     private http: HttpClient,
+     public loadingCtrl: LoadingController,
+     private router: Router,
+     private route: ActivatedRoute,) { }
 
   ngOnInit() {
+    if (this.route && this.route.data) {
+      this.getData();
+    }
+  }
+
+  async getData(){
+    const loading = await this.loadingCtrl.create({
+      message: 'Espere un momento...',
+      duration: 1000
+    });
+    this.presentLoading(loading);
+
+    this.route.data.subscribe(routeData => {
+      routeData['data'].subscribe(data => {
+        loading.dismiss();
+        this.items = data;
+      })
+    })
+  }
+
+  async presentLoading(loading) {
+    return await loading.present();
   }
 
 

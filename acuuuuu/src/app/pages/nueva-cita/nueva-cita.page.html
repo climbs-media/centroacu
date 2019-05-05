@@ -35,7 +35,8 @@
             <ion-label>Finaliza Cita</ion-label>
             <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMMM D:HH:mm" [(ngModel)]="event.endTime" formControlName="finalCita" [min]="minDate" month-names="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agos, Sept, Octubre, Nov, Dic"></ion-datetime>
           </ion-item>
-    <ion-button type="submit" fill="outline" expand="block" (click)="addEvent()" [disabled]="!validations_form.valid" >Añadir Cita</ion-button>
+    <ion-button type="submit" fill="outline" expand="block" [disabled]="!validations_form.valid" >Añadir Cita</ion-button>
+
         </ion-card-content>
       </ion-card>
     </form>
