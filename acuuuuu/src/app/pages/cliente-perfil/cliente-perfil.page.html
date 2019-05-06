@@ -9,6 +9,7 @@
           <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
     </div>
     </ion-toolbar>
+    
      
 </ion-header>
 
@@ -22,24 +23,22 @@
          </div>
     </ion-col>
   </ion-row>
-  <ion-row style='margin-bottom:10px;'>
-      <ion-col text-center>
 
-
-          <p style='margin-bottom:5px;font-weight:bold;'><b>{{item.payload.doc.data().nombreApellido}}</b></p>
-       <!--   <p> Nº socio &nbsp;&nbsp; x años</p> -->
-          <div>
-            <p class="bono">Numero Historial</p>
-          <span class="bot_bono" routerLink="/bono-citas"> {{item.payload.doc.data().numeroHistorial}}</span>
-        </div>
-        
-     </ion-col>
-    </ion-row >
+<ion-row style='margin-bottom:10px;'>
+    <ion-col text-center>
+        <p style='margin-bottom:5px;font-weight:bold;'><b>{{item.payload.doc.data().nombreApellido}}</b></p>
+     <!--   <p> Nº socio &nbsp;&nbsp; x años</p> -->
+        <div>
+          <p class="bono">Numero Historial</p>
+        <span class="bot_bono" routerLink="/bono-citas"> {{item.payload.doc.data().numeroHistorial}}</span>
+      </div>
+   </ion-col>
+  </ion-row >
 
 
 <ion-row >
  <ion-col col-4>
-   <div  routerLink="/historial-clinico" class="bot bot_irHistoryClinico">
+   <div  routerLink="/cliente-historial" class="bot bot_irHistoryClinico">
       <img src="../../../assets/imgs/bot_cliente_seguimiento/historialClinico.png">
       <p>Historial Clínico</p>
     </div>

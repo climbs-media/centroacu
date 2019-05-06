@@ -48,6 +48,7 @@ export class HistorialClinicoPage implements OnInit {
       peso: new FormControl('', Validators.required),
       altura: new FormControl('', Validators.required),
       referencia: new FormControl('', ),
+      edad: new FormControl('', Validators.required),
       fecha: new FormControl('', Validators.required),
     });
   }
@@ -60,6 +61,7 @@ export class HistorialClinicoPage implements OnInit {
       correo: value.correo,
       numeroHistorial: value.numeroHistorial,
       fecha: value.fecha,
+      edad: value.edad,
       telefono: value.telefono,
       profesion: value.profesion,
       motivoConsulta: value.motivoConsulta,

@@ -23,7 +23,19 @@ export class BonoCitasService {
     });
   }
 
-  getBonoCita(Id) {
+  getBonoCitas() {
+    return new Promise<any>((resolve, reject) => {
+      this.afAuth.user.subscribe(currentUser => {
+        if (currentUser) {
+            this.snapshotChangesSubscription = this.afs.
+            collection('bono-cita', ref => ref.where('userId', '==', currentUser.uid)).snapshotChanges();
+            resolve(this.snapshotChangesSubscription);
+        }
+      });
+    });
+  }
+
+  getBonoCitaId(Id) {
     return new Promise<any>((resolve, reject) => {
       this.snapshotChangesSubscription = this.afs.doc<any>('/bono-cita/' + Id).valueChanges()
         .subscribe(snapshots => {

@@ -4,9 +4,9 @@ import { ModalController, ToastController, LoadingController } from '@ionic/angu
 import { BonosAcreditadosPage } from '../bonos-acreditados/bonos-acreditados.page';
 import { BonoCitasService } from 'src/app/services/bono-citas.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-bono-citas',
@@ -18,6 +18,7 @@ export class BonoCitasPage implements OnInit {
 
   validations_form: FormGroup;
   image: any;
+  items: Array<any>;
 
   constructor(
     private modalController: ModalController,
@@ -28,10 +29,14 @@ export class BonoCitasPage implements OnInit {
     private bonoService: BonoCitasService,
     private imagePicker: ImagePicker,
     private webview: WebView,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
     this.resetFields();
+    if (this.route && this.route.data) {
+      this.getData();
+    }
   }
 
   resetFields() {
@@ -58,13 +63,13 @@ export class BonoCitasPage implements OnInit {
       bonoCitas: value.bonoCitas,
       citasRestantes: value.citasRestantes,
       image: this.image
-    }
+    };
     this.bonoService.crearBonoCita(data)
       .then(
         res => {
           this.router.navigate(['/cliente-perfil']);
         }
-      )
+      );
   }
 
   openImagePicker() {
@@ -89,7 +94,7 @@ export class BonoCitasPage implements OnInit {
       });
   }
 
-  async uploadImageToFirebase(image){
+  async uploadImageToFirebase(image) {
     const loading = await this.loadingCtrl.create({
       message: 'Please wait...'
     });
@@ -112,6 +117,21 @@ export class BonoCitasPage implements OnInit {
       });
   }
 
+  async getData() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Espere un momento...',
+      duration: 1000
+    });
+    this.presentLoading(loading);
+
+    this.route.data.subscribe(routeData => {
+      routeData['data'].subscribe(data => {
+        loading.dismiss();
+        this.items = data;
+      });
+    });
+  }
+
 
   async presentLoading(loading) {
     return await loading.present();
@@ -122,7 +142,6 @@ export class BonoCitasPage implements OnInit {
     this.modalController.create({
       component: BonosAcreditadosPage,
       componentProps: {
-  
       }
     }).then(modal => {
       modal.present();

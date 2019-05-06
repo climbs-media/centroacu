@@ -71,6 +71,7 @@ export class AnadirEjercicioService {
         descripcion: value.descripcion,
         horaInicio: value.horaInicio,
         horaFinal: value.horaFinal,
+        fecha: value.fecha,
         userId: currentUser.uid,
       })
       .then(

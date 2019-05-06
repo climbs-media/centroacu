@@ -6,11 +6,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { BonoCitasPage } from './bono-citas.page';
+import { BonoResolver } from './bono-citas.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: BonoCitasPage
+    component: BonoCitasPage,
+    resolve: {
+      data: BonoResolver,
+    }
   }
 ];
 
@@ -22,6 +26,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [BonoCitasPage]
+  declarations: [BonoCitasPage],
+  providers: [BonoResolver]
 })
 export class BonoCitasPageModule {}

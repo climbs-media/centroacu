@@ -10,7 +10,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ClientePerfilPage implements OnInit {
 
-  
   items: Array<any>;
 
   constructor(
@@ -26,7 +25,7 @@ export class ClientePerfilPage implements OnInit {
     }
   }
 
-  async getData(){
+  async getData() {
     const loading = await this.loadingCtrl.create({
       message: 'Espere un momento...',
       duration: 1000
@@ -37,8 +36,8 @@ export class ClientePerfilPage implements OnInit {
       routeData['data'].subscribe(data => {
         loading.dismiss();
         this.items = data;
-      })
-    })
+      });
+    });
   }
 
   async presentLoading(loading) {

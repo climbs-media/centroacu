@@ -50,7 +50,7 @@
         <div class="cajabuscador"  routerLink="/cliente-perfil" >
               <span class="nombreuser">{{item.payload.doc.data().nombreApellido}}</span>
               <div  class="buscado"  >
-                  <span class="num_edad">{{item.payload.doc.data().fechaNacimiento}}</span> 
+                  <span class="num_edad">{{item.payload.doc.data().edad}}</span> 
               </div>
               
               <div class="circular" >
@@ -58,7 +58,7 @@
                       <img   class="circular" src="./../../assets/imgs/foto_cliente.jpg" >
               </div>
               
-          <span class="bot_bono" (click)="aBono()">{{item.payload.doc.data().numeroHistorial}}</span>
+          <span class="bot_bono">{{item.payload.doc.data().numeroHistorial}}</span>
       </div>
         
         <!-- se pone fuera para que no le afecte el click general -->
