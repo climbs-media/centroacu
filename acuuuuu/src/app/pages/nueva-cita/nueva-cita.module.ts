@@ -7,11 +7,15 @@ import { IonicModule } from '@ionic/angular';
 
 import { NuevaCitaPage } from './nueva-cita.page';
 import { NgCalendarModule } from 'ionic2-calendar';
+import { CitaResolver } from './nueva-cita.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: NuevaCitaPage
+    component: NuevaCitaPage,
+    resolve: {
+      data: CitaResolver,
+    }
   }
 ];
 
@@ -24,6 +28,7 @@ const routes: Routes = [
     NgCalendarModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [NuevaCitaPage]
+  declarations: [NuevaCitaPage],
+  providers: [CitaResolver]
 })
 export class NuevaCitaPageModule {}

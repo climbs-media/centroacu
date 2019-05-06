@@ -3,7 +3,7 @@ import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
 import {AlertController, LoadingController, ToastController} from '@ionic/angular';
 import { formatDate } from '@angular/common';
 import {ImagePicker} from '@ionic-native/image-picker/ngx';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {HistorialClinicoService} from '../../services/historial-clinico.service';
 import {WebView} from '@ionic-native/ionic-webview/ngx';
@@ -18,7 +18,7 @@ import {NuevaCitaService} from '../../services/nueva-cita.service';
 export class NuevaCitaPage implements OnInit {
   validations_form: FormGroup;
   image: any;
-
+  items: Array<any>;
 
   event = {
     title: '',
@@ -34,25 +34,45 @@ export class NuevaCitaPage implements OnInit {
   calendar = {
     mode: 'month',
     currentDate: new Date(),
-  }
+  };
 
   viewTitle = '';
 
   @ViewChild(CalendarComponent) myCal: CalendarComponent;
 
   constructor( private alertCtrl: AlertController,
-               @Inject(LOCALE_ID) private locale: string,
-               private imagePicker: ImagePicker,
-               public toastCtrl: ToastController,
-               public loadingCtrl: LoadingController,
-               public router: Router,
-               private formBuilder: FormBuilder,
-               private firebaseService: NuevaCitaService,
+              @Inject(LOCALE_ID) private locale: string,
+              private imagePicker: ImagePicker,
+              public toastCtrl: ToastController,
+              public loadingCtrl: LoadingController,
+              public router: Router,
+              private formBuilder: FormBuilder,
+              private firebaseService: NuevaCitaService,
+              public alertController: AlertController,
+              private route: ActivatedRoute,
   private webview: WebView) { }
 
   ngOnInit() {
     this.resetEvent();
     this.resetFields();
+    if (this.route && this.route.data) {
+      this.getData();
+    }
+  }
+
+  async getData() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Espere un momento...',
+      duration: 1000
+    });
+    this.presentLoading(loading);
+
+    this.route.data.subscribe(routeData => {
+      routeData['data'].subscribe(data => {
+        loading.dismiss();
+        this.items = data;
+      });
+    });
   }
 
   resetFields() {
@@ -60,6 +80,7 @@ export class NuevaCitaPage implements OnInit {
       titulo: new FormControl('', Validators.required),
       descripcion: new FormControl('', Validators.required),
       inicioCita: new FormControl('', Validators.required),
+      fecha: new FormControl('', Validators.required),
       finalCita: new FormControl('', Validators.required),
     });
   }
@@ -68,13 +89,14 @@ export class NuevaCitaPage implements OnInit {
     const data = {
       titulo: value.titulo,
       descripcion: value.descripcion,
+      fecha: value.fecha,
       inicioCita: value.inicioCita,
       finalCita: value.finalCita,
     };
     this.firebaseService.crearNuevaCita(data)
         .then(
             res => {
-              this.router.navigate(['/home-admin']);
+              this.router.navigate(['/nueva-cita']);
             }
         );
   }
@@ -83,7 +105,7 @@ export class NuevaCitaPage implements OnInit {
     return await loading.present();
   }
 
-  resetEvent(){
+  resetEvent() {
     this.event = {
       title: '',
       desc: '',
@@ -93,19 +115,18 @@ export class NuevaCitaPage implements OnInit {
     };
     }
 
-    addEvent(){
-      let eventCopy = {
+    addEvent() {
+      const eventCopy = {
         title: this.event.title,
         startTime:  new Date(this.event.startTime),
         endTime: new Date(this.event.endTime),
         allDay: this.event.allDay,
         desc: this.event.desc
-      }
+      };
 
       if (eventCopy.allDay) {
-        let start = eventCopy.startTime;
-        let end = eventCopy.endTime;
-   
+        const start = eventCopy.startTime;
+        const end = eventCopy.endTime;
         eventCopy.startTime = new Date(Date.UTC(start.getUTCDate(), start.getUTCMonth(), start.getUTCFullYear()));
         eventCopy.endTime = new Date(Date.UTC(end.getUTCDate() + 1, end.getUTCMonth(), end.getUTCFullYear()));
       }
@@ -116,12 +137,12 @@ export class NuevaCitaPage implements OnInit {
     }
 
     next() {
-      var swiper = document.querySelector('.swiper-container')['swiper'];
+      const swiper = document.querySelector('.swiper-container')['swiper'];
       swiper.slideNext();
     }
-     
+
     back() {
-      var swiper = document.querySelector('.swiper-container')['swiper'];
+      const swiper = document.querySelector('.swiper-container')['swiper'];
       swiper.slidePrev();
     }
 
@@ -136,9 +157,8 @@ export class NuevaCitaPage implements OnInit {
 
     async onEventSelected(event) {
       // Use Angular date pipe for conversion
-      let start = formatDate(event.startTime, 'medium', this.locale);
-      let end = formatDate(event.endTime, 'medium', this.locale);
-     
+      const start = formatDate(event.startTime, 'medium', this.locale);
+      const end = formatDate(event.endTime, 'medium', this.locale);
       const alert = await this.alertCtrl.create({
         header: event.title,
         subHeader: event.desc,
@@ -151,12 +171,12 @@ export class NuevaCitaPage implements OnInit {
 
 
 
-  onCurrentDateChanged(){
+  onCurrentDateChanged() {
 
   }
 
 
-  reloadSource(){
+  reloadSource() {
 
   }
 

@@ -5,16 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AjustesPage } from './ajustes.page';
-import { AjustesResolver } from './ajustes.resolver';
+import { ChatPage } from './chat.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: AjustesPage,
-    resolve: {
-      data: AjustesResolver,
-    }
+    component: ChatPage
   }
 ];
 
@@ -25,7 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AjustesPage],
-  providers: [AjustesResolver]
+  declarations: [ChatPage]
 })
-export class AjustesPageModule {}
+export class ChatPageModule {}

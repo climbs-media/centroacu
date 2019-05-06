@@ -4,42 +4,41 @@ import * as firebase from 'firebase/app';
 import 'firebase/storage';
 import { AngularFireAuth } from '@angular/fire/auth';
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class HistorialClinicoService {
-  private snapshotChangesSubscription: any;
+export class ChatService {
 
+  private snapshotChangesSubscription: any;
 
   constructor(
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth
   ) {}
 
-  getHistorialClinicoAdmin() {
+  getChatAdmin() {
     return new Promise<any>((resolve, reject) => {
       this.snapshotChangesSubscription = this.afs.
-        collection('historial-clinico').snapshotChanges();
+        collection('chat').snapshotChanges();
       resolve(this.snapshotChangesSubscription);
     });
   }
-
-  getHistorialClinico() {
+  
+  getChat() {
     return new Promise<any>((resolve, reject) => {
       this.afAuth.user.subscribe(currentUser => {
         if (currentUser) {
             this.snapshotChangesSubscription = this.afs.
-            collection('historial-clinico', ref => ref.where('userId', '==', currentUser.uid)).snapshotChanges();
+            collection('chat', ref => ref.where('userId', '==', currentUser.uid)).snapshotChanges();
             resolve(this.snapshotChangesSubscription);
         }
       });
     });
   }
 
-  getHistorialClinicoId(historialId) {
+  getChatId(Id) {
     return new Promise<any>((resolve, reject) => {
-      this.snapshotChangesSubscription = this.afs.doc<any>('/historial-clinico/' + historialId).valueChanges()
+      this.snapshotChangesSubscription = this.afs.doc<any>('/chat/' + Id).valueChanges()
         .subscribe(snapshots => {
           resolve(snapshots);
         }, err => {
@@ -49,15 +48,16 @@ export class HistorialClinicoService {
   }
 
 
+
   unsubscribeOnLogOut() {
     // remember to unsubscribe from the snapshotChanges
     this.snapshotChangesSubscription.unsubscribe();
   }
 
-  actualizarHistorialClinico(historialClinicoKey, value) {
+  actualizarChat(chatKey, value) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('historial-clinico').doc(historialClinicoKey).set(value)
+      this.afs.collection('chat').doc(chatKey).set(value)
       .then(
         res => resolve(res),
         err => reject(err)
@@ -65,10 +65,10 @@ export class HistorialClinicoService {
     });
   }
 
-  borrarHistorialClinico(historialClinicoKey) {
+  borrarChat(chatKey) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('historial-clinico').doc(historialClinicoKey).delete()
+      this.afs.collection('chat').doc(chatKey).delete()
       .then(
         res => resolve(res),
         err => reject(err)
@@ -76,26 +76,17 @@ export class HistorialClinicoService {
     });
   }
 
-  crearHistorialClinico(value) {
+  crearChat(value) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('historial-clinico').add({
+      this.afs.collection('chat').add({
         nombreApellido: value.nombreApellido,
-        fechaNacimiento: value.fechaNacimiento,
-        ciudad: value.ciudad,
+        motivo: value.motivo,
         correo: value.correo,
         telefono: value.telefono,
-        profesion: value.profesion,
-        motivoConsulta: value.motivoConsulta,
-        interNombre: value.interNombre,
-        enfermedades: value.enfermedades,
-        familiares: value.familiares,
-        numeroHistorial: value.numeroHistorial,
         fecha: value.fecha,
-        peso: value.peso,
-        edad: value.edad,
-        altura: value.altura,
-        referencia: value.referencia,
+        mensaje: value.mensaje,
+        mensajeAdmin: value.mensajeAdmin,
         image: value.image,
         userId: currentUser.uid,
       })
@@ -121,11 +112,11 @@ export class HistorialClinicoService {
     img.src = imageUri;
   }
 
-  uploadImage(imageURI, randomId) {
+  uploadImage(imageURI, randomId){
     return new Promise<any>((resolve, reject) => {
       const storageRef = firebase.storage().ref();
       const imageRef = storageRef.child('image').child(randomId);
-      this.encodeImageUri(imageURI, function(image64) {
+      this.encodeImageUri(imageURI, function(image64){
         imageRef.putString(image64, 'data_url')
         .then(snapshot => {
           snapshot.ref.getDownloadURL()

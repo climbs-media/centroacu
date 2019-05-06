@@ -32,7 +32,7 @@ export class HistorialClinicoPage implements OnInit {
   }
 
   resetFields() {
-    this.image = './assets/imgs/analitica.png';
+    this.image = './assets/imgs/foto_cliente.jpg';
     this.validations_form = this.formBuilder.group({
       nombreApellido: new FormControl('', Validators.required),
       fechaNacimiento: new FormControl('', Validators.required),

@@ -15,7 +15,7 @@ export class NuevaCitaService {
   constructor(
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth
-  ){}
+  ) {}
 
   getCita() {
     return new Promise<any>((resolve, reject) => {
@@ -48,20 +48,20 @@ export class NuevaCitaService {
   }
 
 
-  unsubscribeOnLogOut(){
+  unsubscribeOnLogOut() {
     // remember to unsubscribe from the snapshotChanges
     this.snapshotChangesSubscription.unsubscribe();
   }
 
-  actualizarCita(citaKey, value){
+  actualizarCita(citaKey, value) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
       this.afs.collection('nueva-cita').doc(citaKey).set(value)
       .then(
         res => resolve(res),
         err => reject(err)
-      )
-    })
+      );
+    });
   }
 
   borrarCita(citaKey) {
@@ -82,6 +82,7 @@ export class NuevaCitaService {
         titulo: value.titulo,
         descripcion: value.descripcion,
         inicioCita: value.inicioCita,
+        fecha: value.fecha,
         finalCita: value.finalCita,
         userId: currentUser.uid,
       })
@@ -105,9 +106,9 @@ export class NuevaCitaService {
       callback(dataURL);
     };
     img.src = imageUri;
-  };
+  }
 
-  uploadImage(imageURI, randomId){
+  uploadImage(imageURI, randomId) {
     return new Promise<any>((resolve, reject) => {
       const storageRef = firebase.storage().ref();
       const imageRef = storageRef.child('image').child(randomId);
@@ -115,7 +116,7 @@ export class NuevaCitaService {
         imageRef.putString(image64, 'data_url')
         .then(snapshot => {
           snapshot.ref.getDownloadURL()
-          .then(res => resolve(res))
+          .then(res => resolve(res));
         }, err => {
           reject(err);
         });
