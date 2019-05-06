@@ -5,13 +5,13 @@
         <img   class="circular" src="../../../assets/imgs/foto_cliente.jpg" >
       </div>
     <span text-center style="padding-left:48px;padding-right:48px;font-size: 20px;">
-     &nbsp;&nbsp;Centro ACU 10
+    &nbsp;&nbsp;Centro ACU 10
     </span>
     
         <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
   </div>
   </ion-toolbar>
-   
+
 </ion-header>
 
 <ion-content>
@@ -21,29 +21,33 @@
         <div class="bot bot_seguimiento">
           
         <img src="../../../assets/imgs/bot_cliente_seguimiento/Nueva1-cita.png">
-         <p style="font-size:28px">Próxima Cita</p>
-         <p class="fech">Fecha: 21-01-2019      16:00 pm</p>
+        <p style="font-size:28px">Próxima Cita</p>
+        <p class="fech">Fecha: 21-01-2019      16:00 pm</p>
       </div>
         </ion-col>
         <div  class="bot bot_ejercicio" routerLink="/ejercicio-user">
           
           <img src="../../../assets/imgs/bot_cliente_seguimiento/ejercicio2.png">
-           <p style="font-size:28px; color: #000; float: left; margin-top: 28px;">Ejercicio</p>
+          <p style="font-size:28px; color: #000; float: left; margin-top: 28px;">Ejercicio</p>
             <div class="kilometros">2.1Km<div><img src="../../../assets/imgs/ejercicios/andar.png" style="width:30px; height: 30px; margin-top: -7px;"></div></div>
         </div>
         </ion-row>
 
-        <ion-col>
-          <ion-row>
-              <ion-card>
-                  <ion-card-header>
-                    Grafica
-                  </ion-card-header>
-                  <ion-card-content>
-                    <canvas #barCanvas></canvas>
-                  </ion-card-content>
-                </ion-card>
-          </ion-row>
-        </ion-col>
+        <ion-content padding>
+            <div style="display: block">
+                <canvas baseChart
+                            [data]="doughnutChartData"
+                            [labels]="doughnutChartLabels"
+                            [chartType]="doughnutChartType"
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)"></canvas>
+              </div>
+          </ion-content>
+
+          <hr>
+          <hr>
 
 </ion-content>
+
+
+
