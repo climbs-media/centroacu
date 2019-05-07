@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController, ModalController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-ajustes',
@@ -16,6 +17,7 @@ export class AjustesPage implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private modalController: ModalController,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -41,6 +43,15 @@ export class AjustesPage implements OnInit {
 
   async presentLoading(loading) {
     return await loading.present();
+  }
+
+  onLogout() {
+    this.authService.doLogout()
+      .then(res => {
+        this.router.navigate(['/login-admin']);
+      }, err => {
+        console.log(err);
+      });
   }
 
 

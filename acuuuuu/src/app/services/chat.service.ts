@@ -86,8 +86,8 @@ export class ChatService {
         telefono: value.telefono,
         fecha: value.fecha,
         mensaje: value.mensaje,
-        mensajeAdmin: value.mensajeAdmin,
-        image: value.image,
+      //  mensajeAdmin: value.mensajeAdmin,
+      //  image: value.image,
         userId: currentUser.uid,
       })
       .then(

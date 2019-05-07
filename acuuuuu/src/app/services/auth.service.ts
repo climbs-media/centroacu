@@ -72,7 +72,7 @@ export class AuthService {
   })
   }
 
-  desonectar() {
+  doLogout(){
     return new Promise((resolve, reject) => {
       this.afAuth.auth.signOut()
       .then(() => {
@@ -82,6 +82,6 @@ export class AuthService {
         console.log(error);
         reject();
       });
-    });
+    })
   }
 }
