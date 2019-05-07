@@ -37,7 +37,8 @@ const routes: Routes = [
   { path: 'diario-user', loadChildren: './pages/diario-user/diario-user.module#DiarioUserPageModule' },
   { path: 'registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' },
   { path: 'popover-historial-dietetico', loadChildren: './pages/popover-historial-dietetico/popover-historial-dietetico.module#PopoverHistorialDieteticoPageModule' },
-  { path: 'cliente-historial', loadChildren: './pages/cliente-historial/cliente-historial.module#ClienteHistorialPageModule' },  { path: 'chat', loadChildren: './pages/chat/chat.module#ChatPageModule' },
+  { path: 'cliente-historial', loadChildren: './pages/cliente-historial/cliente-historial.module#ClienteHistorialPageModule' },
+  { path: 'chat', loadChildren: './pages/chat/chat.module#ChatPageModule' },
 
 
 

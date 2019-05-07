@@ -1,4 +1,5 @@
-<ion-header text-center  padding-top>
+
+<ion-header text-center  padding-top *ngIf="isAdmin === true  || isPasi === true">
   <ion-toolbar>
 <div class="contiene">
     <img width="40" height="45"  src="../../../assets/imgs/logo.png" class="logo">
@@ -11,7 +12,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding-top padding-top>
+<ion-content padding-top padding-top *ngIf="isAdmin === true || isPasi === true">
 
   <ion-grid *ngIf="items">
     <ion-row  >
@@ -71,5 +72,6 @@
   </ion-list>
   </div>
   </ion-grid>
-
 </ion-content>
+<!--<ion-button class="centrado" (click)="goPaciente()" *ngIf="isPasi === true ">Ver Perfil User</ion-button>-->
+

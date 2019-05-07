@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import { NavController } from '@ionic/angular';
+import { ChartsModule } from 'ng2-charts';
 @Component({
   selector: 'app-home-user',
   templateUrl: './home-user.page.html',
@@ -14,44 +15,22 @@ export class HomeUserPage implements OnInit {
   lineChart: Chart;
 
 
-
   constructor(public navCtrl: NavController) { }
 
-  ngOnInit() {
+  ngOnInit() { }
 
-    this.lineChart = new Chart(this.lineCanvas.nativeElement, {
+public doughnutChartLabels:string[] = ['Poco Peso', 'Peso Ideal', 'Sobre Peso'];
+public doughnutChartData:number[] = [50, 80, 100];
+public doughnutChartType:string = 'doughnut';
 
-      type: 'line',
-      data: {
-          labels: ["January", "February", "March", "April", "May", "June", "July"],
-          datasets: [
-              {
-                  label: "My First dataset",
-                  fill: false,
-                  lineTension: 0.1,
-                  backgroundColor: "rgba(75,192,192,0.4)",
-                  borderColor: "rgba(75,192,192,1)",
-                  borderCapStyle: 'butt',
-                  borderDash: [],
-                  borderDashOffset: 0.0,
-                  borderJoinStyle: 'miter',
-                  pointBorderColor: "rgba(75,192,192,1)",
-                  pointBackgroundColor: "#fff",
-                  pointBorderWidth: 1,
-                  pointHoverRadius: 5,
-                  pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                  pointHoverBorderColor: "rgba(220,220,220,1)",
-                  pointHoverBorderWidth: 2,
-                  pointRadius: 1,
-                  pointHitRadius: 10,
-                  data: [65, 59, 80, 81, 56, 55, 40],
-                  spanGaps: false,
-              }
-          ]
-      }
-
-  });
-
+// events
+public chartClicked(e: any): void {
+  console.log(e);
 }
+
+public chartHovered(e: any): void {
+  console.log(e);
+}
+
 }
 
