@@ -7,7 +7,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 @Injectable({
   providedIn: 'root'
 })
-export class MenuService {
+export class MenuHipocaloricoService {
 
   private snapshotChangesSubscription: any;
   
@@ -16,29 +16,29 @@ export class MenuService {
     public afAuth: AngularFireAuth
   ) {}
 
-  getMenuProteinaAdmin() {
+  getMenuHipocaloricoAdmin() {
     return new Promise<any>((resolve, reject) => {
       this.snapshotChangesSubscription = this.afs.
-        collection('menu-proteina').snapshotChanges();
+        collection('menu-hipocalorico').snapshotChanges();
       resolve(this.snapshotChangesSubscription);
     });
   }
 
-  getMenuProteina() {
+  getMenuHipocalorico() {
     return new Promise<any>((resolve, reject) => {
       this.afAuth.user.subscribe(currentUser => {
         if (currentUser) {
             this.snapshotChangesSubscription = this.afs.
-            collection('menu-proteina', ref => ref.where('userId', '==', currentUser.uid)).snapshotChanges();
+            collection('menu-hipocalorico', ref => ref.where('userId', '==', currentUser.uid)).snapshotChanges();
             resolve(this.snapshotChangesSubscription);
         }
       });
     });
   }
 
-  getMenuProteinaId(menuId) {
+  getMenuHipocaloricoId(menuId) {
     return new Promise<any>((resolve, reject) => {
-      this.snapshotChangesSubscription = this.afs.doc<any>('/menu-proteina/' + menuId).valueChanges()
+      this.snapshotChangesSubscription = this.afs.doc<any>('/menu-hipocalorico/' + menuId).valueChanges()
         .subscribe(snapshots => {
           resolve(snapshots);
         }, err => {
@@ -53,10 +53,10 @@ export class MenuService {
     this.snapshotChangesSubscription.unsubscribe();
   }
 
-  actualizarMenuProteina(menuKey, value) {
+  actualizarMenuHipocalorico(menuKey, value) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('menu-proteina').doc(menuKey).set(value)
+      this.afs.collection('menu-hipocalorico').doc(menuKey).set(value)
       .then(
         res => resolve(res),
         err => reject(err)
@@ -64,10 +64,10 @@ export class MenuService {
     });
   }
 
-  borrarMenuProteina(menuKey) {
+  borrarMenuHipocalorico(menuKey) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('menu-proteina').doc(menuKey).delete()
+      this.afs.collection('menu-hipocalorico').doc(menuKey).delete()
       .then(
         res => resolve(res),
         err => reject(err)
@@ -75,10 +75,10 @@ export class MenuService {
     });
   }
 
-  crearMenuProteina(value) {
+  crearMenuHipocalorico(value) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('menu-proteina').add({
+      this.afs.collection('menu-hipocalorico').add({
         desayuno: value.desayuno,
         menuLunes: value.menuLunes,
         menuMartes: value.menuMartes,
@@ -96,4 +96,3 @@ export class MenuService {
     });
   }
 }
-
