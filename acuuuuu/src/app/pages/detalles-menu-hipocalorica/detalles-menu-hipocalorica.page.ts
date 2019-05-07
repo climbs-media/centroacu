@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { LoadingController, AlertController, ToastController } from '@ionic/angular';
+import { MenuHipocaloricoService } from 'src/app/services/menu-hipocalorico.service';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { MenuService } from 'src/app/services/menu.service';
+import { ToastController, LoadingController, AlertController } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-detalles-menu-proteina',
-  templateUrl: './detalles-menu-proteina.page.html',
-  styleUrls: ['./detalles-menu-proteina.page.scss'],
+  selector: 'app-detalles-menu-hipocalorica',
+  templateUrl: './detalles-menu-hipocalorica.page.html',
+  styleUrls: ['./detalles-menu-hipocalorica.page.scss'],
 })
-export class DetallesMenuProteinaPage implements OnInit {
+export class DetallesMenuHipocaloricaPage implements OnInit {
 
   validations_form: FormGroup;
   image: any;
@@ -23,7 +23,7 @@ export class DetallesMenuProteinaPage implements OnInit {
     public toastCtrl: ToastController,
     public loadingCtrl: LoadingController,
     private formBuilder: FormBuilder,
-    private menuService: MenuService,
+    private menuService: MenuHipocaloricoService,
     private alertCtrl: AlertController,
     private route: ActivatedRoute,
     private router: Router,
@@ -84,11 +84,11 @@ export class DetallesMenuProteinaPage implements OnInit {
         comidaDomingo: value.comidaDomingo,
         cenaDomingo: value.cenaDomingo,
     };
-    this.menuService.actualizarMenuProteina
+    this.menuService.actualizarMenuHipocalorico
     (this.item.id, data)
       .then(
         res => {
-          this.router.navigate(['/dietas-proteinas']);
+          this.router.navigate(['/dietas-hipocaloricas']);
         }
       );
   }
@@ -108,7 +108,7 @@ export class DetallesMenuProteinaPage implements OnInit {
         {
           text: 'Yes',
           handler: () => {
-            this.menuService.borrarMenuProteina(this.item.id)
+            this.menuService.borrarMenuHipocalorico(this.item.id)
               .then(
                 res => {
                   this.router.navigate(['/home']);
