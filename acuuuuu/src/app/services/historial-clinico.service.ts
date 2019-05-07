@@ -94,6 +94,7 @@ export class HistorialClinicoService {
         fecha: value.fecha,
         peso: value.peso,
         edad: value.edad,
+        bono : value.bono,
         altura: value.altura,
         referencia: value.referencia,
         image: value.image,
