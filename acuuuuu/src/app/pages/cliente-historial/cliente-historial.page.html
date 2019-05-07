@@ -21,7 +21,7 @@
                 Nº Historia
              </div>
              <div class="cajatexto" style="width:55px;"><!-- se le pone estilo propio para no afectar alos demas div-->
-                <ion-input  type="text"  class="inputexto" >{{item.payload.doc.data().numeroHistorial}}</ion-input>
+                <p  type="text"  class="inputexto" style="margin-top: -2px" >{{item.payload.doc.data().numeroHistorial}}</p>
              </div> 
          </ion-col>
          <ion-col col-4 >
@@ -35,7 +35,7 @@
                <div style="color:#BB1D1D; margin-top:15px; font-weight: bold;">
                  Fecha </div>
                  <div class="cajatexto" style="width:120px; ">
-                      <ion-datetime class="inputexto" >{{item.payload.doc.data().fechaNacimiento}}</ion-datetime>
+                      <p class="inputexto" style="margin-top: -2px" >{{item.payload.doc.data().fechaNacimiento}}</p>
                  </div>  
          </ion-col>
      </ion-row>
@@ -44,51 +44,51 @@
       </ion-row>
       <ion-row>
           <ion-col col-12>
-              <ion-input class="cajatexto"  > {{item.payload.doc.data().nombreApellido}} </ion-input>
+              <p class="cajatexto"  > {{item.payload.doc.data().nombreApellido}} </p>
           </ion-col>
       </ion-row>
       <ion-row>
           <ion-col col-12>
-              <ion-input class="cajatexto" style="margin-left:18px;"  >{{item.payload.doc.data().fechaNacimiento}}</ion-input>
+              <p class="cajatexto" style="margin-left:18px;"  >{{item.payload.doc.data().fechaNacimiento}}</p>
           </ion-col>
           <ion-col col-12>
-                  <ion-input class="cajatexto"  style="margin-right:16px;" > {{item.payload.doc.data().ciudad}}</ion-input>
+                  <p class="cajatexto"  style="margin-right:16px;" > {{item.payload.doc.data().ciudad}}</p>
           </ion-col>
         </ion-row>
 
       <ion-row >
               <ion-col col-12>
-                      <ion-input class="cajatexto"  >{{item.payload.doc.data().correo}}</ion-input>
+                      <p class="cajatexto"  >{{item.payload.doc.data().correo}}</p>
               </ion-col>
       </ion-row>
       <ion-row>
               <ion-col col-12>
-                      <ion-input class="cajatexto" type="number"  > {{item.payload.doc.data().telefono}}</ion-input>
+                      <p class="cajatexto" type="number"  > {{item.payload.doc.data().telefono}}</p>
               </ion-col>
             </ion-row>
           <ion-row>
               <ion-col col-12>
-                      <ion-input class="cajatexto"  >{{item.payload.doc.data().profesion}} </ion-input>
+                      <p class="cajatexto"  >{{item.payload.doc.data().profesion}} </p>
               </ion-col>
             </ion-row>
           <ion-row>
               <ion-col col-12>
-                      <ion-input class="cajatexto"  >{{item.payload.doc.data().motivoConsulta}}</ion-input>
+                      <p class="cajatexto"  >{{item.payload.doc.data().motivoConsulta}}</p>
               </ion-col>
      </ion-row>
      <ion-row>
         <ion-col col-12>
-                <ion-input class="cajatexto"  >{{item.payload.doc.data().peso}}</ion-input>
+                <p class="cajatexto"  >{{item.payload.doc.data().peso}}</p>
         </ion-col>
 </ion-row>
 <ion-row>
     <ion-col col-12>
-            <ion-input class="cajatexto"  >{{item.payload.doc.data().altura}}</ion-input>
+            <p class="cajatexto"  >{{item.payload.doc.data().altura}}</p>
     </ion-col>
 </ion-row>
 <ion-row>
     <ion-col col-12>
-            <ion-input class="cajatexto"  >{{item.payload.doc.data().referencia}}</ion-input>
+            <p class="cajatexto"  >{{item.payload.doc.data().referencia}}</p>
     </ion-col>
 </ion-row>
      <ion-row >
@@ -98,7 +98,7 @@
                 <ion-col >
                     <div style="font-weight: bold; margin: 5px; margin-left: 10px">Intervenciones : </div>
                     <div class="cajatexto">
-                        <ion-input  type="text" class="inputexto2" >{{item.payload.doc.data().interNombre}}</ion-input>
+                        <p  type="text" class="inputexto2" >{{item.payload.doc.data().interNombre}}</p>
                    </div> 
                 </ion-col>
       </ion-row>
@@ -106,7 +106,7 @@
                   <ion-col >
                      <div  style="font-weight: bold; margin: 5px; margin-left: 10px">Enfermedades Anteriores  : </div>
                       <div class="cajatexto" >
-                          <ion-input  type="text" class="inputexto2"  >{{item.payload.doc.data().enfermedades}}</ion-input>
+                          <p type="text" class="inputexto2"  >{{item.payload.doc.data().enfermedades}}</p>
                      </div> 
                   </ion-col>
        </ion-row>
@@ -126,6 +126,11 @@
                         <!-- <ion-icon name="arrow-round-forward" style="color:white;"></ion-icon> -->
                           </ion-button>
                           </div>
+                          <div>
+                            <ion-button ion-button class="but" round>Imprimir
+                          <!-- <ion-icon name="arrow-round-forward" style="color:white;"></ion-icon> -->
+                            </ion-button>
+                            </div>
                       </ion-col>
        </ion-row>
      </div>
