@@ -19,7 +19,7 @@ export class MenuService {
   getMenuProteinaAdmin() {
     return new Promise<any>((resolve, reject) => {
       this.snapshotChangesSubscription = this.afs.
-        collection('menu-proteina').snapshotChanges();
+        collection('menus-proteina').snapshotChanges();
       resolve(this.snapshotChangesSubscription);
     });
   }
@@ -29,7 +29,7 @@ export class MenuService {
       this.afAuth.user.subscribe(currentUser => {
         if (currentUser) {
             this.snapshotChangesSubscription = this.afs.
-            collection('menu-proteina', ref => ref.where('userId', '==', currentUser.uid)).snapshotChanges();
+            collection('menus-proteina', ref => ref.where('userId', '==', currentUser.uid)).snapshotChanges();
             resolve(this.snapshotChangesSubscription);
         }
       });
@@ -38,7 +38,7 @@ export class MenuService {
 
   getMenuProteinaId(menuId) {
     return new Promise<any>((resolve, reject) => {
-      this.snapshotChangesSubscription = this.afs.doc<any>('/menu-proteina/' + menuId).valueChanges()
+      this.snapshotChangesSubscription = this.afs.doc<any>('/menus-proteina/' + menuId).valueChanges()
         .subscribe(snapshots => {
           resolve(snapshots);
         }, err => {
@@ -56,7 +56,7 @@ export class MenuService {
   actualizarMenuProteina(menuKey, value) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('menu-proteina').doc(menuKey).set(value)
+      this.afs.collection('menus-proteina').doc(menuKey).set(value)
       .then(
         res => resolve(res),
         err => reject(err)
@@ -67,7 +67,7 @@ export class MenuService {
   borrarMenuProteina(menuKey) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('menu-proteina').doc(menuKey).delete()
+      this.afs.collection('menus-proteina').doc(menuKey).delete()
       .then(
         res => resolve(res),
         err => reject(err)
@@ -78,15 +78,24 @@ export class MenuService {
   crearMenuProteina(value) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('menu-proteina').add({
+      this.afs.collection('menus-proteina').add({
+        nombreMenu: value.nombreMenu,
         desayuno: value.desayuno,
-        menuLunes: value.menuLunes,
-        menuMartes: value.menuMartes,
-        menuMiercoles: value.menuaMiercoles,
-        menuJueves: value.menuJueves,
-        menuViernes: value.menuViernes,
-        menuSabado: value.menuSabado,
-        menuDomingo: value.menuDomingo,
+        desayunoDos: value.desayunoDos,
+        comidaLunes: value.comidaLunes,
+        cenaLunes: value.cenaLunes,
+        comidaMartes: value.comidaMartes,
+        cenaMartes: value.cenaMartes,
+        comidaMiercoles: value.comidaMiercoles,
+        cenaMiercoles: value.cenaMiercoles,
+        comidaJueves: value.comidaJueves,
+        cenaJueves: value.cenaJueves,
+        comidaViernes: value.comidaViernes,
+        cenaViernes: value.cenaViernes,
+        comidaSabado: value.comidaSabado,
+        cenaSabado: value.cenaSabado,
+        comidaDomingo: value.comidaDomingo,
+        cenaDomingo: value.cenaDomingo,
         userId: currentUser.uid,
       })
       .then(

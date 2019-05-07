@@ -38,7 +38,11 @@ const routes: Routes = [
   { path: 'registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' },
   { path: 'popover-historial-dietetico', loadChildren: './pages/popover-historial-dietetico/popover-historial-dietetico.module#PopoverHistorialDieteticoPageModule' },
   { path: 'cliente-historial', loadChildren: './pages/cliente-historial/cliente-historial.module#ClienteHistorialPageModule' },
-  { path: 'chat', loadChildren: './pages/chat/chat.module#ChatPageModule' },  { path: 'historial-fisico', loadChildren: './pages/historial-fisico/historial-fisico.module#HistorialFisicoPageModule' },
+  { path: 'chat', loadChildren: './pages/chat/chat.module#ChatPageModule' },
+  { path: 'historial-fisico', loadChildren: './pages/historial-fisico/historial-fisico.module#HistorialFisicoPageModule' },
+  { path: 'menu-proteina', loadChildren: './pages/menu-proteina/menu-proteina.module#MenuProteinaPageModule' },
+  { path: 'detalles-menu-proteina/:id', loadChildren: './pages/detalles-menu-proteina/detalles-menu-proteina.module#DetallesMenuProteinaPageModule' },  { path: 'menu-hipocalorica', loadChildren: './pages/menu-hipocalorica/menu-hipocalorica.module#MenuHipocaloricaPageModule' },
+
 
 
 

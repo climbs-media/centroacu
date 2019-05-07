@@ -79,14 +79,23 @@ export class MenuHipocaloricoService {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
       this.afs.collection('menu-hipocalorico').add({
+        nombreMenu: value.nombreMenu,
         desayuno: value.desayuno,
-        menuLunes: value.menuLunes,
-        menuMartes: value.menuMartes,
-        menuMiercoles: value.menuaMiercoles,
-        menuJueves: value.menuJueves,
-        menuViernes: value.menuViernes,
-        menuSabado: value.menuSabado,
-        menuDomingo: value.menuDomingo,
+        desayunoDos: value.desayunoDos,
+        comidaLunes: value.comidaLunes,
+        cenaLunes: value.cenaLunes,
+        comidaMartes: value.comidaMartes,
+        cenaMartes: value.cenaMartes,
+        comidaMiercoles: value.comidaMiercoles,
+        cenaMiercoles: value.cenaMiercoles,
+        comidaJueves: value.comidaJueves,
+        cenaJueves: value.cenaJueves,
+        comidaViernes: value.comidaViernes,
+        cenaViernes: value.cenaViernes,
+        comidaSabado: value.comidaSabado,
+        cenaSabado: value.cenaSabado,
+        comidaDomingo: value.comidaDomingo,
+        cenaDomingo: value.cenaDomingo,
         userId: currentUser.uid,
       })
       .then(

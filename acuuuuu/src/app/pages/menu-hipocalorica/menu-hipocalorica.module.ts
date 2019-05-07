@@ -5,16 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DietasProteinasPage } from './dietas-proteinas.page';
-import { DietaProteinaResolver } from './dieras-proteinas.resolver';
+import { MenuHipocaloricaPage } from './menu-hipocalorica.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: DietasProteinasPage,
-    resolve: {
-      data: DietaProteinaResolver,
-    }
+    component: MenuHipocaloricaPage
   }
 ];
 
@@ -26,7 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DietasProteinasPage],
-  providers: [DietaProteinaResolver]
+  declarations: [MenuHipocaloricaPage]
 })
-export class DietasProteinasPageModule {}
+export class MenuHipocaloricaPageModule {}

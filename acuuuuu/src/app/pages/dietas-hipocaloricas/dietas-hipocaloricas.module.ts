@@ -6,11 +6,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { DietasHipocaloricasPage } from './dietas-hipocaloricas.page';
+import { DietaHipocaloricaResolver } from './dietas-hipocalorivas.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: DietasHipocaloricasPage
+    component: DietasHipocaloricasPage,
+    resolve: {
+      data: DietaHipocaloricaResolver
+    }
   }
 ];
 
@@ -21,6 +25,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DietasHipocaloricasPage]
+  declarations: [DietasHipocaloricasPage],
+  providers: [DietaHipocaloricaResolver]
 })
 export class DietasHipocaloricasPageModule {}
