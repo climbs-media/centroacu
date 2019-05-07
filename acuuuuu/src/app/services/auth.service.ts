@@ -69,10 +69,10 @@ export class AuthService {
     .then(
       res => resolve(res),
       err => reject(err));
-  })
+  });
   }
 
-  doLogout(){
+  doLogout() {
     return new Promise((resolve, reject) => {
       this.afAuth.auth.signOut()
       .then(() => {
@@ -82,6 +82,6 @@ export class AuthService {
         console.log(error);
         reject();
       });
-    })
+    });
   }
 }
