@@ -5,16 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DiarioDieteticoPage } from './diario-dietetico.page';
-import { DiarioResolver } from './diario-dietetico.resolver';
+import { DiarioDieteticoAdminPage } from './diario-dietetico-admin.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: DiarioDieteticoPage,
-    resolve: {
-      data: DiarioResolver
-    }
+    component: DiarioDieteticoAdminPage
   }
 ];
 
@@ -25,7 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DiarioDieteticoPage],
-  providers: [DiarioResolver]
+  declarations: [DiarioDieteticoAdminPage]
 })
-export class DiarioDieteticoPageModule {}
+export class DiarioDieteticoAdminPageModule {}

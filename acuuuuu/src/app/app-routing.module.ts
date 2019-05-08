@@ -50,7 +50,10 @@ const routes: Routes = [
   { path: 'citas-admin', loadChildren: './pages/citas-admin/citas-admin.module#CitasAdminPageModule' },
   { path: 'citas-pacientes-admin/:id', loadChildren: './pages/citas-pacientes-admin/citas-pacientes-admin.module#CitasPacientesAdminPageModule' },
   { path: 'lista-paciente-peso', loadChildren: './pages/lista-paciente-peso/lista-paciente-peso.module#ListaPacientePesoPageModule' },
-  { path: 'detalles-peso-pacientes-admin/:id', loadChildren: './pages/detalles-peso-pacientes-admin/detalles-peso-pacientes-admin.module#DetallesPesoPacientesAdminPageModule' },  { path: 'crear-diario-dietetico', loadChildren: './pages/crear-diario-dietetico/crear-diario-dietetico.module#CrearDiarioDieteticoPageModule' },
+  { path: 'detalles-peso-pacientes-admin/:id', loadChildren: './pages/detalles-peso-pacientes-admin/detalles-peso-pacientes-admin.module#DetallesPesoPacientesAdminPageModule' },
+  { path: 'crear-diario-dietetico', loadChildren: './pages/crear-diario-dietetico/crear-diario-dietetico.module#CrearDiarioDieteticoPageModule' },
+  { path: 'diario-dietetico-admin', loadChildren: './pages/diario-dietetico-admin/diario-dietetico-admin.module#DiarioDieteticoAdminPageModule' },
+  { path: 'detalles-diario/:id', loadChildren: './pages/detalles-diario/detalles-diario.module#DetallesDiarioPageModule' },
 
 
 

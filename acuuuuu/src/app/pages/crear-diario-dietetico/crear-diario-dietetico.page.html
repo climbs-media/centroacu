@@ -20,6 +20,9 @@
             <ion-card-title text-center>Crear Diario Dietetico</ion-card-title>
           </ion-card-header>
           <ion-card-content *ngIf="collapseCard">
+              <ion-item>
+                  <ion-input type="text" placeholder="Nombre" formControlName="nombreApellido"></ion-input>
+                </ion-item>
             <ion-item>
               <ion-input type="text" placeholder="Semanas" formControlName="semanas"></ion-input>
             </ion-item>
@@ -30,7 +33,7 @@
                 <ion-input type="number" placeholder="Peso Actual" formControlName="pesoActual"></ion-input>
               </ion-item>
               <ion-item>
-                  <ion-input type="number" placeholder="Menu" formControlName="pesoPerdido"></ion-input>
+                  <ion-input type="number" placeholder="Peso Perdido" formControlName="pesoPerdido"></ion-input>
                 </ion-item>
             <ion-item>
               <ion-label>Fecha Consulta</ion-label>
@@ -38,8 +41,8 @@
               <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  formControlName="fechaConsulta" ></ion-datetime>
             </ion-item>
             <ion-item>
-                <ion-label>Fecha Ultimo Peos</ion-label>
-                <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  formControlName="fechaConsulta" ></ion-datetime>
+                <ion-label>Fecha Ultimo Peso</ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  formControlName="fechaUltimoPeso" ></ion-datetime>
               </ion-item>
       <ion-button type="submit" fill="outline" expand="block" [disabled]="!validations_form.valid" >Crear</ion-button>
   
