@@ -9,15 +9,14 @@
     <form class="animated fadeIn fast" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
         <ion-item>
             <ion-label position="floating" color="primary">Nombre del Paciente</ion-label>
-            <ion-input type="text" formControlName="nombre"></ion-input>
+            <ion-input type="text" formControlName="nombreApellido"></ion-input>
         </ion-item>
-        <ion-item>
-            <ion-label position="floating" color="primary">Peso Anterior</ion-label>
-            <ion-input placeholder="Peso Anterior" type="number" formControlName="pesoAnterior"></ion-input>
-        </ion-item>
+        <div class="cajatexto" style="margin-left:18px;">
+            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" padding placeholder="Fecha Consulta" type="date" formControlName="fechaConsulta" class="inputexto" ></ion-datetime>
+          </div>
         <ion-item>
             <ion-label position="floating" color="primary">Nuevo Peso</ion-label>
-            <ion-input placeholder="Nuevo Peso" type="text" formControlName="peso"></ion-input>
+            <ion-input placeholder="Nuevo Peso" type="number" formControlName="peso"></ion-input>
         </ion-item>
         <ion-item>
             <form method="POST" oninput="resultado.value=parseInt(valor1.value)*2/parseInt(valor2.value)">

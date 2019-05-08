@@ -5,9 +5,19 @@ import { HistorialClinicoService } from 'src/app/services/historial-clinico.serv
 @Injectable()
 export class EditarPesoResolver implements Resolve<any> {
 
-  constructor(private firebaseService: HistorialClinicoService) {}
+constructor(private firebaseService: HistorialClinicoService) {}
 
-  resolve(route: ActivatedRouteSnapshot) {
-    return this.firebaseService.getHistorialClinico();
-  }
+resolve(route: ActivatedRouteSnapshot) {
+
+    return new Promise((resolve, reject) => {
+    const itemId = route.paramMap.get('id');
+    this.firebaseService.getHistorialClinicoId(itemId)
+    .then(data => {
+        data.id = itemId;
+        resolve(data);
+    }, err => {
+        reject(err);
+    });
+    });
+}
 }

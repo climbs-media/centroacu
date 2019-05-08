@@ -48,6 +48,19 @@ export class HistorialClinicoService {
     });
   }
 
+  // get peso
+
+  getPesoId(historialId) {
+    return new Promise<any>((resolve, reject) => {
+      this.snapshotChangesSubscription = this.afs.doc<any>('/nuevo-peso/' + historialId).valueChanges()
+        .subscribe(snapshots => {
+          resolve(snapshots);
+        }, err => {
+          reject(err);
+        });
+    });
+  }
+
 
   unsubscribeOnLogOut() {
     // remember to unsubscribe from the snapshotChanges
@@ -58,6 +71,17 @@ export class HistorialClinicoService {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
       this.afs.collection('historial-clinico').doc(historialClinicoKey).set(value)
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      );
+    });
+  }
+
+  actualizarPeso(historialClinicoKey, value) {
+    return new Promise<any>((resolve, reject) => {
+      const currentUser = firebase.auth().currentUser;
+      this.afs.collection('nuevo-peso').doc(historialClinicoKey).set(value)
       .then(
         res => resolve(res),
         err => reject(err)
