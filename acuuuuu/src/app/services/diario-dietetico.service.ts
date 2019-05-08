@@ -8,38 +8,38 @@ import { AngularFireAuth } from '@angular/fire/auth';
 @Injectable({
   providedIn: 'root'
 })
-export class HistorialClinicoService {
-  private snapshotChangesSubscription: any;
+export class DiarioDieteticoService {
 
+  private snapshotChangesSubscription: any;
 
   constructor(
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth
   ) {}
 
-  getHistorialClinicoAdmin() {
+  getDiarioDieteticoAdmin() {
     return new Promise<any>((resolve, reject) => {
       this.snapshotChangesSubscription = this.afs.
-        collection('historial-clinico').snapshotChanges();
+        collection('diario-dietetico').snapshotChanges();
       resolve(this.snapshotChangesSubscription);
     });
   }
 
-  getHistorialClinico() {
+  getDiarioDietetico() {
     return new Promise<any>((resolve, reject) => {
       this.afAuth.user.subscribe(currentUser => {
         if (currentUser) {
             this.snapshotChangesSubscription = this.afs.
-            collection('historial-clinico', ref => ref.where('userId', '==', currentUser.uid)).snapshotChanges();
+            collection('diario-dietetico', ref => ref.where('userId', '==', currentUser.uid)).snapshotChanges();
             resolve(this.snapshotChangesSubscription);
         }
       });
     });
   }
 
-  getHistorialClinicoId(historialId) {
+  getDiarioDieteticoId(Id) {
     return new Promise<any>((resolve, reject) => {
-      this.snapshotChangesSubscription = this.afs.doc<any>('/historial-clinico/' + historialId).valueChanges()
+      this.snapshotChangesSubscription = this.afs.doc<any>('/diario-dietetico/' + Id).valueChanges()
         .subscribe(snapshots => {
           resolve(snapshots);
         }, err => {
@@ -48,32 +48,6 @@ export class HistorialClinicoService {
     });
   }
 
-  // get peso
-
-  getPesoId(historialId) {
-    return new Promise<any>((resolve, reject) => {
-      this.snapshotChangesSubscription = this.afs.doc<any>('/nuevo-peso/' + historialId).valueChanges()
-        .subscribe(snapshots => {
-          resolve(snapshots);
-        }, err => {
-          reject(err);
-        });
-    });
-  }
-
-  // peso id
-
-  getPeso() {
-    return new Promise<any>((resolve, reject) => {
-      this.afAuth.user.subscribe(currentUser => {
-        if (currentUser) {
-            this.snapshotChangesSubscription = this.afs.
-            collection('nuevo-peso', ref => ref.where('userId', '==', currentUser.uid)).snapshotChanges();
-            resolve(this.snapshotChangesSubscription);
-        }
-      });
-    });
-  }
 
 
   unsubscribeOnLogOut() {
@@ -81,10 +55,10 @@ export class HistorialClinicoService {
     this.snapshotChangesSubscription.unsubscribe();
   }
 
-  actualizarHistorialClinico(historialClinicoKey, value) {
+  actualizarDiarioDietetico(diarioDieteticoKey, value) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('historial-clinico').doc(historialClinicoKey).set(value)
+      this.afs.collection('diario-dietetico').doc(diarioDieteticoKey).set(value)
       .then(
         res => resolve(res),
         err => reject(err)
@@ -92,10 +66,10 @@ export class HistorialClinicoService {
     });
   }
 
-  actualizarPeso(historialClinicoKey, value) {
+  borrarDiarioDietetico(diarioDieteticoKey) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('nuevo-peso').doc(historialClinicoKey).set(value)
+      this.afs.collection('diario-dietetico').doc(diarioDieteticoKey).delete()
       .then(
         res => resolve(res),
         err => reject(err)
@@ -103,40 +77,18 @@ export class HistorialClinicoService {
     });
   }
 
-  borrarHistorialClinico(historialClinicoKey) {
+  crearDiarioDietetico(value) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('historial-clinico').doc(historialClinicoKey).delete()
-      .then(
-        res => resolve(res),
-        err => reject(err)
-      );
-    });
-  }
-
-  crearHistorialClinico(value) {
-    return new Promise<any>((resolve, reject) => {
-      const currentUser = firebase.auth().currentUser;
-      this.afs.collection('historial-clinico').add({
-        nombreApellido: value.nombreApellido,
-        fechaNacimiento: value.fechaNacimiento,
-        ciudad: value.ciudad,
-        correo: value.correo,
-        telefono: value.telefono,
-        profesion: value.profesion,
-        motivoConsulta: value.motivoConsulta,
-        interNombre: value.interNombre,
-        enfermedades: value.enfermedades,
-        familiares: value.familiares,
-        numeroHistorial: value.numeroHistorial,
-        fecha: value.fecha,
-        peso: value.peso,
-        edad: value.edad,
-        bono : value.bono,
-        altura: value.altura,
-        referencia: value.referencia,
-        imc: value.imc,
-        image: value.image,
+      this.afs.collection('diario-dietetico').add({
+        fechaConsulta: value.fechaConsulta,
+        fechaUltimoPeso: value.fechaUltimoPeso,
+        menu: value.menu,
+        pesoActual: value.pesoActual,
+        pesoPerdido: value.pesoPerdido,
+        semanas: value.semanas,
+      //  mensajeAdmin: value.mensajeAdmin,
+      //  image: value.image,
         userId: currentUser.uid,
       })
       .then(
@@ -178,3 +130,4 @@ export class HistorialClinicoService {
   }
 
 }
+

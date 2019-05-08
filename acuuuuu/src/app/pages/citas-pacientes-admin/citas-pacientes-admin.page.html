@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>citas-pacientes-admin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+        <ion-card *ngFor="let item of items">
+            <ion-card-header>
+              <ion-card-title text-center><h5>Citas de {{item.payload.doc.data().titulo}}</h5></ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <ul>
+                    <div>
+                        <ion-col size="12">
+                            <h5>Titulo</h5>
+                            <ion-input formControlName=""></ion-input>
+                        </ion-col>
+                    </div>
+                    <div>
+                        <ion-col size="12">
+                            <h5>Descripcion</h5>
+                            <ion-input formControlName="descripcion"></ion-input>
+                        </ion-col>
+            
+                    </div>
+                    <div>
+                        <ion-col size="12">
+                            <h5>Fecha</h5>
+                            <ion-input formControlName="fecha"></ion-input>
+                        </ion-col>
+            
+                    </div>
+                    <div>
+                        <ion-col size="12">
+                            <h5>Hora Inicio</h5>
+                            <ion-input formControlName="inicioCita"></ion-input>
+                        </ion-col>
+            
+                    </div>
+                    <div>
+                        <ion-col size="12">
+                            <h5>Hora Fin</h5>
+                            <ion-input formControlName="finalCita"></ion-input>
+                        </ion-col>
+                    </div>
+                    <hr>
+                    <hr>
+                  </ul>
+            </ion-card-content>
+          </ion-card>
+        <div>
+          <ion-row style="text-align:center;" padding-top >
+                          <ion-col size="6">
+                              <ion-button type="submit" ion-button class="but" [disabled]="!validations_form.valid" round>Aceptar
+                            <!-- <ion-icon name="arrow-round-forward" style="color:white;"></ion-icon> -->
+                              </ion-button>
+                          </ion-col>
+                          <ion-col size="6">
+                              <ion-button type="submit" ion-button class="but" (click)="delete()" round>Borrar
+                            <!-- <ion-icon name="arrow-round-forward" style="color:white;"></ion-icon> -->
+                              </ion-button>
+                          </ion-col>
+          </ion-row>
+        </div>
+          </form>
+
+</ion-content>

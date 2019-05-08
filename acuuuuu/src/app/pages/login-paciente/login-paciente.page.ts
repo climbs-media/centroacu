@@ -44,17 +44,17 @@ export class LoginPacientePage implements OnInit {
     });
   }
 
-  tryLogin(value){
+  tryLogin(value) {
     this.authService.conectar(value)
     .then(res => {
-      this.router.navigate(['/cliente-perfil']);
+      this.router.navigate(['/tabs/tab1']);
     }, err => {
       this.errorMessage = err.message;
-      console.log(err)
-    })
+      console.log(err);
+    });
   }
 
-  loginAdmin(){
+  loginAdmin() {
     this.router.navigate(['/login-admin']);
   }
 

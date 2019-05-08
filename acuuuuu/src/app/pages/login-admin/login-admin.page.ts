@@ -47,7 +47,7 @@ export class LoginAdminPage implements OnInit {
   tryLogin(value){
     this.authService.conectar(value)
     .then(res => {
-      this.router.navigate(["/home-admin"]);
+      this.router.navigate(["/cliente-perfil"]);
     }, err => {
       this.errorMessage = err.message;
       console.log(err)

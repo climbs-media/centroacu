@@ -1,0 +1,49 @@
+<ion-header text-center  padding-top>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="cliente-seguimiento"></ion-back-button>
+              </ion-buttons>
+  <div class="contiene">
+      <span text-center style="font-size: 26px; margin-left: -20%; font-weight: normal;">
+      &nbsp;&nbsp;Nueva Cita
+      </span>
+      
+          <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
+    </div>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+      <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+      <ion-card>
+          <ion-card-header (click)="collapseCard = !collapseCard">
+            <ion-card-title text-center>Crear Diario Dietetico</ion-card-title>
+          </ion-card-header>
+          <ion-card-content *ngIf="collapseCard">
+            <ion-item>
+              <ion-input type="text" placeholder="Semanas" formControlName="semanas"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" placeholder="Menu" formControlName="menu"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="number" placeholder="Peso Actual" formControlName="pesoActual"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-input type="number" placeholder="Menu" formControlName="pesoPerdido"></ion-input>
+                </ion-item>
+            <ion-item>
+              <ion-label>Fecha Consulta</ion-label>
+            <!-- <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="event.startTime" formControlName="fecha" [min]="minDate" month-names="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Sept, Oct, Nov, Dic"></ion-datetime>--> 
+              <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  formControlName="fechaConsulta" ></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label>Fecha Ultimo Peos</ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  formControlName="fechaConsulta" ></ion-datetime>
+              </ion-item>
+      <ion-button type="submit" fill="outline" expand="block" [disabled]="!validations_form.valid" >Crear</ion-button>
+  
+          </ion-card-content>
+        </ion-card>
+      </form>
+</ion-content>  

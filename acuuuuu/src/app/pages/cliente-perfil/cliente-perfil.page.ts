@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, LoadingController } from '@ionic/angular';
 import { PopoverHistorialDieteticoPage } from '../popover-historial-dietetico/popover-historial-dietetico.page';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-cliente-perfil',
@@ -11,18 +12,24 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ClientePerfilPage implements OnInit {
 
   items: Array<any>;
+  isAdmin: any = null;
+  isPasi: any = null;
+  userUid: string = null;
 
   constructor(
     public loadingCtrl: LoadingController,
     private router: Router,
     private route: ActivatedRoute,
     private modalController: ModalController,
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
     if (this.route && this.route.data) {
       this.getData();
     }
+    this.getCurrentUser();
+    this.getCurrentUser2();
   }
 
   async getData() {
@@ -52,6 +59,42 @@ mostrarhisto() {
     }).then(modal => {
       modal.present();
     });
+  }
+
+  getCurrentUser() {
+    this.authService.isAuth().subscribe(auth => {
+      if (auth) {
+        this.userUid = auth.uid;
+        this.authService.isUserAdmin(this.userUid).subscribe(userRole => {
+          this.isAdmin = userRole && Object.assign({}, userRole.roles).hasOwnProperty('admin') || false;
+          // this.isAdmin = true;
+        });
+      }
+    });
+  }l
+  
+  getCurrentUser2() {
+    this.authService.isAuth().subscribe(auth => {
+      if (auth) {
+        this.userUid = auth.uid;
+        this.authService.isUserPacientes(this.userUid).subscribe(userRole => {
+          this.isPasi = userRole && Object.assign({}, userRole.roles).hasOwnProperty('pacientes') || false;
+          // this.isAdmin = true;
+        })
+      }
+    })
+  }
+
+  goAdmin(){
+    this.router.navigate(['/home-admin'])
+  }
+
+ historialesClinicos() {
+    this.router.navigate(['/historiales-clinicos']);
+  }
+
+  citas() {
+    this.router.navigate(['/citas-admin']);
   }
 
 

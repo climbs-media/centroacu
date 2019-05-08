@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, ActivatedRoute } from '@angular/router';
-import {HistorialClinicoService} from '../../services/historial-clinico.service';
+import { NuevaCitaService } from 'src/app/services/nueva-cita.service';
 
 @Injectable()
-export class EditarResolver implements Resolve<any> {
+export class CitasPacientesResolver implements Resolve<any> {
 
-constructor(public firebaseService: HistorialClinicoService) { }
+constructor(public firebaseService: NuevaCitaService) { }
 
 resolve(route: ActivatedRouteSnapshot) {
 
     return new Promise((resolve, reject) => {
     const itemId = route.paramMap.get('id');
-    this.firebaseService.getHistorialClinicoId(itemId)
+    this.firebaseService.getCitaId(itemId)
     .then(data => {
         data.id = itemId;
         resolve(data);

@@ -4,7 +4,6 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'login-admin', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
-
   { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
   { path: 'login-admin', loadChildren: './pages/login-admin/login-admin.module#LoginAdminPageModule' },
   { path: 'home-admin', loadChildren: './pages/home-admin/home-admin.module#HomeAdminPageModule' },
@@ -44,7 +43,17 @@ const routes: Routes = [
   { path: 'detalles-menu-proteina/:id', loadChildren: './pages/detalles-menu-proteina/detalles-menu-proteina.module#DetallesMenuProteinaPageModule' },
   { path: 'menu-hipocalorica', loadChildren: './pages/menu-hipocalorica/menu-hipocalorica.module#MenuHipocaloricaPageModule' },
   { path: 'detalles-menu-hipocalorica/:id', loadChildren: './pages/detalles-menu-hipocalorica/detalles-menu-hipocalorica.module#DetallesMenuHipocaloricaPageModule' },
-  { path: 'editar-peso/:id', loadChildren: './pages/editar-peso/editar-peso.module#EditarPesoPageModule' },  { path: 'login-paciente', loadChildren: './pages/login-paciente/login-paciente.module#LoginPacientePageModule' },
+  { path: 'editar-peso/:id', loadChildren: './pages/editar-peso/editar-peso.module#EditarPesoPageModule' },
+  { path: 'login-paciente', loadChildren: './pages/login-paciente/login-paciente.module#LoginPacientePageModule' },
+  { path: 'diario-dietetico', loadChildren: './pages/diario-dietetico/diario-dietetico.module#DiarioDieteticoPageModule' },
+  { path: 'historiales-clinicos', loadChildren: './pages/historiales-clinicos/historiales-clinicos.module#HistorialesClinicosPageModule' },
+  { path: 'citas-admin', loadChildren: './pages/citas-admin/citas-admin.module#CitasAdminPageModule' },
+  { path: 'citas-pacientes-admin/:id', loadChildren: './pages/citas-pacientes-admin/citas-pacientes-admin.module#CitasPacientesAdminPageModule' },
+  { path: 'lista-paciente-peso', loadChildren: './pages/lista-paciente-peso/lista-paciente-peso.module#ListaPacientePesoPageModule' },
+  { path: 'detalles-peso-pacientes-admin/:id', loadChildren: './pages/detalles-peso-pacientes-admin/detalles-peso-pacientes-admin.module#DetallesPesoPacientesAdminPageModule' },  { path: 'crear-diario-dietetico', loadChildren: './pages/crear-diario-dietetico/crear-diario-dietetico.module#CrearDiarioDieteticoPageModule' },
+
+
+
 
 
 

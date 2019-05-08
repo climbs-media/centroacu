@@ -1,10 +1,10 @@
 
-<ion-header text-center  padding-top *ngIf="isAdmin === true  || isPasi === true">
+<ion-header text-center  padding-top>
     <ion-toolbar>
   <div class="contiene">
       <img width="40" height="45"  src="../../../assets/imgs/logo.png" class="logo">
       <span text-center style="padding-left:48px;padding-right:48px;font-size: 20px;">
-       &nbsp;&nbsp;Centro ACU 10
+      &nbsp;&nbsp;Centro ACU 10
       </span>
       
           <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
@@ -12,7 +12,7 @@
     </ion-toolbar>
   </ion-header>
   
-  <ion-content padding-top padding-top *ngIf="isAdmin === true || isPasi === true">
+  <ion-content padding-top padding-top>
   
     <ion-grid *ngIf="items">
       <ion-row  >
@@ -48,7 +48,7 @@
                   <div *ngIf="item.payload.doc.data().nombreApellido.includes(searchText) ">  
                     <ul>
       <ion-col>
-          <div class="cajabuscador"  routerLink="/cliente-perfil" >
+          <div [routerLink]="['/detalles-peso-pacientes-admin', item.payload.doc.id]"  class="cajabuscador"   >
                 <span class="nombreuser">{{item.payload.doc.data().nombreApellido}}</span>
                 <div  class="buscado"  >
                     <span class="num_edad">N° {{item.payload.doc.data().numeroHistorial}} </span>
@@ -71,16 +71,7 @@
     </ion-item>
     </ion-list>
     </div>
-
-    <div text-center>
-        <ion-button (click)="historialesClinicos()">Historiales Clinicos</ion-button>
-      </div>
-      <div text-center>
-        <ion-button expand="block" (click)="citas()">Citas</ion-button>
-      </div>
     </ion-grid>
   </ion-content>
-  <!--<ion-button class="centrado" (click)="goPaciente()" *ngIf="isPasi === true ">Ver Perfil User</ion-button>-->
   
   
-

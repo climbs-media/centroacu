@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class HistoricoPage implements OnInit {
 
- 
+  searchText = '';
   items: Array<any>;
 
   constructor(

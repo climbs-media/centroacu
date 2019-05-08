@@ -8,6 +8,6 @@ export class HistoricoResolver implements Resolve<any> {
   constructor(private firebaseService: NuevaCitaService) {}
 
   resolve(route: ActivatedRouteSnapshot) {
-    return this.firebaseService.getCitaPaciente();
+    return this.firebaseService.getCita();
   }
 }

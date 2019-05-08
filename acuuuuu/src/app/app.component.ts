@@ -28,7 +28,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.afAuth.user.subscribe(user => {
         if (user) {
-          this.router.navigate(['/home-admin']);
+          this.router.navigate(['/cliente-perfil']);
         } else {
           this.router.navigate(['/login-paciente']);
         }

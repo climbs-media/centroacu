@@ -1,24 +1,41 @@
 <ion-header text-center  padding-top>
     <ion-toolbar>
-  <div class="contiene">
-      <img width="40" height="45"  src="../../../assets/imgs/logo.png" class="logo">
-      <span text-center style="padding-left:48px;padding-right:48px;font-size: 26px; font-weight: normal;">
-       &nbsp;&nbsp;Gestión de Citas
-      </span>
-      
-          <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
+<div class="contiene">
+    <img width="40" height="45"  src="../../../assets/imgs/logo.png" class="logo">
+    <span text-center style="padding-left:48px;padding-right:48px;font-size: 26px; font-weight: normal;">
+    &nbsp;&nbsp;Gestión de Citas
+    </span>
+    
+        <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
     </div>
     </ion-toolbar>
-     
-  </ion-header>
+
+</ion-header>
 
 
 <ion-content padding>
+        <ion-col >
+                <div class="busqueda" >
+                <ion-searchbar [(ngModel)]="searchText" placeholder="Buscador..." style="text-transform: lowercase; border-radius: 50px;"></ion-searchbar>
+                </div>
+                
+            </ion-col>
     <button routerLink="/gestion-citas"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%"></button> 
     <div class="titulo">
         <h2 style="color: #BB1D1D; font-weight: bold;">FECHA DE CITAS</h2>
     </div>
-    <ion-list *ngFor="let item of items">
+    <ion-list>
+            <div *ngIf="items.length > 0">
+                        <ion-item *ngFor="let item of items">
+                       <div *ngIf="item.payload.doc.data().titulo && item.payload.doc.data().titulo.length"  class="contenido">
+                            <div *ngIf="item.payload.doc.data().titulo.includes(searchText) ">  
+        <ion-card >
+            <ion-card-header>
+                    <ion-item>
+                            <div  text-center class='mes' >{{item.payload.doc.data().titulo}}</div>
+                    </ion-item>
+            </ion-card-header>
+            <ion-card-content>
                     <ion-item>
                         <div  text-center class='mes' >Inicio Cita</div>
                     </ion-item>
@@ -37,8 +54,15 @@
                     <ion-item>
                         <div class="diahora" ><span style="margin-left: 10px; font-weight: bold;">{{item.payload.doc.data().descripcion}}</span></div>
                     </ion-item>
+                </ion-card-content>
+                </ion-card>
                     <hr>
                     <hr>
+                </div>
+                </div>
+                </ion-item>
+                </div>
+                
     </ion-list>
 </ion-content>
 

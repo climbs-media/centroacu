@@ -80,7 +80,7 @@ export class HistorialClinicoPage implements OnInit {
     this.firebaseService.crearHistorialClinico(data)
       .then(
         res => {
-          this.router.navigate(['/home-admin']);
+          this.router.navigate(['/login-paciente']);
         }
       );
   }

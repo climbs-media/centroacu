@@ -3,11 +3,13 @@ import { Resolve, ActivatedRouteSnapshot} from '@angular/router';
 import { HistorialClinicoService } from 'src/app/services/historial-clinico.service';
 
 @Injectable()
-export class MiPseResolver implements Resolve<any> {
+export class HistorialesResolver implements Resolve<any> {
 
-  constructor(private firebaseService: HistorialClinicoService) {}
+  constructor(private historialServices: HistorialClinicoService ) {}
 
   resolve(route: ActivatedRouteSnapshot) {
-    return this.firebaseService.getPeso();
+    const response = this.historialServices.getHistorialClinicoAdmin();
+    console.log('response', response);
+    return response;
   }
 }

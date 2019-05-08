@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>diario-dietetico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <!--
+    <div *ngIf="items.length > 0" class="list-mini animated fadeIn fast font-family: Comfortaa">
+        <ion-list>
+          <ion-item *ngFor="let item of items" style="--background:whitesmoke">-->
+            <!--[routerLink]="['/admin-contact', item.payload.doc.id]" no funciona-->
+            <!--
+            <div *ngIf="item.payload.doc.data().email && item.payload.doc.data().email.length" >
+              <div *ngIf="item.payload.doc.data().email.includes(searchText) ">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <ion-item [routerLink]="['/detalles-diario', item.payload.doc.id]">
+                    <ion-label>{{item.payload.doc.data().menu}}</ion-label>
+                  </ion-item>
+                </div>
+  
+              </div>
+            </div>
+              </div>
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>-->
+  <ion-button size="12" expand="block" (click)="diarioDietetico()">Añadir al diario</ion-button>
+
+</ion-content>

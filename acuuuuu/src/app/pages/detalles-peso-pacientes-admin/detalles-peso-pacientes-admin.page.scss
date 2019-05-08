@@ -1,0 +1,183 @@
+    
+    *{
+        margin:0px;
+        padding:0px;
+    }
+  
+    //CABEZERA
+  
+     .contiene .logo{
+       font-size: 30px;
+       position:absolute;
+       bottom: 1px;
+       left:10px;
+       padding-bottom: 5px;
+      }
+  
+   .contiene .chat{
+    position: absolute;
+    width:70px;
+    height: 70px;
+    margin-top: -20px;
+    }
+  
+   .contiene{
+           padding-top: 5px;
+           padding-bottom: -10px;
+           height: 35px;
+       
+     }
+
+     h4{
+         text-align: center;
+         margin-top: 10%;
+     }
+
+
+     .pesoIni{
+        border: 1px solid #C4C4C4;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 50px;
+        color: white;
+        background: #15B712;
+        width: 70px;
+        height: 70px;
+        margin-left: 5%;
+
+     }
+     .pesoPer{
+        border: 1px solid #C4C4C4;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 50px;
+        color: white;
+        background: #BC1E1E;
+        width: 70px;
+        height: 70px;
+        margin-right: 5%;
+
+     }
+
+
+     .pesoIni p{
+         margin-top: 8px;
+
+     }
+
+     .pesoConsul{
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 12px;
+        background: #FFFFFF;
+        border: 1px solid #C4C4C4;
+        width: 71px;
+        height: 100px;
+        margin: 0 auto;
+        margin-top: -10%;
+
+     }
+     .tconsul{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 11px;
+        margin-bottom: 4px; 
+        line-height: normal;
+        text-align: center;
+     }
+
+     .tconsul strong{
+         font-size: 17px;
+     }
+
+
+
+     p{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 7px;
+        text-align: center;
+         margin-top: 10px;
+     }
+
+     .pesoObj{
+        border: 1px solid #C4C4C4;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 50px;
+        color: white;
+        background: #15B712;
+        width: 70px;
+        height: 70px;
+        margin-left: 12%;
+
+     }
+
+
+     .pesoEst{
+        border: 1px solid #C4C4C4;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 50px;
+        color: white;
+        background: #BC1E1E;
+        width: 70px;
+        height: 70px;
+        margin-right: 10%;
+
+     }
+
+    .pesoEst .obje{
+        margin-top: -1px;
+    }
+    .pesoEst .obje1{
+        margin-top: -4px;
+    }
+
+
+    .agregar{
+        --border-radius: 20px;
+        --border: 1px solid #C4C4C4;
+        --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        margin: 0 auto;
+    }
+
+
+    .cont{
+        height: 25px; 
+        display:flex; 
+        text-align: center;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .pesoIde{
+        background: green;
+        width: 30%;
+        color: #FFFFFF;
+        font-size: 13px;
+        font-style: bold;
+        font-weight: bold;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+    .sobrePe{
+
+        background: orange;
+        width: 30%;
+        font-size: 13px;
+        color: #FFFFFF;
+        font-style: bold;
+        font-weight: bold;
+    }
+    .obe{
+       
+        font-size: 13px;
+        background: red;
+        width: 30%;
+        color: #FFFFFF;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        font-style: bold;
+        font-weight: bold;
+    }

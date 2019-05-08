@@ -10,7 +10,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class MenuService {
 
   private snapshotChangesSubscription: any;
-  
+
   constructor(
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth
