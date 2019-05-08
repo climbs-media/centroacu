@@ -97,10 +97,10 @@ export class MipesoPage implements OnInit {
 // tslint:disable-next-line: max-line-length
   constructor( private selector: WheelSelector, 
     private toastCtrl: ToastController,
-     private http: HttpClient,
-     public loadingCtrl: LoadingController,
-     private router: Router,
-     private route: ActivatedRoute,) { }
+    private http: HttpClient,
+    public loadingCtrl: LoadingController,
+    private router: Router,
+    private route: ActivatedRoute,) { }
 
   ngOnInit() {
     if (this.route && this.route.data) {
@@ -127,8 +127,10 @@ export class MipesoPage implements OnInit {
     return await loading.present();
   }
 
+  editarPeso() {
+    this.router.navigate(['/editar-peso'])
+  }
 
- 
     openPicker() {
       this.selector.show({
         title: 'Añade tu peso Actual',

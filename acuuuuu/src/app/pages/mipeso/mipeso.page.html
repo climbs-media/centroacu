@@ -4,13 +4,13 @@
   <div class="contiene">
       <img width="40" height="45"  src="../../../assets/imgs/logo.png" class="logo">
       <span text-center style="padding-left:48px;padding-right:48px;font-size: 20px;">
-       &nbsp;&nbsp;Seguimiento
+      &nbsp;&nbsp;Seguimiento
       </span>
       
           <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
     </div>
     </ion-toolbar>
-     
+
 </ion-header>
 <ion-content>
   <button routerLink="/cliente-seguimiento"><img src="../../../assets/imgs/retroceso.png" style="margin-top: 5%; color: red; position: absolute; margin-left: 5%"></button> 
@@ -33,7 +33,7 @@
             <div class="pesoConsul">
                 <p class="tconsul">Peso en Consulta</p>
                 <p class="tconsul"><strong>{{item.payload.doc.data().peso}}</strong> Kg</p>
-                <p class="tconsul">IMC 25,23</p> 
+                <p class="tconsul">IMC {{item.payload.doc.data().imc}}</p> 
               </div>
             </ion-grid>
             <ion-grid text-center>
@@ -52,7 +52,8 @@
                     <p class="obje">Objetivo</p>
                   </div>
               </ion-row>
-              <ion-button color="primary" round class="agregar" (click)="openPicker()"> Agregar</ion-button>
+          <!-- <ion-button color="primary" round class="agregar" (click)="openPicker()"> Agregar</ion-button> --> 
+              <ion-button color="primary" round class="agregar" (click)="editarPeso()"> Agregar</ion-button>
               <h4>Indice IMC</h4>
               <div class="cont">
                 <div class="pesoIde">Peso ideal</div>
@@ -63,16 +64,34 @@
 
 
                   <div *ngFor="let item of items">
+                    <h4 text-center>Tu IMC</h4>
                     <div text-center>
-                    <ion-label><h5>{{item.payload.doc.data().peso}}<span>KG</span></h5></ion-label>
+                    <ion-label><h5>{{item.payload.doc.data().imc}}</h5></ion-label>
                   </div>
-                      <progress style="margin-top: 5px; width: 90%" value="{{item.payload.doc.data().peso}}" min="40" max="800"></progress>
+                      <progress style="margin-top: 5px; width: 90%" value="{{item.payload.doc.data().imc}}" min="1" max="12"></progress>
                   </div>
-
-              
 
 
             </ion-grid> 
+          
             
+<!--<form method="POST" oninput="resultado.value=parseInt(valor1.value)*2/parseInt(valor2.value)">
+    <div>
+  <ion-label>Altura</ion-label>
+</div>
+<div>
+    <input type="number" id="valor1" value="0">
+  </div>
+  <div>
+    <ion-label>Peso</ion-label>
+  </div>
+  <div>
+    <input type="number" id="valor2" value="0"> 
+  </div>
+  <div>
+    <ion-label>IMC</ion-label>
+  </div>
+    <output name="resultado" for="valor1 valor2"></output>
+</form>-->
 
 </ion-content>

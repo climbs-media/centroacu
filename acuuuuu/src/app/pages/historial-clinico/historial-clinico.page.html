@@ -15,30 +15,30 @@
     <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
     <button routerLink="/cliente-perfil"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%; margin-top:-10px;"></button> 
   <ion-grid>
-     <ion-row  text-center >
-         <ion-col col-4 >
-             <div style="color:#BB1D1D ;margin-top:15px; font-weight: bold;" >
+    <ion-row  text-center >
+        <ion-col col-4 >
+            <div style="color:#BB1D1D ;margin-top:15px; font-weight: bold;" >
                 Nº Historia
-             </div>
-             <div class="cajatexto" style="width:55px;"><!-- se le pone estilo propio para no afectar alos demas div-->
+            </div>
+            <div class="cajatexto" style="width:55px;"><!-- se le pone estilo propio para no afectar alos demas div-->
                 <ion-input formControlName="numeroHistorial"  type="text"  class="inputexto2" placeholder="Añadir" style="margin-left:-10px" ></ion-input>
-             </div> 
-         </ion-col>
-         <ion-col col-4 >
+            </div> 
+        </ion-col>
+        <ion-col col-4 >
             <ion-icon name="ios-add-circle"  name="md-add-circle" class="iconos" (click)="openImagePicker()"></ion-icon>
               <div class="circular">
                   <img   class="circular" [src]="image" >
-               </div>
-         </ion-col>
-         <ion-col col-4>
-               <div style="color:#BB1D1D; margin-top:15px; font-weight: bold;">
-                 Fecha </div>
-                 <div class="cajatexto" style="width:100px;">
-                      <ion-datetime formControlName="fecha" class="inputexto" placeholder="Añadir" style="margin-left:-10px" ></ion-datetime>
-                 </div>  
-         </ion-col>
-     </ion-row>
-     <ion-row  >
+              </div>
+        </ion-col>
+        <ion-col col-4>
+              <div style="color:#BB1D1D; margin-top:15px; font-weight: bold;">
+                Fecha </div>
+                <div class="cajatexto" style="width:100px;">
+                      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" formControlName="fecha" class="inputexto" placeholder="Añadir" style="margin-left:-10px" ></ion-datetime>
+                </div>  
+        </ion-col>
+    </ion-row>
+    <ion-row  >
         <ion-col text-center > <div style="color:#BB1D1D; font-size: 20px; font-weight: bold; margin-top: 14px;">Datos </div> </ion-col>
   </ion-row>
   <ion-row>
@@ -54,7 +54,7 @@
           <!--
           <ion-input placeholder="Nombre Restaurante" type="text" formControlName="fechaNacimiento"></ion-input>
           -->
-              <ion-datetime padding placeholder="Fecha de Nacimiento" type="date" formControlName="fechaNacimiento" class="inputexto" ></ion-datetime>
+              <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" padding placeholder="Fecha de Nacimiento" type="date" formControlName="fechaNacimiento" class="inputexto" ></ion-datetime>
             </div>
         </ion-col>
       <ion-col col-12>
@@ -100,6 +100,28 @@
             </ion-col>
         </ion-row>
         <ion-row>
+        <ion-col col-12>
+          <form method="POST" oninput="resultado.value=parseInt(valor1.value)*2/parseInt(valor2.value)">
+            <div>
+          <ion-label>Altura</ion-label>
+        </div>
+        <div>
+            <input type="number" id="valor1" value="0">
+          </div>
+          <div>
+            <ion-label>Peso</ion-label>
+          </div>
+          <div>
+            <input type="number" id="valor2" value="0"> 
+          </div>
+          <div>
+            <ion-label>IMC</ion-label>
+          </div>
+            <output name="resultado" for="valor1 valor2"></output>
+        </form>
+        </ion-col>
+      </ion-row>
+        <ion-row>
           <ion-col col-12>
                   <div class="cajatexto"  style="margin-left:18px;"> 
                   <ion-input placeholder="Altura en CM" type="text" formControlName="altura" class="inputexto2"></ion-input> 
@@ -110,6 +132,11 @@
             <ion-input placeholder="Añade Peso" type="text" formControlName="peso" class="inputexto2"></ion-input> 
             </div>
     </ion-col>
+    <ion-col col-12>
+      <div class="cajatexto"  style="margin-right:16px;"> 
+      <ion-input placeholder="Agrega el IMC" type="number" formControlName="imc" class="inputexto2"></ion-input> 
+      </div>
+</ion-col>
     <ion-col col-12>
       <div class="cajatexto"  style="margin-right:16px;"> 
       <ion-input placeholder="Edad" type="number" formControlName="edad" class="inputexto2"></ion-input> 

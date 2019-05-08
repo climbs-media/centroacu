@@ -97,6 +97,7 @@ export class HistorialClinicoService {
         bono : value.bono,
         altura: value.altura,
         referencia: value.referencia,
+        imc: value.imc,
         image: value.image,
         userId: currentUser.uid,
       })

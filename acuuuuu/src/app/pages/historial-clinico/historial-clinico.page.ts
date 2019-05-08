@@ -50,6 +50,7 @@ export class HistorialClinicoPage implements OnInit {
       altura: new FormControl('', Validators.required),
       referencia: new FormControl('', ),
       edad: new FormControl('', Validators.required),
+      imc: new FormControl('', Validators.required),
       fecha: new FormControl('', Validators.required),
     });
   }
@@ -73,6 +74,7 @@ export class HistorialClinicoPage implements OnInit {
       bono: value.bono,
       altura: value.altura,
       referencia: value.referencia,
+      imc: value.imc,
       image: this.image
     };
     this.firebaseService.crearHistorialClinico(data)

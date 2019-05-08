@@ -43,7 +43,8 @@ const routes: Routes = [
   { path: 'menu-proteina', loadChildren: './pages/menu-proteina/menu-proteina.module#MenuProteinaPageModule' },
   { path: 'detalles-menu-proteina/:id', loadChildren: './pages/detalles-menu-proteina/detalles-menu-proteina.module#DetallesMenuProteinaPageModule' },
   { path: 'menu-hipocalorica', loadChildren: './pages/menu-hipocalorica/menu-hipocalorica.module#MenuHipocaloricaPageModule' },
-  { path: 'detalles-menu-hipocalorica/:id', loadChildren: './pages/detalles-menu-hipocalorica/detalles-menu-hipocalorica.module#DetallesMenuHipocaloricaPageModule' },
+  { path: 'detalles-menu-hipocalorica/:id', loadChildren: './pages/detalles-menu-hipocalorica/detalles-menu-hipocalorica.module#DetallesMenuHipocaloricaPageModule' },  { path: 'editar-peso', loadChildren: './pages/editar-peso/editar-peso.module#EditarPesoPageModule' },
+
 
 
 
