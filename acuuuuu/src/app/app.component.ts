@@ -30,10 +30,10 @@ export class AppComponent {
         if (user) {
           this.router.navigate(['/home-admin']);
         } else {
-          this.router.navigate(['/login-admin']);
+          this.router.navigate(['/login-paciente']);
         }
       }, err => {
-        this.router.navigate(['/login-admin']);
+        this.router.navigate(['/login-paciente']);
       }, () => {
         this.splashScreen.hide();
       });

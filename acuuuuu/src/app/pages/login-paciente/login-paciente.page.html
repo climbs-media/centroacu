@@ -11,7 +11,7 @@
       <form [formGroup]="validations_form" (ngSubmit)="tryLogin(validations_form.value)">   
 
     <ion-row  >
-       <ion-col> <img src="../../../assets/imgs/logo.png" alt="" class="logo"></ion-col>
+       <ion-col> <img (click)="loginAdmin()" src="../../../assets/imgs/logo.png" alt="" class="logo"></ion-col>
     </ion-row>
     <ion-row>
        <ion-col  > <h3 class="subtitulo">Centro<br>Acu 10</h3></ion-col>
@@ -49,6 +49,7 @@
      <ion-row padding-top>
         <ion-col >
             <ion-button  color="primary" class="but" routerLink="/home-admin" round type="submit" [disabled]="!validations_form.valid">Acceder</ion-button>
+            <ion-button  color="primary" class="but" routerLink="/tabs/tab1" round>Ver Perfil User</ion-button>
          </ion-col>
      </ion-row>
 
