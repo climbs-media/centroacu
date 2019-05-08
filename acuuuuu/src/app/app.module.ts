@@ -25,7 +25,7 @@ import { PopoverHistorialDieteticoPageModule } from './pages/popover-historial-d
 
 
 @NgModule({
-  declarations: [AppComponent,],
+  declarations: [AppComponent, ],
   entryComponents: [],
   imports: [BrowserModule,
   IonicModule.forRoot(),

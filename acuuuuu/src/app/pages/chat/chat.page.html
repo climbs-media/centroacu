@@ -1,44 +1,42 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>chat</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content padding>
+<!-- Default form contact -->
+<form padding style="font-family: Comfortaa" class="animated fadeIn fast" style="font-family: Comfortaa" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    <div text-center>
+        <p class="h4 mb-4">Contactanos</p>
+    </div>
+    <!-- Name -->
+    <input formControlName="title" type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Nombre">
 
-    <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
-      <ion-grid>
-        <ion-col size="12">
-          <ion-item>
-          <ion-label position="floating">Nombre</ion-label>
-           <ion-input formControlName="nombreApellido" placeholder="Nombre"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col size="12">
-            <ion-item>
-                <ion-label position="floating">Motivo</ion-label>
-                 <ion-input formControlName="motivo" placeholder="motivo"></ion-input>
-                </ion-item>
-        </ion-col>
-        <ion-col size="12">
-            <ion-item>
-                <ion-label position="floating">Mensaje Admin</ion-label>
-                  <ion-textarea formControlName="mensajeAdmin"></ion-textarea>
-            </ion-item>
-        </ion-col>
-        <ion-col size="12">
-            <ion-item>
-                <ion-label position="floating">Mensaje</ion-label>
-                  <ion-textarea formControlName="mensaje"></ion-textarea>
-                </ion-item>
-        </ion-col>
-      </ion-grid>
-     
-      <button type="button" [disabled]="!validations_form.valid" class="btn btn-primary" btn-lg btn-block>Enviar</button>
-  
-  
-  
-    </form>
+    <!-- Email -->
+    <input formControlName="email" type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="Correo Electronico">
 
+    <!-- Subject -->
+    <label>Asunto</label>
+    <select formControlName="asunto" class="browser-default custom-select mb-4">
+          <option value="" disabled>Escoge una Opción</option>
+          <option value="Feedback" selected>Preguntas</option>
+          <option value="Bug">Reportar un Bug</option>
+          <option value="Solicitudes">Actualizaciónes</option>
+        </select>
 
-</ion-content>
+    <!-- Message -->
+    <div class="form-group">
+        <textarea formControlName="mensaje" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Mensaje"></textarea>
+    </div>
+
+    <!-- Copy 
+    <div class="row">
+        <div class="col-md-6 mx-auto d-flex justify-content-center">
+            <div class="custom-control custom-checkbox mb-4">
+                <input type="checkbox" class="custom-control-input" id="defaultContactFormCopy">
+                <label class="custom-control-label" for="defaultContactFormCopy">Send me a copy of this message</label>
+            </div>
+        </div>
+    </div>
+-->
+
+    <!-- Send button -->
+    <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid" class="boton-crear">Enviar</ion-button>
+
+</form>
+<!-- Default form contact -->

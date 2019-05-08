@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve} from '@angular/router';
-import { MenuService } from 'src/app/services/menu.service';
-import { DiarioDieteticoService } from 'src/app/services/diario-dietetico.service';
+import { AnadirEjercicioService } from 'src/app/services/añadir-ejercicio.service';
 
 @Injectable()
-export class DetallesDiarioResolver implements Resolve<any> {
+export class DetallesEjerciciooResolver implements Resolve<any> {
 
-constructor(public diarioService: DiarioDieteticoService) { }
+constructor(public detallesEjercicioService: AnadirEjercicioService) { }
 
 resolve(route: ActivatedRouteSnapshot) {
 
     return new Promise((resolve, reject) => {
         const itemId = route.paramMap.get('id');
-        this.diarioService.getDiarioDieteticoId(itemId)
+        this.detallesEjercicioService.getAnadirEjercicioId(itemId)
         .then(data => {
         data.id = itemId;
         resolve(data);

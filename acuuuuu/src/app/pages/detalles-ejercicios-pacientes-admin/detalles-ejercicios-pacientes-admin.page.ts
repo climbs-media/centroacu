@@ -3,14 +3,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LoadingController, AlertController, ToastController } from '@ionic/angular';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
-import { DiarioDieteticoService } from 'src/app/services/diario-dietetico.service';
+import { AnadirEjercicioService } from 'src/app/services/añadir-ejercicio.service';
 
 @Component({
-  selector: 'app-detalles-diario',
-  templateUrl: './detalles-diario.page.html',
-  styleUrls: ['./detalles-diario.page.scss'],
+  selector: 'app-detalles-ejercicios-pacientes-admin',
+  templateUrl: './detalles-ejercicios-pacientes-admin.page.html',
+  styleUrls: ['./detalles-ejercicios-pacientes-admin.page.scss'],
 })
-export class DetallesDiarioPage implements OnInit {
+export class DetallesEjerciciosPacientesAdminPage implements OnInit {
 
   validations_form: FormGroup;
   image: any;
@@ -23,7 +23,7 @@ export class DetallesDiarioPage implements OnInit {
     public toastCtrl: ToastController,
     public loadingCtrl: LoadingController,
     private formBuilder: FormBuilder,
-    private diarioService: DiarioDieteticoService,
+    private diarioService: AnadirEjercicioService,
     private alertCtrl: AlertController,
     private route: ActivatedRoute,
     private router: Router,
@@ -44,27 +44,24 @@ export class DetallesDiarioPage implements OnInit {
       }
     });
     this.validations_form = this.formBuilder.group({
-      nombreApellido: new FormControl(this.item.nombreApellido, ),
-      fechaConsulta: new FormControl(this.item.fechaConsulta , Validators.required),
-      fechaUltimoPeso: new FormControl(this.item.fechaUltimoPeso , Validators.required),
-      menu: new FormControl(this.item.menu , Validators.required),
-      pesoActual: new FormControl(this.item.pesoActual , Validators.required),
-      pesoPerdido: new FormControl(this.item.pesoPerdido , Validators.required),
-      semana: new FormControl(this.item.semana , Validators.required),
+      titulo: new FormControl(this.item.titulo, ),
+      descripcion: new FormControl(this.item.descripcion , Validators.required),
+      horaInicio: new FormControl(this.item.horaInicio , Validators.required),
+      horaFinal: new FormControl(this.item.horaFinal , Validators.required),
+      fecha: new FormControl(this.item.fecha , Validators.required),
+
     });
   }
 
   onSubmit(value) {
     const data = {
-      nombreApellido: value.nombreApellido,
-        fechaConsulta: value.fechaConsulta,
-        fechaUltimoPeso: value.fechaUltimoPeso,
-        menu: value.menu,
-        pesoActual: value.pesoActual,
-        pesoPerdido: value.pesoPerdido,
-        semanas: value.semanas,
+      titulo: value.titulo,
+      descripcion: value.descripcion,
+      horaInicio: value.horaInicio,
+      horaFinal: value.horaFinal,
+      fecha: value.fecha,
     };
-    this.diarioService.actualizarDiarioDietetico
+    this.diarioService.actualizarAnadirEjercicio
     (this.item.id, data)
       .then(
         res => {
@@ -88,7 +85,7 @@ export class DetallesDiarioPage implements OnInit {
         {
           text: 'Yes',
           handler: () => {
-            this.diarioService.borrarDiarioDietetico(this.item.id)
+            this.diarioService.borrarAnadirEjercicio(this.item.id)
               .then(
                 res => {
                   this.router.navigate(['/home']);

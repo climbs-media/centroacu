@@ -111,7 +111,7 @@ export class DetallesMenuHipocaloricaPage implements OnInit {
             this.menuService.borrarMenuHipocalorico(this.item.id)
               .then(
                 res => {
-                  this.router.navigate(['/home']);
+                  this.router.navigate(['/cliente-perfil']);
                 },
                 err => console.log(err)
               );

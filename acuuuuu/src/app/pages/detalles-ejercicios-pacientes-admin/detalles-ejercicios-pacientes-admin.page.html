@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Detalles Ejercicios</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content padding>
+  
+<form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+        <ion-grid>
+          <ion-row>
+          <ion-col>
+              <h5>Nombre</h5>
+              <ion-input type="text" formControlName="nombreApellido">{{this.item.titulo}}</ion-input>
+          </ion-col>
+          <ion-col size="12">
+                  <ion-item>
+                  <ion-label position="floating"><p> Inicial</p></ion-label>
+                    <ion-input  formControlName="horaInicio"></ion-input>
+                  </ion-item>
+          </ion-col>
+            <ion-col size="12">
+                  <ion-item>
+                      <ion-label position="floating"><p> Hora Final</p></ion-label>
+                      <ion-input  formControlName="horaFinal"></ion-input>
+                    </ion-item>
+              </ion-col>
+            <ion-col size="12">
+                    <ion-item>
+                        <ion-label position="floating"><p>Descripcion</p></ion-label>
+                        <ion-input  formControlName="descripcion"></ion-input>
+                      </ion-item>
+          </ion-col>
+                          </ion-row>
+        </ion-grid>
+        <div text-cente> 
+            <ion-button *ngIf="isAdmin === true" type="submit" [disabled]="!validations_form.valid">Modificar</ion-button>
+        </div>
+</form>
+
+        
+          
+
+      <div text-center>
+        <ion-button *ngIf="isAdmin === true"  (click)="delete()">Borrar</ion-button>
+      </div>
+</ion-content>
+  
