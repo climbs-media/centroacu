@@ -50,7 +50,7 @@ export class DetallesDiarioPage implements OnInit {
       menu: new FormControl(this.item.menu , Validators.required),
       pesoActual: new FormControl(this.item.pesoActual , Validators.required),
       pesoPerdido: new FormControl(this.item.pesoPerdido , Validators.required),
-      semana: new FormControl(this.item.semana , Validators.required),
+      semanas: new FormControl(this.item.semanas , Validators.required),
     });
   }
 

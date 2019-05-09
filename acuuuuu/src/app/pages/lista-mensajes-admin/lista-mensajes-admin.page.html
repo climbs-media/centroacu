@@ -2,13 +2,6 @@
 <ion-content *ngIf="items" class="fondo" style="font-family: Comfortaa">
   <ion-searchbar [(ngModel)]="searchText" placeholder="Buscador..." style="text-transform: lowercase"></ion-searchbar>
     <div text-center>
-        <ion-grid>
-            <ion-row text-center class="animated fadeIn fast">
-                <ion-col size="2"><img class="boton-mas" src="../../../assets/imgs/Group 7.png" (click)="mostrarPop($event)"></ion-col>
-                <ion-col size="5"><button color="primary" type="button" class="btn btn-primary btn-sm" (click)="goSolicitudes()">Solicitudes</button> </ion-col>
-                <ion-col size="5"><button color="primary" type="button" class="btn btn-primary btn-sm" (click)="goMensajes()">Mensajes</button> </ion-col>
-            </ion-row>
-        </ion-grid>
         <hr>
         <div class="card" *ngIf="items.length > 0" class="list-mini animated fadeIn fast font-family: Comfortaa">
             <ion-list>
@@ -29,7 +22,7 @@
                     <ion-grid>
                       <ion-row>
                         <ion-col size="6">
-                            <ion-button size="small" [routerLink]="['/detalle-mensajes', item.payload.doc.id]">Detalles</ion-button>
+                            <ion-button size="small" [routerLink]="['/detall-mensajes', item.payload.doc.id]">Detalles</ion-button>
                         </ion-col>
                         <ion-col size="6">
                             <ion-button size="small"  href="mailto:{{item.payload.doc.data().email}}">Contestar</ion-button>
