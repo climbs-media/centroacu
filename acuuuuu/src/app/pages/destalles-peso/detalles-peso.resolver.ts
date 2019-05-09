@@ -12,7 +12,7 @@ resolve(route: ActivatedRouteSnapshot) {
 
     return new Promise((resolve, reject) => {
     const itemId = route.paramMap.get('id');
-    this.mensajesServices.getPesoId(itemId)
+    this.mensajesServices.getHistorialClinicoId(itemId)
     .then(data => {
         data.id = itemId;
         resolve(data);
