@@ -33,7 +33,9 @@ export class CrearDiarioDieteticoPage implements OnInit {
   resetFields() {
     this.image = './assets/imgs/foto_cliente.jpg';
     this.validations_form = this.formBuilder.group({
+      nombreApellido: new FormControl('', Validators.required),
       fechaConsulta: new FormControl('', Validators.required),
+      fechaUltimoPeso: new FormControl('', Validators.required),
       menu: new FormControl('', Validators.required),
       pesoActual: new FormControl('', Validators.required),
       pesoPerdido: new FormControl('', Validators.required),
@@ -43,6 +45,7 @@ export class CrearDiarioDieteticoPage implements OnInit {
 
   onSubmit(value) {
     const data = {
+      nombreApellido: value.nombreApellido,
       fechaConsulta: value.fechaConsulta,
         fechaUltimoPeso: value.fechaUltimoPeso,
         menu: value.menu,

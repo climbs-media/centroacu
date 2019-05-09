@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Detalles Diario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content padding>
+  
+<form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+        <ion-grid>
+          <ion-row>
+          <ion-col>
+              <h5>Nombre</h5>
+              <ion-input type="text" formControlName="nombreApellido">{{this.item.nombreApellido}}</ion-input>
+          </ion-col>
+          <ion-col size="12">
+                  <ion-item>
+                  <ion-label position="floating"><p>Fecha Consulta</p></ion-label>
+                    <ion-input  formControlName="fechaConsulta"></ion-input>
+                  </ion-item>
+          </ion-col>
+            <ion-col size="12">
+                  <ion-item>
+                      <ion-label position="floating"><p>Fecha Ultimo Peso</p></ion-label>
+                      <ion-input  formControlName="fechaUltimoPeso"></ion-input>
+                    </ion-item>
+              </ion-col>
+            <ion-col size="12">
+                    <ion-item>
+                        <ion-label position="floating"><p>Fecha Ultimo Peso</p></ion-label>
+                        <ion-input  formControlName="fechaUltimoPeso"></ion-input>
+                      </ion-item>
+          </ion-col>
+                    <ion-col size="12">
+                        <ion-item>
+                            <ion-label position="floating"><p>Ménu</p></ion-label>
+                            <ion-input  formControlName="menu"></ion-input>
+                          </ion-item>
+                </ion-col>
+                    <ion-col size="12">
+                            <ion-item>
+                                <ion-label position="floating"><p>Peso Actual</p></ion-label>
+                                <ion-input  formControlName="pesoActual"></ion-input>
+                              </ion-item>
+                    </ion-col>
+                <ion-col size="12">
+                                <ion-item>
+                                    <ion-label position="floating"><p>Peso Perdido</p></ion-label>
+                                    <ion-input  formControlName="pesoPerdido"></ion-input>
+                                  </ion-item>
+                  </ion-col>
+                    <ion-col size="12">
+                                    <ion-item>
+                                        <ion-label position="floating"><p>Semanas</p></ion-label>
+                                        <ion-input  formControlName="semanas"></ion-input>
+                                      </ion-item>
+                          </ion-col>
+                          </ion-row>
+        </ion-grid>
+        <div text-cente> 
+            <ion-button *ngIf="isAdmin === true" type="submit" [disabled]="!validations_form.valid">Modificar</ion-button>
+        </div>
+</form>
+
+        
+          
+
+      <div text-center>
+        <ion-button *ngIf="isAdmin === true"  (click)="delete()">Borrar</ion-button>
+      </div>
+</ion-content>
+  

@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'seguimiento', loadChildren: './pages/seguimiento/seguimiento.module#SeguimientoPageModule' },
   { path: 'mipeso', loadChildren: './pages/mipeso/mipeso.module#MipesoPageModule' },
   { path: 'diario', loadChildren: './pages/diario/diario.module#DiarioPageModule' },
+  // tslint:disable-next-line:max-line-length
   { path: 'modal-diario-dietetico', loadChildren: './pages/modal-diario-dietetico/modal-diario-dietetico.module#ModalDiarioDieteticoPageModule' },
   { path: 'historial-clinico', loadChildren: './pages/historial-clinico/historial-clinico.module#HistorialClinicoPageModule' },
   { path: 'bono-citas', loadChildren: './pages/bono-citas/bono-citas.module#BonoCitasPageModule' },
@@ -35,22 +36,37 @@ const routes: Routes = [
   { path: 'mipeso-user', loadChildren: './pages/mipeso-user/mipeso-user.module#MipesoUserPageModule' },
   { path: 'diario-user', loadChildren: './pages/diario-user/diario-user.module#DiarioUserPageModule' },
   { path: 'registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' },
+  // tslint:disable-next-line:max-line-length
   { path: 'popover-historial-dietetico', loadChildren: './pages/popover-historial-dietetico/popover-historial-dietetico.module#PopoverHistorialDieteticoPageModule' },
   { path: 'cliente-historial', loadChildren: './pages/cliente-historial/cliente-historial.module#ClienteHistorialPageModule' },
   { path: 'chat', loadChildren: './pages/chat/chat.module#ChatPageModule' },
   { path: 'historial-fisico', loadChildren: './pages/historial-fisico/historial-fisico.module#HistorialFisicoPageModule' },
   { path: 'menu-proteina', loadChildren: './pages/menu-proteina/menu-proteina.module#MenuProteinaPageModule' },
+  // tslint:disable-next-line:max-line-length
   { path: 'detalles-menu-proteina/:id', loadChildren: './pages/detalles-menu-proteina/detalles-menu-proteina.module#DetallesMenuProteinaPageModule' },
   { path: 'menu-hipocalorica', loadChildren: './pages/menu-hipocalorica/menu-hipocalorica.module#MenuHipocaloricaPageModule' },
+  // tslint:disable-next-line:max-line-length
   { path: 'detalles-menu-hipocalorica/:id', loadChildren: './pages/detalles-menu-hipocalorica/detalles-menu-hipocalorica.module#DetallesMenuHipocaloricaPageModule' },
   { path: 'editar-peso/:id', loadChildren: './pages/editar-peso/editar-peso.module#EditarPesoPageModule' },
   { path: 'login-paciente', loadChildren: './pages/login-paciente/login-paciente.module#LoginPacientePageModule' },
   { path: 'diario-dietetico', loadChildren: './pages/diario-dietetico/diario-dietetico.module#DiarioDieteticoPageModule' },
   { path: 'historiales-clinicos', loadChildren: './pages/historiales-clinicos/historiales-clinicos.module#HistorialesClinicosPageModule' },
   { path: 'citas-admin', loadChildren: './pages/citas-admin/citas-admin.module#CitasAdminPageModule' },
+  // tslint:disable-next-line:max-line-length
   { path: 'citas-pacientes-admin/:id', loadChildren: './pages/citas-pacientes-admin/citas-pacientes-admin.module#CitasPacientesAdminPageModule' },
   { path: 'lista-paciente-peso', loadChildren: './pages/lista-paciente-peso/lista-paciente-peso.module#ListaPacientePesoPageModule' },
-  { path: 'detalles-peso-pacientes-admin/:id', loadChildren: './pages/detalles-peso-pacientes-admin/detalles-peso-pacientes-admin.module#DetallesPesoPacientesAdminPageModule' },  { path: 'crear-diario-dietetico', loadChildren: './pages/crear-diario-dietetico/crear-diario-dietetico.module#CrearDiarioDieteticoPageModule' },
+  // tslint:disable-next-line:max-line-length
+  { path: 'detalles-peso-pacientes-admin/:id', loadChildren: './pages/detalles-peso-pacientes-admin/detalles-peso-pacientes-admin.module#DetallesPesoPacientesAdminPageModule' },
+  // tslint:disable-next-line:max-line-length
+  { path: 'crear-diario-dietetico', loadChildren: './pages/crear-diario-dietetico/crear-diario-dietetico.module#CrearDiarioDieteticoPageModule' },
+  // tslint:disable-next-line:max-line-length
+  { path: 'diario-dietetico-admin', loadChildren: './pages/diario-dietetico-admin/diario-dietetico-admin.module#DiarioDieteticoAdminPageModule' },
+  { path: 'detalles-diario/:id', loadChildren: './pages/detalles-diario/detalles-diario.module#DetallesDiarioPageModule' },
+  // tslint:disable-next-line:max-line-length
+  { path: 'lista-pacientes-ejercicios', loadChildren: './pages/lista-pacientes-ejercicios/lista-pacientes-ejercicios.module#ListaPacientesEjerciciosPageModule' },
+  // tslint:disable-next-line:max-line-length
+  { path: 'detalles-ejercicios-pacientes-admin/:id', loadChildren: './pages/detalles-ejercicios-pacientes-admin/detalles-ejercicios-pacientes-admin.module#DetallesEjerciciosPacientesAdminPageModule' },
+
 
 
 

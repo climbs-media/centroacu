@@ -73,8 +73,8 @@ mostrarhisto() {
         });
       }
     });
-  }l
-  
+  }
+
   getCurrentUser2() {
     this.authService.isAuth().subscribe(auth => {
       if (auth) {
@@ -82,16 +82,16 @@ mostrarhisto() {
         this.authService.isUserPacientes(this.userUid).subscribe(userRole => {
           this.isPasi = userRole && Object.assign({}, userRole.roles).hasOwnProperty('pacientes') || false;
           // this.isAdmin = true;
-        })
+        });
       }
-    })
+    });
   }
 
-  goAdmin(){
-    this.router.navigate(['/home-admin'])
+  goAdmin() {
+    this.router.navigate(['/home-admin']);
   }
 
- historialesClinicos() {
+historialesClinicos() {
     this.router.navigate(['/historiales-clinicos']);
   }
 

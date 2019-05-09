@@ -65,7 +65,6 @@ export class DiarioEjercicioPage implements OnInit {
       horaInicio: new FormControl('', Validators.required),
       horaFinal: new FormControl('', Validators.required),
       fecha: new FormControl('', Validators.required),
-
     });
   }
 
@@ -80,7 +79,7 @@ export class DiarioEjercicioPage implements OnInit {
     this.firebaseService.crearAnadirEjercicio(data)
       .then(
         res => {
-          this.router.navigate(['/home-admin']);
+          this.router.navigate(['/home-user']);
         }
       );
   }
