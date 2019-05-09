@@ -5,17 +5,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DiarioEjercicioPage } from './diario-ejercicio.page';
-import { NgCalendarModule } from 'ionic2-calendar';
-import { ComponentsModule } from '../../componentes/cabecera/components.module';
-import { EjercicioResolver } from './diario-ejercicio.resolver';
+import { DetallesCitasPage } from './detalles-citas.page';
+import { DetallesCitasResolver } from './detalles-citas.resolver';
+import { ComponentsModule } from 'src/app/componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: DiarioEjercicioPage,
+    component: DetallesCitasPage,
     resolve: {
-      data: EjercicioResolver
+      data: DetallesCitasResolver
     }
   }
 ];
@@ -27,10 +26,9 @@ const routes: Routes = [
     ComponentsModule,
     ReactiveFormsModule,
     IonicModule,
-    NgCalendarModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DiarioEjercicioPage],
-  providers: [EjercicioResolver]
+  declarations: [DetallesCitasPage],
+  providers: [DetallesCitasResolver]
 })
-export class DiarioEjercicioPageModule {}
+export class DetallesCitasPageModule {}

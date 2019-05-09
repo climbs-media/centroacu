@@ -24,6 +24,18 @@ export class AnadirEjercicioService {
     });
   }
 
+  getEjercicioPaciente() {
+    return new Promise<any>((resolve, reject) => {
+      this.afAuth.user.subscribe(currentUser => {
+        if (currentUser) {
+            this.snapshotChangesSubscription = this.afs.
+            collection('anadir-ejercicio', ref => ref.where('userId', '==', currentUser.uid)).snapshotChanges();
+            resolve(this.snapshotChangesSubscription);
+        }
+      });
+    });
+  }
+
   getAnadirEjercicioId(Id) {
     return new Promise<any>((resolve, reject) => {
       this.snapshotChangesSubscription = this.afs.doc<any>('/anadir-ejercicio/' + Id).valueChanges()

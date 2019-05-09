@@ -33,71 +33,91 @@
       </ion-row>
       <ion-row>
         <ion-col col-12>
-          <ion-input class="cajatexto" formControlName="nombreApellido" placeholder="Nombre y Apellido">  </ion-input>
+            <ion-label>Nombre</ion-label>
+          <ion-input class="cajatexto" formControlName="nombreApellido" value="{{this.item.nombreApellido}}" placeholder="Nombre y Apellido" [readonly]="true">  </ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
+          
         <ion-col col-12>
-          <ion-input class="cajatexto" style="margin-left:18px;" formControlName="fechaNacimiento" placeholder="Fecha de Nacimiento"></ion-input>
+            <ion-label>Fecha Nascimiento</ion-label>
+          <ion-input class="cajatexto" style="margin-left:18px;"  formControlName="fechaNacimiento" value="{{this.item.fechaNacimiento}}" placeholder="Fecha de Nacimiento" [readonly]="true"></ion-input>
         </ion-col>
+        
         <ion-col col-12>
-          <ion-input class="cajatexto" formControlName="ciudad" style="margin-right:16px;" placeholder="Ciudad"> </ion-input>
+            <ion-label>Ciudad</ion-label>
+          <ion-input class="cajatexto" formControlName="ciudad" style="margin-right:16px;" placeholder="Ciudad" value="{{this.item.ciudad}}" [readonly]="true"> </ion-input>
         </ion-col>
       </ion-row>
 
       <ion-row >
+          
         <ion-col col-12>
-          <ion-input class="cajatexto" formControlName="correo" placeholder=" Nuevo Correo"></ion-input>
+            <ion-label>Correo</ion-label>
+          <ion-input class="cajatexto" formControlName="correo"  placeholder=" Nuevo Correo" value="{{this.item.correo}}" [readonly]="true"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          
+        <ion-col col-12>
+            <ion-label>Telefono</ion-label>
+          <ion-input class="cajatexto" type="number" formControlName="telefono" value="{{this.item.telefono}}"> </ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          
+        <ion-col col-12>
+            <ion-label>Profesion</ion-label>
+          <ion-input class="cajatexto" formControlName="profesion" value="{{this.item.profesion}}" [readonly]="true"> </ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          
+        <ion-col col-12>
+            <ion-label>Motivo Consulta</ion-label>
+          <ion-input class="cajatexto" formControlName="motivoConsulta"  value="{{this.item.motivoConsulta}}" [readonly]="true"></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col col-12>
-          <ion-input class="cajatexto" type="number" formControlName="telefono" placeholder=" Nuevo Teléfono"> </ion-input>
+          <ion-label>Peso</ion-label>
+          <ion-input type="number" class="cajatexto" formControlName="peso" placeholder="Peso" value="{{this.item.peso}}" [readonly]="true"></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col col-12>
-          <ion-input class="cajatexto" formControlName="profesion" placeholder=" Nueva Profesión"> </ion-input>
+            <ion-label>Altura</ion-label>
+          <ion-input type="number" class="cajatexto" formControlName="altura" placeholder="Altura" value="{{this.item.altura}}" [readonly]="true"></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col col-12>
-          <ion-input class="cajatexto" formControlName="motivoConsulta" placeholder="Motivo de Consulta"></ion-input>
+            <ion-label>Edad</ion-label>
+          <ion-input type="number" class="cajatexto" formControlName="edad" placeholder="Edad" value="{{this.item.edad}}" [readonly]="true"></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col col-12>
-          <ion-input type="number" class="cajatexto" formControlName="peso" placeholder="Peso"></ion-input>
+            <ion-label>IMC</ion-label>
+          <ion-input type="number" class="cajatexto" formControlName="imc" placeholder="IMC" value="{{this.item.imc}}" [readonly]="true"></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col col-12>
-          <ion-input type="number" class="cajatexto" formControlName="altura" placeholder="Altura"></ion-input>
+            <ion-label>Bonos</ion-label>
+          <ion-input type="number" class="cajatexto" formControlName="bono" placeholder="Bonos" ></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col col-12>
-          <ion-input type="number" class="cajatexto" formControlName="edad" placeholder="Edad"></ion-input>
+            <ion-label>Citas Restantes</ion-label>
+          <ion-input type="number" class="cajatexto" formControlName="citasRestantes" placeholder="Citas Restantes" ></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col col-12>
-          <ion-input type="number" class="cajatexto" formControlName="imc" placeholder="IMC"></ion-input>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-12>
-          <ion-input type="number" class="cajatexto" formControlName="bono" placeholder="Bonos"></ion-input>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-12>
-          <ion-input type="number" class="cajatexto" formControlName="citasRestantes" placeholder="Citas Restantes"></ion-input>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-12>
-          <ion-input type="number" class="cajatexto" formControlName="referencia" placeholder="Referencia"></ion-input>
+            <ion-label>Referencia</ion-label>
+          <ion-input type="text" class="cajatexto" formControlName="referencia" placeholder="Referencia" value="{{this.item.referencia}}" [readonly]="true"></ion-input>
         </ion-col>
       </ion-row>
 
@@ -108,7 +128,7 @@
         <ion-col >
           <div style="font-weight: bold; margin: 5px; margin-left: 10px">Intervenciones : </div>
           <div class="cajatexto">
-            <ion-input formControlName="interNombre"  type="text" class="inputexto2" placeholder=""></ion-input>
+            <ion-input formControlName="interNombre"  type="text" class="inputexto2"  value="{{this.item.interNombre}}" [readonly]="true"></ion-input>
           </div>
         </ion-col>
       </ion-row>
@@ -116,22 +136,14 @@
         <ion-col >
           <div  style="font-weight: bold; margin: 5px; margin-left: 10px">Enfermedades Anteriores  : </div>
           <div class="cajatexto" >
-            <ion-input formControlName="enfermedades"  type="text" class="inputexto2"  placeholder=""></ion-input>
+            <ion-input formControlName="enfermedades"  type="text" class="inputexto2"   value="{{this.item.fechaenfermedades}}" [readonly]="true"></ion-input>
           </div>
         </ion-col>
       </ion-row>
       <ion-row >
         <ion-col >
           <div style="font-weight: bold; margin: 5px"> Familiares:</div>
-          <ion-select formControlName="familiares" placeholder="Seleccionar">
-            <ion-select-option value="diabetes">diabetes</ion-select-option>
-            <ion-select-option value="cardiopatia">cardiopatia</ion-select-option>
-            <ion-select-option value="obesidad">obesidad</ion-select-option>
-            <!--  <span class='padece'>Diabetes<ion-checkbox  [(ngModel)]="diabetes" style="margin-left: 10px" ></ion-checkbox> </span>
-              <span class='padece'>Cardiopatia<ion-checkbox  [(ngModel)]="cardiopatia" style="margin-left: 17px"  ></ion-checkbox></span>
-              <br><span class='padece'>Obesidad<ion-checkbox  [(ngModel)]="obesidad" style="margin-left: 15px"  ></ion-checkbox></span>   -->
-          </ion-select>
-
+          <ion-input formControlName="familiares" placeholder="Seleccionar" value="{{this.item.familiares}}" readonly="true"></ion-input>
         </ion-col>
       </ion-row>
       <div>

@@ -132,6 +132,10 @@ export class MipesoPage implements OnInit {
     this.router.navigate(['/editar-peso'])
   }
 
+  crearPeso() {
+    this.router.navigate(['/crear-peso'])
+  }
+
     openPicker() {
       this.selector.show({
         title: 'Añade tu peso Actual',

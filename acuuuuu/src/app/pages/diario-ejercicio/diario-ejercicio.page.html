@@ -9,10 +9,10 @@
         </ion-card-header>
         <ion-card-content *ngIf="!collapseCard">
           <ion-item>
-            <ion-input type="text" placeholder="Ejercicio" [(ngModel)]="event.titulo" formControlName="titulo"></ion-input>
+            <ion-input type="text" placeholder="Ejercicio"  formControlName="titulo"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input type="text" placeholder="Descripción de Ejercico" [(ngModel)]="event.descripcion" formControlName="descripcion"></ion-input>
+            <ion-input type="text" placeholder="Descripción de Ejercico"  formControlName="descripcion"></ion-input>
           </ion-item>
           <ion-item>
               <ion-label>Fecha</ion-label>
@@ -51,20 +51,64 @@
         </ion-row>
 
 
-
-
-    <calendar
-    [eventSource]="eventSource"
-    [calendarMode]="calendar.mode"
-    [currentDate]="calendar.currentDate"
-    (onCurrentDateChanged)="onCurrentDateChanged($event)"
-    (onRangeChanged)="reloadSource(startTime, endTime)"
-    (onEventSelected)="onEventSelected($event)"
-    (onTitleChanged)="onViewTitleChanged($event)"
-    (onTimeSelected)="onTimeSelected($event)"
-    step="30"
-    >
-  </calendar>
-
+        <calendar
+        [locale]="locale"
+        [eventSource]="eventSource"
+        [calendarMode]="calendar.mode"
+        [currentDate]="calendar.currentDate"
+        (onCurrentDateChanged)="onCurrentDateChanged($event)"
+        (onRangeChanged)="reloadSource(startTime, endTime)"
+        (onEventSelected)="onEventSelected($event)"
+        (onTitleChanged)="onViewTitleChanged($event)"
+        (onTimeSelected)="onTimeSelected($event)"
+        step="5"
+        startingDayWeek="1"
+        >
+      </calendar>
+    
+      <ion-card *ngFor="let item of items">
+          <ion-card-header>
+            <ion-card-title text-center><h5>Citas de {{item.payload.doc.data().titulo}}</h5></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+              <ul>
+                  <div>
+                      <ion-col size="12">
+                          <h5>Titulo</h5>
+                          <ion-label>{{item.payload.doc.data().titulo}}</ion-label>
+                      </ion-col>
+                  </div>
+                  <div>
+                      <ion-col size="12">
+                          <h5>Descripcion</h5>
+                          <ion-label>{{item.payload.doc.data().descripcion}}</ion-label>
+                      </ion-col>
+          
+                  </div>
+                  <div>
+                      <ion-col size="12">
+                          <h5>Fecha</h5>
+                          <ion-label>{{item.payload.doc.data().fecha}}</ion-label>
+                      </ion-col>
+          
+                  </div>
+                  <div>
+                      <ion-col size="12">
+                          <h5>Hora Inicio</h5>
+                          <ion-label>{{item.payload.doc.data().inicioCita}}</ion-label>
+                      </ion-col>
+          
+                  </div>
+                  <div>
+                      <ion-col size="12">
+                          <h5>Hora Fin</h5>
+                          <ion-label>{{item.payload.doc.data().finalCita}}</ion-label>
+                      </ion-col>
+                  </div>
+                  <hr>
+                  <hr>
+                </ul>
+          </ion-card-content>
+        </ion-card>
 
 </ion-content>

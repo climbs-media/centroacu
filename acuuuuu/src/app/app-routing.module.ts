@@ -69,6 +69,15 @@ const routes: Routes = [
   { path: 'dietas-pacientes', loadChildren: './pages/dietas-pacientes/dietas-pacientes.module#DietasPacientesPageModule' },
   { path: 'lista-mensajes-admin', loadChildren: './pages/lista-mensajes-admin/lista-mensajes-admin.module#ListaMensajesAdminPageModule' },
   { path: 'detall-mensajes/:id', loadChildren: './pages/detall-mensajes/detall-mensajes.module#DetallMensajesPageModule' },
+  { path: 'crear-peso', loadChildren: './pages/crear-peso/crear-peso.module#CrearPesoPageModule' },
+  { path: 'lista-pacientes-bonos', loadChildren: './pages/lista-pacientes-bonos/lista-pacientes-bonos.module#ListaPacientesBonosPageModule' },
+  { path: 'detalles-bonos-pacientes-admin/:id', loadChildren: './pages/detalles-bonos-pacientes-admin/detalles-bonos-pacientes-admin.module#DetallesBonosPacientesAdminPageModule' },
+  { path: 'lista-citas', loadChildren: './pages/lista-citas/lista-citas.module#ListaCitasPageModule' },
+  { path: 'destalles-peso/:id', loadChildren: './pages/destalles-peso/destalles-peso.module#DestallesPesoPageModule' },
+  { path: 'detalles-citas/:id', loadChildren: './pages/detalles-citas/detalles-citas.module#DetallesCitasPageModule' },
+
+
+
 
 
 

@@ -25,7 +25,7 @@
                   <div *ngIf="item.payload.doc.data().nombreApellido.includes(searchText) ">  
                     <ul>
       <ion-col>
-          <div [routerLink]="['/destalles-peso', item.payload.doc.id]"  class="cajabuscador"   >
+          <div [routerLink]="['/detalles-bonos-pacientes-admin', item.payload.doc.id]"  class="cajabuscador"   >
                 <span class="nombreuser">{{item.payload.doc.data().nombreApellido}}</span>
                 <div  class="buscado"  >
                     <span class="num_edad">N° {{item.payload.doc.data().numeroHistorial}} </span>

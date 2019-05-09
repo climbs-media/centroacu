@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { LoadingController, ToastController, AlertController } from '@ionic/angular';
-import { ImagePicker } from '@ionic-native/image-picker/ngx';
-import { WebView } from '@ionic-native/ionic-webview/ngx';
-import { ActivatedRoute, Router } from '@angular/router';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {ImagePicker} from '@ionic-native/image-picker/ngx';
+import {AlertController, LoadingController, ToastController} from '@ionic/angular';
 import {HistorialClinicoService} from '../../services/historial-clinico.service';
+import {WebView} from '@ionic-native/ionic-webview/ngx';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-editar',
-  templateUrl: './editar.page.html',
-  styleUrls: ['./editar.page.scss'],
+  selector: 'app-detalles-bonos-pacientes-admin',
+  templateUrl: './detalles-bonos-pacientes-admin.page.html',
+  styleUrls: ['./detalles-bonos-pacientes-admin.page.scss'],
 })
-export class EditarPage implements OnInit {
+export class DetallesBonosPacientesAdminPage implements OnInit {
+
   public  tituhead: String = 'Editar Perfil';
 
   validations_form: FormGroup;
@@ -41,23 +42,30 @@ export class EditarPage implements OnInit {
       const data = routeData['data'];
       if (data) {
         this.item = data;
-       this.image = this.item.image;
+        this.image = this.item.image;
         this.userId = this.item.userId;
       }
     })
     this.validations_form = this.formBuilder.group({
-      nombreApellido: new FormControl(this.item.nombreApellido, Validators.required),
-      fechaNacimiento: new FormControl(this.item.fechaNacimiento, Validators.required),
-      ciudad: new FormControl(this.item.ciudad, Validators.required),
-      correo: new FormControl(this.item.correo, Validators.required),
-      profesion: new FormControl(this.item.profesion, Validators.required),
-      motivoConsulta: new FormControl(this.item.motivoConsulta, Validators.required),
-      interNombre: new FormControl(this.item.interNombre, Validators.required),
-      enfermedades: new FormControl(this.item.enfermedades, Validators.required),
-      familiares: new FormControl(this.item.familiares, Validators.required),
-      numeroHistorial: new FormControl(this.item.numeroHistorial, Validators.required),
-      telefono: new FormControl(this.item.telefono, Validators.required),
-      fecha: new FormControl(this.item.fecha, Validators.required),
+      nombreApellido: new FormControl(this.item.nombreApellido, ),
+      fechaNacimiento: new FormControl(this.item.fechaNacimiento, ),
+      ciudad: new FormControl(this.item.ciudad, ),
+      correo: new FormControl(this.item.correo, ),
+      profesion: new FormControl(this.item.profesion, ),
+      motivoConsulta: new FormControl(this.item.motivoConsulta, ),
+      interNombre: new FormControl(this.item.interNombre, ),
+      enfermedades: new FormControl(this.item.enfermedades, ),
+      familiares: new FormControl(this.item.familiares, ),
+      numeroHistorial: new FormControl(this.item.numeroHistorial, ),
+      telefono: new FormControl(this.item.telefono, ),
+      fecha: new FormControl(this.item.fecha, ),
+      peso: new FormControl(this.item.peso, ),
+      edad: new FormControl(this.item.edad, ),
+      bono: new FormControl(this.item.bono, Validators.required),
+      citasRestantes: new FormControl(this.item.citasRestantes, Validators.required),
+      altura: new FormControl(this.item.altura, ),
+      referencia: new FormControl(this.item.referencia, ),
+      imc: new FormControl(this.item.imc, ),
     });
   }
 
@@ -75,6 +83,13 @@ export class EditarPage implements OnInit {
       familiares: value.familiares,
       numeroHistorial: value.numeroHistorial,
       fecha: value.fecha,
+      peso: value.peso,
+      edad: value.edad,
+      bono : value.bono,
+      citasRestantes : value.citasRestantes,
+      altura: value.altura,
+      referencia: value.referencia,
+      imc: value.imc,
       userId: this.userId,
     };
     this.firebaseService.actualizarHistorialClinico(this.item.id, data)

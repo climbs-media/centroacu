@@ -1,39 +1,43 @@
 import { Component, OnInit } from '@angular/core';
-import { ChatService } from 'src/app/services/chat.service';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { ToastController, LoadingController, AlertController } from '@ionic/angular';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NuevaCitaService } from 'src/app/services/nueva-cita.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-detall-mensajes',
-  templateUrl: './detall-mensajes.page.html',
-  styleUrls: ['./detall-mensajes.page.scss'],
+  selector: 'app-detalles-citas',
+  templateUrl: './detalles-citas.page.html',
+  styleUrls: ['./detalles-citas.page.scss'],
 })
-export class DetallMensajesPage implements OnInit {
+export class DetallesCitasPage implements OnInit {
 
-
+ 
   validations_form: FormGroup;
   image: any;
   item: any;
   load: boolean = false;
-  userId: any;
+  isAdmin: any = null;
+  userUid: string = null;
 
   constructor(
     private imagePicker: ImagePicker,
     public toastCtrl: ToastController,
     public loadingCtrl: LoadingController,
     private formBuilder: FormBuilder,
-    private firebaseService: ChatService,
+    private firebaseService: NuevaCitaService,
     private webview: WebView,
     private alertCtrl: AlertController,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
     this.getData();
+    this.getCurrentUser();
   }
 
   getData(){
@@ -42,30 +46,28 @@ export class DetallMensajesPage implements OnInit {
       if (data) {
         this.item = data;
         this.image = this.item.image;
-        this.userId = this.item.userId;
       }
     })
     this.validations_form = this.formBuilder.group({
-      title: new FormControl(this.item.title, Validators.required),
-      email: new FormControl(this.item.email, Validators.required),
-      asunto: new FormControl(this.item.asunto, Validators.required),
-      mensaje: new FormControl(this.item.mensaje, Validators.required),
+      titulo: new FormControl(this.item.titulo, Validators.required),
+      descripcion: new FormControl(this.item.descripcion, Validators.required),
+      inicioCita: new FormControl(this.item.inicioCita, Validators.required),
+      finalCita: new FormControl(this.item.finalCita, Validators.required),
     });
   }
 
   onSubmit(value){
     let data = {
-      title: value.title,
-      email: value.email,
-      asunto: value.asunto,
-      mensaje: value.mensaje,
-      image: this.image,
-      userId: this.userId,
+      titulo: value.titulo,
+      descripcion: value.descripcion,
+      inicioCita: value.inicioCita,
+      fecha: value.fecha,
+      finalCita: value.finalCita,
     }
-    this.firebaseService.updateContacto(this.item.id,data)
+    this.firebaseService.actualizarCita(this.item.id,data)
       .then(
         res => {
-          this.router.navigate(["/lista-mensajes-admin"]);
+          this.router.navigate(["/lista-citas"]);
         }
       )
   }
@@ -73,7 +75,7 @@ export class DetallMensajesPage implements OnInit {
   async delete() {
     const alert = await this.alertCtrl.create({
       header: 'Confirmar',
-      message: 'Quieres Eliminarlo ' + this.item.title + '?',
+      message: 'Quieres Eliminarlo ' + this.item.titulo + '?',
       buttons: [
         {
           text: 'No',
@@ -84,10 +86,10 @@ export class DetallMensajesPage implements OnInit {
         {
           text: 'Yes',
           handler: () => {
-            this.firebaseService.deleteContacto(this.item.id)
+            this.firebaseService.borrarCita(this.item.id)
               .then(
                 res => {
-                  this.router.navigate(["/lista-mensajes-admin"]);
+                  this.router.navigate(["/lista-citas"]);
                 },
                 err => console.log(err)
               )
@@ -121,6 +123,18 @@ export class DetallMensajesPage implements OnInit {
       });
   }
 
+  getCurrentUser() {
+    this.authService.isAuth().subscribe(auth => {
+      if (auth) {
+        this.userUid = auth.uid;
+        this.authService.isUserAdmin(this.userUid).subscribe(userRole => {
+          this.isAdmin = userRole && Object.assign({}, userRole.roles).hasOwnProperty('admin') || false;
+          // this.isAdmin = true;
+        });
+      }
+    });
+  }
+
   async uploadImageToFirebase(image){
     const loading = await this.loadingCtrl.create({
       message: 'Please wait...'
@@ -150,3 +164,4 @@ export class DetallMensajesPage implements OnInit {
   }
 
 }
+

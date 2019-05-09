@@ -15,6 +15,7 @@ import { MipesoPageModule } from '../mipeso/mipeso.module';
 import { DiarioEjercicioPageModule } from '../diario-ejercicio/diario-ejercicio.module';
 import { DietasPacientesPageModule } from '../dietas-pacientes/dietas-pacientes.module';
 import { DiarioDieteticoPageModule } from '../diario-dietetico/diario-dietetico.module';
+import { ListaCitasPageModule } from '../lista-citas/lista-citas.module';
 
 const routes: Routes = [
   {
@@ -30,6 +31,7 @@ const routes: Routes = [
         { path: 'tab4', loadChildren: () => MipesoPageModule }, // ESTA EN DUDA PARA CREAR MI PESO USER
 
         { path: 'tab5', loadChildren: () => DiarioEjercicioPageModule },
+        { path: 'tab6', loadChildren: () => ListaCitasPageModule },
 
 
 

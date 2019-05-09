@@ -50,9 +50,9 @@ export class HistorialClinicoService {
 
   // get peso
 
-  getPesoId(historialId) {
+  getPesoId(pesoId) {
     return new Promise<any>((resolve, reject) => {
-      this.snapshotChangesSubscription = this.afs.doc<any>('/nuevo-peso/' + historialId).valueChanges()
+      this.snapshotChangesSubscription = this.afs.doc<any>('/nuevo-peso/' + pesoId).valueChanges()
         .subscribe(snapshots => {
           resolve(snapshots);
         }, err => {
@@ -76,6 +76,7 @@ export class HistorialClinicoService {
   }
 
 
+
   unsubscribeOnLogOut() {
     // remember to unsubscribe from the snapshotChanges
     this.snapshotChangesSubscription.unsubscribe();
@@ -92,10 +93,21 @@ export class HistorialClinicoService {
     });
   }
 
-  actualizarPeso(historialClinicoKey, value) {
+  actualizarPeso(pesoKey, value) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('nuevo-peso').doc(historialClinicoKey).set(value)
+      this.afs.collection('nuevo-peso').doc(pesoKey).set(value)
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      );
+    });
+  }
+
+  borrarPeso(historialClinicoKey) {
+    return new Promise<any>((resolve, reject) => {
+      const currentUser = firebase.auth().currentUser;
+      this.afs.collection('historial-clinico').doc(historialClinicoKey).delete()
       .then(
         res => resolve(res),
         err => reject(err)
@@ -133,6 +145,7 @@ export class HistorialClinicoService {
         peso: value.peso,
         edad: value.edad,
         bono : value.bono,
+        citasRestantes : value.citasRestantes,
         altura: value.altura,
         referencia: value.referencia,
         imc: value.imc,
@@ -145,6 +158,24 @@ export class HistorialClinicoService {
       );
     });
   }
+
+  crearPeso(value) {
+    return new Promise<any>((resolve, reject) => {
+      const currentUser = firebase.auth().currentUser;
+      this.afs.collection('nuevo-peso').add({
+        nombreApellido: value.nombreApellido,
+        fechaConsulta: value.fechaConsulta,
+        peso: value.peso,
+        imc: value.imc,
+        userId: currentUser.uid,
+      })
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      );
+    });
+  }
+
 
   encodeImageUri(imageUri, callback) {
     const c = document.createElement('canvas');

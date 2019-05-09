@@ -3,7 +3,7 @@ import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
 import { AlertController, ToastController, LoadingController } from '@ionic/angular';
 import { formatDate } from '@angular/common';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { AnadirEjercicioService } from 'src/app/services/añadir-ejercicio.service';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
@@ -18,9 +18,9 @@ export class DiarioEjercicioPage implements OnInit {
 
   public  tituhead: String = 'Asignar Ejercicio';
 
-  
   validations_form: FormGroup;
   image: any;
+  items: Array<any>;
 
   event = {
     titulo: '',
@@ -51,11 +51,32 @@ export class DiarioEjercicioPage implements OnInit {
     public router: Router,
     private formBuilder: FormBuilder,
     private firebaseService: AnadirEjercicioService,
+    public alertController: AlertController,
+    private route: ActivatedRoute,
+    private imagePicker: ImagePicker,
   ) { }
 
   ngOnInit() {
-    this.resetFields();
     this.resetEvent();
+    this.resetFields();
+    if (this.route && this.route.data) {
+      this.getData();
+    }
+  }
+
+  async getData() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Espere un momento...',
+      duration: 1000
+    });
+    this.presentLoading(loading);
+
+    this.route.data.subscribe(routeData => {
+      routeData['data'].subscribe(data => {
+        loading.dismiss();
+        this.items = data;
+      });
+    });
   }
 
   resetFields() {
@@ -112,7 +133,7 @@ export class DiarioEjercicioPage implements OnInit {
       if (eventCopy.allDay) {
         const start = eventCopy.horaInicio;
         const end = eventCopy.horaFinal;
-   
+
         eventCopy.horaInicio = new Date(Date.UTC(start.getUTCDate(), start.getUTCMonth(), start.getUTCFullYear()));
         eventCopy.horaFinal = new Date(Date.UTC(end.getUTCDate() + 1, end.getUTCMonth(), end.getUTCFullYear()));
       }
@@ -127,7 +148,7 @@ export class DiarioEjercicioPage implements OnInit {
       var swiper = document.querySelector('.swiper-container')['swiper'];
       swiper.slideNext();
     }
-     
+
     back() {
       // tslint:disable-next-line:prefer-const
       var swiper = document.querySelector('.swiper-container')['swiper'];
@@ -147,7 +168,7 @@ export class DiarioEjercicioPage implements OnInit {
       // Use Angular date pipe for conversion
       const start = formatDate(event.horaInicio, 'medium', this.locale);
       const end = formatDate(event.horaFinal, 'medium', this.locale);
-     
+
       const alert = await this.alertCtrl.create({
         header: event.titulo,
         subHeader: event.descripcion,

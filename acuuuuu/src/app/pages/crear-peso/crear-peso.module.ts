@@ -1,4 +1,3 @@
-import { MiPseResolver } from './mipeso.resolver';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -6,16 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MipesoPage } from './mipeso.page';
-import { ComponentsModule } from '../../componentes/cabecera/components.module';
+import { CrearPesoPage } from './crear-peso.page';
+import { ComponentsModule } from 'src/app/componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: MipesoPage,
-    resolve: {
-      data: MiPseResolver
-    }
+    component: CrearPesoPage
   }
 ];
 
@@ -28,7 +24,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [MipesoPage, ],
-  providers: [MiPseResolver],
+  declarations: [CrearPesoPage]
 })
-export class MipesoPageModule {}
+export class CrearPesoPageModule {}

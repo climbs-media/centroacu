@@ -62,9 +62,11 @@
 
 
             </ion-grid> 
-
-            <ion-button color="primary" round class="agregar" [routerLink]="['/editar-peso', item.payload.doc.id]"> Agregar</ion-button>
-
+            <div *ngIf="items" >
+            <div *ngIf="items.length == 0" class="empty-list">
+                <ion-button color="primary" round class="agregar" (click)="crearPeso()"> Agregar</ion-button>
+            </div>
+          </div>
           
             
 <!--<form method="POST" oninput="resultado.value=parseInt(valor1.value)*2/parseInt(valor2.value)">

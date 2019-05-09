@@ -1,4 +1,3 @@
-import { MiPseResolver } from './mipeso.resolver';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -6,15 +5,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MipesoPage } from './mipeso.page';
-import { ComponentsModule } from '../../componentes/cabecera/components.module';
+import { ListaCitasPage } from './lista-citas.page';
+import { CitasResolver } from './lista-cites.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: MipesoPage,
+    component: ListaCitasPage,
     resolve: {
-      data: MiPseResolver
+      data: CitasResolver
     }
   }
 ];
@@ -24,11 +23,10 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    ComponentsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [MipesoPage, ],
-  providers: [MiPseResolver],
+  declarations: [ListaCitasPage],
+  providers: [CitasResolver]
 })
-export class MipesoPageModule {}
+export class ListaCitasPageModule {}
