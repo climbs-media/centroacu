@@ -44,14 +44,14 @@
          <div *ngIf="items.length > 0">
           <ion-list>
               <ion-item *ngFor="let item of items" style="--background:whitesmoke">
-             <div *ngIf="item.payload.doc.data().nombreApellido && item.payload.doc.data().nombreApellido.length"  class="contenido">
-                  <div *ngIf="item.payload.doc.data().nombreApellido.includes(searchText) ">  
+             <div *ngIf="item.payload.doc.data().titulo && item.payload.doc.data().titulo.length"  class="contenido">
+                  <div *ngIf="item.payload.doc.data().titulo.includes(searchText) ">  
                     <ul>
       <ion-col>
           <div [routerLink]="['/detalles-ejercicios-pacientes-admin', item.payload.doc.id]"  class="cajabuscador"   >
-                <span class="nombreuser">{{item.payload.doc.data().nombreApellido}}</span>
+                <span class="nombreuser">{{item.payload.doc.data().titulo}}</span>
                 <div  class="buscado"  >
-                    <span class="num_edad">N° {{item.payload.doc.data().numeroHistorial}} </span>
+                    <span class="num_edad">N° {{item.payload.doc.data().descripcion}} </span>
                     <span class="num_edad">{{item.payload.doc.data().edad}} Años</span> 
                 </div>
                 

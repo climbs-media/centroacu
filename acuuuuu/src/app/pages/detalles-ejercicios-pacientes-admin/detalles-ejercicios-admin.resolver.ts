@@ -3,7 +3,7 @@ import { ActivatedRouteSnapshot, Resolve} from '@angular/router';
 import { AnadirEjercicioService } from 'src/app/services/añadir-ejercicio.service';
 
 @Injectable()
-export class DetallesEjerciciooResolver implements Resolve<any> {
+export class DetallesEjerciciosResolver implements Resolve<any> {
 
 constructor(public detallesEjercicioService: AnadirEjercicioService) { }
 

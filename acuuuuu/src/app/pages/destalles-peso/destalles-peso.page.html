@@ -79,6 +79,113 @@
     <div class="cajatexto" style="margin-left:18px;">
         <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" padding placeholder="Fecha Consulta" type="date" formControlName="fechaConsulta" class="inputexto" ></ion-datetime>
       </div>
+<!--Formulario inputs bloqueados-->
+
+<ion-col col-12 *ngIf="isPasi === true">
+    <ion-label>Fecha Nascimiento</ion-label>
+  <ion-input class="cajatexto" style="margin-left:18px;"  formControlName="fechaNacimiento" value="{{this.item.fechaNacimiento}}" placeholder="Fecha de Nacimiento" [readonly]="true"></ion-input>
+</ion-col>
+<ion-col col-12 *ngIf="isPasi === true">
+    <ion-label>Ciudad</ion-label>
+  <ion-input class="cajatexto" formControlName="ciudad" style="margin-right:16px;" placeholder="Ciudad" value="{{this.item.ciudad}}" [readonly]="true"> </ion-input>
+</ion-col>
+<ion-row >
+<ion-col col-12 *ngIf="isPasi === true">
+    <ion-label>Correo</ion-label>
+  <ion-input class="cajatexto" formControlName="correo"  placeholder=" Nuevo Correo" value="{{this.item.correo}}" [readonly]="true"></ion-input>
+</ion-col>
+</ion-row>
+<ion-row>
+<ion-col col-12 *ngIf="isPasi === true">
+    <ion-label>Telefono</ion-label>
+  <ion-input class="cajatexto" type="number" formControlName="telefono" value="{{this.item.telefono}}"> </ion-input>
+</ion-col>
+</ion-row>
+<ion-row>
+<ion-col col-12 *ngIf="isPasi === true">
+    <ion-label>Profesion</ion-label>
+  <ion-input class="cajatexto" formControlName="profesion" value="{{this.item.profesion}}" [readonly]="true"> </ion-input>
+</ion-col>
+</ion-row>
+<ion-row> 
+<ion-col col-12 *ngIf="isPasi === true">
+    <ion-label>Motivo Consulta</ion-label>
+  <ion-input class="cajatexto" formControlName="motivoConsulta"  value="{{this.item.motivoConsulta}}" [readonly]="true"></ion-input>
+</ion-col>
+</ion-row>
+<ion-row>
+<ion-col col-12 *ngIf="isPasi === true">
+  <ion-label>Peso</ion-label>
+  <ion-input type="number" class="cajatexto" formControlName="peso" placeholder="Peso" value="{{this.item.peso}}" [readonly]="true"></ion-input>
+</ion-col>
+</ion-row>
+<ion-row>
+<ion-col col-12 *ngIf="isPasi === true">
+    <ion-label>Altura</ion-label>
+  <ion-input type="number" class="cajatexto" formControlName="altura" placeholder="Altura" value="{{this.item.altura}}" [readonly]="true"></ion-input>
+</ion-col>
+</ion-row>
+<ion-row>
+<ion-col col-12 *ngIf="isPasi === true">
+    <ion-label>Edad</ion-label>
+  <ion-input type="number" class="cajatexto" formControlName="edad" placeholder="Edad" value="{{this.item.edad}}" [readonly]="true"></ion-input>
+</ion-col>
+</ion-row>
+<ion-row>
+    <ion-col col-12 *ngIf="isPasi === true">
+        <ion-label>Bono</ion-label>
+      <ion-input type="number" class="cajatexto" formControlName="bono" placeholder="Edad" value="{{this.item.bono}}" [readonly]="true"></ion-input>
+    </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-12 *ngIf="isPasi === true">
+            <ion-label>Edad</ion-label>
+          <ion-input type="number" class="cajatexto" formControlName="citasRestantes" placeholder="Edad" value="{{this.item.citasRestantes}}" [readonly]="true"></ion-input>
+        </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12 *ngIf="isPasi === true">
+                <ion-label>Edad</ion-label>
+              <ion-input type="number" class="cajatexto" formControlName="altura" placeholder="Edad" value="{{this.item.altura}}" [readonly]="true"></ion-input>
+            </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-12 *ngIf="isPasi === true">
+                    <ion-label>Edad</ion-label>
+                  <ion-input type="number" class="cajatexto" formControlName="referencias" placeholder="Edad" value="{{this.item.referencias}}" [readonly]="true"></ion-input>
+                </ion-col>
+                </ion-row>
+
+                <ion-row *ngIf="isPasi === true">
+                    <ion-col text-center style="color:#BB1D1D; font-weight: bold; margin-top: 5px">Antecedentes</ion-col>
+                  </ion-row>
+                  <ion-row *ngIf="isPasi === true">
+                    <ion-col >
+                      <div style="font-weight: bold; margin: 5px; margin-left: 10px">Intervenciones : </div>
+                      <div class="cajatexto">
+                        <ion-input formControlName="interNombre"  type="text" class="inputexto2"  value="{{this.item.interNombre}}" [readonly]="true"></ion-input>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row *ngIf="isPasi === true">
+                    <ion-col >
+                      <div  style="font-weight: bold; margin: 5px; margin-left: 10px">Enfermedades Anteriores  : </div>
+                      <div class="cajatexto" >
+                        <ion-input formControlName="enfermedades"  type="text" class="inputexto2"   value="{{this.item.fechaenfermedades}}" [readonly]="true"></ion-input>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row *ngIf="isPasi === true">
+                    <ion-col >
+                      <div style="font-weight: bold; margin: 5px"> Familiares:</div>
+                      <ion-input formControlName="familiares" placeholder="Seleccionar" value="{{this.item.familiares}}" readonly="true"></ion-input>
+                    </ion-col>
+                  </ion-row>
+
+
+<!--------------------------------------------------------------------------->
+
+
     <ion-item>
         <ion-label position="floating" color="primary">Nuevo Peso</ion-label>
         <ion-input placeholder="Nuevo Peso" type="number" formControlName="peso"></ion-input>

@@ -5,6 +5,7 @@ import {AlertController, LoadingController, ToastController} from '@ionic/angula
 import {HistorialClinicoService} from '../../services/historial-clinico.service';
 import {WebView} from '@ionic-native/ionic-webview/ngx';
 import {ActivatedRoute, Router} from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-detalles-bonos-pacientes-admin',
@@ -20,6 +21,9 @@ export class DetallesBonosPacientesAdminPage implements OnInit {
   item: any;
   userId: any;
   load = false;
+  isAdmin: any = null;
+  isPasi: any = null;
+  userUid: string = null;
 
   constructor(
       private imagePicker: ImagePicker,
@@ -30,11 +34,15 @@ export class DetallesBonosPacientesAdminPage implements OnInit {
       private webview: WebView,
       private alertCtrl: AlertController,
       private route: ActivatedRoute,
-      private router: Router
+      private router: Router,
+      private authService: AuthService,
+
   ) { }
 
   ngOnInit() {
     this.getData();
+    this.getCurrentUser();
+    this.getCurrentUser2();
   }
 
   getData(){
@@ -148,6 +156,30 @@ export class DetallesBonosPacientesAdminPage implements OnInit {
         }, (err) => {
           console.log(err);
         });
+  }
+
+  getCurrentUser() {
+    this.authService.isAuth().subscribe(auth => {
+      if (auth) {
+        this.userUid = auth.uid;
+        this.authService.isUserAdmin(this.userUid).subscribe(userRole => {
+          this.isAdmin = userRole && Object.assign({}, userRole.roles).hasOwnProperty('admin') || false;
+          // this.isAdmin = true;
+        });
+      }
+    });
+  }
+
+  getCurrentUser2() {
+    this.authService.isAuth().subscribe(auth => {
+      if (auth) {
+        this.userUid = auth.uid;
+        this.authService.isUserPacientes(this.userUid).subscribe(userRole => {
+          this.isPasi = userRole && Object.assign({}, userRole.roles).hasOwnProperty('pacientes') || false;
+          // this.isAdmin = true;
+        });
+      }
+    });
   }
 
   async uploadImageToFirebase(image) {

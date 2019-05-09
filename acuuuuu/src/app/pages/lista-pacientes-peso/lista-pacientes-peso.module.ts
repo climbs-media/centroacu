@@ -5,15 +5,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DetallesEjerciciosPacientesAdminPage } from './detalles-ejercicios-pacientes-admin.page';
-import { DetallesEjerciciosResolver } from './detalles-ejercicios-admin.resolver';
+import { ListaPacientesPesoPage } from './lista-pacientes-peso.page';
+import { ListaPesoResolver } from './lista-pacientes-peso.resolver';
+import { ComponentsModule } from 'src/app/componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: DetallesEjerciciosPacientesAdminPage,
+    component: ListaPacientesPesoPage,
     resolve: {
-      data: DetallesEjerciciosResolver
+      data: ListaPesoResolver
     }
   }
 ];
@@ -22,11 +23,12 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ComponentsModule,
     ReactiveFormsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DetallesEjerciciosPacientesAdminPage],
-  providers: [DetallesEjerciciosResolver]
+  declarations: [ListaPacientesPesoPage],
+  providers: [ListaPesoResolver]
 })
-export class DetallesEjerciciosPacientesAdminPageModule {}
+export class ListaPacientesPesoPageModule {}

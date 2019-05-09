@@ -5,7 +5,7 @@
   <ion-grid>
     <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
       <ion-row  text-center >
-        <ion-col col-4 >
+        <ion-col col-4 *ngIf="isPasi === true">
           <div style="color:#BB1D1D ;margin-top:15px; font-weight: bold;" >
             Nº Historia
           </div>
@@ -20,7 +20,7 @@
             </a>
           </div>
         </ion-col>
-        <ion-col col-4>
+        <ion-col *ngIf="isPasi === true" col-4>
           <div style="color:#BB1D1D; margin-top:15px; font-weight: bold;">
             Fecha </div>
           <div class="cajatexto" style="width:120px; ">
@@ -28,7 +28,7 @@
           </div>
         </ion-col>
       </ion-row>
-      <ion-row  >
+      <ion-row *ngIf="isPasi === true" >
         <ion-col text-center > <div style="color:#BB1D1D; font-size: 20px; font-weight: bold; margin-top: 14px;">Datos </div> </ion-col>
       </ion-row>
       <ion-row>
@@ -39,12 +39,12 @@
       </ion-row>
       <ion-row>
           
-        <ion-col col-12>
+        <ion-col col-12 *ngIf="isPasi === true">
             <ion-label>Fecha Nascimiento</ion-label>
           <ion-input class="cajatexto" style="margin-left:18px;"  formControlName="fechaNacimiento" value="{{this.item.fechaNacimiento}}" placeholder="Fecha de Nacimiento" [readonly]="true"></ion-input>
         </ion-col>
         
-        <ion-col col-12>
+        <ion-col col-12 *ngIf="isPasi === true">
             <ion-label>Ciudad</ion-label>
           <ion-input class="cajatexto" formControlName="ciudad" style="margin-right:16px;" placeholder="Ciudad" value="{{this.item.ciudad}}" [readonly]="true"> </ion-input>
         </ion-col>
@@ -52,52 +52,52 @@
 
       <ion-row >
           
-        <ion-col col-12>
+        <ion-col col-12 *ngIf="isPasi === true">
             <ion-label>Correo</ion-label>
           <ion-input class="cajatexto" formControlName="correo"  placeholder=" Nuevo Correo" value="{{this.item.correo}}" [readonly]="true"></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
           
-        <ion-col col-12>
+        <ion-col col-12 *ngIf="isPasi === true">
             <ion-label>Telefono</ion-label>
           <ion-input class="cajatexto" type="number" formControlName="telefono" value="{{this.item.telefono}}"> </ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
           
-        <ion-col col-12>
+        <ion-col col-12 *ngIf="isPasi === true">
             <ion-label>Profesion</ion-label>
           <ion-input class="cajatexto" formControlName="profesion" value="{{this.item.profesion}}" [readonly]="true"> </ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
           
-        <ion-col col-12>
+        <ion-col col-12 *ngIf="isPasi === true">
             <ion-label>Motivo Consulta</ion-label>
           <ion-input class="cajatexto" formControlName="motivoConsulta"  value="{{this.item.motivoConsulta}}" [readonly]="true"></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col col-12>
+        <ion-col col-12 *ngIf="isPasi === true">
           <ion-label>Peso</ion-label>
           <ion-input type="number" class="cajatexto" formControlName="peso" placeholder="Peso" value="{{this.item.peso}}" [readonly]="true"></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col col-12>
+        <ion-col col-12 *ngIf="isPasi === true">
             <ion-label>Altura</ion-label>
           <ion-input type="number" class="cajatexto" formControlName="altura" placeholder="Altura" value="{{this.item.altura}}" [readonly]="true"></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col col-12>
+        <ion-col col-12 *ngIf="isPasi === true">
             <ion-label>Edad</ion-label>
           <ion-input type="number" class="cajatexto" formControlName="edad" placeholder="Edad" value="{{this.item.edad}}" [readonly]="true"></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col col-12>
+        <ion-col col-12 *ngIf="isPasi === true">
             <ion-label>IMC</ion-label>
           <ion-input type="number" class="cajatexto" formControlName="imc" placeholder="IMC" value="{{this.item.imc}}" [readonly]="true"></ion-input>
         </ion-col>
@@ -115,16 +115,16 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col col-12>
+        <ion-col col-12 *ngIf="isPasi === true">
             <ion-label>Referencia</ion-label>
           <ion-input type="text" class="cajatexto" formControlName="referencia" placeholder="Referencia" value="{{this.item.referencia}}" [readonly]="true"></ion-input>
         </ion-col>
       </ion-row>
 
-      <ion-row >
+      <ion-row *ngIf="isPasi === true">
         <ion-col text-center style="color:#BB1D1D; font-weight: bold; margin-top: 5px">Antecedentes</ion-col>
       </ion-row>
-      <ion-row >
+      <ion-row *ngIf="isPasi === true">
         <ion-col >
           <div style="font-weight: bold; margin: 5px; margin-left: 10px">Intervenciones : </div>
           <div class="cajatexto">
@@ -132,7 +132,7 @@
           </div>
         </ion-col>
       </ion-row>
-      <ion-row >
+      <ion-row *ngIf="isPasi === true">
         <ion-col >
           <div  style="font-weight: bold; margin: 5px; margin-left: 10px">Enfermedades Anteriores  : </div>
           <div class="cajatexto" >
@@ -140,7 +140,7 @@
           </div>
         </ion-col>
       </ion-row>
-      <ion-row >
+      <ion-row *ngIf="isPasi === true">
         <ion-col >
           <div style="font-weight: bold; margin: 5px"> Familiares:</div>
           <ion-input formControlName="familiares" placeholder="Seleccionar" value="{{this.item.familiares}}" readonly="true"></ion-input>
