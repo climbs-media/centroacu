@@ -8,6 +8,8 @@ import { IonicModule } from '@ionic/angular';
 import { CitasPacientesAdminPage } from './citas-pacientes-admin.page';
 import { CitasPacientesResolver } from './citas-pacientes-admin.resolver';
 
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
+
 const routes: Routes = [
   {
     path: '',
@@ -22,6 +24,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ComponentsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],

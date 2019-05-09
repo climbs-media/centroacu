@@ -12,6 +12,7 @@ import { MenuService } from 'src/app/services/menu.service';
 })
 export class MenuProteinaPage implements OnInit {
 
+  public  tituhead: String = 'Crear Dieta Proteína';
 
   validations_form: FormGroup;
   image: any;

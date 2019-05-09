@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NuevaDietaPage implements OnInit {
 
+
+  public  tituhead: string = 'Seguimiento';
+  
   constructor() { }
 
   ngOnInit() {

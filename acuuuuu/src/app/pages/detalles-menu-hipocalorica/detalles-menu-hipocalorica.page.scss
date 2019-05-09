@@ -1,0 +1,64 @@
+    
+    *{
+        margin:0px;
+        padding:0px;
+    }
+  
+    //CABEZERA
+  
+     .contiene .logo{
+       font-size: 30px;
+       position:absolute;
+       bottom: 1px;
+       left:10px;
+       padding-bottom: 5px;
+      }
+  
+   .contiene .chat{
+    position: absolute;
+    width:70px;
+    height: 70px;
+    margin-top: -20px;
+    margin-left: -10%;
+    }
+  
+   .contiene{
+           padding-top: 5px;
+           padding-bottom: -10px;
+           height: 35px;
+       
+     }
+   //FIN DE LA CABEZERA
+   // FLECHA RETROCESO
+  .flecha{
+    color :red;
+    font-size: 30px;
+    top:-5px;
+    position: absolute;
+   }
+   .inputexto2{
+    --padding-top:25px;
+    --padding-bottom:25px;
+    height: 30px;
+    margin-left:3px;
+    bottom:4px;
+    color: #3B3B3B;
+    background: #FFFFFF;
+    font-size: 13px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    
+    }
+
+   p{
+    color: #BB1D1D;
+    font-size:14px;
+    font-weight: bold;
+}
+h5{
+    padding: 2px;
+    color: #BB1D1D;
+    font-weight: bold;
+}

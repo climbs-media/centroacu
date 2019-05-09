@@ -10,6 +10,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HistorialesClinicosPage implements OnInit {
 
+
+  public  tituhead: String = 'Historiales Clínicos';
   personabuscar: string;
   encontrado = false;
   items: Array<any>;

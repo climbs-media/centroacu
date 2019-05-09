@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { CitasAdminPage } from './citas-admin.page';
 import { CitasResolver } from './citas-admin.resolver';
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [CitasAdminPage],

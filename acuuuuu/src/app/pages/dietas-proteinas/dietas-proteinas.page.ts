@@ -8,6 +8,7 @@ import { LoadingController, AlertController } from '@ionic/angular';
   styleUrls: ['./dietas-proteinas.page.scss'],
 })
 export class DietasProteinasPage implements OnInit {
+  public  tituhead: String = 'Dietas Proteínicas';
 
   items: Array<any>;
   searchText = '';

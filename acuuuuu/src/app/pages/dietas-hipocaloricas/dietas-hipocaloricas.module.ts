@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { DietasHipocaloricasPage } from './dietas-hipocaloricas.page';
 import { DietaHipocaloricaResolver } from './dietas-hipocalorivas.resolver';
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ComponentsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],

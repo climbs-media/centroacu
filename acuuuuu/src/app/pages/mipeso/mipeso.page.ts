@@ -13,6 +13,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class MipesoPage implements OnInit {
 
+  public  tituhead: String = 'Seguimiento';
   items: Array<any>;
 
   dummyJson = {

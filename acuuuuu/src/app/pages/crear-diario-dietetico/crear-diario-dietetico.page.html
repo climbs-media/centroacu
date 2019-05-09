@@ -1,17 +1,4 @@
-<ion-header text-center  padding-top>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-back-button defaultHref="cliente-seguimiento"></ion-back-button>
-              </ion-buttons>
-  <div class="contiene">
-      <span text-center style="font-size: 26px; margin-left: -20%; font-weight: normal;">
-      &nbsp;&nbsp;Nueva Cita
-      </span>
-      
-          <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
-    </div>
-    </ion-toolbar>
-  </ion-header>
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
   
   <ion-content padding>
       <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">

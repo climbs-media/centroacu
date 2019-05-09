@@ -11,6 +11,7 @@ import { ProteccionService } from 'src/app/services/proteccion.service';
 })
 export class ProteccionPage implements OnInit {
 
+  public  tituhead: string = 'Centro ACU 10';
 
   validations_form: FormGroup;
   image: any;

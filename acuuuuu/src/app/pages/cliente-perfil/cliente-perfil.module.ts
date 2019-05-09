@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ClientePerfilPage } from './cliente-perfil.page';
 import { ClientePerfilResolver } from './cliente-perfil.resolver';
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ComponentsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],

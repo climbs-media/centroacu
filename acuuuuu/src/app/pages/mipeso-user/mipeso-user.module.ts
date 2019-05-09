@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { MipesoUserPage } from './mipeso-user.page';
 import { GraficaComponent } from '../../componentes/grafica/grafica.component';
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
+
 
 const routes: Routes = [
   {
@@ -19,6 +21,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ComponentsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],

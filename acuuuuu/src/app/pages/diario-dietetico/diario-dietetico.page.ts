@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class DiarioDieteticoPage implements OnInit {
 
   constructor(private router: Router) { }
-
+  public  tituhead: String = 'Diario Dietetico';
   ngOnInit() {
   }
 

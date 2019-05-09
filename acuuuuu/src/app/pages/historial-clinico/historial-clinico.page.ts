@@ -14,6 +14,8 @@ import { HistorialClinicoService } from 'src/app/services/historial-clinico.serv
 })
 export class HistorialClinicoPage implements OnInit {
 
+  public  tituhead: String = 'Historial Clinico';
+
   validations_form: FormGroup;
   image: any;
 

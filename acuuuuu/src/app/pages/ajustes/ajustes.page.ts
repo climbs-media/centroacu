@@ -12,6 +12,8 @@ export class AjustesPage implements OnInit {
 
   items: Array<any>;
 
+  public  tituhead: String = 'Ajustes';
+
   constructor(
     public loadingCtrl: LoadingController,
     private router: Router,

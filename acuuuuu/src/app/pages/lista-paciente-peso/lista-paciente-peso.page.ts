@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./lista-paciente-peso.page.scss'],
 })
 export class ListaPacientePesoPage implements OnInit {
-
+  public  tituhead: String = 'Lista de Pesos';
   personabuscar: string;
   encontrado = false;
   items: Array<any>;

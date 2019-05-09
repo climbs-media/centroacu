@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./diario-user.page.scss'],
 })
 export class DiarioUserPage implements OnInit {
+  public  tituhead: string = 'Diario Dietético';
 
   constructor() { }
 

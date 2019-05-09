@@ -12,7 +12,7 @@ import {HistorialClinicoService} from '../../services/historial-clinico.service'
   styleUrls: ['./editar.page.scss'],
 })
 export class EditarPage implements OnInit {
-
+  public  tituhead: String = 'Editar Perfil';
 
   validations_form: FormGroup;
   image: any;

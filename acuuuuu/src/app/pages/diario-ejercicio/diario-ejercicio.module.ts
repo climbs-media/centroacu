@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { DiarioEjercicioPage } from './diario-ejercicio.page';
 import { NgCalendarModule } from 'ionic2-calendar';
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ComponentsModule,
     ReactiveFormsModule,
     IonicModule,
     NgCalendarModule,

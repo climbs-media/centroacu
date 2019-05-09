@@ -9,6 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ClienteHistorialPage implements OnInit {
 
+  public  tituhead: String = 'Editar Perfil';
   items: Array<any>;
 
   constructor(

@@ -8,6 +8,8 @@ import { IonicModule } from '@ionic/angular';
 import { AjustesPage } from './ajustes.page';
 import { AjustesResolver } from './ajustes.resolver';
 
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
+
 const routes: Routes = [
   {
     path: '',
@@ -22,6 +24,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ComponentsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],

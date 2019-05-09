@@ -1,0 +1,31 @@
+    
+    *{
+        margin:0px;
+        padding:0px;
+    }
+  
+    //CABEZERA
+  
+     .contiene .logo{
+       font-size: 30px;
+       bottom: 1px;
+       left:10px;
+       padding-bottom: 5px;
+       float: left;
+        margin-left: 15px;
+      }
+  
+   .contiene .chat{
+   
+    width:70px;
+    height: 70px;
+    float: right;
+    margin-top: -10px;
+    
+    }
+  
+   .contiene{
+           padding-top: 5px;
+           padding-bottom: -10px;
+       
+     }

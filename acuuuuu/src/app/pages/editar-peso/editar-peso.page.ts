@@ -13,6 +13,7 @@ import {HistorialClinicoService} from '../../services/historial-clinico.service'
 })
 export class EditarPesoPage implements OnInit {
 
+  public  tituhead: String = 'Editar Peso';
 
   validations_form: FormGroup;
   image: any;

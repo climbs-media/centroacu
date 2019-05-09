@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { HomeUserPage } from './home-user.page';
 import { ChartsModule } from 'ng2-charts';
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
@@ -20,6 +21,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ChartsModule,
+    ComponentsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],

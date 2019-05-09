@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RegistroPage implements OnInit {
 
-
+  public  tituhead: string = 'Registro Cliente';
 
   validations_form: FormGroup;
   errorMessage = '';

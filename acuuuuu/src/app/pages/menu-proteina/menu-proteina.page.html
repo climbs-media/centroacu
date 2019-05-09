@@ -1,8 +1,4 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>menuProteina</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content padding>
 
@@ -11,23 +7,23 @@
         <ion-row>
           <ion-col>
             <h5>Numero del Menu</h5>
-            <ion-input placeholder="Menu 1" type="text" formControlName="nombreMenu"></ion-input>
+            <ion-input placeholder="Menu 1" type="text" formControlName="nombreMenu" class="inputexto2"></ion-input>
           </ion-col>
           <ion-col size="12">
             
             <h5>Desayuno</h5>
-            <ion-input placeholder="Opción 1" formControlName="desayuno"></ion-input>
-            <ion-input placeholder="Opción 2" formControlName="desayunoDos"></ion-input>
+            <ion-input placeholder="Opción 1" formControlName="desayuno" class="inputexto2" style="margin-bottom: 5px"></ion-input>
+            <ion-input placeholder="Opción 2" formControlName="desayunoDos" class="inputexto2"></ion-input>
           </ion-col>
           <ion-col size="12">
               <h5>Lunes</h5>
                 <ion-item>
                 <ion-label position="floating"><p>Comida</p></ion-label>
-                  <ion-input placeholder="Comida" formControlName="comidaLunes"></ion-input>
+                  <ion-input placeholder="Comida" formControlName="comidaLunes" class="inputexto2"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label position="floating"><p>Cena</p></ion-label>
-                    <ion-input placeholder="Cena" formControlName="cenaLunes"></ion-input>
+                    <ion-input placeholder="Cena" formControlName="cenaLunes" class="inputexto2"></ion-input>
                   </ion-item>
             </ion-col>
               <ion-col size="12">
@@ -36,13 +32,13 @@
                       
                         <ion-label position="floating"><p>Comida</p></ion-label>
                       
-                      <ion-input placeholder="Comida" formControlName="comidaMartes"></ion-input>
+                      <ion-input placeholder="Comida" formControlName="comidaMartes" class="inputexto2"></ion-input>
                     </ion-item>
                     <ion-item>
                       
                         <ion-label position="floating"><p>Cena</p></ion-label>
                         
-                        <ion-input placeholder="Cena" formControlName="cenaMartes"></ion-input>
+                        <ion-input placeholder="Cena" formControlName="cenaMartes" class="inputexto2"></ion-input>
                       </ion-item>
               </ion-col>
               <ion-col size="12">
@@ -51,13 +47,13 @@
                           
                             <ion-label position="floating"><p>Comida</p></ion-label>
                           
-                          <ion-input placeholder="Comida" formControlName="comidaMiercoles"></ion-input>
+                          <ion-input placeholder="Comida" formControlName="comidaMiercoles" class="inputexto2"></ion-input>
                         </ion-item>
                         <ion-item>
                           
                             <ion-label position="floating"><p>Cena</p></ion-label>
                             
-                            <ion-input placeholder="Cena" formControlName="cenaMiercoles"></ion-input>
+                            <ion-input placeholder="Cena" formControlName="cenaMiercoles" class="inputexto2"></ion-input>
                           </ion-item>
                   </ion-col>
                       <ion-col size="12">
@@ -66,13 +62,13 @@
                               
                                 <ion-label position="floating"><p>Comida</p></ion-label>
                               
-                              <ion-input placeholder="Comida" formControlName="comidaJueves"></ion-input>
+                              <ion-input placeholder="Comida" formControlName="comidaJueves" class="inputexto2"></ion-input>
                             </ion-item>
                             <ion-item>
                               
                                 <ion-label position="floating"><p>Cena</p></ion-label>
                                 
-                                <ion-input placeholder="Cena" formControlName="cenaJueves"></ion-input>
+                                <ion-input placeholder="Cena" formControlName="cenaJueves" class="inputexto2"></ion-input>
                               </ion-item>
                           </ion-col>
                           <ion-col size="12">
@@ -81,13 +77,13 @@
                                   
                                     <ion-label position="floating"><p>Comida</p></ion-label>
                                   
-                                  <ion-input placeholder="Comida" formControlName="comidaViernes"></ion-input>
+                                  <ion-input placeholder="Comida" formControlName="comidaViernes" class="inputexto2"></ion-input>
                                 </ion-item>
                                 <ion-item>
                                   
                                     <ion-label position="floating"><p>Cena</p></ion-label>
                                     
-                                    <ion-input placeholder="Cena" formControlName="cenaViernes"></ion-input>
+                                    <ion-input placeholder="Cena" formControlName="cenaViernes" class="inputexto2"></ion-input>
                                   </ion-item>
                               </ion-col>
                               <ion-col size="12">
@@ -96,13 +92,13 @@
                                       
                                         <ion-label position="floating"><p>Comida</p></ion-label>
                                       
-                                      <ion-input placeholder="Comida" formControlName="comidaSabado"></ion-input>
+                                      <ion-input placeholder="Comida" formControlName="comidaSabado" class="inputexto2"></ion-input>
                                     </ion-item>
                                     <ion-item>
                                       
                                         <ion-label position="floating" ><p>Cena</p></ion-label>
                                         
-                                        <ion-input placeholder="Cena" formControlName="cenaSabado"></ion-input>
+                                        <ion-input placeholder="Cena" formControlName="cenaSabado" class="inputexto2"></ion-input>
                                       </ion-item>
                                   </ion-col>
           <ion-col size="12">
@@ -111,13 +107,13 @@
                   
                     <ion-label position="floating"><p>Comida</p></ion-label>
                   
-                  <ion-input placeholder="Comida" formControlName="comidaDomingo"></ion-input>
+                  <ion-input placeholder="Comida" formControlName="comidaDomingo" class="inputexto2"></ion-input>
                 </ion-item>
                 <ion-item>
                   
                     <ion-label position="floating"><p>Cena</p></ion-label>
                     
-                    <ion-input placeholder="Cena" formControlName="cenaDomingo"></ion-input>
+                    <ion-input placeholder="Cena" formControlName="cenaDomingo" class="inputexto2"></ion-input>
                   </ion-item>
               </ion-col>
         </ion-row>

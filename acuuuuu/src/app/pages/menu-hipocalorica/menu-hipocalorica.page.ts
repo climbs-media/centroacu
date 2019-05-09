@@ -12,7 +12,7 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
 })
 export class MenuHipocaloricaPage implements OnInit {
 
-
+  public  tituhead: String = 'Crear Dieta Hipocalórica';
   validations_form: FormGroup;
   image: any;
 

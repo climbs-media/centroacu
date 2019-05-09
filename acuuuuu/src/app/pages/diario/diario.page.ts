@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class DiarioPage implements OnInit {
 
+  public  tituhead: String = 'Centro ACU 10';
+
   constructor(private router: Router) { }
 
   ngOnInit() {

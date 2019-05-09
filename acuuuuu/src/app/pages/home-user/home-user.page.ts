@@ -9,6 +9,8 @@ import { ChartsModule } from 'ng2-charts';
 })
 export class HomeUserPage implements OnInit {
 
+  public  tituhead: String = 'Centro ACU 10';
+
   @ViewChild('barCanvas') barCanvas;
   @ViewChild('lineCanvas') lineCanvas;
   barChart: any;

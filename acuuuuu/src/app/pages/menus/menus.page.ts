@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenusPage implements OnInit {
 
+
+  public  tituhead: String = 'Seguimiento';
   constructor() { }
 
   ngOnInit() {

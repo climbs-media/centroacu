@@ -8,7 +8,7 @@ import { LoadingController, AlertController } from '@ionic/angular';
   styleUrls: ['./dietas-hipocaloricas.page.scss'],
 })
 export class DietasHipocaloricasPage implements OnInit {
-
+  public  tituhead: String = 'Dietas Hipocalóricas';
   items: Array<any>;
   searchText = '';
   isAdmin: any = null;

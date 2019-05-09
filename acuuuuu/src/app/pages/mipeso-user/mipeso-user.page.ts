@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MipesoUserPage implements OnInit {
 
+
+  public  tituhead: String = 'Seguimiento';
+
   constructor() { }
 
   ngOnInit() {

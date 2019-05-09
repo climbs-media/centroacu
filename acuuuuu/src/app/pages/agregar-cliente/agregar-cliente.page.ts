@@ -13,6 +13,8 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
 })
 export class AgregarClientePage implements OnInit {
 
+  public  tituhead: String = 'Centro ACU 10';
+
   constructor() { }
 
 

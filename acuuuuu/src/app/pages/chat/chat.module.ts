@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { ChatPage } from './chat.page';
 
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
+
 const routes: Routes = [
   {
     path: '',
@@ -19,6 +21,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [ChatPage]

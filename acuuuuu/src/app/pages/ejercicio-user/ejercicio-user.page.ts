@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EjercicioUserPage implements OnInit {
 
+
+  public  tituhead: String = 'Centro ACU 10';
   constructor() { }
 
   ngOnInit() {

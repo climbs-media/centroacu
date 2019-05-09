@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { HistorialesClinicosPage } from './historiales-clinicos.page';
 import { HistorialesResolver } from './historiales-clinicos.resolver';
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [HistorialesClinicosPage],

@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ListaPacientePesoPage } from './lista-paciente-peso.page';
 import { PesoResolver } from './lista-paciente-eso.resolver';
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    ComponentsModule,
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)

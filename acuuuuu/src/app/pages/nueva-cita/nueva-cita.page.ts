@@ -16,6 +16,8 @@ import {NuevaCitaService} from '../../services/nueva-cita.service';
   styleUrls: ['./nueva-cita.page.scss'],
 })
 export class NuevaCitaPage implements OnInit {
+
+  public  tituhead: String = 'Nueva Cita';
   validations_form: FormGroup;
   image: any;
   items: Array<any>;
@@ -183,9 +185,9 @@ export class NuevaCitaPage implements OnInit {
 
   onTimeSelected(ev) {
     const selected = new Date(ev.selectedTime);
-    this.event.startTime = selected.toISOString();
+    this.event.startTime = selected.toISOString().slice(0, 10);
     selected.setHours(selected.getHours() + 1);
-    this.event.endTime = (selected.toISOString());
+    this.event.endTime = (selected.toISOString().slice(0, 10));
   }
 
 

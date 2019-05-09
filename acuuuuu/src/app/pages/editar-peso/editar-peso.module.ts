@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { EditarPesoPage } from './editar-peso.page';
 import { EditarPesoResolver } from './editar-peso.resolver';
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ComponentsModule,
     ReactiveFormsModule,
     IonicModule,
     RouterModule.forChild(routes)

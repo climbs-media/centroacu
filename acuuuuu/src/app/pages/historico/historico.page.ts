@@ -9,6 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class HistoricoPage implements OnInit {
 
+  public  tituhead: String = 'Gestión de Citas';
   searchText = '';
   items: Array<any>;
 

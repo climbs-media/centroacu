@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { HistorialFisicoPage } from './historial-fisico.page';
 import { HistoricoFisicoResolver } from './historial-fisico.resolver';
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ComponentsModule,
     ReactiveFormsModule,
     IonicModule,
     RouterModule.forChild(routes)

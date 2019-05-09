@@ -8,7 +8,7 @@ import { LoadingController, AlertController } from '@ionic/angular';
   styleUrls: ['./citas-admin.page.scss'],
 })
 export class CitasAdminPage implements OnInit {
-
+  public  tituhead: String = 'Centro Acu 10';
   personabuscar: string;
   encontrado = false;
   items: Array<any>;

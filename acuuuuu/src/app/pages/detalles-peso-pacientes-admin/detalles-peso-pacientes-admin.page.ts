@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./detalles-peso-pacientes-admin.page.scss'],
 })
 export class DetallesPesoPacientesAdminPage implements OnInit {
-
+  public  tituhead: String = 'Seguimiento';
   validations_form: FormGroup;
   image: any;
   item: any;

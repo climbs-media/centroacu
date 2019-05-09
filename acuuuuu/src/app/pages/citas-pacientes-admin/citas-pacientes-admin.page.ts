@@ -13,6 +13,8 @@ import { ImagePicker } from '@ionic-native/image-picker/ngx';
 })
 export class CitasPacientesAdminPage implements OnInit {
 
+  public  tituhead: String = 'Citas Pacientes';
+
   validations_form: FormGroup;
   image: any;
   item: any;

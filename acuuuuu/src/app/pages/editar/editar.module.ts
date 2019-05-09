@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { EditarPage } from './editar.page';
 import {EditarResolver} from './editar.resolver';
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    ComponentsModule,
     FormsModule,
       ReactiveFormsModule,
     IonicModule,

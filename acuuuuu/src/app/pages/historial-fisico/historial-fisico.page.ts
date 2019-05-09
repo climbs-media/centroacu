@@ -14,7 +14,7 @@ import { HistorialFisicoService } from 'src/app/services/historial-fisico.servic
 })
 export class HistorialFisicoPage implements OnInit {
 
-
+  public  tituhead: String = 'Historial Físico';
   validations_form: FormGroup;
   image: any;
   items: Array<any>;

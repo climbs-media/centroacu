@@ -1,6 +1,4 @@
-<ion-header text-center>
-    <h1>Registro Cliente</h1>
-</ion-header>
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
 <ion-content padding style="font-family: Comfortaa">
     <form class="form centrado animated fadeIn fast" [formGroup]="validations_form" (ngSubmit)="tryRegistrar(validations_form.value)">
 

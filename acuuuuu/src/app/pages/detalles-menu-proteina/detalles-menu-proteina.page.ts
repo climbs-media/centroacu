@@ -111,7 +111,7 @@ export class DetallesMenuProteinaPage implements OnInit {
             this.menuService.borrarMenuProteina(this.item.id)
               .then(
                 res => {
-                  this.router.navigate(['/home']);
+                  this.router.navigate(['/dietas-proteinas  ']);
                 },
                 err => console.log(err)
               );

@@ -1,16 +1,4 @@
-<ion-header text-center  padding-top>
-    <ion-toolbar>
-  <div class="contiene">
-      <img width="40" height="45"  src="../../../assets/imgs/logo.png" class="logo">
-      <span text-center style="padding-left:48px;padding-right:48px;font-size: 20px;">
-       &nbsp;&nbsp;Dietas Hipocalorícas
-      </span>
-      
-          <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
-    </div>
-    </ion-toolbar>
-     
-</ion-header>
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content padding margin-top>
     <h4>
@@ -27,12 +15,15 @@
                   </div>
             </ion-col>
             </ul>
-    <ion-col>
-      <div   class="bot bot_irHistoryClinico" >
+          </ion-row>
+          <ion-row>
+
+      <div   class="bot2 bot_irHistoryClinico"  (click)="crearDietaHipo()">
          <ion-icon name="ios-add-circle"  name="md-add-circle" class="iconos"></ion-icon>
          <p style="font-size:13px; font-weight: bold; margin-top:-5%" (click)="crearDietaHipo()">Añadir Dieta</p>
        </div>
- </ion-col>
-            </ion-row>
+
+</ion-row>
+            
     </ion-grid>
 </ion-content>

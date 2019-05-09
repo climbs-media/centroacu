@@ -16,6 +16,8 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
 })
 export class DiarioEjercicioPage implements OnInit {
 
+  public  tituhead: String = 'Asignar Ejercicio';
+
   
   validations_form: FormGroup;
   image: any;
@@ -32,7 +34,7 @@ export class DiarioEjercicioPage implements OnInit {
   eventSource = [];
 
   calendar = { 
-    mode: 'week',
+    mode: 'month',
     currentDate: new Date(),
   }
 
@@ -171,9 +173,9 @@ export class DiarioEjercicioPage implements OnInit {
 
   onTimeSelected(ev) {
     const selected = new Date(ev.selectedTime);
-    this.event.horaInicio = selected.toISOString();
+    this.event.horaInicio = selected.toISOString().slice(0, 10);
     selected.setHours(selected.getHours() + 1);
-    this.event.horaFinal = (selected.toISOString());
+    this.event.horaFinal = (selected.toISOString().slice(0, 10));
   }
 
 

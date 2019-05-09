@@ -8,6 +8,8 @@ import { IonicModule } from '@ionic/angular';
 import { BonoCitasPage } from './bono-citas.page';
 import { BonoResolver } from './bono-citas.resolver';
 
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
+
 const routes: Routes = [
   {
     path: '',
@@ -22,6 +24,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ComponentsModule,
     ReactiveFormsModule,
     IonicModule,
     RouterModule.forChild(routes)

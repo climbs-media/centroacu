@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatPage implements OnInit {
 
+  public  tituhead: String = ' Chat ';
+
   constructor() { }
 
   ngOnInit() {

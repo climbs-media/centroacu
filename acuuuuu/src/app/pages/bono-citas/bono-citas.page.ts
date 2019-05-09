@@ -15,6 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class BonoCitasPage implements OnInit {
 
+  public  tituhead: String = 'Centro Acu 10 ';
 
   validations_form: FormGroup;
   image: any;

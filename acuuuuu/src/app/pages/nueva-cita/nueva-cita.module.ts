@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { NuevaCitaPage } from './nueva-cita.page';
 import { NgCalendarModule } from 'ionic2-calendar';
 import { CitaResolver } from './nueva-cita.resolver';
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ComponentsModule,
     ReactiveFormsModule,
     IonicModule,
     NgCalendarModule,

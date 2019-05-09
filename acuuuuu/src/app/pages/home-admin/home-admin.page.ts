@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HomeAdminPage implements OnInit {
 
+  public  tituhead: String = 'Centro ACU 10';
   personabuscar: string;
   encontrado = false;
   items: Array<any>;
