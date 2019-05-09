@@ -6,11 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { DiarioDieteticoPage } from './diario-dietetico.page';
-<<<<<<< HEAD
 import { ComponentsModule } from '../../componentes/cabecera/components.module';
-=======
 import { DiarioResolver } from './diario-dietetico.resolver';
->>>>>>> ab22a7aaa920a1b675e30f11ebef7b4480872580
 
 const routes: Routes = [
   {

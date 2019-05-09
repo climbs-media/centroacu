@@ -33,6 +33,7 @@ export class DetallesMenuHipocaloricaPage implements OnInit {
 
   ngOnInit() {
     this.getData();
+    this.getCurrentUser();
     this.getCurrentUser2();
   }
 
@@ -111,11 +112,7 @@ export class DetallesMenuHipocaloricaPage implements OnInit {
             this.menuService.borrarMenuHipocalorico(this.item.id)
               .then(
                 res => {
-<<<<<<< HEAD
                   this.router.navigate(['/dietas-hipocaloricas']);
-=======
-                  this.router.navigate(['/cliente-perfil']);
->>>>>>> ab22a7aaa920a1b675e30f11ebef7b4480872580
                 },
                 err => console.log(err)
               );

@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ChatPage } from './chat.page';
-
-import { ComponentsModule } from '../../componentes/cabecera/components.module';
+import { DietasPacientesPage } from './dietas-pacientes.page';
+import { ComponentsModule } from 'src/app/componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: ChatPage
+    component: DietasPacientesPage
   }
 ];
 
@@ -20,11 +19,10 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
-    IonicModule,
     ComponentsModule,
+    IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ChatPage]
+  declarations: [DietasPacientesPage]
 })
-export class ChatPageModule {}
+export class DietasPacientesPageModule {}

@@ -1,16 +1,11 @@
-<<<<<<< HEAD
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 <ion-content padding>
-=======
 
-<!-- Default form contact -->
+
 <form padding style="font-family: Comfortaa" class="animated fadeIn fast" style="font-family: Comfortaa" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
-    <div text-center>
-        <p class="h4 mb-4">Contactanos</p>
-    </div>
-    <!-- Name -->
+
+    <!--Nombre-->
     <input formControlName="title" type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Nombre">
->>>>>>> ab22a7aaa920a1b675e30f11ebef7b4480872580
 
     <!-- Email -->
     <input formControlName="email" type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="Correo Electronico">
@@ -18,10 +13,10 @@
     <!-- Subject -->
     <label>Asunto</label>
     <select formControlName="asunto" class="browser-default custom-select mb-4">
-          <option value="" disabled>Escoge una Opción</option>
-          <option value="Feedback" selected>Preguntas</option>
-          <option value="Bug">Reportar un Bug</option>
-          <option value="Solicitudes">Actualizaciónes</option>
+        <option value="" disabled>Escoge una Opción</option>
+        <option value="Feedback" selected>Preguntas</option>
+        <option value="Bug">Reportar un Bug</option>
+        <option value="Solicitudes">Actualizaciónes</option>
         </select>
 
     <!-- Message -->

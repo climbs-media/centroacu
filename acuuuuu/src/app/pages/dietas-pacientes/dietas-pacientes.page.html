@@ -1,0 +1,26 @@
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
+<ion-content padding margin-top>
+        <button routerLink="/cliente-seguimiento"><img src="../../../assets/imgs/retroceso.png" style="background: none; position: absolute; margin-top: -15px;"></button> 
+    <ion-grid margin-top>
+    <ion-row margin-top>
+    <ion-col>
+        <div routerLink="/dietas-hipocaloricas"  class="bot bot_irHistoryClinico">
+            <img src="../../../assets/imgs/bot_cliente_seguimiento/menuhipo.png">
+            <p style="font-size:13px; font-weight: bold;">Hipocalórica</p>
+          </div>
+    </ion-col>
+    <ion-col>
+         <div  routerLink="/dietas-proteinas" class="bot bot_proteina">
+            <img src="../../../assets/imgs/bot_cliente_seguimiento/menuproteinas.png">
+            <p style="font-size:13px; font-weight: bold; margin-top:-20%">Menús<br>Proteínas</p>
+          </div>
+    </ion-col>
+    <ion-col>
+        <div  routerLink="/dietas-cenas" class="bot bot_irHistoryClinico">
+           <img src="../../../assets/imgs/bot_cliente_seguimiento/menucenas.png">
+           <p style="font-size:13px; font-weight: bold;">Menús Cenas</p>
+         </div>
+   </ion-col>
+    </ion-row>
+    </ion-grid>
+</ion-content>

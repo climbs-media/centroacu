@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cabecera',
@@ -10,9 +11,13 @@ export class CabeceraComponent implements OnInit {
   @Input() titulohead: any;
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  contacto() {
+    this.router.navigate(['/chat']);
   }
 
 }

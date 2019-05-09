@@ -1,0 +1,51 @@
+
+<ion-content *ngIf="items" class="fondo" style="font-family: Comfortaa">
+  <ion-searchbar [(ngModel)]="searchText" placeholder="Buscador..." style="text-transform: lowercase"></ion-searchbar>
+    <div text-center>
+        <ion-grid>
+            <ion-row text-center class="animated fadeIn fast">
+                <ion-col size="2"><img class="boton-mas" src="../../../assets/imgs/Group 7.png" (click)="mostrarPop($event)"></ion-col>
+                <ion-col size="5"><button color="primary" type="button" class="btn btn-primary btn-sm" (click)="goSolicitudes()">Solicitudes</button> </ion-col>
+                <ion-col size="5"><button color="primary" type="button" class="btn btn-primary btn-sm" (click)="goMensajes()">Mensajes</button> </ion-col>
+            </ion-row>
+        </ion-grid>
+        <hr>
+        <div class="card" *ngIf="items.length > 0" class="list-mini animated fadeIn fast font-family: Comfortaa">
+            <ion-list>
+                <ion-item *ngFor="let item of items" style="--background:whitesmoke">
+                    <!--[routerLink]="['/admin-contact', item.payload.doc.id]" no funciona-->
+                  <div *ngIf="item.payload.doc.data().title && item.payload.doc.data().title.length" >
+                    <div *ngIf="item.payload.doc.data().title.includes(searchText) ">
+                  <ion-card>
+                    <ion-card-content style="color: black;">
+                      <p><i>{{item.payload.doc.data().title}}</i></p>
+                      <p><i>{{item.payload.doc.data().email}}</i></p>
+                      <p><i><ion-label>{{item.payload.doc.data().instagram}}</ion-label></i></p>
+                      <p><i>{{item.payload.doc.data().asunto}}</i></p>
+                    </ion-card-content>
+                    <ion-card-content>
+                      {{item.payload.doc.data().mensaje}}
+                    </ion-card-content>
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col size="6">
+                            <ion-button size="small" [routerLink]="['/detalle-mensajes', item.payload.doc.id]">Detalles</ion-button>
+                        </ion-col>
+                        <ion-col size="6">
+                            <ion-button size="small"  href="mailto:{{item.payload.doc.data().email}}">Contestar</ion-button>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-card>
+                    </div>
+                  </div>
+                </ion-item>
+
+
+            </ion-list>
+        </div>
+        <div *ngIf="items.length == 0" class="empty-list">
+            Sin Mensajes en este Momento
+        </div>
+    </div>
+</ion-content>

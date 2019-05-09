@@ -12,11 +12,7 @@ import { ChatService } from 'src/app/services/chat.service';
 })
 export class ChatPage implements OnInit {
 
-<<<<<<< HEAD
   public  tituhead: String = ' Chat ';
-
-  constructor() { }
-=======
   validations_form: FormGroup;
   image: any;
 
@@ -28,7 +24,6 @@ export class ChatPage implements OnInit {
     private contactoService: ChatService,
     private webview: WebView
   ) { }
->>>>>>> ab22a7aaa920a1b675e30f11ebef7b4480872580
 
   ngOnInit() {
     this.resetFields();

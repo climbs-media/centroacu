@@ -132,12 +132,12 @@
           </ion-row>
           </ion-grid>
           <div text-center> 
-              <ion-button type="submit" [disabled]="!validations_form.valid" style="margin-bottom:15px;">Modificar</ion-button>
+              <ion-button *ngIf="isAdmin === true" type="submit" [disabled]="!validations_form.valid" style="margin-bottom:15px;">Modificar</ion-button>
           </div>
           
       </form>
       <div text-center>
-        <ion-button (click)="delete()">Borrar</ion-button>
+        <ion-button *ngIf="isAdmin === true" (click)="delete()">Borrar</ion-button>
       </div>
   </ion-content>
   

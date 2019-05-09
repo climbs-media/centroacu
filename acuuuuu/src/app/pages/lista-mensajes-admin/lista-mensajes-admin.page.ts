@@ -1,20 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController, LoadingController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
-import { LoadingController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-diario-dietetico',
-  templateUrl: './diario-dietetico.page.html',
-  styleUrls: ['./diario-dietetico.page.scss'],
+  selector: 'app-lista-mensajes-admin',
+  templateUrl: './lista-mensajes-admin.page.html',
+  styleUrls: ['./lista-mensajes-admin.page.scss'],
 })
-export class DiarioDieteticoPage implements OnInit {
+export class ListaMensajesAdminPage implements OnInit {
 
   items: Array<any>;
+  searchText = '';
   
-  constructor(public loadingCtrl: LoadingController,
-    private router: Router,
-    private route: ActivatedRoute, ) { }
-  public  tituhead: String = 'Diario Dietetico';
+
+  constructor(public alertController: AlertController, 
+              private loadingCtrl: LoadingController,
+              private router: Router,
+              private route: ActivatedRoute,) {
+  }
 
   ngOnInit() {
     if (this.route && this.route.data) {
@@ -22,10 +25,9 @@ export class DiarioDieteticoPage implements OnInit {
     }
   }
 
-  async getData() {
+  async getData(){
     const loading = await this.loadingCtrl.create({
-      message: 'Espere un momento...',
-      duration: 1000
+      message: 'Espere un momento...'
     });
     this.presentLoading(loading);
 
@@ -41,7 +43,4 @@ export class DiarioDieteticoPage implements OnInit {
     return await loading.present();
   }
 
-  diarioDietetico() {
-    this.router.navigate(['/crear-diario-dietetico']);
-  }
 }

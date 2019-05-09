@@ -24,13 +24,8 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { PopoverHistorialDieteticoPageModule } from './pages/popover-historial-dietetico/popover-historial-dietetico.module';
 
 
-
 @NgModule({
-<<<<<<< HEAD
-  declarations: [AppComponent],
-=======
   declarations: [AppComponent, ],
->>>>>>> ab22a7aaa920a1b675e30f11ebef7b4480872580
   entryComponents: [],
   imports: [BrowserModule,
   IonicModule.forRoot(),

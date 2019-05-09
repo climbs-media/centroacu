@@ -5,14 +5,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ChatPage } from './chat.page';
-
-import { ComponentsModule } from '../../componentes/cabecera/components.module';
+import { ListaMensajesAdminPage } from './lista-mensajes-admin.page';
+import { ChatResolver } from './lista-mensajes-admin.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: ChatPage
+    component: ListaMensajesAdminPage,
+    resolve: {
+      data: ChatResolver
+    }
   }
 ];
 
@@ -22,9 +24,9 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    ComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ChatPage]
+  declarations: [ListaMensajesAdminPage],
+  providers: [ChatResolver]
 })
-export class ChatPageModule {}
+export class ListaMensajesAdminPageModule {}

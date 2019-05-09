@@ -69,7 +69,6 @@ export class ChatService {
         email: value.email,
         asunto: value.asunto,
         mensaje: value.mensaje,
-        image: value.image,
         userId: currentUser.uid,
       })
         .then(

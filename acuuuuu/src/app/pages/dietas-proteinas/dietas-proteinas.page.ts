@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoadingController, AlertController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-dietas-proteinas',
@@ -21,6 +22,7 @@ export class DietasProteinasPage implements OnInit {
               private loadingCtrl: LoadingController,
               private router: Router,
               private route: ActivatedRoute, 
+              private authService: AuthService,
               ) {
   }
 
@@ -28,6 +30,7 @@ export class DietasProteinasPage implements OnInit {
     if (this.route && this.route.data) {
       this.getData();
     }
+    this.getCurrentUser();
   }
 
   async getData() {
@@ -41,6 +44,18 @@ export class DietasProteinasPage implements OnInit {
         loading.dismiss();
         this.items = data;
       });
+    });
+  }
+
+  getCurrentUser() {
+    this.authService.isAuth().subscribe(auth => {
+      if (auth) {
+        this.userUid = auth.uid;
+        this.authService.isUserAdmin(this.userUid).subscribe(userRole => {
+          this.isAdmin = userRole && Object.assign({}, userRole.roles).hasOwnProperty('admin') || false;
+          // this.isAdmin = true;
+        });
+      }
     });
   }
 

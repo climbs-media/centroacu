@@ -13,6 +13,8 @@ import { DiarioUserPageModule } from '../diario-user/diario-user.module';
 import { MipesoUserPageModule } from '../mipeso-user/mipeso-user.module';
 import { MipesoPageModule } from '../mipeso/mipeso.module';
 import { DiarioEjercicioPageModule } from '../diario-ejercicio/diario-ejercicio.module';
+import { DietasPacientesPageModule } from '../dietas-pacientes/dietas-pacientes.module';
+import { DiarioDieteticoPageModule } from '../diario-dietetico/diario-dietetico.module';
 
 const routes: Routes = [
   {
@@ -22,10 +24,10 @@ const routes: Routes = [
       { path: 'tab1', loadChildren: () => HomeUserPageModule },
       { path: 'tab1/ejercicio-user', loadChildren: () => EjercicioUserPageModule },
 
-        { path: 'tab2', loadChildren: () => AlimentacionUserPageModule },
-        { path: 'tab3', loadChildren: () => DiarioUserPageModule },
+        { path: 'tab2', loadChildren: () => DiarioDieteticoPageModule },
+        { path: 'tab3', loadChildren: () => DietasPacientesPageModule },
 
-        { path: 'tab4', loadChildren: () => MipesoUserPageModule }, // ESTA EN DUDA PARA CREAR MI PESO USER
+        { path: 'tab4', loadChildren: () => MipesoPageModule }, // ESTA EN DUDA PARA CREAR MI PESO USER
 
         { path: 'tab5', loadChildren: () => DiarioEjercicioPageModule },
 
