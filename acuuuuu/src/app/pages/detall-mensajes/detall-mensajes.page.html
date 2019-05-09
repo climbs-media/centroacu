@@ -1,19 +1,5 @@
 
 <ion-content padding style="font-family: Comfortaa">
-<div>
-    <ion-row class="animated fadeIn fast">
-        <ion-col size="6" offset="3">
-            <img [src]="image" alt="imagen" />
-        </ion-col>
-    </ion-row>
-    <ion-row class="animated fadeIn fast">
-        <ion-col size="6" offset="3">
-            <ion-button fill="outline" expand="block" size="small" color="ion-color-dark" class="text-boton" (click)="openImagePicker()">
-                <ion-icon name="cloud-upload"></ion-icon>
-            </ion-button>
-        </ion-col>
-    </ion-row>
-</div>
 <form class="animated fadeIn fast" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
   
     <ion-item>
@@ -29,7 +15,8 @@
         <ion-input type="text" formControlName="asunto" [readonly]="false"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label formControlName="mensaje"></ion-label>
+    <ion-label position="floating" color="ion-color-dark"><a>Mensaje</a></ion-label>
+        <textarea value="mensaje"></textarea>
     </ion-item>
     <!--
     <div>

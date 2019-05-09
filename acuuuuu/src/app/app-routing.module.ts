@@ -65,9 +65,10 @@ const routes: Routes = [
   // tslint:disable-next-line:max-line-length
   { path: 'lista-pacientes-ejercicios', loadChildren: './pages/lista-pacientes-ejercicios/lista-pacientes-ejercicios.module#ListaPacientesEjerciciosPageModule' },
   // tslint:disable-next-line:max-line-length
-  { path: 'detalles-ejercicios-pacientes-admin/:id', loadChildren: './pages/detalles-ejercicios-pacientes-admin/detalles-ejercicios-pacientes-admin.module#DetallesEjerciciosPacientesAdminPageModule' },  { path: 'dietas-pacientes', loadChildren: './pages/dietas-pacientes/dietas-pacientes.module#DietasPacientesPageModule' },
+  { path: 'detalles-ejercicios-pacientes-admin/:id', loadChildren: './pages/detalles-ejercicios-pacientes-admin/detalles-ejercicios-pacientes-admin.module#DetallesEjerciciosPacientesAdminPageModule' },
+  { path: 'dietas-pacientes', loadChildren: './pages/dietas-pacientes/dietas-pacientes.module#DietasPacientesPageModule' },
   { path: 'lista-mensajes-admin', loadChildren: './pages/lista-mensajes-admin/lista-mensajes-admin.module#ListaMensajesAdminPageModule' },
-  { path: 'detall-mensajes', loadChildren: './pages/detall-mensajes/detall-mensajes.module#DetallMensajesPageModule' },
+  { path: 'detall-mensajes/:id', loadChildren: './pages/detall-mensajes/detall-mensajes.module#DetallMensajesPageModule' },
 
 
 
