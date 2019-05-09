@@ -6,7 +6,7 @@
   <!--<ion-grid *ngFor="let item of items">-->
   <ion-row >
     <ion-col>
-        <button routerLink="/home-admin"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%; margin-top: -10px;"></button> 
+       <!-- <button routerLink="/home-admin"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%; margin-top: -10px;"></button> --> 
       <!--
         <div class="circular">
             <img   class="circular" src="../../../assets/imgs/foto_cliente.jpg" >
@@ -56,18 +56,17 @@
 <ion-row>
 <ion-col col-4>
     <div routerLink="/lista-mensajes-admin" class="bot bot_citas">
-      <img src="../../../assets/imgs/bot_cliente_seguimiento/gestioncitas.png">
+      <img src="../../../assets/imgs/bot_cliente_seguimiento/mensajes.png" style="margin-top:25px; margin-bottom:30px; width: 70%;">
       <p>Mensajes</p>
         </div>
   </ion-col>
-</ion-row> 
-<ion-row>
 <ion-col col-4>
     <div routerLink="/lista-bono-pacientes" class="bot bot_citas">
       <img src="../../../assets/imgs/bot_cliente_seguimiento/gestioncitas.png">
       <p>Bonos</p>
         </div>
   </ion-col>
+
 </ion-row> 
 
 <!-- siguientes botones  -->
@@ -93,5 +92,5 @@
 </ion-content>
 
 <div *ngIf="isPasi === true" text-center>
-    <ion-button expand="block" class="centrado" routerLink="/home-user" >Acceder</ion-button>
+    <ion-button expand="block" class="centrado" routerLink="/tabs/tab1" >Acceder</ion-button>
     </div>

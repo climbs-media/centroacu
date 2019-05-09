@@ -47,7 +47,7 @@ export class LoginPacientePage implements OnInit {
   tryLogin(value) {
     this.authService.conectar(value)
     .then(res => {
-      this.router.navigate(['home-user']);
+      this.router.navigate(['/tabs/tab1']);
     }, err => {
       this.errorMessage = err.message;
       console.log(err);
