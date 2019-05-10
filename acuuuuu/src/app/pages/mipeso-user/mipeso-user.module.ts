@@ -8,12 +8,16 @@ import { IonicModule } from '@ionic/angular';
 import { MipesoUserPage } from './mipeso-user.page';
 import { GraficaComponent } from '../../componentes/grafica/grafica.component';
 import { ComponentsModule } from '../../componentes/cabecera/components.module';
+import { MiPesoResolver } from './mipeso-user.resolver';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: MipesoUserPage
+    component: MipesoUserPage,
+    resolve: {
+      data: MiPesoResolver
+    }
   }
 ];
 
@@ -25,6 +29,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [MipesoUserPage, GraficaComponent]
+  declarations: [MipesoUserPage, GraficaComponent],
+  providers: [MiPesoResolver]
 })
 export class MipesoUserPageModule {}

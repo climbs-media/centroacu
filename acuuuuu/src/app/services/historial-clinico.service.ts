@@ -104,7 +104,7 @@ export class HistorialClinicoService {
   actualizarPeso(pesoKey, value) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('historial-clinico').doc(pesoKey).set(value)
+      this.afs.collection('nuevo-peso').doc(pesoKey).set(value)
       .then(
         res => resolve(res),
         err => reject(err)
@@ -115,7 +115,7 @@ export class HistorialClinicoService {
   borrarPeso(historialClinicoKey) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('historial-clinico').doc(historialClinicoKey).delete()
+      this.afs.collection('nuevo-peso').doc(historialClinicoKey).delete()
       .then(
         res => resolve(res),
         err => reject(err)
@@ -166,7 +166,7 @@ export class HistorialClinicoService {
     });
   }
 
-/*  crearPeso(value) {
+  crearPeso(value) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
       this.afs.collection('nuevo-peso').add({
@@ -181,7 +181,7 @@ export class HistorialClinicoService {
         err => reject(err)
       );
     });
-  }*/
+  }
 
 
   encodeImageUri(imageUri, callback) {

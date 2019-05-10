@@ -41,7 +41,7 @@
               </ion-row>
               <div *ngFor="let item of items" >
           <!-- <ion-button color="primary" round class="agregar" (click)="openPicker()"> Agregar</ion-button> --> 
-              <ion-button color="primary" round class="agregar" [routerLink]="['/editar-peso', item.payload.doc.id]"> Agregar</ion-button>
+              <ion-button color="primary" round class="agregar" [routerLink]="['/detalles-peso-pacientes-admin', item.payload.doc.id]"> Agregar</ion-button>
             </div>
               <h4>Indice IMC</h4>
               <div class="cont">
