@@ -1,0 +1,81 @@
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
+  
+  <ion-content padding>
+  
+      <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <h5>Número del Ménu</h5>
+              <ion-input placeholder="Menu 1" type="text" formControlName="nombreMenu" class="inputexto2"></ion-input>
+            </ion-col>
+            <ion-col size="12">
+                <h5>Lunes</h5>
+                  <ion-item>
+                      <ion-label position="floating"><p>Cena </p></ion-label>
+                      <ion-input placeholder="Cena" formControlName="cenaLunes" class="inputexto2"></ion-input>
+                    </ion-item>
+              </ion-col>
+                <ion-col size="12">
+                    <h5>Martes</h5>
+                      <ion-item>
+                          <ion-label position="floating"><p>Cena </p></ion-label>
+                          <ion-input placeholder="Cena" formControlName="cenaMartes" class="inputexto2"></ion-input>
+                        </ion-item>
+                </ion-col>
+                <ion-col size="12">
+                        <h5>Miercoles</h5>
+                          <ion-item>
+                        
+                              <ion-label position="floating"><p>Cena </p></ion-label>
+                              
+                              <ion-input placeholder="Cena" formControlName="cenaMiercoles" class="inputexto2"></ion-input>
+                            </ion-item>
+                    </ion-col>
+                        <ion-col size="12">
+                            <h5>Jueves</h5>
+                       
+                              <ion-item>
+                                
+                                  <ion-label position="floating"><p>Cena </p></ion-label>
+                                  
+                                  <ion-input placeholder="Cena" formControlName="cenaJueves" class="inputexto2"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col size="12">
+                                <h5>Viernes</h5>
+                                
+                                  <ion-item>
+                                    
+                                      <ion-label position="floating"><p>Cena </p></ion-label>
+                                      
+                                      <ion-input placeholder="Cena" formControlName="cenaViernes" class="inputexto2"></ion-input>
+                                    </ion-item>
+                                </ion-col>
+                                <ion-col size="12">
+                                    <h5>Sabado</h5>
+                                    
+                                      <ion-item>
+                                        
+                                          <ion-label position="floating" ><p>Cena </p></ion-label>
+                                          
+                                          <ion-input placeholder="Cena" formControlName="cenaSabado"></ion-input>
+                                        </ion-item>
+                                    </ion-col>
+            <ion-col size="12">
+                <h5>Domingo</h5>
+              
+                  <ion-item>
+                    
+                      <ion-label position="floating"><p>Cena </p></ion-label>
+                      
+                      <ion-input placeholder="Cena" formControlName="cenaDomingo"></ion-input>
+                    </ion-item>
+                </ion-col>
+          </ion-row>
+          </ion-grid>
+  
+          <ion-button type="submit" [disabled]="!validations_form.valid" text-center>Agregar Menu</ion-button>
+      </form>
+  </ion-content>
+  

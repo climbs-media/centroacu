@@ -5,8 +5,8 @@
     <h4>DIETAS</h4>
     <ion-grid margin-top>
     <ion-row margin-top>
-    <ion-col>
-        <div routerLink="/diario-dietetico" class="bot bot_irHistoryClinico">
+    <ion-col (click)="diarioDietetico()">
+        <div class="bot bot_irHistoryClinico">
             <img src="../../../assets/imgs/bot_cliente_seguimiento/diarioDietetico.png">
             <p style="font-size:14px">Diario Dietetico</p>
             </div>
@@ -17,6 +17,9 @@
             <p style="font-size:14px">Nueva Dieta</p>
             </div>
     </ion-col>
+    <ion-col (click)="diarioDietetico()">
+          <button>diario</button>
+        </ion-col>
     </ion-row>
     </ion-grid>
 </ion-content>

@@ -7,11 +7,15 @@ import { IonicModule } from '@ionic/angular';
 
 import { DietasCenasPage } from './dietas-cenas.page';
 import { ComponentsModule } from '../../componentes/cabecera/components.module';
+import { DietaCenaResolver } from './dieras-cenas.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: DietasCenasPage
+    component: DietasCenasPage,
+    resolve: {
+    data:  DietaCenaResolver
+    }
   }
 ];
 
@@ -23,6 +27,7 @@ const routes: Routes = [
     ComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DietasCenasPage]
+  declarations: [DietasCenasPage],
+  providers: [DietaCenaResolver]
 })
 export class DietasCenasPageModule {}

@@ -20,7 +20,7 @@ export class DiarioDieteticoService {
   getDiarioDieteticoAdmin() {
     return new Promise<any>((resolve, reject) => {
       this.snapshotChangesSubscription = this.afs.
-        collection('diario-dietetico').snapshotChanges();
+        collection('/diario-dietetico/').snapshotChanges();
       resolve(this.snapshotChangesSubscription);
     });
   }

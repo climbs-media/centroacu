@@ -8,11 +8,15 @@ import { IonicModule } from '@ionic/angular';
 import { HomeUserPage } from './home-user.page';
 import { ChartsModule } from 'ng2-charts';
 import { ComponentsModule } from '../../componentes/cabecera/components.module';
+import { HomeUserResolver } from './home-user.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeUserPage
+    component: HomeUserPage,
+    resolve: {
+      data: HomeUserResolver
+    }
   }
 ];
 
@@ -25,6 +29,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [HomeUserPage]
+  declarations: [HomeUserPage],
+  providers: [HomeUserResolver]
 })
 export class HomeUserPageModule {}

@@ -16,7 +16,7 @@ export class DiarioPage implements OnInit {
   }
 
   diarioDietetico() {
-    this.router.navigate(['/diario-dietetico']);
+    this.router.navigate(['/lista-historial-dietetico']);
   }
 
 }

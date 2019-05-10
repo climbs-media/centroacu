@@ -75,7 +75,10 @@ const routes: Routes = [
   { path: 'lista-citas', loadChildren: './pages/lista-citas/lista-citas.module#ListaCitasPageModule' },
   { path: 'destalles-peso/:id', loadChildren: './pages/destalles-peso/destalles-peso.module#DestallesPesoPageModule' },
   { path: 'detalles-citas/:id', loadChildren: './pages/detalles-citas/detalles-citas.module#DetallesCitasPageModule' },
-  { path: 'lista-pacientes-peso', loadChildren: './pages/lista-pacientes-peso/lista-pacientes-peso.module#ListaPacientesPesoPageModule' },
+  { path: 'lista-pacientes-peso', loadChildren: './pages/lista-pacientes-peso/lista-pacientes-peso.module#ListaPacientesPesoPageModule' },  { path: 'menu-cena', loadChildren: './pages/menu-cena/menu-cena.module#MenuCenaPageModule' },
+  { path: 'lista-historial-dietetico', loadChildren: './pages/lista-historial-dietetico/lista-historial-dietetico.module#ListaHistorialDieteticoPageModule' },
+  { path: 'detalles-menu-cena', loadChildren: './pages/detalles-menu-cena/detalles-menu-cena.module#DetallesMenuCenaPageModule' },
+
 
 
 
