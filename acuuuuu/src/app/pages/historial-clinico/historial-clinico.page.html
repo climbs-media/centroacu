@@ -88,7 +88,7 @@
                   </div>
             </ion-col>
         </ion-row>
-   <!--   <ion-row>
+  <!--   <ion-row>
         <ion-col col-12>
           <form method="POST" oninput="resultado.value=parseInt(valor1.value)*2/parseInt(valor2.value)">
             <div>
@@ -147,29 +147,29 @@
               </ion-col>
               </ion-row>
               
-     <ion-row >
-               <ion-col text-center style="color:#BB1D1D; font-weight: bold; margin-top: 5px">Antecedentes</ion-col>
-     </ion-row>
-     <ion-row >
+    <ion-row >
+              <ion-col text-center style="color:#BB1D1D; font-weight: bold; margin-top: 5px">Antecedentes</ion-col>
+    </ion-row>
+    <ion-row >
                 <ion-col >
                     <div style="font-weight: bold; margin: 5px; margin-left: 10px">Intervenciones : </div>
                     <div class="cajatexto">
                       <ion-input placeholder="" type="text" formControlName="interNombre"></ion-input>
-                   </div> 
+                  </div> 
                 </ion-col>
       </ion-row>
       <ion-row >
                   <ion-col >
-                     <div  style="font-weight: bold; margin: 5px; margin-left: 10px">Enfermedades Anteriores  : </div>
+                    <div  style="font-weight: bold; margin: 5px; margin-left: 10px">Enfermedades Anteriores  : </div>
                       <div class="cajatexto" >
                         <ion-input placeholder="" type="text" formControlName="enfermedades"></ion-input>
-                     </div> 
+                    </div> 
                   </ion-col>
-       </ion-row>
-       <ion-row >
+      </ion-row>
+      <ion-row >
               <ion-col >
-                   <div style="font-weight: bold; margin: 5px"> Familiares:</div> 
-                 <div  style="margin-bottom:5px; display: flex; align-content: center">
+                  <div style="font-weight: bold; margin: 5px"> Familiares:</div> 
+                <div  style="margin-bottom:5px; display: flex; align-content: center">
                   <ion-select formControlName="familiares" placeholder="Seleccionar">
                       <ion-select-option value="diabetes">Diabetes</ion-select-option>
                       <ion-select-option value="cardiopatia">Cardiopatia</ion-select-option>
@@ -179,17 +179,17 @@
                     <br><span class='padece'>Obesidad<ion-checkbox  [(ngModel)]="obesidad" style="margin-left: 15px"  ></ion-checkbox></span>   -->
                   </ion-select>
                 </div>
-                 
+                
               </ion-col>
-   </ion-row>
-     
-       <ion-row style="text-align:center;" padding-top >
+  </ion-row>
+    
+      <ion-row style="text-align:center;" padding-top >
                       <ion-col >
                           <ion-button ion-button class="but" type="submit" [disabled]="!validations_form.valid" round>Agregar
                         <!-- <ion-icon name="arrow-round-forward" style="color:white;"></ion-icon> -->
                           </ion-button>
                       </ion-col>
-       </ion-row>
-   </ion-grid>
-   </form>
+      </ion-row>
+  </ion-grid>
+  </form>
 </ion-content>
