@@ -11,7 +11,7 @@ import { DiarioDieteticoService } from 'src/app/services/diario-dietetico.servic
   styleUrls: ['./detalles-diario.page.scss'],
 })
 export class DetallesDiarioPage implements OnInit {
-
+  public  tituhead: string = 'Detalles de Diario';
   validations_form: FormGroup;
   image: any;
   item: any;

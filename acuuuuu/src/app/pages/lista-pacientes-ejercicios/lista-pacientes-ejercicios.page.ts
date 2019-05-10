@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ListaPacientesEjerciciosPage implements OnInit {
 
-
+  public  tituhead: String = 'Lista de Pacientes Ejercicios';
   personabuscar: string;
   encontrado = false;
   items: Array<any>;

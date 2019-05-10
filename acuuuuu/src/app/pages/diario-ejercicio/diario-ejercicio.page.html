@@ -1,7 +1,6 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content>
-    <button routerLink="/cliente-seguimiento"><img src="../../../assets/imgs/retroceso.png" style="margin-top: 5%; color: red; position: absolute; margin-left: 5%"></button> 
     <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
     <ion-card>
         <ion-card-header (click)="collapseCard = !collapseCard">
@@ -12,7 +11,7 @@
             <ion-input type="text" placeholder="Ejercicio"  formControlName="titulo"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input type="text" placeholder="Descripción de Ejercico"  formControlName="descripcion"></ion-input>
+            <ion-input type="text" placeholder="Descripción de Ejercicio"  formControlName="descripcion"></ion-input>
           </ion-item>
           <ion-item>
               <ion-label>Fecha</ion-label>
@@ -66,7 +65,7 @@
         >
       </calendar>
     
-      <ion-card *ngFor="let item of items">
+      <ion-card *ngFor="let item of items" style="margin-bottom:220px; margin-top:-200px;">
           <ion-card-header>
             <ion-card-title text-center><h5>Citas de {{item.payload.doc.data().titulo}}</h5></ion-card-title>
           </ion-card-header>

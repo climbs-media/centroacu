@@ -9,6 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ListaMensajesAdminPage implements OnInit {
 
+  public  tituhead: String = 'Lista de Mensajes';
   items: Array<any>;
   searchText = '';
   

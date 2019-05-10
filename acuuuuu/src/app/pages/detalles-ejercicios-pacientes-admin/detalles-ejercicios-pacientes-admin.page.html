@@ -1,34 +1,31 @@
-<ion-header>
-    <ion-toolbar>
-      <ion-title>Detalles Ejercicios</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
   
 <ion-content padding>
-  
+<button routerLink="/lista-pacientes-ejercicios"><img src="../../../assets/imgs/retroceso.png" style=" color: red; position: absolute;"></button> 
 <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    
         <ion-grid>
           <ion-row>
           <ion-col>
-              <h5>Nombre</h5>
-              <ion-input type="text" formControlName="nombreApellido">{{this.item.titulo}}</ion-input>
+              <h5>Nombre Ejercicio</h5>
+              <ion-input type="text" formControlName="nombreApellido"  class="inputexto2">{{this.item.titulo}}</ion-input>
           </ion-col>
           <ion-col size="12">
+              <h5>Inicio</h5> 
                   <ion-item>
-                  <ion-label position="floating"><p> Inicial</p></ion-label>
-                    <ion-input  formControlName="horaInicio"></ion-input>
+                    <ion-input  formControlName="horaInicio" class="inputexto2"></ion-input>
                   </ion-item>
           </ion-col>
             <ion-col size="12">
+                <h5>Finalizó Ejercicio</h5> 
                   <ion-item>
-                      <ion-label position="floating"><p> Hora Final</p></ion-label>
-                      <ion-input  formControlName="horaFinal"></ion-input>
+                      <ion-input  formControlName="horaFinal"  class="inputexto2"></ion-input>
                     </ion-item>
               </ion-col>
             <ion-col size="12">
+                <h5>Descripción</h5> 
                     <ion-item>
-                        <ion-label position="floating"><p>Descripcion</p></ion-label>
-                        <ion-input  formControlName="descripcion"></ion-input>
+                        <ion-input  formControlName="descripcion" class="inputexto2"></ion-input>
                       </ion-item>
           </ion-col>
                           </ion-row>

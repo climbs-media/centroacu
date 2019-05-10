@@ -12,6 +12,7 @@ import { AnadirEjercicioService } from 'src/app/services/añadir-ejercicio.servi
 })
 export class DetallesEjerciciosPacientesAdminPage implements OnInit {
 
+  public  tituhead: String = 'Detalles de Ejercicio';
   validations_form: FormGroup;
   image: any;
   item: any;
