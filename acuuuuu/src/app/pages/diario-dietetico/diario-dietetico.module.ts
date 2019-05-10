@@ -9,6 +9,7 @@ import { DiarioDieteticoPage } from './diario-dietetico.page';
 import { ComponentsModule } from '../../componentes/cabecera/components.module';
 import { DiarioResolver } from './diario-dietetico.resolver';
 
+
 const routes: Routes = [
   {
     path: '',

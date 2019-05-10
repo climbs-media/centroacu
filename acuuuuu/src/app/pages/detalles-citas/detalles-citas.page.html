@@ -5,22 +5,25 @@
     </ion-buttons>
 <ion-content padding style="font-family: Comfortaa">
     <form class="animated fadeIn fast" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
-    
+        <h5>Nombre</h5>
         <ion-item>
-            <ion-label position="floating" color="ion-color-dark">Nombre</ion-label>
-            <ion-input type="text" formControlName="titulo" [readonly]="false"></ion-input>
+           
+            <ion-input type="text" formControlName="titulo" [readonly]="false" class="inputexto2"></ion-input>
         </ion-item>
+        <h5>Descripción</h5>
         <ion-item>
-            <ion-label position="floating" color="ion-color-dark">Descripción</ion-label>
-            <ion-input formControlName="descripcion" [readonly]="false"></ion-input>
+           
+            <ion-input formControlName="descripcion" [readonly]="false"  class="inputexto2"></ion-input>
         </ion-item>
+        <h5>Inicio de Cita</h5>
         <ion-item>
-            <ion-label position="floating" color="ion-color-dark"><a>Inicio Cita</a></ion-label>
-            <ion-input type="text" formControlName="inicioCita" [readonly]="false"></ion-input>
+           
+            <ion-input type="text" formControlName="inicioCita" [readonly]="false"  class="inputexto2"></ion-input>
         </ion-item>
+        <h5>Finaliza la Cita</h5>
         <ion-item>
-            <ion-label position="floating" color="ion-color-dark"><a>Final Cita</a></ion-label>
-            <ion-input type="text" formControlName="finalCita" [readonly]="false"></ion-input>
+           
+            <ion-input type="text" formControlName="finalCita" [readonly]="false"  class="inputexto2"></ion-input>
         </ion-item>
         
         <div *ngIf="isAdmin === true">

@@ -1,11 +1,7 @@
-<ion-header>
-    <ion-toolbar>
-      <ion-title>Detalles Diario</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
   
 <ion-content padding>
-  
+    <button routerLink="/tabs/tab2"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%; margin-top:-10px;"></button>
 <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
         <ion-grid>
           <ion-row>
@@ -14,44 +10,46 @@
               <ion-input type="text" formControlName="nombreApellido">{{this.item.nombreApellido}}</ion-input>
           </ion-col>
           <ion-col size="12">
+              <h5>Fecha Consulta</h5>
                   <ion-item>
-                  <ion-label position="floating"><p>Fecha Consulta</p></ion-label>
+    
                     <ion-input  formControlName="fechaConsulta"></ion-input>
                   </ion-item>
           </ion-col>
             <ion-col size="12">
+                <h5>Fecha Último Peso</h5>
                   <ion-item>
-                      <ion-label position="floating"><p>Fecha Ultimo Peso</p></ion-label>
                       <ion-input  formControlName="fechaUltimoPeso"></ion-input>
                     </ion-item>
               </ion-col>
             <ion-col size="12">
+                <h5>Fecha Último Peso</h5>
                     <ion-item>
-                        <ion-label position="floating"><p>Fecha Ultimo Peso</p></ion-label>
                         <ion-input  formControlName="fechaUltimoPeso"></ion-input>
                       </ion-item>
           </ion-col>
                     <ion-col size="12">
+                        <h5>Menú</h5>
                         <ion-item>
-                            <ion-label position="floating"><p>Ménu</p></ion-label>
                             <ion-input  formControlName="menu"></ion-input>
                           </ion-item>
                 </ion-col>
                     <ion-col size="12">
+                      <h5>Peso Actual</h5>
                             <ion-item>
-                                <ion-label position="floating"><p>Peso Actual</p></ion-label>
                                 <ion-input  formControlName="pesoActual"></ion-input>
                               </ion-item>
                     </ion-col>
                 <ion-col size="12">
+                  <h5>Peso Pérdido</h5>
                                 <ion-item>
-                                    <ion-label position="floating"><p>Peso Perdido</p></ion-label>
+                                  
                                     <ion-input  formControlName="pesoPerdido"></ion-input>
                                   </ion-item>
                   </ion-col>
                     <ion-col size="12">
+                      <h5>Semanas</h5>
                                     <ion-item>
-                                        <ion-label position="floating"><p>Semanas</p></ion-label>
                                         <ion-input  formControlName="semanas"></ion-input>
                                       </ion-item>
                           </ion-col>

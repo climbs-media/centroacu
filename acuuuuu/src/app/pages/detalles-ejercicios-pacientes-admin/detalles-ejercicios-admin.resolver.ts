@@ -7,6 +7,9 @@ export class DetallesEjerciciosResolver implements Resolve<any> {
 
 constructor(public detallesEjercicioService: AnadirEjercicioService) { }
 
+
+
+
 resolve(route: ActivatedRouteSnapshot) {
 
     return new Promise((resolve, reject) => {

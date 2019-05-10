@@ -1,6 +1,50 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content padding>
+<<<<<<< HEAD
+    <ion-back-button defaultHref="/"></ion-back-button>
+    <form class="animated fadeIn fast" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+      <h5>Nombre del Paciente</h5>  
+      <ion-item>
+            <ion-input type="text" formControlName="nombreApellido"  class="inputexto2"></ion-input>
+        </ion-item>
+        <h5>Fecha</h5>  
+        <div class="cajatexto" style="margin-left:18px;">
+            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" placeholder="Fecha Actual" type="date" formControlName="fechaConsulta"  class="inputexto2" ></ion-datetime>
+          </div>
+          <h5>Nuevo Peso</h5>  
+        <ion-item>
+            <ion-input placeholder=" Coloca Nuevo Peso" type="number" formControlName="peso" class="inputexto2"></ion-input>
+        </ion-item>
+        <ion-item>
+            <form method="POST" oninput="resultado.value=parseInt(valor1.value)*2/parseInt(valor2.value)">
+              <div>
+            <h5>Tú Altura</h5>
+          </div>
+          <div>
+              <input type="number" id="valor1" value="0"  class="inputexto2">
+            </div>
+            <div>
+              <h5>Nuevo Peso:</h5>
+            </div>
+            <div>
+              <input type="number" id="valor2" value="0" placeholder="Coloca Altura"  class="inputexto2"> 
+            </div>
+            <div>
+              <h5>IMC</h5>
+            </div>
+              <output name="resultado" for="valor1 valor2"></output>
+          </form>
+        </ion-item>
+        <h5 color="primary"> Tu Nuevo IMC es:</h5>
+        <ion-item>
+            
+            <ion-input placeholder="Nuevo IMC" type="number" formControlName="imc"  class="inputexto2"></ion-input>
+        </ion-item>
+        <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Actualizar Datos</ion-button>
+    </form>
+
+=======
   <div>
     <h4>Modificar</h4>
   </div>
@@ -150,4 +194,5 @@
       </ion-item>
       <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Actualizar Datos</ion-button>
   </form>
+>>>>>>> fc59a9b29a00ab14bdbd624c1c6f196679d2e833
 </ion-content>
