@@ -1,6 +1,6 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 <ion-content *ngIf="items" class="fondo" style="font-family: Comfortaa">
-  <button routerLink="/cliente-perfil"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute;  margin-top:-20px;"></button> 
+    <ion-back-button defaultHref="/"></ion-back-button> 
   <ion-searchbar [(ngModel)]="searchText" placeholder="Buscador..." style="text-transform: lowercase"></ion-searchbar>
     <div text-center>
         <hr>

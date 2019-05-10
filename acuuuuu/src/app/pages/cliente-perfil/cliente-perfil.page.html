@@ -72,18 +72,13 @@
 <!-- siguientes botones  -->
 <ion-row style="margin-top: 10%">
   <ion-col col-4>
-          <ion-button color="primary"  routerLink="/ajustes" class="botones" round>
-          <img src="../../../assets/imgs/bot_cliente_seguimiento/ajustesacu.png" class="boton">Ajustes
+          <ion-button color="primary"  (click)="onLogout()" class="botones" round>
+          <img src="../../../assets/imgs/bot_cliente_seguimiento/ajustesacu.png" class="boton">Cerrar Sesión
           </ion-button>
   </ion-col>
   <ion-col col-4>
       <ion-button  routerLink="/historial-fisico" class="botones" round>
       <img src="../../../assets/imgs/bot_cliente_seguimiento/fotoacu.png" class="boton">Historial <br> Físico 
-      </ion-button>
-  </ion-col>
-  <ion-col col-4>
-      <ion-button  routerLink="/cliente-historial" class="bot_impri" round>
-      <img src="../../../assets/imgs/bot_cliente_seguimiento/imprime.png" class="boton">Vista Previa
       </ion-button>
   </ion-col>
   
