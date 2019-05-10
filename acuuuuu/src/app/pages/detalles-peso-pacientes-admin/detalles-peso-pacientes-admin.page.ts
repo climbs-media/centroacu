@@ -18,7 +18,8 @@ export class DetallesPesoPacientesAdminPage implements OnInit {
     isPasi: any = null;
     isAdmin: any = null;
     userUid: string = null;
-
+    userId: any;
+    
     constructor(
         public toastCtrl: ToastController,
         public loadingCtrl: LoadingController,
@@ -41,6 +42,7 @@ export class DetallesPesoPacientesAdminPage implements OnInit {
             const data = routeData['data'];
             if (data) {
                 this.item = data;
+                this.userId = this.item.userId;
             }
         });
         this.validations_form = this.formBuilder.group({
@@ -57,12 +59,13 @@ export class DetallesPesoPacientesAdminPage implements OnInit {
             fechaConsulta: value.fechaConsulta,
             peso: value.peso,
             imc: value.imc,
+            userId: this.userId,
         };
         this.menuService.actualizarPeso
         (this.item.id, data)
             .then(
                 res => {
-                    this.router.navigate(['/dietas-proteinas']);
+                    this.router.navigate(['/mipeso']);
                 }
             );
     }
@@ -85,7 +88,7 @@ export class DetallesPesoPacientesAdminPage implements OnInit {
                         this.menuService.borrarHistorialClinico(this.item.id)
                             .then(
                                 res => {
-                                    this.router.navigate(['/home']);
+                                    this.router.navigate(['/mipeso']);
                                 },
                                 err => console.log(err)
                             );

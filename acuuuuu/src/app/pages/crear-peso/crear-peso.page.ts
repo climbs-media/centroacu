@@ -43,11 +43,11 @@ export class CrearPesoPage implements OnInit {
   onSubmit(value) {
     const data = {
       nombreApellido: value.nombreApellido,
-        fechaConsulta: value.fechaConsulta,
-        peso: value.peso,
-        imc: value.imc,
+            fechaConsulta: value.fechaConsulta,
+            peso: value.peso,
+            imc: value.imc,
     };
-    this.firebaseService.crearHistorialClinico(data)
+    this.firebaseService.crearPeso(data)
       .then(
         res => {
           this.router.navigate(['/mipeso']);

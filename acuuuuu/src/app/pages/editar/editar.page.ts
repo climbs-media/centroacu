@@ -41,7 +41,7 @@ export class EditarPage implements OnInit {
       const data = routeData['data'];
       if (data) {
         this.item = data;
-       this.image = this.item.image;
+        this.image = this.item.image;
         this.userId = this.item.userId;
       }
     })
@@ -50,14 +50,20 @@ export class EditarPage implements OnInit {
       fechaNacimiento: new FormControl(this.item.fechaNacimiento, Validators.required),
       ciudad: new FormControl(this.item.ciudad, Validators.required),
       correo: new FormControl(this.item.correo, Validators.required),
+      numeroHistorial: new FormControl(this.item.numeroHistorial, Validators.required),
+      fecha: new FormControl(this.item.fecha, Validators.required),
+      edad: new FormControl(this.item.edad, Validators.required),
+      telefono: new FormControl(this.item.telefono, Validators.required),
       profesion: new FormControl(this.item.profesion, Validators.required),
       motivoConsulta: new FormControl(this.item.motivoConsulta, Validators.required),
       interNombre: new FormControl(this.item.interNombre, Validators.required),
       enfermedades: new FormControl(this.item.enfermedades, Validators.required),
       familiares: new FormControl(this.item.familiares, Validators.required),
-      numeroHistorial: new FormControl(this.item.numeroHistorial, Validators.required),
-      telefono: new FormControl(this.item.telefono, Validators.required),
-      fecha: new FormControl(this.item.fecha, Validators.required),
+      peso: new FormControl(this.item.peso, Validators.required),
+      bono: new FormControl(this.item.bono, Validators.required),
+      altura: new FormControl(this.item.altura, Validators.required),
+      referencia: new FormControl(this.item.referencia, Validators.required),
+      imc: new FormControl(this.item.imc, Validators.required), 
     });
   }
 
@@ -67,14 +73,20 @@ export class EditarPage implements OnInit {
       fechaNacimiento: value.fechaNacimiento,
       ciudad: value.ciudad,
       correo: value.correo,
+      numeroHistorial: value.numeroHistorial,
+      fecha: value.fecha,
+      edad: value.edad,
       telefono: value.telefono,
       profesion: value.profesion,
       motivoConsulta: value.motivoConsulta,
       interNombre: value.interNombre,
       enfermedades: value.enfermedades,
       familiares: value.familiares,
-      numeroHistorial: value.numeroHistorial,
-      fecha: value.fecha,
+      peso: value.peso,
+      bono: value.bono,
+      altura: value.altura,
+      referencia: value.referencia,
+      imc: value.imc,
       userId: this.userId,
     };
     this.firebaseService.actualizarHistorialClinico(this.item.id, data)

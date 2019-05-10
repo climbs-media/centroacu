@@ -8,6 +8,6 @@ export class MiPseResolver implements Resolve<any> {
   constructor(private firebaseService: HistorialClinicoService) {}
 
   resolve(route: ActivatedRouteSnapshot) {
-    return this.firebaseService.getHistorialClinico();
+    return this.firebaseService.getPeso();
   }
 }
