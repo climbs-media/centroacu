@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot} from '@angular/router';
-import { HistorialClinicoService } from 'src/app/services/historial-clinico.service';
+import { AnadirEjercicioService } from 'src/app/services/añadir-ejercicio.service';
 
 @Injectable()
 export class EjercicioResolver implements Resolve<any> {
 
-    constructor(private ejercicioServices: HistorialClinicoService ) {}
+    constructor(private ejercicioServices: AnadirEjercicioService ) {}
 
     resolve(route: ActivatedRouteSnapshot) {
-        const response = this.ejercicioServices.getHistorialClinicoAdmin();
+        const response = this.ejercicioServices.getAnadirEjercicio();
         console.log('response', response);
         return response;
 }

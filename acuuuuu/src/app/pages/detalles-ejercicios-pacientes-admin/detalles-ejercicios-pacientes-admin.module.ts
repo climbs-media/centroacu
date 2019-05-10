@@ -6,11 +6,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { ComponentsModule } from '../../componentes/cabecera/components.module';
 import { DetallesEjerciciosPacientesAdminPage } from './detalles-ejercicios-pacientes-admin.page';
+import { DetallesEjerciciosResolver } from './detalles-ejercicios-admin.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: DetallesEjerciciosPacientesAdminPage
+    component: DetallesEjerciciosPacientesAdminPage,
+    resolve: {
+      data: DetallesEjerciciosResolver
+    }
   }
 ];
 
@@ -23,6 +27,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DetallesEjerciciosPacientesAdminPage]
+  declarations: [DetallesEjerciciosPacientesAdminPage],
+  providers: [DetallesEjerciciosResolver]
 })
 export class DetallesEjerciciosPacientesAdminPageModule {}

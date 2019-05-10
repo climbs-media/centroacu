@@ -74,7 +74,7 @@ export class DetallesEjerciciosPacientesAdminPage implements OnInit {
   async delete() {
     const alert = await this.alertCtrl.create({
       header: 'Confirmar',
-      message: 'Quieres Eliminar el Menu' + this.item.nombreMenu + '?',
+      message: 'Quieres Eliminar Ejercicio' + this.item.titulo + '?',
       buttons: [
         {
           text: 'No',

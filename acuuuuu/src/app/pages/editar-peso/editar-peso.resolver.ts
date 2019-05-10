@@ -11,7 +11,7 @@ resolve(route: ActivatedRouteSnapshot) {
 
     return new Promise((resolve, reject) => {
     const itemId = route.paramMap.get('id');
-    this.firebaseService.getPesoId(itemId)
+    this.firebaseService.getHistorialClinicoId(itemId)
     .then(data => {
         data.id = itemId;
         resolve(data);

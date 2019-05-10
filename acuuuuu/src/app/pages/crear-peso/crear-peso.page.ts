@@ -47,7 +47,7 @@ export class CrearPesoPage implements OnInit {
         peso: value.peso,
         imc: value.imc,
     };
-    this.firebaseService.crearPeso(data)
+    this.firebaseService.crearHistorialClinico(data)
       .then(
         res => {
           this.router.navigate(['/mipeso']);

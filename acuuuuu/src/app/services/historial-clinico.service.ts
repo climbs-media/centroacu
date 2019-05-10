@@ -75,6 +75,14 @@ export class HistorialClinicoService {
     });
   }
 
+  getPesoAdmin() {
+    return new Promise<any>((resolve, reject) => {
+      this.snapshotChangesSubscription = this.afs.
+        collection('nuevo-peso').snapshotChanges();
+      resolve(this.snapshotChangesSubscription);
+    });
+  }
+
 
 
   unsubscribeOnLogOut() {
@@ -96,7 +104,7 @@ export class HistorialClinicoService {
   actualizarPeso(pesoKey, value) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
-      this.afs.collection('nuevo-peso').doc(pesoKey).set(value)
+      this.afs.collection('historial-clinico').doc(pesoKey).set(value)
       .then(
         res => resolve(res),
         err => reject(err)
@@ -142,6 +150,7 @@ export class HistorialClinicoService {
         familiares: value.familiares,
         numeroHistorial: value.numeroHistorial,
         fecha: value.fecha,
+        fechaConsulta: value.fechaConsulta,
         peso: value.peso,
         edad: value.edad,
         bono : value.bono,
@@ -159,7 +168,7 @@ export class HistorialClinicoService {
     });
   }
 
-  crearPeso(value) {
+/*  crearPeso(value) {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
       this.afs.collection('nuevo-peso').add({
@@ -174,7 +183,7 @@ export class HistorialClinicoService {
         err => reject(err)
       );
     });
-  }
+  }*/
 
 
   encodeImageUri(imageUri, callback) {

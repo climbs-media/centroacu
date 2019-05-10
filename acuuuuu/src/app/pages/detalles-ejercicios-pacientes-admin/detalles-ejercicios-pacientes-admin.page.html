@@ -31,15 +31,12 @@
                           </ion-row>
         </ion-grid>
         <div text-cente> 
-            <ion-button *ngIf="isAdmin === true" type="submit" [disabled]="!validations_form.valid">Modificar</ion-button>
+            <ion-button  type="submit" [disabled]="!validations_form.valid">Modificar</ion-button>
         </div>
 </form>
 
-        
-          
-
       <div text-center>
-        <ion-button *ngIf="isAdmin === true"  (click)="delete()">Borrar</ion-button>
+        <ion-button   (click)="delete()">Borrar</ion-button>
       </div>
 </ion-content>
   

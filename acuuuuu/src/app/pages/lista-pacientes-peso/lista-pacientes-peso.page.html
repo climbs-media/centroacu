@@ -1,0 +1,39 @@
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
+  
+  <ion-content padding-top padding-top>
+  
+    <ion-grid *ngIf="items">
+      <!-- <ion-row  >
+          <ion-icon name="ios-add-circle"  name="md-add-circle" routerLink="/proteccion"  class="iconos"></ion-icon>
+  
+       <ion-col >
+              <div class="busqueda" >
+                <ion-searchbar [(ngModel)]="searchText" placeholder="Buscador..." style="text-transform: lowercase; border-radius: 50px;"></ion-searchbar>
+              </div>
+              
+          </ion-col>  
+        </ion-row>--> 
+  
+    <ion-row class="conteBoton" margin-top>
+  
+  <ion-col col-8>
+      <ion-col>
+          <div class="cajabuscador"  [routerLink]="['/editar-peso', item.payload.doc.id]" >
+                <span class="nombreuser">{{item.payload.doc.data().nombreApellido}}</span>
+                <div  class="buscado"  >
+                    <span class="num_edad">{{item.payload.doc.data().peso}} </span>
+                </div>
+            </div>
+          
+          <!-- se pone fuera para que no le afecte el click general -->
+      </ion-col>
+    </ion-col>     
+</ion-row> 
+</ion-grid>
+
+
+
+  </ion-content>
+  
+  
+
