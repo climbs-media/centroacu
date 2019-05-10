@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ListaCitasPage } from './lista-citas.page';
+import { ComponentsModule } from '../../componentes/cabecera/components.module';
 import { CitasResolver } from './lista-cites.resolver';
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    ComponentsModule,
     FormsModule,
     ReactiveFormsModule,
     IonicModule,

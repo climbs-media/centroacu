@@ -9,6 +9,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ListaCitasPage implements OnInit {
 
+
+  public  tituhead: String = 'Lista de Citas';
+
   items: Array<any>;
   searchText = '';
   
