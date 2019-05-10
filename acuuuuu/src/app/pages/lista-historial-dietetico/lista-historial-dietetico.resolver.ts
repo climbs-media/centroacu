@@ -9,6 +9,8 @@ export class DieteticoResolver implements Resolve<any> {
   constructor(private dieteticoServices: DiarioDieteticoService ) {}
 
   resolve(route: ActivatedRouteSnapshot) {
-    return this.dieteticoServices.getDiarioDieteticoAdmin();
-  }
+    const response = this.dieteticoServices.getDiarioDieteticoAdmin();
+    console.log('response', response);
+    return response;
+}
 }

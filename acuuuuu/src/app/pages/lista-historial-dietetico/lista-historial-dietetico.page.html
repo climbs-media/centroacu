@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 <ion-content *ngIf="items" class="fondo" style="font-family: Comfortaa">
     <ion-back-button defaultHref="/"></ion-back-button>
@@ -14,6 +15,9 @@
                     <ion-card-content style="color: black;">
                       <p><i>{{item.payload.doc.data().NombreApellido}}</i></p>
          
+=======
+
+>>>>>>> 6c2af3a2a9736429cfdd5602bcbc4205bcce285c
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content padding-top padding-top>
@@ -47,9 +51,10 @@
         <div [routerLink]="['/detalles-ejercicios-pacientes-admin', item.payload.doc.id]"  class="cajabuscador"   >
               <span class="nombreuser">{{item.payload.doc.data().nombreApellido}}</span>
               <div  class="buscado"  >
-                  <span class="num_edad"> {{item.payload.doc.data().menu}} </span>
+                  <span class="num_edad">N° {{item.payload.doc.data().menu}} </span>
+                  <span class="num_edad">{{item.payload.doc.data().fechaConsulta}} Años</span> 
               </div>
-              
+
       </div>
         
         <!-- se pone fuera para que no le afecte el click general -->
@@ -63,27 +68,3 @@
   </ion-grid>
 </ion-content>
 
-           </ion-card-content>
-                    <ion-card-content>
-                      {{item.payload.doc.data().menu}}
-                    </ion-card-content>
-                    <ion-grid>
-                      <ion-row>
-                        <ion-col size="12">
-                            <ion-button size="small" [routerLink]="['/detall-mensajes', item.payload.doc.id]">Detalles</ion-button>
-                        </ion-col>
-                      </ion-row>
-                    </ion-grid>
-                  </ion-card>
-                    </div>
-                  </div>
-                </ion-item>
-
-
-            </ion-list>
-        </div>
-        <div *ngIf="items.length == 0" class="empty-list">
-            Sin Darios en este Momento
-        </div>
-    </div>
-</ion-content>
