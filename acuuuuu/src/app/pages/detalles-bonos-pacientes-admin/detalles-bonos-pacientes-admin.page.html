@@ -109,12 +109,6 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col col-12>
-            <ion-label>Bonos Restantes</ion-label>
-          <ion-input type="number" class="cajatexto" formControlName="citasRestantes" placeholder="Citas Restantes" ></ion-input>
-        </ion-col>
-      </ion-row>
-      <ion-row>
         <ion-col col-12 *ngIf="isPasi === true">
             <ion-label>Referencia</ion-label>
           <ion-input type="text" class="cajatexto" formControlName="referencia" placeholder="Referencia" value="{{this.item.referencia}}" [readonly]="true"></ion-input>
