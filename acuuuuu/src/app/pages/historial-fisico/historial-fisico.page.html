@@ -4,7 +4,12 @@
     <button routerLink="/cliente-perfil"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%; margin-top:-10px;"></button> 
     <ion-slides pager="true" style="margin-top:20px;">
         <ion-slide *ngFor="let item of items">
+          <ion-item>
           <img src="{{item.payload.doc.data().image}}"  (click)="irVotaciones()">
+        </ion-item>
+        <ion-item>
+          <ion-label>{{item.payload.doc.data().fecha}}</ion-label>
+        </ion-item>
         </ion-slide>
       </ion-slides>
 
@@ -16,10 +21,13 @@
       </ion-button>
     </ion-col>
     <ion-col text-center col-4>
-        <ion-input formControlName="nombre" placeholder="nombre foto"></ion-input>
+        <ion-input formControlName="nombre" placeholder="nombre de Paciente"></ion-input>
+        <hr>
+        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" formControlName="fecha" placeholder="Fecha Consulta"></ion-datetime>
         <div text-center>
             <ion-button type="submit" [disabled]="!validations_form.valid">Agregar</ion-button>
         </div>   
     </ion-col>
+
   </form>
 </ion-content>

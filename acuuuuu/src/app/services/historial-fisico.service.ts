@@ -83,6 +83,7 @@ export class HistorialFisicoService {
       this.afs.collection('historial-fisico').add({
         image: value.image,
         nombre: value.nombre,
+        fecha: value.fecha,
         userId: currentUser.uid,
       })
       .then(

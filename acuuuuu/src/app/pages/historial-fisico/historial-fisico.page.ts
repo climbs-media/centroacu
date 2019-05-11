@@ -56,12 +56,14 @@ export class HistorialFisicoPage implements OnInit {
     this.image = './assets/imgs/foto_cliente.jpg';
     this.validations_form = this.formBuilder.group({
       nombre: new FormControl('', Validators.required),
+      fecha: new FormControl('', Validators.required),
     });
   }
 
   onSubmit(value) {
     const data = {
       nombre: value.nombre,
+      fecha: value.fecha,
       image: this.image
     };
     this.firebaseService.crearHistorialFisico(data)

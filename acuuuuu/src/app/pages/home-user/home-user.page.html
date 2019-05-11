@@ -4,11 +4,10 @@
     <ion-row margin-top style="margin-top:15%">
 
         <ion-col col-4 >
-        <div class="bot bot_seguimiento">
+        <div routerLink="/lista-citas" class="bot bot_seguimiento">
           
         <img src="../../../assets/imgs/bot_cliente_seguimiento/Nueva1-cita.png">
         <p style="font-size:28px">Próxima Cita</p>
-        <p class="fech">Fecha: 21-01-2019      16:00 pm</p>
       </div>
         </ion-col>
         <div  class="bot bot_ejercicio" routerLink="/ejercicio-user">
@@ -19,21 +18,13 @@
         </div>
         </ion-row>
 
-        <ion-content padding>
-            <div style="display: block">
-                <canvas baseChart
-                            [data]="doughnutChartData"
-                            [labels]="doughnutChartLabels"
-                            [chartType]="doughnutChartType"
-                            (chartHover)="chartHovered($event)"
-                            (chartClick)="chartClicked($event)"></canvas>
-              </div>
-          </ion-content>
+          <hr>
+          <hr>
 
-          <hr>
-          <hr>
+      
         
 
 </ion-content>
+
 
 
