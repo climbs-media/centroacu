@@ -21,9 +21,53 @@
           <hr>
           <hr>
 
-      
-        
 
+          <div>
+            <div *ngFor="let item of items">
+              <ion-grid>
+                <ion-row text-center>
+                  <ion-col size="6">
+                    <div text-center>
+                    <h5>Tu Peso</h5>
+                  </div>
+                    <p style="color:black">{{item.payload.doc.data().peso}} KG</p>
+                  </ion-col>
+                  <ion-col size="6">
+                    <h5>Tu IMC</h5>
+                    <p style="color:black">{{item.payload.doc.data().imc}}</p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <div>
+                <h5>imc ideal</h5>
+              </div>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="3">
+                    <p style="color:black">Debajo 18.5</p>
+                  </ion-col>
+                  <ion-col size="3">
+                    <p style="color:black">Normal 18.5-25</p>
+                  </ion-col>
+                  <ion-col size="3">
+                    <p style="color:black">Sobrepeso 25-30</p>
+                  </ion-col>
+                  <ion-col size="3">
+                    <p style="color:black">Obesidad > 30 </p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+            <div style="display: block">
+              <canvas baseChart
+                      [datasets]="barChartData"
+                      [labels]="barChartLabels"
+                      [options]="barChartOptions"
+                      [legend]="barChartLegend"
+                      [chartType]="barChartType">
+              </canvas>
+            </div>
+          </div>
 </ion-content>
 
 
