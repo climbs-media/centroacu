@@ -74,7 +74,7 @@ public barChartOptions = {
 };
 
 public barChartLabels = ['40', '50 ', '60', '70', '80', '100', '120'];
-public barChartType = 'bar';
+public barChartType = 'line';
 public barChartLegend = true;
 
 public barChartData = [
