@@ -19,11 +19,11 @@
             </ion-item>
           <ion-item>
             <ion-label>Hora  de Ejercicio</ion-label>
-            <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="event.horaInicio" [min]="minDate" formControlName="horaInicio"></ion-datetime>
+            <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"  [min]="minDate" formControlName="horaInicio"></ion-datetime>
           </ion-item>
           <ion-item>
             <ion-label>Finaliza </ion-label>
-            <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="event.horaFinal" [min]="minDate" formControlName="horaFinal"></ion-datetime>
+            <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"  [min]="minDate" formControlName="horaFinal"></ion-datetime>
           </ion-item>
           <ion-button type="submit" fill="outline" expand="block" class="asig"  (click)="addEvent()" [disabled]="!validations_form.valid">Asignar</ion-button>
           <!--Funcional

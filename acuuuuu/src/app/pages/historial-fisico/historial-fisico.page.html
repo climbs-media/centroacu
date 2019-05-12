@@ -23,7 +23,9 @@
     <ion-col text-center col-4>
         <ion-input formControlName="nombre" placeholder="nombre de Paciente"></ion-input>
         <hr>
+        <div>
         <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" formControlName="fecha" placeholder="Fecha Consulta"></ion-datetime>
+      </div>
         <div text-center>
             <ion-button type="submit" [disabled]="!validations_form.valid">Agregar</ion-button>
         </div>   

@@ -173,6 +173,9 @@ export class HistorialClinicoService {
         nombreApellido: value.nombreApellido,
         fechaConsulta: value.fechaConsulta,
         peso: value.peso,
+        pesoPerdido: value.pesoPerdido,
+        pesoObjetivo: value.pesoObjetivo,
+        estasObjetivo: value.estasObjetivo,
         imc: value.imc,
         userId: currentUser.uid,
       })

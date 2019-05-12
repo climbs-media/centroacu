@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { ToastController, LoadingController } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ToastController, LoadingController, NavController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { WheelSelector } from '@ionic-native/wheel-selector/ngx';
 import { PopoverController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Chart } from 'chart.js';
+import { ChartsModule } from 'ng2-charts';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -15,6 +18,11 @@ export class MipesoPage implements OnInit {
 
   public  tituhead: String = 'Seguimiento';
   items: Array<any>;
+
+  @ViewChild('barCanvas') barCanvas;
+  @ViewChild('lineCanvas') lineCanvas;
+  barChart: any;
+  lineChart: Chart;
 
   dummyJson = {
     kilos: [
@@ -101,7 +109,9 @@ export class MipesoPage implements OnInit {
     private http: HttpClient,
     public loadingCtrl: LoadingController,
     private router: Router,
-    private route: ActivatedRoute,) { }
+    private route: ActivatedRoute,
+    public navCtrl: NavController,
+              private authService: AuthService,) { }
 
   ngOnInit() {
     if (this.route && this.route.data) {
@@ -161,6 +171,36 @@ export class MipesoPage implements OnInit {
         err => console.log('Error: ', err)
         );
     }
+    
+    public doughnutChartLabels:string[] = ['Poco Peso', 'Peso Ideal', 'Sobre Peso'];
+public doughnutChartData:number[] = [50, 80, 100];
+public doughnutChartType:string = 'doughnut';
+
+// events
+public chartClicked(e: any): void {
+  console.log(e);
+}
+
+public chartHovered(e: any): void {
+  console.log(e);
+}
+
+public barChartOptions = {
+  scaleShowVerticalLines: false,
+  responsive: true
+};
+
+public barChartLabels = ['40', '50 ', '60', '70', '80', '100', '120'];
+public barChartType = 'bar';
+public barChartLegend = true;
+
+public barChartData = [
+  {data: [1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2], label: 'Altura'},
+  {data: [45, 55, 65, 75, 85, 95, 100, 110, 120], label: 'Peso Kg'},
+  {data: [1.85,2.85, 3.85, 5.25, 25.5, 30, 31, 50], label: 'IMC'}
+];
+
+
   }
 
   

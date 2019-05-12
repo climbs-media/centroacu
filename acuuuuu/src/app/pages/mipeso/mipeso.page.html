@@ -6,14 +6,14 @@
           <ion-col>
             <div class="pesoIni">
               <p>Peso inicial</p>
-              <p class="tconsul"><strong>90</strong> Kg</p>
+              <p class="tconsul"><strong>{{item.payload.doc.data().peso}}</strong> Kg</p>
               <p>IMC xx</p>
             </div>
             </ion-col>
             <div class="pesoPer">
                 <p>Peso Total</p>
                 <p>Perdido</p>
-                <p class="tconsul"><strong>10</strong> Kg</p>
+                <p class="tconsul"><strong>{{item.payload.doc.data().pesoPerdido}}</strong> Kg</p>
               </div>
             </ion-row>
             <div class="pesoConsul">
@@ -22,18 +22,18 @@
                 <p class="tconsul">IMC {{item.payload.doc.data().imc}}</p> 
               </div>
             </ion-grid>
-            <ion-grid text-center>
+            <ion-grid text-center *ngFor="let item of items">
               <ion-row style="margin-top: -20px; text-align: center">
                 <ion-col>
                     <div class="pesoObj">
                         <p>Peso</p>
                         <p>Objetivo</p>
-                        <p class="tconsul"><strong>65</strong> Kg</p>
+                        <p class="tconsul"><strong>{{item.payload.doc.data().pesoObjetivo}}</strong> Kg</p>
                       </div>
                 </ion-col>
                 <div class="pesoEst">
                     <p>Estás a</p>
-                    <p class="tconsul"><strong>10</strong> Kg</p>
+                    <p class="tconsul"><strong>{{item.payload.doc.data().estasObjetivo}}</strong> Kg</p>
                     <p class="obje1">De tu</p>
                     <p class="obje">Objetivo</p>
                   </div>
@@ -48,17 +48,65 @@
                 <div class="sobrePe"> Sobre Peso</div>
                 <div class="obe">Obesidad</div>
               </div>
+
+              <div>
+                  <h4 text-center>Tu IMC</h4>
+                  <div text-center>
+                  <ion-label><h5>{{item.payload.doc.data().imc}}</h5></ion-label>
+                </div>
+                    <progress style="margin-top: 5px; width: 90%" value="{{item.payload.doc.data().imc}}" min="13" max="50"></progress>
+                </div>
               
 
 
-                  <div *ngFor="let item of items">
-                    <h4 text-center>Tu IMC</h4>
-                    <div text-center>
-                    <ion-label><h5>{{item.payload.doc.data().imc}}</h5></ion-label>
+            <div>
+                <div>
+                    <div *ngFor="let item of items">
+                      <ion-grid>
+                        <ion-row text-center>
+                          <ion-col size="6">
+                            <div text-center>
+                            <h5>Tu Peso</h5>
+                          </div>
+                            <p style="color:black">{{item.payload.doc.data().peso}} KG</p>
+                          </ion-col>
+                          <ion-col size="6">
+                            <h5>Tu IMC</h5>
+                            <p style="color:black">{{item.payload.doc.data().imc}}</p>
+                          </ion-col>
+                        </ion-row>
+                      </ion-grid>
+                      <div>
+                        <h5>imc ideal</h5>
+                      </div>
+                      <ion-grid>
+                        <ion-row>
+                          <ion-col size="3">
+                            <p style="color:black">Debajo 18.5</p>
+                          </ion-col>
+                          <ion-col size="3">
+                            <p style="color:black">Normal 18.5-25</p>
+                          </ion-col>
+                          <ion-col size="3">
+                            <p style="color:black">Sobrepeso 25-30</p>
+                          </ion-col>
+                          <ion-col size="3">
+                            <p style="color:black">Obesidad > 30 </p>
+                          </ion-col>
+                        </ion-row>
+                      </ion-grid>
+                    </div>
+                    <div style="display: block">
+                      <canvas baseChart
+                              [datasets]="barChartData"
+                              [labels]="barChartLabels"
+                              [options]="barChartOptions"
+                              [legend]="barChartLegend"
+                              [chartType]="barChartType">
+                      </canvas>
+                    </div>
                   </div>
-                      <progress style="margin-top: 5px; width: 90%" value="{{item.payload.doc.data().imc}}" min="13" max="50"></progress>
-                  </div>
-
+            </div>
 
             </ion-grid> 
             <div *ngIf="items" >
