@@ -14,26 +14,22 @@
     </div>
     <ion-list *ngIf="items">
             <div *ngIf="items.length > 0">
-                        <ion-item *ngFor="let item of items">
+                        <ion-item *ngFor="let item of items" >
                        <div *ngIf="item.payload.doc.data().titulo && item.payload.doc.data().titulo.length"  class="contenido">
                             <div *ngIf="item.payload.doc.data().titulo.includes(searchText) ">  
         <ion-card [routerLink]="['/detalles-citas', item.payload.doc.id]">
             <ion-card-header>
                     <ion-item>
-                            <div  text-center class='mes' >{{item.payload.doc.data().titulo}}</div>
+                          <span style="font-weight: bold; color: white;">{{item.payload.doc.data().titulo}}</span>
                     </ion-item>
             </ion-card-header>
             <ion-card-content>
                     <ion-item>
-                        <div  text-center class='mes' >Fecha</div>
-                    </ion-item>
-                    <ion-item>
-                        <div class="diahora" ><span style="margin-left: 10px; font-weight: bold;">{{item.payload.doc.data().fecha}}</span></div>
+                        Fecha: <span style="margin-left: 10px; font-weight: bold; color: white;">{{item.payload.doc.data().fecha}}</span>
                     </ion-item>
                 </ion-card-content>
                 </ion-card>
-                    <hr>
-                    <hr>
+
                 </div>
                 </div>
                 </ion-item>
