@@ -1,6 +1,6 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
-<ion-content>
+<ion-content *ngIf="isPasi === true">
     <ion-row margin-top style="margin-top:15%">
 
         <ion-col col-4 >
@@ -70,5 +70,7 @@
           </div>
 </ion-content>
 
-
+<div *ngIf="isAdmin === true" text-center>
+    <ion-button expand="block" class="centrado" routerLink="/tabs/tab1" >Acceder</ion-button>
+    </div>
 

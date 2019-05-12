@@ -49,6 +49,9 @@ export class DetallesPesoPacientesAdminPage implements OnInit {
             nombreApellido: new FormControl(this.item.nombreApellido, ),
             fechaConsulta: new FormControl(this.item.fechaConsulta , Validators.required),
             peso: new FormControl(this.item.peso , Validators.required),
+            pesoPerdido: new FormControl(this.item.peso , Validators.required),
+            pesoObjetivo: new FormControl(this.item.peso , Validators.required),
+            estasObjetivo: new FormControl(this.item.peso , Validators.required),
             imc: new FormControl(this.item.imc , Validators.required),
         });
     }
@@ -58,6 +61,9 @@ export class DetallesPesoPacientesAdminPage implements OnInit {
             nombreApellido: value.nombreApellido,
             fechaConsulta: value.fechaConsulta,
             peso: value.peso,
+            pesoPerdido: value.pesoPerdido,
+            pesoObjetivo: value.pesoObjetivo,
+            estasObjetivo: value.estasObjetivo,
             imc: value.imc,
             userId: this.userId,
         };

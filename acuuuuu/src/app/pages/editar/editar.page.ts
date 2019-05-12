@@ -92,7 +92,7 @@ export class EditarPage implements OnInit {
     this.firebaseService.actualizarHistorialClinico(this.item.id, data)
         .then(
             res => {
-              this.router.navigate(['/home-admin']);
+              this.router.navigate(['/cliente-perfil']);
             }
         );
   }
@@ -100,7 +100,7 @@ export class EditarPage implements OnInit {
   async delete() {
     const alert = await this.alertCtrl.create({
       header: 'Confirmar',
-      message: 'Quieres Eliminarlo ' + this.item.title + '?',
+      message: 'Quieres Eliminarlo ' + this.item.nombreApellido + '?',
       buttons: [
         {
           text: 'No',
@@ -114,7 +114,7 @@ export class EditarPage implements OnInit {
             this.firebaseService.borrarHistorialClinico(this.item.id)
                 .then(
                     res => {
-                      this.router.navigate(['/home-admin']);
+                      this.router.navigate(['/cliente-perfil']);
                     },
                     err => console.log(err)
                 );

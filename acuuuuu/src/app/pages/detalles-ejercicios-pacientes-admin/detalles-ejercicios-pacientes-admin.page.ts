@@ -66,7 +66,7 @@ export class DetallesEjerciciosPacientesAdminPage implements OnInit {
     (this.item.id, data)
       .then(
         res => {
-          this.router.navigate(['/dietas-proteinas']);
+          this.router.navigate(['/lista-pacientes-ejercicios']);
         }
       );
   }
@@ -89,7 +89,7 @@ export class DetallesEjerciciosPacientesAdminPage implements OnInit {
             this.diarioService.borrarAnadirEjercicio(this.item.id)
               .then(
                 res => {
-                  this.router.navigate(['/home']);
+                  this.router.navigate(['/lista-pacientes-ejercicios']);
                 },
                 err => console.log(err)
               );

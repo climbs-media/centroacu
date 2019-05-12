@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { MipesoPage } from './mipeso.page';
 import { ComponentsModule } from '../../componentes/cabecera/components.module';
+import { ChartsModule } from 'ng2-charts';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ChartsModule,
     ReactiveFormsModule,
     ComponentsModule,
     IonicModule,

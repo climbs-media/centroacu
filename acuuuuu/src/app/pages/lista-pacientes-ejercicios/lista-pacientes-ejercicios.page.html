@@ -33,12 +33,11 @@
                 <span class="nombreuser">{{item.payload.doc.data().titulo}}</span>
                 <div  class="buscado"  >
                     <span class="num_edad">N° {{item.payload.doc.data().descripcion}} </span>
-                    <span class="num_edad">{{item.payload.doc.data().edad}} Años</span> 
                 </div>
                 
                 <div class="circular" >
                         <span class="estado"></span><!-- nos dira si esta activo ,frecuente, no viene -->
-                        <img   class="circular" src="./../../assets/imgs/foto_cliente.jpg" >
+                        <img   class="circular" src="{{item.payload.doc.data().image}}" >
                 </div>
                 
             <span class="bot_bono">{{item.payload.doc.data().bono}}</span>

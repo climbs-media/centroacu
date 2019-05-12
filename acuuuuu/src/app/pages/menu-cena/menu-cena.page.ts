@@ -32,21 +32,12 @@ export class MenuCenaPage implements OnInit {
   resetFields() {
     this.validations_form = this.formBuilder.group({
       nombreMenu: new FormControl('', Validators.required),
-      desayuno: new FormControl('', Validators.required),
-      desayunoDos: new FormControl('', Validators.required),
-      comidaLunes: new FormControl('', Validators.required),
       cenaLunes: new FormControl('', Validators.required),
-      comidaMartes: new FormControl('', Validators.required),
       cenaMartes: new FormControl('', Validators.required),
-      comidaMiercoles: new FormControl('', Validators.required),
       cenaMiercoles: new FormControl('', Validators.required),
-      comidaJueves: new FormControl('', Validators.required),
       cenaJueves: new FormControl('', Validators.required),
-      comidaViernes: new FormControl('', Validators.required),
       cenaViernes: new FormControl('', Validators.required),
-      comidaSabado: new FormControl('', Validators.required),
       cenaSabado: new FormControl('', Validators.required),
-      comidaDomingo: new FormControl('', Validators.required),
       cenaDomingo: new FormControl('', Validators.required),
     });
   }
@@ -65,7 +56,7 @@ export class MenuCenaPage implements OnInit {
     this.firebaseService.crearMenuCena(data)
       .then(
         res => {
-          this.router.navigate(['/dietas-cenass']);
+          this.router.navigate(['/dietas-cenas']);
         }
       );
   }
