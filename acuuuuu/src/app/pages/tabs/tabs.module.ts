@@ -31,7 +31,7 @@ const routes: Routes = [
         { path: 'tab4', loadChildren: () => MipesoPageModule }, // ESTA EN DUDA PARA CREAR MI PESO USER
 
         { path: 'tab5', loadChildren: () => DiarioEjercicioPageModule },
-        { path: 'tab6', loadChildren: () => ListaCitasPageModule },
+      //  { path: 'tab6', loadChildren: () => ListaCitasPageModule },
 
 
 

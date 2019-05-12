@@ -58,7 +58,7 @@
                     <div text-center>
                     <ion-label><h5>{{this.item.imc}}</h5></ion-label>
                   </div>
-                      <progress style="margin-top: 5px; width: 90%" value="{{this.item.imc}}" min="13" max="35"></progress>
+                      <progress style="margin-top: 5px; width: 90%" value="{{this.item.imc}}" min="13" max="50"></progress>
                   </div>
 
             
@@ -85,7 +85,7 @@
     </ion-item>
     <ion-item>
       <div><h5>Formula IMC</h5></div>
-        <form method="POST" oninput="resultado.value=parseInt(valor1.value)*2/parseInt(valor2.value)">
+        <form method="POST" oninput="resultado.value=parseInt(valor1.value)*parseInt(valor1.value)/parseInt(valor2.value)">
           <div>
         <ion-label>Nuevo Peso:</ion-label>
       </div>
