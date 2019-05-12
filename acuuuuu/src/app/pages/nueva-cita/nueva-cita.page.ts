@@ -98,7 +98,7 @@ export class NuevaCitaPage implements OnInit {
     this.firebaseService.crearNuevaCita(data)
         .then(
             res => {
-              this.router.navigate(['/nueva-cita']);
+              this.router.navigate(['/cliente-perfil']);
             }
         );
   }

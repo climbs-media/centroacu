@@ -79,7 +79,9 @@ const routes: Routes = [
   { path: 'menu-cena', loadChildren: './pages/menu-cena/menu-cena.module#MenuCenaPageModule' },
   { path: 'lista-historial-dietetico', loadChildren: './pages/lista-historial-dietetico/lista-historial-dietetico.module#ListaHistorialDieteticoPageModule' },
   { path: 'detalles-menu-cena/:id', loadChildren: './pages/detalles-menu-cena/detalles-menu-cena.module#DetallesMenuCenaPageModule' },
-  { path: 'detalles-historial-dietetico/:id', loadChildren: './pages/detalles-historial-dietetico/detalles-historial-dietetico.module#DetallesHistorialDieteticoPageModule' },
+  { path: 'detalles-historial-dietetico/:id', loadChildren: './pages/detalles-historial-dietetico/detalles-historial-dietetico.module#DetallesHistorialDieteticoPageModule' },  { path: 'login-reservar-cita', loadChildren: './pages/login-reservar-cita/login-reservar-cita.module#LoginReservarCitaPageModule' },
+  { path: 'lista-citas-pacientes', loadChildren: './pages/lista-citas-pacientes/lista-citas-pacientes.module#ListaCitasPacientesPageModule' },
+
 
 
 
