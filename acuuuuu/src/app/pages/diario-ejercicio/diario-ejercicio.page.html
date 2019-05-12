@@ -65,49 +65,6 @@
         >
       </calendar>
     
-      <ion-card *ngFor="let item of items" style="margin-bottom:220px; margin-top:-200px;">
-          <ion-card-header>
-            <ion-card-title text-center><h5>Citas de {{item.payload.doc.data().titulo}}</h5></ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-              <ul>
-                  <div>
-                      <ion-col size="12">
-                          <h5>Titulo</h5>
-                          <ion-label>{{item.payload.doc.data().titulo}}</ion-label>
-                      </ion-col>
-                  </div>
-                  <div>
-                      <ion-col size="12">
-                          <h5>Descripcion</h5>
-                          <ion-label>{{item.payload.doc.data().descripcion}}</ion-label>
-                      </ion-col>
-          
-                  </div>
-                  <div>
-                      <ion-col size="12">
-                          <h5>Fecha</h5>
-                          <ion-label>{{item.payload.doc.data().fecha}}</ion-label>
-                      </ion-col>
-          
-                  </div>
-                  <div>
-                      <ion-col size="12">
-                          <h5>Hora Inicio</h5>
-                          <ion-label>{{item.payload.doc.data().inicioCita}}</ion-label>
-                      </ion-col>
-          
-                  </div>
-                  <div>
-                      <ion-col size="12">
-                          <h5>Hora Fin</h5>
-                          <ion-label>{{item.payload.doc.data().finalCita}}</ion-label>
-                      </ion-col>
-                  </div>
-                  <hr>
-                  <hr>
-                </ul>
-          </ion-card-content>
-        </ion-card>
+    
 
 </ion-content>
