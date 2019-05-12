@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 
 import { ProteccionPage } from './proteccion.page';
 import { ComponentsModule } from '../../componentes/cabecera/components.module';
+import { SignaturePadModule } from 'angular2-signaturepad';
+import { IonicStorageModule } from '@ionic/storage';
+
 
 const routes: Routes = [
   {
@@ -22,6 +25,8 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
+    SignaturePadModule,
+    IonicStorageModule.forRoot(),
     RouterModule.forChild(routes)
   ],
   declarations: [ProteccionPage]

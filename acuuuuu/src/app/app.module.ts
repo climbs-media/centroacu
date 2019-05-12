@@ -22,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { PopoverHistorialDieteticoPageModule } from './pages/popover-historial-dietetico/popover-historial-dietetico.module';
-
+import { SignaturePadModule } from 'angular2-signaturepad';
+import { IonicStorageModule } from '@ionic/storage'
 
 @NgModule({
   declarations: [AppComponent, ],
@@ -30,6 +31,8 @@ import { PopoverHistorialDieteticoPageModule } from './pages/popover-historial-d
   imports: [BrowserModule,
   IonicModule.forRoot(),
   AppRoutingModule,
+  SignaturePadModule,
+  IonicStorageModule.forRoot(),
   BonosAcreditadosPageModule,
   ChartsModule,
   ReactiveFormsModule,
