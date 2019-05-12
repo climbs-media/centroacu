@@ -8,6 +8,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {HistorialClinicoService} from '../../services/historial-clinico.service';
 import {WebView} from '@ionic-native/ionic-webview/ngx';
 import {NuevaCitaService} from '../../services/nueva-cita.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -52,6 +53,7 @@ export class NuevaCitaPage implements OnInit {
               private firebaseService: NuevaCitaService,
               public alertController: AlertController,
               private route: ActivatedRoute,
+              private authService: AuthService,
   private webview: WebView) { }
 
   ngOnInit() {
@@ -98,7 +100,7 @@ export class NuevaCitaPage implements OnInit {
     this.firebaseService.crearNuevaCita(data)
         .then(
             res => {
-              this.router.navigate(['/cliente-perfil']);
+              this.router.navigate(['/nueva-cita']);
             }
         );
   }
@@ -188,6 +190,15 @@ export class NuevaCitaPage implements OnInit {
     this.event.startTime = selected.toISOString().slice(0, 10);
     selected.setHours(selected.getHours() + 1);
     this.event.endTime = (selected.toISOString().slice(0, 10));
+  }
+  
+  onLogout() {
+    this.authService.doLogout()
+      .then(res => {
+        this.router.navigate(['/login-admin']);
+      }, err => {
+        console.log(err);
+      });
   }
 
 
