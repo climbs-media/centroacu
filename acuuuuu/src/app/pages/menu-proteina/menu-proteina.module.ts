@@ -18,6 +18,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     ComponentsModule,
     ReactiveFormsModule,
     IonicModule,

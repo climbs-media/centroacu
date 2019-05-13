@@ -18,15 +18,15 @@
           <ion-item>
             <ion-label>Fecha</ion-label>
           <!-- <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="event.startTime" formControlName="fecha" [min]="minDate" month-names="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Sept, Oct, Nov, Dic"></ion-datetime>--> 
-            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  formControlName="fecha" ></ion-datetime>
-          </ion-item>
+          <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" formControlName="fecha" class="inputexto" placeholder="Añadir" style="margin-left:-10px" done-text="Aceptar" cancel-text="Cancelar"></ion-datetime>
+        </ion-item>
           <ion-item>
               <ion-label>Hora Inicio</ion-label>
-              <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"  formControlName="inicioCita"  month-names="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Sept, Oct, Nov, Dic"></ion-datetime>
+              <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"  formControlName="inicioCita"  month-names="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Sept, Oct, Nov, Dic" done-text="Aceptar" cancel-text="Cancelar"></ion-datetime>
             </ion-item>
           <ion-item>
             <ion-label>Hora Final</ion-label>
-            <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"  formControlName="finalCita"  month-names="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agos, Sept, Octubre, Nov, Dic"></ion-datetime>
+            <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"  formControlName="finalCita"  month-names="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agos, Sept, Octubre, Nov, Dic" done-text="Aceptar" cancel-text="Cancelar"></ion-datetime>
           </ion-item>
     <ion-button type="submit" fill="outline" expand="block" [disabled]="!validations_form.valid" >Añadir Cita</ion-button>
 

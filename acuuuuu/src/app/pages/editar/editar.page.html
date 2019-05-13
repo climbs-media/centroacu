@@ -24,8 +24,8 @@
           <div style="color:#BB1D1D; margin-top:15px; font-weight: bold;">
             Fecha </div>
           <div class="cajatexto" style="width:120px; ">
-            <ion-datetime display-format="DD-MM-YYYY" picker-format="DD-MM-YYYY" formControlName="fecha" class="inputexto" ></ion-datetime>
-          </div>
+              <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" formControlName="fecha" class="inputexto" placeholder="Añadir" style="margin-left:-10px" done-text="Aceptar" cancel-text="Cancelar"></ion-datetime>
+            </div>
         </ion-col>
       </ion-row>
       <ion-row  >
@@ -122,9 +122,6 @@
             <ion-select-option value="diabetes">diabetes</ion-select-option>
             <ion-select-option value="cardiopatia">cardiopatia</ion-select-option>
             <ion-select-option value="obesidad">obesidad</ion-select-option>
-            <!--  <span class='padece'>Diabetes<ion-checkbox  [(ngModel)]="diabetes" style="margin-left: 10px" ></ion-checkbox> </span>
-              <span class='padece'>Cardiopatia<ion-checkbox  [(ngModel)]="cardiopatia" style="margin-left: 17px"  ></ion-checkbox></span>
-              <br><span class='padece'>Obesidad<ion-checkbox  [(ngModel)]="obesidad" style="margin-left: 15px"  ></ion-checkbox></span>   -->
           </ion-select>
 
         </ion-col>
@@ -133,12 +130,10 @@
         <ion-row style="text-align:center;" padding-top >
           <ion-col size="6">
             <ion-button type="submit" ion-button class="but" [disabled]="!validations_form.valid" round>Aceptar
-              <!-- <ion-icon name="arrow-round-forward" style="color:white;"></ion-icon> -->
             </ion-button>
           </ion-col>
           <ion-col size="6">
             <ion-button type="submit" ion-button class="but" (click)="delete()" round>Borrar
-              <!-- <ion-icon name="arrow-round-forward" style="color:white;"></ion-icon> -->
             </ion-button>
           </ion-col>
         </ion-row>

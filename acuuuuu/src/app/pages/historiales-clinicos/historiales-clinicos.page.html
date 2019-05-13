@@ -3,7 +3,7 @@
 
 <ion-content padding-top padding-top>
 <ion-back-button color="primary" defaultHref="/"></ion-back-button>
-  <ion-grid *ngIf="items">
+  <ion-grid>
     <ion-row  >
         <ion-icon name="ios-add-circle"  name="md-add-circle" routerLink="/proteccion"  class="iconos"></ion-icon>
 
@@ -22,8 +22,8 @@
           <div class="tabla"><img src="../../../assets/imgs/bot_cliente_perfil/recuento.png" class="recuento"></div>
         </ion-col>
       </ion-row>
-       <div *ngIf="items.length > 0">
-        <ion-list>
+        <ion-list *ngIf="items">
+            <div *ngIf="items.length > 0">
             <ion-item *ngFor="let item of items" style="--background:whitesmoke">
            <div *ngIf="item.payload.doc.data().nombreApellido && item.payload.doc.data().nombreApellido.length"  class="contenido">
                 <div *ngIf="item.payload.doc.data().nombreApellido.includes(searchText) ">  
@@ -50,8 +50,9 @@
   </div>
   </div>
   </ion-item>
+    </div>
   </ion-list>
-  </div>
+  
   </ion-grid>
 </ion-content>
 

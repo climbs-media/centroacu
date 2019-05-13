@@ -123,4 +123,8 @@ export class HistorialFisicoPage implements OnInit {
     return await loading.present();
   }
 
+  goAgregar(){
+    this.router.navigate(['/crear-historial-fisico'])
+  }
+
 }

@@ -79,8 +79,15 @@ const routes: Routes = [
   { path: 'menu-cena', loadChildren: './pages/menu-cena/menu-cena.module#MenuCenaPageModule' },
   { path: 'lista-historial-dietetico', loadChildren: './pages/lista-historial-dietetico/lista-historial-dietetico.module#ListaHistorialDieteticoPageModule' },
   { path: 'detalles-menu-cena/:id', loadChildren: './pages/detalles-menu-cena/detalles-menu-cena.module#DetallesMenuCenaPageModule' },
-  { path: 'detalles-historial-dietetico/:id', loadChildren: './pages/detalles-historial-dietetico/detalles-historial-dietetico.module#DetallesHistorialDieteticoPageModule' },  { path: 'login-reservar-cita', loadChildren: './pages/login-reservar-cita/login-reservar-cita.module#LoginReservarCitaPageModule' },
+  { path: 'detalles-historial-dietetico/:id', loadChildren: './pages/detalles-historial-dietetico/detalles-historial-dietetico.module#DetallesHistorialDieteticoPageModule' },
+  { path: 'login-reservar-cita', loadChildren: './pages/login-reservar-cita/login-reservar-cita.module#LoginReservarCitaPageModule' },
   { path: 'lista-citas-pacientes', loadChildren: './pages/lista-citas-pacientes/lista-citas-pacientes.module#ListaCitasPacientesPageModule' },
+  { path: 'login-dieta', loadChildren: './pages/login-dieta/login-dieta.module#LoginDietaPageModule' },
+  { path: 'lista-dietas-hipocaloricas-user', loadChildren: './pages/lista-dietas-hipocaloricas-user/lista-dietas-hipocaloricas-user.module#ListaDietasHipocaloricasUserPageModule' },
+  { path: 'lista-dietas-proteinas-user', loadChildren: './pages/lista-dietas-proteinas-user/lista-dietas-proteinas-user.module#ListaDietasProteinasUserPageModule' },
+  { path: 'lista-dietas-cena-user', loadChildren: './pages/lista-dietas-cena-user/lista-dietas-cena-user.module#ListaDietasCenaUserPageModule' },
+  { path: 'crear-historial-fisico', loadChildren: './pages/crear-historial-fisico/crear-historial-fisico.module#CrearHistorialFisicoPageModule' },
+  { path: 'detalles-historial-fisico/:id', loadChildren: './pages/detalles-historial-fisico/detalles-historial-fisico.module#DetallesHistorialFisicoPageModule' },
 
 
 

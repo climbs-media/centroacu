@@ -87,6 +87,7 @@ export class EditarPage implements OnInit {
       altura: value.altura,
       referencia: value.referencia,
       imc: value.imc,
+      image: this.image,
       userId: this.userId,
     };
     this.firebaseService.actualizarHistorialClinico(this.item.id, data)

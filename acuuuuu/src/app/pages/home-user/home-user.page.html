@@ -46,15 +46,8 @@
                   </ion-col>
                 </ion-row>
               </ion-grid>
-<<<<<<< HEAD
               <div>
                 <h5>IMC ideal</h5>
-=======
-              <hr>
-              <hr>
-              <div text-center>
-                  <h5><b>IMC Ideal</b></h5>
->>>>>>> a3b0d64092b540d22b5a652ff6ff771b233d235e
               </div>
               <ion-grid>
                 <ion-row>
@@ -83,9 +76,11 @@
               </canvas>
             </div>
           </div>
+
+          <div *ngIf="isAdmin === true" text-center>
+            <ion-button expand="block" class="centrado" routerLink="/tabs/tab1" >Acceder</ion-button>
+          </div>
 </ion-content>
 
-<div *ngIf="isAdmin === true" text-center>
-    <ion-button expand="block" class="centrado" routerLink="/tabs/tab1" >Acceder</ion-button>
-    </div>
+
 

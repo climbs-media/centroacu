@@ -15,7 +15,7 @@ export class HistorialesClinicosPage implements OnInit {
   personabuscar: string;
   encontrado = false;
   items: Array<any>;
-  searchText = '';
+  searchText: string = '';
   isAdmin: any = null;
   isPasi: any = null;
   userUid: string = null;
