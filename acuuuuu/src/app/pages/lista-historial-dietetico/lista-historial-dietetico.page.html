@@ -1,7 +1,7 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content padding-top padding-top>
-
+  <ion-back-button color="primary" defaultHref="/"></ion-back-button>
   <ion-grid *ngIf="items">
     <ion-row  >
 
@@ -14,26 +14,22 @@
       </ion-row>
 
   <ion-row class="conteBoton" margin-top>
-  
-
       </ion-row>
-      <ion-col col-8>
-        
-          <div class="tabla"><img src="../../../assets/imgs/bot_cliente_perfil/recuento.png" class="recuento"></div>
-        </ion-col>
        <div *ngIf="items.length > 0">
         <ion-list>
-            <ion-item *ngFor="let item of items" style="--background:whitesmoke">
+            <ion-item *ngFor="let item of items">
            <div *ngIf="item.payload.doc.data().nombreApellido && item.payload.doc.data().nombreApellido.length"  class="contenido">
                 <div *ngIf="item.payload.doc.data().nombreApellido.includes(searchText) ">  
                   <ul>
     <ion-col>
-        <div [routerLink]="['/detalles-historial-dietetico', item.payload.doc.id]"  class="cajabuscador"   >
-              <span class="nombreuser">{{item.payload.doc.data().nombreApellido}}</span>
-              <div  class="buscado"  >
-                  <span class="num_edad">N° {{item.payload.doc.data().menu}} </span>
-                  <span class="num_edad">{{item.payload.doc.data().fechaConsulta}} Años</span> 
+        <div [routerLink]="['/detalles-historial-dietetico', item.payload.doc.id]"  class="cajabuscador"    >
+              <span class="nombreuser"> <strong>Paciente:     </strong>{{item.payload.doc.data().nombreApellido}}</span>
+              <div  class="buscado">
+                  <span class="num_edad" style="font-weight:bold;">Menú: {{item.payload.doc.data().menu}} </span>
+                 
               </div>
+                <span class="num_edad"> Última Consulta:  {{item.payload.doc.data().fechaConsulta}}</span> 
+              
 
       </div>
         

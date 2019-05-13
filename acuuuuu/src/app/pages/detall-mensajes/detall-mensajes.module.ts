@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { DetallMensajesPage } from './detall-mensajes.page';
 import { ChatResolver } from './detall-mensajes.resolver';
+import { ComponentsModule } from 'src/app/componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ComponentsModule,
     ReactiveFormsModule,
     IonicModule,
     RouterModule.forChild(routes)

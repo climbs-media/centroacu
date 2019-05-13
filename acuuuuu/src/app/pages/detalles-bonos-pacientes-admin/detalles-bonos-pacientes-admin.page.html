@@ -1,7 +1,7 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content padding>
-  <button routerLink="/historiales-clinicos"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%; margin-top:-10px;"></button>
+  <ion-back-button color="primary" defaultHref="/"></ion-back-button>
   <ion-grid>
     <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
       <ion-row  text-center >
@@ -105,7 +105,7 @@
       <ion-row>
         <ion-col col-12>
             <ion-label>Bonos</ion-label>
-          <ion-input type="number" class="cajatexto" formControlName="bono" placeholder="Bonos" ></ion-input>
+          <ion-input type="number" class="cajatexto" formControlName="bono" placeholder="Añadir Bonos..." ></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>

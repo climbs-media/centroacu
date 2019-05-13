@@ -107,5 +107,14 @@ getCurrentUser2() {
   });
 }
 
+onLogout() {
+  this.authService.doLogout()
+    .then(res => {
+      this.router.navigate(['/login-user']);
+    }, err => {
+      console.log(err);
+    });
+}
+
 }
 

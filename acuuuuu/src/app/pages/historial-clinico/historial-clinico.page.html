@@ -1,8 +1,9 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content padding>
+    <ion-back-button color="primary" defaultHref="/"></ion-back-button>
     <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
-    <button routerLink="/cliente-perfil"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%; margin-top:-10px;"></button> 
+  
   <ion-grid>
     <ion-row  text-center >
         <ion-col col-4 >
@@ -112,26 +113,33 @@
       </ion-row> -->  
         <ion-row>
           <ion-col col-12>
-                  <div class="cajatexto"  style="margin-left:18px;"> 
+                  <div class="cajatexto" > 
                   <ion-input placeholder="Altura en CM" type="text" formControlName="altura" class="inputexto2"></ion-input> 
                   </div>
           </ion-col>
+        </ion-row>
+        <ion-row>
           <ion-col col-12>
-            <div class="cajatexto"  style="margin-left:10px;"> 
+            <div class="cajatexto" > 
             <ion-input placeholder="Añade Peso" type="text" formControlName="peso" class="inputexto2"></ion-input> 
             </div>
+            
     </ion-col>
+  </ion-row>
+  <ion-row>
     <ion-col col-12>
-      <div class="cajatexto"  style="margin-right:16px;"> 
+      <div class="cajatexto"  > 
       <ion-input placeholder="Agrega el IMC" type="number" formControlName="imc" class="inputexto2"></ion-input> 
       </div>
 </ion-col>
+</ion-row>
+<ion-row>
     <ion-col col-12>
-      <div class="cajatexto"  style="margin-right:16px;"> 
+      <div class="cajatexto"  > 
       <ion-input placeholder="Edad" type="number" formControlName="edad" class="inputexto2"></ion-input> 
       </div>
 </ion-col>
-        </ion-row>
+</ion-row>
         <ion-row>
           <ion-col col-12>
             <div class="bono"  style="margin-left:16px;"> 

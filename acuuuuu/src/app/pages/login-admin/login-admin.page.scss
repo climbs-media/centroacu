@@ -27,7 +27,9 @@
               text-decoration: none;
              width:120px;
              height:35px;
-              color: #ffffff;
+              color: #BB1D1D;
+              font-weight: bold;
+              --background:white;
              /* background-color:#9c3535;pondre color en theme/variables.css*/
               border-radius: 100px 100px 100px 100px !important;
               -moz-border-radius: 62px 66px 62px 78px;
@@ -49,6 +51,7 @@
           height: 35px;
           padding-bottom: 3px;
         background-color: #F9F7F6;
+        color: #BB1D1D;
         
        
         border: 0.5px solid rgba(0,0,0,.25);

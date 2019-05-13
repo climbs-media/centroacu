@@ -154,7 +154,7 @@ export class MipesoPage implements OnInit {
           this.dummyJson.gramos
         ],
         positiveButtonText: 'Seleccionar',
-        negativeButtonText: 'Ccncelar',
+        negativeButtonText: 'Cancelar',
         defaultItems: [ 
           { index: 0, value: this.dummyJson.kilos[4].description },
           { index: 1, value: this.dummyJson.gramos[1].description}
@@ -191,7 +191,7 @@ public barChartOptions = {
 };
 
 public barChartLabels = ['40', '50 ', '60', '70', '80', '100', '120'];
-public barChartType = 'bar';
+public barChartType = 'line';
 public barChartLegend = true;
 
 public barChartData = [

@@ -14,7 +14,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class DetallesBonosPacientesAdminPage implements OnInit {
 
-  public  tituhead: String = 'Editar Perfil';
+  public  tituhead: String = 'Añade Bonos';
 
   validations_form: FormGroup;
   image: any;

@@ -13,6 +13,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DetallesHistorialDieteticoPage implements OnInit {
 
+  public  tituhead: String = 'Detalles';
+
 
   validations_form: FormGroup;
   image: any;

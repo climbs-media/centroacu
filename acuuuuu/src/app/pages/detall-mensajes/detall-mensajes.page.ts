@@ -13,7 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DetallMensajesPage implements OnInit {
 
-
+  public  tituhead: String = 'Detalle de mensaje';
   validations_form: FormGroup;
   image: any;
   item: any;

@@ -2,8 +2,7 @@
 
 <ion-content>
 <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
-  <button routerLink="/cliente-seguimiento"><img src="../../../assets/imgs/retroceso.png" style="margin-top: 5%; color: red; position: absolute; margin-left: 5%"></button> 
-    <h4>Mi Peso</h4>
+  <ion-back-button color="primary" defaultHref="/"></ion-back-button> 
     <ion-grid *ngFor="let item of items">
         <ion-row>
           <ion-col>
@@ -68,12 +67,12 @@
 
 </form>
 
-<div>
-  <h4>Modifical</h4>
+<div style="width:80%; height:30px; background:#BB1D1D; border-radius:30px; color: white; font-weight: bold; margin: 0 auto">
+  <h4>Actualiza Tu Peso!</h4>
 </div>
 <form class="animated fadeIn fast" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
     <ion-item>
-        <ion-label position="floating" color="primary">Nombre del Paciente</ion-label>
+        <ion-label position="floating" color="primary">Paciente</ion-label>
         <ion-input type="text" formControlName="nombreApellido"></ion-input>
     </ion-item>
     <div class="cajatexto" style="margin-left:18px;">
