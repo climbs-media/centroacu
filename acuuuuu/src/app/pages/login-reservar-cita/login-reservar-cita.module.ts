@@ -5,30 +5,23 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ProteccionPage } from './proteccion.page';
-import { ComponentsModule } from '../../componentes/cabecera/components.module';
-import { SignaturePadModule } from 'angular2-signaturepad';
-import { IonicStorageModule } from '@ionic/storage';
-
+import { LoginReservarCitaPage } from './login-reservar-cita.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ProteccionPage
+    component: LoginReservarCitaPage
   }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
-    ComponentsModule,
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    SignaturePadModule,
-    IonicStorageModule.forRoot(),
     RouterModule.forChild(routes)
   ],
-  declarations: [ProteccionPage]
+  declarations: [LoginReservarCitaPage]
 })
-export class ProteccionPageModule {}
+export class LoginReservarCitaPageModule {}

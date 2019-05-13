@@ -2,7 +2,7 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content padding>
-    <ion-back-button color="primary" defaultHref="/"></ion-back-button>
+    <ion-back-button defaultHref="/"></ion-back-button>
         <ion-col >
                 <div class="busqueda" >
                 <ion-searchbar [(ngModel)]="searchText" placeholder="Busca Nombre" style=" border-radius: 50px;" ></ion-searchbar>
@@ -12,28 +12,27 @@
         <h2 style="color: #BB1D1D; font-weight: bold;">Citas Disponibles</h2>
     </div>
     <ion-list *ngIf="items">
-            <div *ngIf="items.length > 0">
-                        <ion-item *ngFor="let item of items" >
+            <div >
+                        <ion-item *ngFor="let item of items">
                        <div *ngIf="item.payload.doc.data().titulo && item.payload.doc.data().titulo.length"  class="contenido">
                             <div *ngIf="item.payload.doc.data().titulo.includes(searchText) ">  
         <ion-card [routerLink]="['/detalles-citas', item.payload.doc.id]">
             <ion-card-header>
-<<<<<<< HEAD
-                    <ion-item color="primary">
-                          Paciente: <span style="font-weight: bold; color: white; margin-left: 3px;">{{item.payload.doc.data().titulo}}</span>
-=======
                     <ion-item>
-                        <span style="font-weight: bold; color: white;">{{item.payload.doc.data().titulo}}</span>
->>>>>>> a3b0d64092b540d22b5a652ff6ff771b233d235e
+                            <div  text-center class='mes' >{{item.payload.doc.data().titulo}}</div>
                     </ion-item>
             </ion-card-header>
             <ion-card-content>
-                    <ion-item  color="primary">
-                        Fecha de cita: <span style="margin-left: 10px; font-weight: bold; color: white;">{{item.payload.doc.data().fecha}}</span>
+                    <ion-item>
+                        <div  text-center class='mes' >Fecha</div>
+                    </ion-item>
+                    <ion-item>
+                        <div class="diahora" ><span style="margin-left: 10px; font-weight: bold;">{{item.payload.doc.data().fecha}}</span></div>
                     </ion-item>
                 </ion-card-content>
                 </ion-card>
-
+                    <hr>
+                    <hr>
                 </div>
                 </div>
                 </ion-item>

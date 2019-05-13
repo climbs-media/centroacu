@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { ToastController, LoadingController } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ToastController, LoadingController, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ProteccionService } from 'src/app/services/proteccion.service';
+import { SignaturePad } from 'angular2-signaturepad/signature-pad';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-proteccion',
@@ -10,6 +12,18 @@ import { ProteccionService } from 'src/app/services/proteccion.service';
   styleUrls: ['./proteccion.page.scss'],
 })
 export class ProteccionPage implements OnInit {
+
+  signature = '';
+  isDrawing = false;
+ 
+  @ViewChild(SignaturePad) signaturePad: SignaturePad;
+  private signaturePadOptions: Object = { // Check out https://github.com/szimek/signature_pad
+    'minWidth': 2,
+    'canvasWidth': 400,
+    'canvasHeight': 200,
+    'backgroundColor': '#f6fbff',
+    'penColor': '#666a73'
+  };
 
   public  tituhead: string = 'Centro ACU 10';
 
@@ -22,6 +36,8 @@ export class ProteccionPage implements OnInit {
     public router: Router,
     private formBuilder: FormBuilder,
     private proteccionService: ProteccionService,
+    public navController: NavController, 
+    public storage: Storage, 
   ) { }
 
   ngOnInit() {
@@ -56,4 +72,36 @@ export class ProteccionPage implements OnInit {
     return await loading.present();
   }
 
+  /*tabla firma*/
+
+  ionViewDidEnter() {
+    this.signaturePad.clear()
+    this.storage.get('savedSignature').then((data) => {
+      this.signature = data;
+    });
+  }
+ 
+  drawComplete() {
+    this.isDrawing = false;
+  }
+ 
+  drawStart() {
+    this.isDrawing = true;
+  }
+ 
+  async savePad() {
+    this.signature = this.signaturePad.toDataURL();
+    this.storage.set('savedSignature', this.signature);
+    this.signaturePad.clear();
+    let toast = await this.toastCtrl.create({
+      message: 'Nueva Firma Guardada.',
+      duration: 1000
+    });
+    toast.present();
+  }
+
+  clearPad() {
+    this.signaturePad.clear();
+  }
 }
+

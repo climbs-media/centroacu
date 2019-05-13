@@ -10,7 +10,7 @@
         </ion-card-header>
         <ion-card-content *ngIf="collapseCard">
           <ion-item>
-            <ion-input type="text" placeholder="Título" [(ngModel)]="event.title" formControlName="titulo"></ion-input>
+            <ion-input type="text" placeholder="Nombre" [(ngModel)]="event.title" formControlName="titulo"></ion-input>
           </ion-item>
           <ion-item>
             <ion-input type="text" placeholder="Descripción" [(ngModel)]="event.desc" formControlName="descripcion"></ion-input>
@@ -114,3 +114,6 @@
     </ion-card>
 
 </ion-content>
+<ion-footer>
+  <ion-button text-center expand="block" (click)="onLogout()">Salir</ion-button>
+</ion-footer>

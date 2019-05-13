@@ -5,30 +5,30 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ProteccionPage } from './proteccion.page';
-import { ComponentsModule } from '../../componentes/cabecera/components.module';
-import { SignaturePadModule } from 'angular2-signaturepad';
-import { IonicStorageModule } from '@ionic/storage';
-
+import { ListaCitasPacientesPage } from './lista-citas-pacientes.page';
+import { CitasResolver } from './lista-citas-pacientes.resolver';
+import { ComponentsModule } from 'src/app/componentes/cabecera/components.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: ProteccionPage
+    component: ListaCitasPacientesPage,
+    resolve: {
+      data: CitasResolver
+    }
   }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
-    ComponentsModule,
     FormsModule,
+    ComponentsModule,
     ReactiveFormsModule,
     IonicModule,
-    SignaturePadModule,
-    IonicStorageModule.forRoot(),
     RouterModule.forChild(routes)
   ],
-  declarations: [ProteccionPage]
+  declarations: [ListaCitasPacientesPage],
+  providers: [CitasResolver]
 })
-export class ProteccionPageModule {}
+export class ListaCitasPacientesPageModule {}

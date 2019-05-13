@@ -12,12 +12,30 @@
       <ion-col col-12>
         <p text-justify class="ley">
             La Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos privacidad personal y familiar.
-             Fue aprobada por las Cortes Generales el 13 de diciembre de 1999 y derogada con la entrada en 
+            Fue aprobada por las Cortes Generales el 13 de diciembre de 1999 y derogada con la entrada en 
               General de Protección de Datos de la Unión Europea. <a href="#" color="primary">Más info.</a>
         </p>
       </ion-col>
     </div>
+    <div>
+      <div class="title">Firma</div>
+      <ion-row [ngClass]="{'drawing-active': isDrawing}">
+        <ion-col></ion-col>
+        <ion-col>
+          <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+        </ion-col>
+        <ion-col></ion-col>
     
+      </ion-row>
+    
+  <!-- <ion-row>
+        <ion-col></ion-col>
+        <ion-col width-80>
+          <img [src]="signature"/>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>-->
+    </div>
   </ion-row>
 </ion-grid>
 <div class="cFirma">
@@ -38,8 +56,15 @@
       </ion-label>
     </div>
   </ion-col>
-    <ion-button type='submit' ion-button color="primary" class="but" [disabled]="!validations_form.valid" round>Adelante</ion-button>
-</div>
+  <div>
+    <ion-col size="6">
+        <ion-button size="small" color="danger" class="but" (click)="clearPad()">Limpiar</ion-button>
+    </ion-col>
+    <ion-col size="6">
+    <ion-button type='submit' ion-button color="primary" class="but" [disabled]="!validations_form.valid" (click)="savePad()"round>Adelante</ion-button>
+  </ion-col>
+  </div>
+  </div>
 </div>
 
 </form>
