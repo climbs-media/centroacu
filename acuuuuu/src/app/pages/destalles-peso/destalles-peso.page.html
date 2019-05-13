@@ -69,7 +69,7 @@
 </form>
 
 <div>
-  <h4>Modifical</h4>
+  <h4>Modificar</h4>
 </div>
 <form class="animated fadeIn fast" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
     <ion-item>
@@ -186,35 +186,93 @@
 <!--------------------------------------------------------------------------->
 
 
-    <ion-item>
-        <ion-label position="floating" color="primary">Nuevo Peso</ion-label>
-        <ion-input placeholder="Nuevo Peso" type="number" formControlName="peso"></ion-input>
-    </ion-item>
-    <ion-item>
-      <div><h5>Formula IMC</h5></div>
-      <form method="POST" oninput="resultado.value=parseInt(valor1.value)*parseInt(valor1.value)/parseInt(valor2.value)">
+<ion-item>
+    <ion-label position="floating" color="primary">Peso Anterior</ion-label>
+    <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoAnterior"></ion-input>
+</ion-item> 
+<ion-item>
+    <ion-label position="floating" color="primary">Peso Actual</ion-label>
+    <ion-input placeholder="Nuevo Peso" type="number" formControlName="peso"></ion-input>
+</ion-item>
+<ion-item>
+    <div><h5>Formula Peso Perdido</h5></div>
+      <form method="POST" oninput="resultado.value=parseInt(valor1.value)-parseInt(valor2.value)">
         <div>
-        <ion-label>Nuevo Peso:</ion-label>
+      <ion-label>Peso Anterior:</ion-label>
+    </div>
+    <div>
+        <input type="number" id="valor1" value="{{this.item.peso}}">
       </div>
       <div>
-          <input type="number" id="valor1" value="0">
-        </div>
+        <ion-label>Peso Actual:</ion-label>
+      </div>
+      <div>
+        <input type="number" id="valor2" value="0"> 
+      </div>
+      <div>
+        <ion-label>Peso Perdido</ion-label>
+      </div>
+        <output name="resultado" for="valor1 valor2"></output>
+    </form>
+</ion-item>
+<ion-item>
+    <ion-label position="floating" color="primary">Peso Perdido</ion-label>
+    <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoPerdido"></ion-input>
+</ion-item>
+<ion-item>
+    <ion-label position="floating" color="primary">Peso Objetivo</ion-label>
+    <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoObjetivo"></ion-input>
+</ion-item>
+<ion-item>
+    <div><h5>Formula estas de tu objetivo</h5></div>
+      <form method="POST" oninput="resultado.value=parseInt(valor1.value)-parseInt(valor2.value)">
         <div>
-          <ion-label>Altura</ion-label>
-        </div>
-        <div>
-          <input type="number" id="valor2" value="0"> 
-        </div>
-        <div>
-          <ion-label>IMC</ion-label>
-        </div>
-          <output name="resultado" for="valor1 valor2"></output>
-      </form>
-    </ion-item>
-    <ion-item>
-        <ion-label position="floating" color="primary">Nuevo IMC</ion-label>
-        <ion-input placeholder="Nuevo IMC" type="number" formControlName="imc"></ion-input>
-    </ion-item>
+      <ion-label>Peso Actual:</ion-label>
+    </div>
+    <div>
+        <input type="number" id="valor1" value="0">
+      </div>
+      <div>
+        <ion-label>Peso objetivo:</ion-label>
+      </div>
+      <div>
+        <input type="number" id="valor2" value="0"> 
+      </div>
+      <div>
+        <ion-label>Kg de tu objetivo</ion-label>
+      </div>
+        <output name="resultado" for="valor1 valor2"></output>
+    </form>
+</ion-item>
+<ion-item>
+    <ion-label position="floating" color="primary">¿A cuanto estas de tu objetivo?</ion-label>
+    <ion-input placeholder="Nuevo Peso" type="number" formControlName="estasObjetivo"></ion-input>
+</ion-item>
+<ion-item>
+  <div><h5>Formula IMC</h5></div>
+    <form method="POST" oninput="resultado.value=parseInt(valor1.value)*parseInt(valor1.value)/parseInt(valor2.value)">
+      <div>
+    <ion-label>Peso actual:</ion-label>
+  </div>
+  <div>
+      <input type="number" id="valor1" value="0">
+    </div>
+    <div>
+      <ion-label>Altura:</ion-label>
+    </div>
+    <div>
+      <input type="number" id="valor2" value="{{this.item.altura}}"> 
+    </div>
+    <div>
+      <ion-label>IMC</ion-label>
+    </div>
+      <output name="resultado" for="valor1 valor2"></output>
+  </form>
+</ion-item>
+<ion-item>
+    <ion-label position="floating" color="primary">Nuevo IMC</ion-label>
+    <ion-input placeholder="Nuevo IMC" type="number" formControlName="imc"></ion-input>
+</ion-item>
     <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Actualizar Datos</ion-button>
 </form>
 </ion-content>
