@@ -33,19 +33,25 @@ export class CrearPesoPage implements OnInit {
   resetFields() {
     this.image = './assets/imgs/foto_cliente.jpg';
     this.validations_form = this.formBuilder.group({
-      nombreApellido: new FormControl('', Validators.required),
-      fechaConsulta: new FormControl('', Validators.required),
+      fecha: new FormControl('', Validators.required),
       peso: new FormControl('', Validators.required),
+      pesoAnterior: new FormControl('', Validators.required),
+      pesoPerdido: new FormControl('', Validators.required),
+      pesoObjetivo: new FormControl('', Validators.required),
+      estasObjetivo: new FormControl('', Validators.required),
       imc: new FormControl('', Validators.required),
     });
   }
 
   onSubmit(value) {
     const data = {
-      nombreApellido: value.nombreApellido,
-            fechaConsulta: value.fechaConsulta,
-            peso: value.peso,
-            imc: value.imc,
+      fecha: value.fecha,
+      peso: value.peso,
+      pesoAnterior: value.pesoAnterior,
+      pesoPerdido: value.pesoPerdido,
+      pesoObjetivo: value.pesoObjetivo,
+      estasObjetivo: value.estasObjetivo,
+      imc: value.imc,
     };
     this.firebaseService.crearPeso(data)
       .then(

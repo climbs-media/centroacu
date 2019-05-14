@@ -33,25 +33,23 @@ export class CrearDiarioDieteticoPage implements OnInit {
   resetFields() {
     this.image = './assets/imgs/foto_cliente.jpg';
     this.validations_form = this.formBuilder.group({
-      nombreApellido: new FormControl('', Validators.required),
-      fechaConsulta: new FormControl('', Validators.required),
-      fechaUltimoPeso: new FormControl('', Validators.required),
-      menu: new FormControl('', Validators.required),
-      pesoActual: new FormControl('', Validators.required),
-      pesoPerdido: new FormControl('', Validators.required),
-      semanas: new FormControl('', Validators.required),
+      desayuno: new FormControl('', Validators.required),
+      fecha: new FormControl('', Validators.required),
+      mediaManana: new FormControl('', Validators.required),
+      comida: new FormControl('', Validators.required),
+      mediaTarde: new FormControl('', Validators.required),
+      cena: new FormControl('', Validators.required),
     });
   }
 
   onSubmit(value) {
     const data = {
-      nombreApellido: value.nombreApellido,
-      fechaConsulta: value.fechaConsulta,
-        fechaUltimoPeso: value.fechaUltimoPeso,
-        menu: value.menu,
-        pesoActual: value.pesoActual,
-        pesoPerdido: value.pesoPerdido,
-        semanas: value.semanas,
+      desayuno: value.desayuno,
+      fecha: value.fecha,
+        mediaManana: value.mediaManana,
+        comida: value.comida,
+        mediaTarde: value.mediaTarde,
+        cena: value.cena,
     };
     this.firebaseService.crearDiarioDietetico(data)
       .then(

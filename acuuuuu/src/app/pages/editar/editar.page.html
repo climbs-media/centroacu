@@ -14,9 +14,10 @@
           </div>
         </ion-col>
         <ion-col col-4 >
+          <p>Cambiar Foto</p>
           <div  class="circular">
             <a (click)="openImagePicker()">
-              <img  class="circular" [src]="image" alt="imagen"  >
+              <img  class="circular" [src]="image" alt="imagen" />
             </a>
           </div>
         </ion-col>
@@ -72,6 +73,27 @@
       </ion-row>
       <ion-row>
         <ion-col col-12>
+          <ion-input type="number" class="cajatexto" formControlName="pesoAnterior" placeholder="Peso Anterior"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-input type="number" class="cajatexto" formControlName="pesoObjetivo" placeholder="Peso Objetivo"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-input type="number" class="cajatexto" formControlName="pesoPerdido" placeholder="Peso Perdido"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-input type="number" class="cajatexto" formControlName="estasObjetivo" placeholder=""></ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-12>
           <ion-input type="number" class="cajatexto" formControlName="altura" placeholder="Altura"></ion-input>
         </ion-col>
       </ion-row>
@@ -92,7 +114,7 @@
       </ion-row>
       <ion-row>
         <ion-col col-12>
-          <ion-input type="number" class="cajatexto" formControlName="referencia" placeholder="Referencia"></ion-input>
+          <ion-input type="text" class="cajatexto" formControlName="referencia" placeholder="Referencia"></ion-input>
         </ion-col>
       </ion-row>
 
@@ -114,16 +136,11 @@
             <ion-input formControlName="enfermedades"  type="text" class="inputexto2"  placeholder=""></ion-input>
           </div>
         </ion-col>
-      </ion-row>
-      <ion-row >
         <ion-col >
-          <div style="font-weight: bold; margin: 5px"> Familiares:</div>
-          <ion-select formControlName="familiares" placeholder="Seleccionar">
-            <ion-select-option value="diabetes">diabetes</ion-select-option>
-            <ion-select-option value="cardiopatia">cardiopatia</ion-select-option>
-            <ion-select-option value="obesidad">obesidad</ion-select-option>
-          </ion-select>
-
+          <div  style="font-weight: bold; margin: 5px; margin-left: 10px">Familiares  : </div>
+          <div class="cajatexto" >
+            <ion-input formControlName="familiares"  type="text" class="inputexto2"  placeholder=""></ion-input>
+          </div>
         </ion-col>
       </ion-row>
       <div>

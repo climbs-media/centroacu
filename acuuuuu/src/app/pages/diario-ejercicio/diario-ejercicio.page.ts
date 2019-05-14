@@ -100,7 +100,7 @@ export class DiarioEjercicioPage implements OnInit {
     this.firebaseService.crearAnadirEjercicio(data)
       .then(
         res => {
-          this.router.navigate(['/tabs/tab5']);
+          this.router.navigate(['/ejercicio-user']);
         }
       );
   }

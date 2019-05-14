@@ -5,66 +5,55 @@
 <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
         <ion-grid>
           <ion-row>
-          <ion-col>
-              <h5>Nombre</h5>
-              <ion-input type="text" formControlName="nombreApellido">{{this.item.nombreApellido}}</ion-input>
-          </ion-col>
           <ion-col size="12">
-              <h5>Fecha Consulta</h5>
+              <h5>Fecha</h5>
                   <ion-item>
-    
-                    <ion-input  formControlName="fechaConsulta"></ion-input>
+                    <ion-input  formControlName="fecha" readonly="true"></ion-input>
                   </ion-item>
           </ion-col>
             <ion-col size="12">
-                <h5>Fecha Último Peso</h5>
+                <h5>Desayuno</h5>
                   <ion-item>
-                      <ion-input  formControlName="fechaUltimoPeso"></ion-input>
+                      <ion-input  formControlName="desayuno" readonly="true"></ion-input>
                     </ion-item>
               </ion-col>
             <ion-col size="12">
-                <h5>Fecha Último Peso</h5>
+                <h5>Media mañana</h5>
                     <ion-item>
-                        <ion-input  formControlName="fechaUltimoPeso"></ion-input>
+                        <ion-input  formControlName="mediaManana" readonly="true"></ion-input>
                       </ion-item>
           </ion-col>
                     <ion-col size="12">
-                        <h5>Menú</h5>
+                        <h5>Comida</h5>
                         <ion-item>
-                            <ion-input  formControlName="menu"></ion-input>
+                            <ion-input  formControlName="comida" readonly="true"></ion-input>
                           </ion-item>
                 </ion-col>
                     <ion-col size="12">
-                      <h5>Peso Actual</h5>
+                      <h5>Media tarde</h5>
                             <ion-item>
-                                <ion-input  formControlName="pesoActual"></ion-input>
+                                <ion-input  formControlName="mediaTarde" readonly="true"></ion-input>
                               </ion-item>
                     </ion-col>
                 <ion-col size="12">
-                  <h5>Peso Pérdido</h5>
+                  <h5>cena</h5>
                                 <ion-item>
                                   
-                                    <ion-input  formControlName="pesoPerdido"></ion-input>
+                                    <ion-input  formControlName="cena" readonly="true"></ion-input>
                                   </ion-item>
                   </ion-col>
-                    <ion-col size="12">
-                      <h5>Semanas</h5>
-                                    <ion-item>
-                                        <ion-input  formControlName="semanas"></ion-input>
-                                      </ion-item>
-                          </ion-col>
                           </ion-row>
         </ion-grid>
-        <div text-cente> 
+     <!--   <div text-cente> 
             <ion-button *ngIf="isAdmin === true" type="submit" [disabled]="!validations_form.valid">Modificar</ion-button>
-        </div>
+        </div>-->
 </form>
 
         
           
 
       <div text-center>
-        <ion-button *ngIf="isAdmin === true"  (click)="delete()">Borrar</ion-button>
+        <ion-button  (click)="delete()">Borrar</ion-button>
       </div>
 </ion-content>
   

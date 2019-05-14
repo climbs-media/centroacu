@@ -8,27 +8,27 @@
         <h5>Nombre</h5>
         <ion-item>
            
-            <ion-input type="text" formControlName="titulo" [readonly]="false" class="inputexto2"></ion-input>
+            <ion-input type="text" formControlName="titulo" readonly="true" class="inputexto2"></ion-input>
         </ion-item>
         <h5>Descripción</h5>
         <ion-item>
            
-            <ion-input formControlName="descripcion" [readonly]="false"  class="inputexto2"></ion-input>
+            <ion-input formControlName="descripcion" readonly="true"  class="inputexto2"></ion-input>
         </ion-item>
         <h5>Inicio de Cita</h5>
         <ion-item>
            
-            <ion-input type="text" formControlName="inicioCita" [readonly]="false"  class="inputexto2"></ion-input>
+            <ion-input type="text" formControlName="inicioCita" readonly="true"  class="inputexto2"></ion-input>
         </ion-item>
         <h5>Finaliza la Cita</h5>
         <ion-item>
            
-            <ion-input type="text" formControlName="finalCita" [readonly]="false"  class="inputexto2"></ion-input>
+            <ion-input type="text" formControlName="finalCita" readonly="true"  class="inputexto2"></ion-input>
         </ion-item>
         
-        <div *ngIf="isAdmin === true">
+    <!--   <div *ngIf="isAdmin === true">
             <ion-button fill="outline" expand="block" type="submit" [disabled]="!validations_form.valid">Modificar</ion-button>
-        </div>
+        </div>-->
         <div *ngIf="isAdmin === true">
         <ion-button class="submit-button" fill="outline" expand="block" color="danger" (click)="delete()">Borrar</ion-button>
         </div>

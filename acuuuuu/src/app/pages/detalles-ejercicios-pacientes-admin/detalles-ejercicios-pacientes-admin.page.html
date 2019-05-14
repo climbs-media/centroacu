@@ -8,31 +8,31 @@
           <ion-row>
           <ion-col>
               <h5>Nombre Ejercicio</h5>
-              <ion-input type="text" formControlName="titulo"  class="inputexto2">{{this.item.titulo}}</ion-input>
+              <ion-input type="text" formControlName="titulo"  class="inputexto2" readonly="true">{{this.item.titulo}}</ion-input>
           </ion-col>
           <ion-col size="12">
               <h5>Inicio</h5> 
                   <ion-item>
-                    <ion-input  formControlName="horaInicio" class="inputexto2"></ion-input>
+                    <ion-input  formControlName="horaInicio" class="inputexto2" readonly="true"></ion-input>
                   </ion-item>
           </ion-col>
             <ion-col size="12">
                 <h5>Finalizó Ejercicio</h5> 
                   <ion-item>
-                      <ion-input  formControlName="horaFinal"  class="inputexto2"></ion-input>
+                      <ion-input  formControlName="horaFinal"  class="inputexto2" readonly="true"></ion-input>
                     </ion-item>
               </ion-col>
             <ion-col size="12">
                 <h5>Descripción</h5> 
                     <ion-item>
-                        <ion-input  formControlName="descripcion" class="inputexto2"></ion-input>
+                        <ion-input  formControlName="descripcion" class="inputexto2" readonly="true"></ion-input>
                       </ion-item>
           </ion-col>
                           </ion-row>
         </ion-grid>
-        <div text-cente> 
+    <!--  <div text-cente> 
             <ion-button  type="submit" [disabled]="!validations_form.valid">Modificar</ion-button>
-        </div>
+        </div>-->  
 </form>
 
       <div text-center>

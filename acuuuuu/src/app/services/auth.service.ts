@@ -28,6 +28,19 @@ export class AuthService {
   })
   }
 
+  resetPasswordInit(email: string) { 
+    return this.afAuth.auth.sendPasswordResetEmail(
+      email, 
+      { url: 'https://acu-app-ed220.firebaseapp.com/__/auth/action' }); 
+    } 
+
+  resetPassword(email: string) {
+    var auth = firebase.auth();
+    return auth.sendPasswordResetEmail(email)
+      .then(() => console.log("email sent"))
+      .catch((error) => console.log(error))
+  }
+
   doRegistrarPaciente(value) {
     return new Promise((resolve, reject) => {
       this.afsAuth.auth.createUserWithEmailAndPassword(value.email, value.password)

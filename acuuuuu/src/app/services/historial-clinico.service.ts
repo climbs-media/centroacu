@@ -152,7 +152,7 @@ export class HistorialClinicoService {
         enfermedades: value.enfermedades,
         familiares: value.familiares,
         peso: value.peso,
-        pesoAnterior: value.pesoAnterio,
+        pesoAnterior: value.pesoAnterior,
         pesoObjetivo: value.pesoObjetivo,
         pesoPerdido: value.pesoPerdido,
         estasObjetivo: value.estasObjetivo,
@@ -173,7 +173,7 @@ export class HistorialClinicoService {
     return new Promise<any>((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
       this.afs.collection('nuevo-peso').add({
-        fechaConsulta: value.fechaConsulta,
+        fecha: value.fecha,
         peso: value.peso,
         pesoAnterior: value.pesoAnterior,
         pesoPerdido: value.pesoPerdido,

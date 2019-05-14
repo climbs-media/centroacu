@@ -3,34 +3,35 @@
   <ion-content padding>
       <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
       <ion-card>
-          <ion-card-header (click)="collapseCard = !collapseCard">
-            <ion-card-title text-center>Crear Diario Dietético</ion-card-title>
+          <ion-card-header>
+            <ion-card-title text-center>Tu dieta diaria</ion-card-title>
           </ion-card-header>
-          <ion-card-content *ngIf="collapseCard">
+          <ion-card-content>
               <ion-item>
-                  <ion-input type="text" placeholder="Nombre" formControlName="nombreApellido"></ion-input>
+                <ion-label position="floating">Desayuno</ion-label>
+                  <ion-input type="text" placeholder="desayuno" formControlName="desayuno"></ion-input>
                 </ion-item>
             <ion-item>
-              <ion-input type="text" placeholder="Semanas" formControlName="semanas"></ion-input>
+                <ion-label position="floating">Media mañana</ion-label>
+              <ion-input type="text" placeholder="Media mañana" formControlName="mediaManana"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input type="text" placeholder="Menu" formControlName="menu"></ion-input>
+                <ion-label position="floating">Comida</ion-label>
+              <ion-input type="text" placeholder="Comida" formControlName="comida"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-input type="number" placeholder="Peso Actual" formControlName="pesoActual"></ion-input>
+                <ion-label position="floating">Media tarde</ion-label>
+                <ion-input type="text" placeholder="MediaTarde" formControlName="mediaTarde"></ion-input>
               </ion-item>
               <ion-item>
-                  <ion-input type="number" placeholder="Peso Perdido" formControlName="pesoPerdido"></ion-input>
+                  <ion-label position="floating">cena</ion-label>
+                  <ion-input type="text" placeholder="Cena" formControlName="cena"></ion-input>
                 </ion-item>
             <ion-item>
-              <ion-label>Fecha Consulta</ion-label>
+              <ion-label>Fecha</ion-label>
             <!-- <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="event.startTime" formControlName="fecha" [min]="minDate" month-names="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Sept, Oct, Nov, Dic"></ion-datetime>--> 
-              <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  formControlName="fechaConsulta" ></ion-datetime>
+              <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  formControlName="fecha" cance-text="Cancelar" done-text="Aceptar"></ion-datetime>
             </ion-item>
-            <ion-item>
-                <ion-label>Fecha Ultimo Peso</ion-label>
-                <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  formControlName="fechaUltimoPeso" ></ion-datetime>
-              </ion-item>
       <ion-button type="submit" fill="outline" expand="block" [disabled]="!validations_form.valid" >Crear</ion-button>
   
           </ion-card-content>

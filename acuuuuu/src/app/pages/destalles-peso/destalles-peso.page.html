@@ -9,14 +9,14 @@
           <ion-col>
             <div class="pesoIni">
               <p>Peso inicial</p>
-              <p class="tconsul"><strong>90</strong> Kg</p>
+              <p class="tconsul"><strong>{{this.item.peso}}</strong> Kg</p>
               <p>IMC xx</p>
             </div>
             </ion-col>
             <div class="pesoPer">
                 <p>Peso Total</p>
                 <p>Perdido</p>
-                <p class="tconsul"><strong>10</strong> Kg</p>
+                <p class="tconsul"><strong>{{this.item.pesoPerdido}}</strong> Kg</p>
               </div>
             </ion-row>
             <div class="pesoConsul">
@@ -31,12 +31,12 @@
                     <div class="pesoObj">
                         <p>Peso</p>
                         <p>Objetivo</p>
-                        <p class="tconsul"><strong>65</strong> Kg</p>
+                        <p class="tconsul"><strong>{{this.item.pesoObjetivo}}</strong> Kg</p>
                       </div>
                 </ion-col>
                 <div class="pesoEst">
                     <p>Estás a</p>
-                    <p class="tconsul"><strong>10</strong> Kg</p>
+                    <p class="tconsul"><strong>{{this.item.estasObjetivo}}</strong> Kg</p>
                     <p class="obje1">De tu</p>
                     <p class="obje">Objetivo</p>
                   </div>
@@ -77,7 +77,7 @@
         <ion-input type="text" formControlName="nombreApellido"></ion-input>
     </ion-item>
     <div class="cajatexto" style="margin-left:18px;">
-        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" padding placeholder="Fecha Consulta" type="date" formControlName="fechaConsulta" class="inputexto" ></ion-datetime>
+        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" padding placeholder="Fecha Consulta" type="date" formControlName="fecha" class="inputexto" done-text="Aceptar" cancel-text="Cancelar"></ion-datetime>
       </div>
 <!--Formulario inputs bloqueados-->
 
@@ -188,11 +188,11 @@
 
 <ion-item>
     <ion-label position="floating" color="primary">Peso Anterior</ion-label>
-    <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoAnterior"></ion-input>
+    <ion-input placeholder="Peso Anterior" type="number" formControlName="pesoAnterior"></ion-input>
 </ion-item> 
 <ion-item>
     <ion-label position="floating" color="primary">Peso Actual</ion-label>
-    <ion-input placeholder="Nuevo Peso" type="number" formControlName="peso"></ion-input>
+    <ion-input placeholder="Peso Actual" type="number" formControlName="peso"></ion-input>
 </ion-item>
 <ion-item>
     <div><h5>Formula Peso Perdido</h5></div>

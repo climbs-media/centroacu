@@ -15,17 +15,17 @@
           </ion-item>
           <ion-item>
               <ion-label>Fecha</ion-label>
-              <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD-MM-YYYY" [(ngModel)]="event.horaInicio" [min]="minDate" formControlName="fecha"></ion-datetime>
+              <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD-MM-YYYY" [(ngModel)]="event.horaInicio" [min]="minDate" formControlName="fecha" cancel-text="Cancelar" done-text="Aceptar"></ion-datetime>
             </ion-item>
           <ion-item>
             <ion-label>Hora  de Ejercicio</ion-label>
-            <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"  [min]="minDate" formControlName="horaInicio"></ion-datetime>
+            <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"  formControlName="horaInicio" cancel-text="Cancelar" done-text="Aceptar"></ion-datetime>
           </ion-item>
           <ion-item>
             <ion-label>Finaliza </ion-label>
-            <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"  [min]="minDate" formControlName="horaFinal"></ion-datetime>
+            <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"  formControlName="horaFinal" cancel-text="Cancelar" done-text="Aceptar"></ion-datetime>
           </ion-item>
-          <ion-button type="submit" fill="outline" expand="block" class="asig"  (click)="addEvent()" [disabled]="!validations_form.valid">Asignar</ion-button>
+          <ion-button type="submit" fill="outline" expand="block" class="asig"  [disabled]="!validations_form.valid">Asignar</ion-button>
           <!--Funcional
             <ion-button type="submit" fill="outline" expand="block" class="asig" [disabled]="!validations_form.valid" >Asignar</ion-button>
 -->

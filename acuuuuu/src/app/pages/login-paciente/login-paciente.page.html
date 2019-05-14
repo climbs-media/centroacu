@@ -37,7 +37,7 @@
         </ion-col>
     </ion-row>
     <ion-row >
-        <ion-col routerLink="/chat" class="olvido">¿Olvido su contraseña ?  <span style="color:red; font-style: italic;">click aqui</span></ion-col>
+        <ion-col (click)="resetPassword('https://acu-app-ed220.firebaseapp.com/__/auth/action')" class="olvido">¿Olvido su contraseña ?  <span style="color:red; font-style: italic;">click aqui</span></ion-col>
      </ion-row>
      <ion-row padding-top>
         <ion-col >

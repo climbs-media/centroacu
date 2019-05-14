@@ -57,5 +57,8 @@ export class LoginPacientePage implements OnInit {
   loginAdmin() {
     this.router.navigate(['/login-admin']);
   }
+  resetPassword(email: string) {
+    this.authService.resetPassword(email)
+  }
 
 }

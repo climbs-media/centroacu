@@ -56,26 +56,28 @@ export class DestallesPesoPage implements OnInit {
       }
     })
     this.validations_form = this.formBuilder.group({
-      nombreApellido: new FormControl(this.item.nombreApellido, ),
-      fechaNacimiento: new FormControl(this.item.fechaNacimiento, ),
-      ciudad: new FormControl(this.item.ciudad, ),
-      correo: new FormControl(this.item.correo, ),
-      profesion: new FormControl(this.item.profesion, ),
-      motivoConsulta: new FormControl(this.item.motivoConsulta, ),
-      fechaConsulta: new FormControl(this.item.fechaConsulta, Validators.required),
-      interNombre: new FormControl(this.item.interNombre, ),
-      enfermedades: new FormControl(this.item.enfermedades, ),
-      familiares: new FormControl(this.item.familiares, ),
-      numeroHistorial: new FormControl(this.item.numeroHistorial, ),
-      telefono: new FormControl(this.item.telefono, ),
-      fecha: new FormControl(this.item.fecha, ),
+      nombreApellido: new FormControl(this.item.nombreApellido, Validators.required),
+      fechaNacimiento: new FormControl(this.item.fechaNacimiento, Validators.required),
+      ciudad: new FormControl(this.item.ciudad, Validators.required),
+      correo: new FormControl(this.item.correo, Validators.required),
+      numeroHistorial: new FormControl(this.item.numeroHistorial, Validators.required),
+      fecha: new FormControl(this.item.fecha, Validators.required),
+      edad: new FormControl(this.item.edad, Validators.required),
+      telefono: new FormControl(this.item.telefono, Validators.required),
+      profesion: new FormControl(this.item.profesion, Validators.required),
+      motivoConsulta: new FormControl(this.item.motivoConsulta, Validators.required),
+      interNombre: new FormControl(this.item.interNombre, Validators.required),
+      enfermedades: new FormControl(this.item.enfermedades, Validators.required),
+      familiares: new FormControl(this.item.familiares, Validators.required),
       peso: new FormControl(this.item.peso, Validators.required),
-      edad: new FormControl(this.item.edad, ),
-      bono: new FormControl(this.item.bono,),
-      citasRestantes: new FormControl(this.item.citasRestantes,),
-      altura: new FormControl(this.item.altura, ),
-      referencia: new FormControl(this.item.referencia, ),
-      imc: new FormControl(this.item.imc, Validators.required),
+      pesoAnterior: new FormControl(this.item.pesoAnterior, Validators.required),
+      pesoPerdido: new FormControl(this.item.pesoPerdido, Validators.required),
+      pesoObjetivo: new FormControl(this.item.pesoObjetivo, Validators.required),
+      estasObjetivo: new FormControl(this.item.estasObjetivo, Validators.required),
+      bono: new FormControl(this.item.bono, Validators.required),
+      altura: new FormControl(this.item.altura, Validators.required),
+      referencia: new FormControl(this.item.referencia, Validators.required),
+      imc: new FormControl(this.item.imc, Validators.required), 
     });
   }
 
@@ -85,28 +87,30 @@ export class DestallesPesoPage implements OnInit {
       fechaNacimiento: value.fechaNacimiento,
       ciudad: value.ciudad,
       correo: value.correo,
+      numeroHistorial: value.numeroHistorial,
+      fecha: value.fecha,
+      edad: value.edad,
       telefono: value.telefono,
       profesion: value.profesion,
       motivoConsulta: value.motivoConsulta,
-      fechaConsulta: value.fechaConsulta,
       interNombre: value.interNombre,
       enfermedades: value.enfermedades,
       familiares: value.familiares,
-      numeroHistorial: value.numeroHistorial,
-      fecha: value.fecha,
       peso: value.peso,
-      edad: value.edad,
-      bono : value.bono,
-      citasRestantes : value.citasRestantes,
+      pesoAnterior: value.pesoAnterior,
+      pesoObjetivo: value.pesoObjetivo,
+      pesoPerdido: value.pesoPerdido,
+      estasObjetivo: value.estasObjetivo,
+      bono: value.bono,
       altura: value.altura,
       referencia: value.referencia,
-      imc: value.imc,
+      imc: value.imc, 
       userId: this.userId,
     };
     this.firebaseService.actualizarHistorialClinico(this.item.id, data)
         .then(
             res => {
-              this.router.navigate(['/home-admin']);
+              this.router.navigate(['/lista-paciente-peso']);
             }
         );
   }
@@ -128,7 +132,7 @@ export class DestallesPesoPage implements OnInit {
             this.firebaseService.borrarHistorialClinico(this.item.id)
                 .then(
                     res => {
-                      this.router.navigate(['/home-admin']);
+                      this.router.navigate(['/lista-paciente-peso']);
                     },
                     err => console.log(err)
                 );
