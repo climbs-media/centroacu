@@ -8,6 +8,6 @@ export class HistoricoFisicoResolver implements Resolve<any> {
 constructor(private firebaseService: HistorialFisicoService) {}
 
 resolve(route: ActivatedRouteSnapshot) {
-    return this.firebaseService.getHistorialFisico();
+    return this.firebaseService.getHistorialFisicoAdmin();
 }
 }

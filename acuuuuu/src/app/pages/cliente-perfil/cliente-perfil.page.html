@@ -3,28 +3,10 @@
 
 <ion-content *ngIf="isAdmin === true" padding>
 <ion-grid>
-  <!--<ion-grid *ngFor="let item of items">-->
   <ion-row >
     <ion-col>
-      <!-- <button routerLink="/home-admin"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%; margin-top: -10px;"></button> --> 
-      <!--
-        <div class="circular">
-            <img   class="circular" src="../../../assets/imgs/foto_cliente.jpg" >
-        </div>
-        --> 
     </ion-col>
   </ion-row>
-<!--
-<ion-row style='margin-bottom:10px;'>
-    <ion-col text-center>
-        <p style='margin-bottom:5px;font-weight:bold;'><b>{{item.payload.doc.data().nombreApellido}}</b></p>
-        <div>
-          <p class="bono">Bonos</p>
-        <span class="bot_bono" routerLink="/bono-citas"> {{item.payload.doc.data().bono}}</span>
-      </div>
-   </ion-col>
-  </ion-row >
--->
 <ion-row >
  <ion-col col-4>
    <div  (click)="historialesClinicos()" class="bot bot_irHistoryClinico">

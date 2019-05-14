@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detalles-historial-fisico</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-buttons>
+  <ion-back-button defaultHref="/"></ion-back-button>
+</ion-buttons>
+
+<ion-content padding>
+<form class="animated fadeIn fast" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+  <ion-item>
+        <ion-item>
+            <img [src]="image" alt="imagen" />
+        </ion-item>
+  </ion-item>
+  <ion-item>
+        <ion-item>
+            <ion-input type="text" formControlName="nombre" [readonly]="true"></ion-input>
+          </ion-item>
+        <ion-item>
+            <ion-input type="text" formControlName="fecha" [readonly]="true"></ion-input>
+          </ion-item>
+  </ion-item>
+</form>
+  <ion-button class="submit-button" fill="outline" expand="block" color="primary" style="--border-radius:20px"  (click)="delete()">Borrar</ion-button>
+
+</ion-content>

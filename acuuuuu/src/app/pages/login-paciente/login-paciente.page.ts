@@ -17,11 +17,11 @@ export class LoginPacientePage implements OnInit {
   validation_messages = {
   'email': [
     { type: 'required', message: 'Correo es Requerido.' },
-    { type: 'pattern', message: 'Por Favor ingrese un correo Valido.' }
+    { type: 'pattern', message: 'Por favor ingrese un correo válido.' }
   ],
   'password': [
-    { type: 'required', message: 'Contraseña es Requerida.' },
-    { type: 'minlength', message: 'La Contraseña debe tener mas de 5 Digitos.' }
+    { type: 'required', message: 'Contraseña es requerida.' },
+    { type: 'minlength', message: 'La contraseña debe tener mas de 5 Digitos.' }
   ]
 };
 

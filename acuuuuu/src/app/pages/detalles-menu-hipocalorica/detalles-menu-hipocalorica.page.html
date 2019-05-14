@@ -21,14 +21,18 @@
         <ion-row>
           <ion-col>
             <h5>Numero del Menu</h5>
-            <ion-input type="text" formControlName="nombreMenu">{{this.item.nombreMenu}}</ion-input>
+            <ion-input type="text" formControlName="nombreMenu" readonly="true">{{this.item.numeroMenu}}</ion-input>
           </ion-col>
           <ion-col size="12">
-            
-            <h5>Desayuno</h5>
-            <ion-input placeholder="Opción 1" formControlName="desayuno" class="inputexto2"></ion-input>
-            <ion-input placeholder="Opción 2" formControlName="desayunoDos" class="inputexto2"></ion-input>
+            <h5>Semanas</h5>
+            <ion-input placeholder="Opción 1" formControlName="semanas" class="inputexto2" readonly="true"></ion-input>
           </ion-col>
+          <hr>
+          <hr>
+          <ion-col size="12">
+              <img src="{{this.item.image}}" alt="imagen"  >
+          </ion-col>
+          <!--
           <ion-col size="12">
               <h5>Lunes</h5>
                 <ion-item>
@@ -130,6 +134,7 @@
                     <ion-input placeholder="Cena" formControlName="cenaDomingo" class="inputexto2"></ion-input>
                   </ion-item>
               </ion-col>
+              -->
         </ion-row>
         </ion-grid>
         <div text-center> 

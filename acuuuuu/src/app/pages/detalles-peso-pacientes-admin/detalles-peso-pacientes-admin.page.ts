@@ -46,7 +46,7 @@ export class DetallesPesoPacientesAdminPage implements OnInit {
             }
         });
         this.validations_form = this.formBuilder.group({
-            nombreApellido: new FormControl(this.item.nombreApellido, ),
+            pesoAnterior: new FormControl(this.item.pesoAnterior, ),
             fechaConsulta: new FormControl(this.item.fechaConsulta , Validators.required),
             peso: new FormControl(this.item.peso , Validators.required),
             pesoPerdido: new FormControl(this.item.peso , Validators.required),
@@ -58,9 +58,9 @@ export class DetallesPesoPacientesAdminPage implements OnInit {
 
     onSubmit(value) {
         const data = {
-            nombreApellido: value.nombreApellido,
             fechaConsulta: value.fechaConsulta,
             peso: value.peso,
+            pesoAnterior: value.pesoAnterior,
             pesoPerdido: value.pesoPerdido,
             pesoObjetivo: value.pesoObjetivo,
             estasObjetivo: value.estasObjetivo,
