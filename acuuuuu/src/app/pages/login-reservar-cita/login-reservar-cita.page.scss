@@ -24,36 +24,39 @@
       
       .but{
           
-              text-decoration: none;
-             width:120px;
-             height:35px;
-              color: #ffffff;
-             /* background-color:#9c3535;pondre color en theme/variables.css*/
-              border-radius: 100px 100px 100px 100px !important;
-              -moz-border-radius: 62px 66px 62px 78px;
-              -webkit-border-radius: 62px 66px 62px 78px;
-              text-transform: none;
-         
-      }
+        text-decoration: none;
+       width:120px;
+       height:35px;
+        color: #BB1D1D;
+        font-weight: bold;
+        --background:white;
+       /* background-color:#9c3535;pondre color en theme/variables.css*/
+        -moz-border-radius: 62px 66px 62px 78px;
+        -webkit-border-radius: 62px 66px 62px 78px;
+        text-transform: none;
+   
+}
+
  
 
 
        
       
       .cajatexto{
-          text-align: justify;
-          outline: none;
-          margin: 0 auto;
-          width: 90%;
-          margin-bottom: 10px;
-          height: 35px;
-          padding-bottom: 3px;
-        background-color: #F9F7F6;
-        
-       
-        border: 0.5px solid rgba(0,0,0,.25);
-        border-radius: 62px 66px 62px 78px;
-       box-shadow: 0px 2px rgba(0,0,0,.50);
+        text-align: justify;
+        outline: none;
+        margin: 0 auto;
+        width: 90%;
+        margin-bottom: 10px;
+        height: 35px;
+        padding-bottom: 3px;
+      background-color: #F9F7F6;
+      color: #BB1D1D;
+      
+     
+      border: 0.5px solid rgba(0,0,0,.25);
+      border-radius: 62px 66px 62px 78px;
+     box-shadow: 0px 2px rgba(0,0,0,.50);
       }
       
       
