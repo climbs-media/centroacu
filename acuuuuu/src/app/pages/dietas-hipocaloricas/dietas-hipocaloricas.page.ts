@@ -67,4 +67,13 @@ export class DietasHipocaloricasPage implements OnInit {
     this.router.navigate(['/menu-hipocalorica']);
   }
 
+  onLogout() {
+    this.authService.doLogout()
+      .then(res => {
+        this.router.navigate(['/login-admin']);
+      }, err => {
+        console.log(err);
+      });
+  }
+
 }

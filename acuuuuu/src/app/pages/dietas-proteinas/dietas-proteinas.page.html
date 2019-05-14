@@ -24,3 +24,7 @@
             
     </ion-grid>
 </ion-content>
+
+<ion-footer *ngIf="isAdmin === true">
+    <ion-button text-center expand="block" (click)="onLogout()">Salir</ion-button>
+  </ion-footer>

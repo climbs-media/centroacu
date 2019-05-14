@@ -67,5 +67,14 @@ export class DietasCenasPage implements OnInit {
     this.router.navigate(['/menu-cena']);
   }
 
+  onLogout() {
+    this.authService.doLogout()
+      .then(res => {
+        this.router.navigate(['/login-admin']);
+      }, err => {
+        console.log(err);
+      });
+  }
+
 }
 

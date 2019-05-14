@@ -160,6 +160,7 @@ export class HistorialClinicoService {
         altura: value.altura,
         referencia: value.referencia,
         imc: value.imc,
+        image: value.image,
         userId: currentUser.uid,
       })
       .then(

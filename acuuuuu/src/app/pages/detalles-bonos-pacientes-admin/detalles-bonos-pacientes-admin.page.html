@@ -13,13 +13,6 @@
             <ion-input formControlName="numeroHistorial"  type="text"  class="inputexto" ></ion-input>
           </div>
         </ion-col>
-        <ion-col col-4 >
-          <div  class="circular">
-            <a (click)="openImagePicker()">
-              <img  class="circular" [src]="image" alt="imagen"  >
-            </a>
-          </div>
-        </ion-col>
         <ion-col *ngIf="isPasi === true" col-4>
           <div style="color:#BB1D1D; margin-top:15px; font-weight: bold;">
             Fecha </div>

@@ -64,6 +64,15 @@ export class DietasProteinasPage implements OnInit {
     return await loading.present();
   }
 
+  onLogout() {
+    this.authService.doLogout()
+      .then(res => {
+        this.router.navigate(['/login-admin']);
+      }, err => {
+        console.log(err);
+      });
+  }
+
   crearDieta() {
     this.router.navigate(['/menu-proteina']);
   }

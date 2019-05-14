@@ -46,7 +46,7 @@ export class LoginReservarCitaPage implements OnInit {
   tryLogin(value) {
     this.authService.conectar(value)
     .then(res => {
-      this.router.navigate(['nueva-cita']);
+      this.router.navigate(['/nueva-cita']);
     }, err => {
       this.errorMessage = err.message;
       console.log(err);
