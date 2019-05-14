@@ -80,22 +80,9 @@ export class MenuService {
       const currentUser = firebase.auth().currentUser;
       this.afs.collection('menus-proteina').add({
         nombreMenu: value.nombreMenu,
-        desayuno: value.desayuno,
-        desayunoDos: value.desayunoDos,
-        comidaLunes: value.comidaLunes,
-        cenaLunes: value.cenaLunes,
-        comidaMartes: value.comidaMartes,
-        cenaMartes: value.cenaMartes,
-        comidaMiercoles: value.comidaMiercoles,
-        cenaMiercoles: value.cenaMiercoles,
-        comidaJueves: value.comidaJueves,
-        cenaJueves: value.cenaJueves,
-        comidaViernes: value.comidaViernes,
-        cenaViernes: value.cenaViernes,
-        comidaSabado: value.comidaSabado,
-        cenaSabado: value.cenaSabado,
-        comidaDomingo: value.comidaDomingo,
-        cenaDomingo: value.cenaDomingo,
+        numeroMenu: value.numeroMenu,
+        semanas: value.semanas,
+        image: value.image,
         userId: currentUser.uid,
       })
       .then(

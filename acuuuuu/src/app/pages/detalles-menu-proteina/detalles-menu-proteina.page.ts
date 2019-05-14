@@ -46,6 +46,11 @@ export class DetallesMenuProteinaPage implements OnInit {
     });
     this.validations_form = this.formBuilder.group({
       nombreMenu: new FormControl(this.item.asunto, ),
+      numeroMenu: new FormControl(this.item.numeroMenu , Validators.required),
+      semanas: new FormControl(this.item.semanas , Validators.required),
+    });
+  /*  this.validations_form = this.formBuilder.group({
+      nombreMenu: new FormControl(this.item.asunto, ),
       desayuno: new FormControl(this.item.desayuno , Validators.required),
       desayunoDos: new FormControl(this.item.desayunoDos , Validators.required),
       comidaLunes: new FormControl(this.item.comidaLunes , Validators.required),
@@ -62,28 +67,14 @@ export class DetallesMenuProteinaPage implements OnInit {
       cenaSabado: new FormControl(this.item.cenaSabado , Validators.required),
       comidaDomingo: new FormControl(this.item.comidaDomingo , Validators.required),
       cenaDomingo: new FormControl(this.item.cenaDomingo , Validators.required),
-    });
+    });*/
   }
 
   onSubmit(value) {
     const data = {
       nombreMenu: value.nombreMenu,
-        desayuno: value.desayuno,
-        desayunoDos: value.desayunoDos,
-        comidaLunes: value.comidaLunes,
-        cenaLunes: value.cenaLunes,
-        comidaMartes: value.comidaMartes,
-        cenaMartes: value.cenaMartes,
-        comidaMiercoles: value.comidaMiercoles,
-        cenaMiercoles: value.cenaMiercoles,
-        comidaJueves: value.comidaJueves,
-        cenaJueves: value.cenaJueves,
-        comidaViernes: value.comidaViernes,
-        cenaViernes: value.cenaViernes,
-        comidaSabado: value.comidaSabado,
-        cenaSabado: value.cenaSabado,
-        comidaDomingo: value.comidaDomingo,
-        cenaDomingo: value.cenaDomingo,
+        numeroMenu: value.numeroMenu,
+        semanas: value.semanas,
     };
     this.menuService.actualizarMenuProteina
     (this.item.id, data)
@@ -112,7 +103,7 @@ export class DetallesMenuProteinaPage implements OnInit {
             this.menuService.borrarMenuProteina(this.item.id)
               .then(
                 res => {
-                  this.router.navigate(['/dietas-proteinas  ']);
+                  this.router.navigate(['/dietas-hipocaloricas']);
                 },
                 err => console.log(err)
               );

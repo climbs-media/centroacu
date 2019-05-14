@@ -80,13 +80,9 @@ export class MenuCenasService {
       const currentUser = firebase.auth().currentUser;
       this.afs.collection('menu-cena').add({
         nombreMenu: value.nombreMenu,
-        cenaLunes: value.cenaLunes,
-        cenaMartes: value.cenaMartes,
-        cenaMiercoles: value.cenaMiercoles,
-        cenaJueves: value.cenaJueves,
-        cenaViernes: value.cenaViernes,
-        cenaSabado: value.cenaSabado,
-        cenaDomingo: value.cenaDomingo,
+        numeroMenu: value.numeroMenu,
+        semanas: value.semanas,
+        image: value.image,
         userId: currentUser.uid,
       })
       .then(

@@ -98,7 +98,7 @@ export class MenuCenaPage implements OnInit {
     this.firebaseService.crearMenuCena(data)
       .then(
         res => {
-          this.router.navigate(['/dietas-hipocaloricas']);
+          this.router.navigate(['/dietas-cenas']);
         }
       );
   }

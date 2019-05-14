@@ -1,45 +1,42 @@
 
 <ion-header text-center  padding-top>
-    <ion-toolbar>
-  <div class="contiene">
-      <img width="40" height="45"  src="../../../assets/imgs/logo.png" class="logo">
-      <span text-center style="padding-left:48px;padding-right:48px;font-size: 20px;">
-       &nbsp;&nbsp;{{this.item.nombreMenu}}
-      </span>
-      
-          <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
-    </div>
-    </ion-toolbar>
+  <ion-toolbar>
+<div class="contiene">
+  <img width="40" height="45"  src="../../../assets/imgs/logo.png" class="logo">
+  <span text-center style="padding-left:48px;padding-right:48px;font-size: 20px;">
+  &nbsp;&nbsp;{{this.item.nombreMenu}}
+  </span>
   
-  </ion-header>
-  
-  <ion-content padding>
-      <ion-back-button color="primary" defaultHref="/"></ion-back-button>
-  
+      <img class="chat" src="../../../assets/imgs/bot_cliente_perfil/buzon.png" >
+  </div>
+  </ion-toolbar>
+
+</ion-header>
+<ion-back-button color="primary" defaultHref="/"></ion-back-button>
+<ion-content padding>
       <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
-          <ion-grid>
-            <ion-row>
-              <ion-col>
-                <h5>Numero del Menu</h5>
-                <ion-input type="text" formControlName="nombreMenu" readonly="true">{{this.item.numeroMenu}}</ion-input>
-              </ion-col>
-              <ion-col size="12">
-                <h5>Semanas</h5>
-                <ion-input placeholder="Opción 1" formControlName="semanas" class="inputexto2" readonly="true"></ion-input>
-              </ion-col>
-              <hr>
-              <hr>
-              <ion-col size="12">
-                  <img src="{{this.item.image}}" alt="imagen"  >
-              </ion-col>
-          </ion-row>
-          </ion-grid>
-       <!--  <div text-center> 
-              <ion-button *ngIf="isAdmin === true" type="submit" [disabled]="!validations_form.valid" style="margin-bottom:15px;">Modificar</ion-button>
-          </div>   -->  
-      </form>
-      <div text-center>
-        <ion-button *ngIf="isAdmin === true" (click)="delete()">Borrar</ion-button>
-      </div>
-  </ion-content>
-  
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <h5>Numero del Menu</h5>
+                    <ion-input type="text" formControlName="nombreMenu" readonly="true">{{this.item.numeroMenu}}</ion-input>
+                  </ion-col>
+                  <ion-col size="12">
+                    <h5>Semanas</h5>
+                    <ion-input placeholder="Opción 1" formControlName="semanas" class="inputexto2" readonly="true"></ion-input>
+                  </ion-col>
+                  <hr>
+                  <hr>
+                  <ion-col size="12">
+                      <img src="{{this.item.image}}" alt="imagen"  >
+                  </ion-col>
+              </ion-row>
+              </ion-grid>
+           <!--  <div text-center> 
+                  <ion-button *ngIf="isAdmin === true" type="submit" [disabled]="!validations_form.valid" style="margin-bottom:15px;">Modificar</ion-button>
+              </div>   -->  
+          </form>
+          <div text-center>
+            <ion-button *ngIf="isAdmin === true" (click)="delete()">Borrar</ion-button>
+          </div>
+</ion-content>

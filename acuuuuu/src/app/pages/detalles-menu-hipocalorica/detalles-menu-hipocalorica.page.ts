@@ -74,7 +74,6 @@ export class DetallesMenuHipocaloricaPage implements OnInit {
     const data = {
       nombreMenu: value.nombreMenu,
         numeroMenu: value.numeroMenu,
-        desayunoDos: value.desayunoDos,
         semanas: value.semanas,
     };
     this.menuService.actualizarMenuHipocalorico

@@ -4,6 +4,7 @@ import { ToastController, LoadingController, AlertController } from '@ionic/angu
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { MenuCenasService } from 'src/app/services/menu-cenas.service';
+import { MenuCenaPage } from '../menu-cena/menu-cena.page';
 
 
 @Component({
@@ -47,26 +48,35 @@ export class DetallesMenuCenaPage implements OnInit {
     });
     this.validations_form = this.formBuilder.group({
       nombreMenu: new FormControl(this.item.asunto, ),
-      cenaLunes: new FormControl(this.item.cenaLunes , Validators.required),
-      cenaMartes: new FormControl(this.item.cenaMartes , Validators.required),
-      cenaMiercoles: new FormControl(this.item.cenaMiercoles , Validators.required),
-      cenaJueves: new FormControl(this.item.cenaJueves , Validators.required),
-      cenaViernes: new FormControl(this.item.cenaViernes , Validators.required),
-      cenaSabado: new FormControl(this.item.cenaSabado , Validators.required),
-      cenaDomingo: new FormControl(this.item.cenaDomingo , Validators.required),
+      numeroMenu: new FormControl(this.item.numeroMenu , Validators.required),
+      semanas: new FormControl(this.item.semanas , Validators.required),
     });
+  /*  this.validations_form = this.formBuilder.group({
+      nombreMenu: new FormControl(this.item.asunto, ),
+      desayuno: new FormControl(this.item.desayuno , Validators.required),
+      desayunoDos: new FormControl(this.item.desayunoDos , Validators.required),
+      comidaLunes: new FormControl(this.item.comidaLunes , Validators.required),
+      cenaLunes: new FormControl(this.item.cenaLunes , Validators.required),
+      comidaMartes: new FormControl(this.item.comidaMartes , Validators.required),
+      cenaMartes: new FormControl(this.item.cenaMartes , Validators.required),
+      comidaMiercoles: new FormControl(this.item.comidaMiercoles , Validators.required),
+      cenaMiercoles: new FormControl(this.item.cenaMiercoles , Validators.required),
+      comidaJueves: new FormControl(this.item.comidaJueves , Validators.required),
+      cenaJueves: new FormControl(this.item.cenaJueves , Validators.required),
+      comidaViernes: new FormControl(this.item.comidaViernes , Validators.required),
+      cenaViernes: new FormControl(this.item.cenaViernes , Validators.required),
+      comidaSabado: new FormControl(this.item.comidaSabado , Validators.required),
+      cenaSabado: new FormControl(this.item.cenaSabado , Validators.required),
+      comidaDomingo: new FormControl(this.item.comidaDomingo , Validators.required),
+      cenaDomingo: new FormControl(this.item.cenaDomingo , Validators.required),
+    });*/
   }
 
   onSubmit(value) {
     const data = {
       nombreMenu: value.nombreMenu,
-        cenaLunes: value.cenaLunes,
-        cenaMartes: value.cenaMartes,
-        cenaMiercoles: value.cenaMiercoles,
-        cenaJueves: value.cenaJueves,
-        cenaViernes: value.cenaViernes,
-        cenaSabado: value.cenaSabado,
-        cenaDomingo: value.cenaDomingo,
+        numeroMenu: value.numeroMenu,
+        semanas: value.semanas,
     };
     this.menuService.actualizarMenuCena
     (this.item.id, data)
@@ -95,7 +105,7 @@ export class DetallesMenuCenaPage implements OnInit {
             this.menuService.borrarMenuCena(this.item.id)
               .then(
                 res => {
-                  this.router.navigate(['/dietas-hipocaloricas']);
+                  this.router.navigate(['/dietas-cenas']);
                 },
                 err => console.log(err)
               );
