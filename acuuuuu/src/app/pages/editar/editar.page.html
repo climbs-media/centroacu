@@ -1,16 +1,16 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content padding>
-  <button routerLink="/historiales-clinicos"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%; margin-top:-10px;"></button>
+  <ion-back-button color="primary" defaultHref="/"></ion-back-button>
   <ion-grid>
     <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
       <ion-row  text-center >
         <ion-col col-4 >
           <div style="color:#BB1D1D ;margin-top:15px; font-weight: bold;" >
-            Nº Historia
+            Nº Historial
           </div>
           <div class="cajatexto" style="width:55px;"><!-- se le pone estilo propio para no afectar alos demas div-->
-            <ion-input formControlName="numeroHistorial"  type="text"  class="inputexto" ></ion-input>
+            <ion-input formControlName="numeroHistorial"  type="text"  class="inputexto"  style="margin-left:-5px"></ion-input>
           </div>
         </ion-col>
         <ion-col col-4 >
@@ -119,9 +119,9 @@
         <ion-col >
           <div style="font-weight: bold; margin: 5px"> Familiares:</div>
           <ion-select formControlName="familiares" placeholder="Seleccionar">
-            <ion-select-option value="diabetes">diabetes</ion-select-option>
-            <ion-select-option value="cardiopatia">cardiopatia</ion-select-option>
-            <ion-select-option value="obesidad">obesidad</ion-select-option>
+            <ion-select-option value="diabetes">Diabetes</ion-select-option>
+            <ion-select-option value="cardiopatia">Cardiopatía</ion-select-option>
+            <ion-select-option value="obesidad">Obesidad</ion-select-option>
             <!--  <span class='padece'>Diabetes<ion-checkbox  [(ngModel)]="diabetes" style="margin-left: 10px" ></ion-checkbox> </span>
               <span class='padece'>Cardiopatia<ion-checkbox  [(ngModel)]="cardiopatia" style="margin-left: 17px"  ></ion-checkbox></span>
               <br><span class='padece'>Obesidad<ion-checkbox  [(ngModel)]="obesidad" style="margin-left: 15px"  ></ion-checkbox></span>   -->

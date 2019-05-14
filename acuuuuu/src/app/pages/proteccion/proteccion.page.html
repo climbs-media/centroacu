@@ -25,6 +25,10 @@
           <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
         </ion-col>
         <ion-col></ion-col>
+
+        <ion-col size="6">
+            <ion-button size="small" color="danger" class="but" (click)="clearPad()">Limpiar</ion-button>
+        </ion-col>
     
       </ion-row>
     
@@ -39,7 +43,7 @@
   </ion-row>
 </ion-grid>
 <div class="cFirma">
-<div >Firma :</div>
+<div>Firma :</div>
 <!--<textarea style="margin:3px 0; margin-left: 10%;" rows="7" cols="36"></textarea>-->
 <input formControlName="nombre" type="text" placeholder="Nombre Completo" class="cajatexto">
 <input formControlName="identidad" type="text" placeholder="Nº de identidad" class="cajatexto">
@@ -52,14 +56,12 @@
     <div>
       <ion-label class="label label-ios">
         <ion-checkbox formControlName="check" class="check" color="primary" checked="false"></ion-checkbox>
-        <p class="terminos"> Haciendo click aquì acepto los terminos y condicione..</p>
+        <p class="terminos"> Haciendo click aquí acepto los términos y condiciones..</p>
       </ion-label>
     </div>
   </ion-col>
   <div>
-    <ion-col size="6">
-        <ion-button size="small" color="danger" class="but" (click)="clearPad()">Limpiar</ion-button>
-    </ion-col>
+
     <ion-col size="6">
     <ion-button type='submit' ion-button color="primary" class="but" [disabled]="!validations_form.valid" (click)="savePad()"round>Adelante</ion-button>
   </ion-col>

@@ -14,7 +14,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class DetallesCitasPage implements OnInit {
 
- 
+  public  tituhead: String = 'Detalles';
   validations_form: FormGroup;
   image: any;
   item: any;

@@ -18,13 +18,8 @@
                             <div *ngIf="item.payload.doc.data().titulo.includes(searchText) ">  
         <ion-card [routerLink]="['/detalles-citas', item.payload.doc.id]">
             <ion-card-header>
-<<<<<<< HEAD
                     <ion-item color="primary">
                           Paciente: <span style="font-weight: bold; color: white; margin-left: 3px;">{{item.payload.doc.data().titulo}}</span>
-=======
-                    <ion-item>
-                        <span style="font-weight: bold; color: white;">{{item.payload.doc.data().titulo}}</span>
->>>>>>> a3b0d64092b540d22b5a652ff6ff771b233d235e
                     </ion-item>
             </ion-card-header>
             <ion-card-content>

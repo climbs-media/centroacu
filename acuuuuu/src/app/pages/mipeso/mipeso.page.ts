@@ -16,7 +16,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class MipesoPage implements OnInit {
 
-  public  tituhead: String = 'Seguimiento';
+  public  tituhead: String = 'Mi Peso';
   items: Array<any>;
 
   @ViewChild('barCanvas') barCanvas;

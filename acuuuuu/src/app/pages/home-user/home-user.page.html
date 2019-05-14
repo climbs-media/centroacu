@@ -31,44 +31,18 @@
 
 
           <div>
-            <div *ngFor="let item of items">
+            <div  >
               <ion-grid>
                 <ion-row text-center>
                   <ion-col size="6">
                     <div text-center>
-                    <h5><b> Tu Peso</b></h5>
+                    <h5 style="color:#BB1D1D"><b> Tú Peso</b></h5>
                   </div>
                     <p style="color:black">{{item.payload.doc.data().peso}} KG</p>
                   </ion-col>
                   <ion-col size="6">
-                    <h5><b>Tu IMC</b></h5>
+                    <h5 style="color:#BB1D1D"><b>Tú IMC</b></h5>
                     <p style="color:black">{{item.payload.doc.data().imc}}</p>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-<<<<<<< HEAD
-              <div>
-                <h5>IMC ideal</h5>
-=======
-              <hr>
-              <hr>
-              <div text-center>
-                  <h5><b>IMC Ideal</b></h5>
->>>>>>> a3b0d64092b540d22b5a652ff6ff771b233d235e
-              </div>
-              <ion-grid>
-                <ion-row>
-                  <ion-col size="3">
-                    <p style="color:black">Debajo <br> 18.5</p>
-                  </ion-col>
-                  <ion-col size="3">
-                    <p style="color:black">Normal <br> 18.5-25</p>
-                  </ion-col>
-                  <ion-col size="3">
-                    <p style="color:black">Sobrepeso <br> 25-30</p>
-                  </ion-col>
-                  <ion-col size="3">
-                    <p style="color:black">Obesidad <br> > 30 </p>
                   </ion-col>
                 </ion-row>
               </ion-grid>

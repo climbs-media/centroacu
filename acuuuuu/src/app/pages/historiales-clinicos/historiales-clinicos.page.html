@@ -24,7 +24,7 @@
       </ion-row>
        <div *ngIf="items.length > 0">
         <ion-list>
-            <ion-item *ngFor="let item of items" style="--background:whitesmoke">
+            <ion-item *ngFor="let item of items">
            <div *ngIf="item.payload.doc.data().nombreApellido && item.payload.doc.data().nombreApellido.length"  class="contenido">
                 <div *ngIf="item.payload.doc.data().nombreApellido.includes(searchText) ">  
                   <ul>
