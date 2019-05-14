@@ -1,7 +1,7 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
   
 <ion-content padding>
-<button routerLink="/lista-pacientes-ejercicios"><img src="../../../assets/imgs/retroceso.png" style=" color: red; position: absolute;"></button> 
+  <ion-back-button color="primary" defaultHref="/"></ion-back-button>
 <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
     
         <ion-grid>

@@ -1,16 +1,16 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content padding>
-  <button routerLink="/historiales-clinicos"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%; margin-top:-10px;"></button>
+  <ion-back-button color="primary" defaultHref="/"></ion-back-button>
   <ion-grid>
     <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
       <ion-row  text-center >
         <ion-col col-4 >
           <div style="color:#BB1D1D ;margin-top:15px; font-weight: bold;" >
-            Nº Historia
+            Nº Historial
           </div>
           <div class="cajatexto" style="width:55px;"><!-- se le pone estilo propio para no afectar alos demas div-->
-            <ion-input formControlName="numeroHistorial"  type="text"  class="inputexto" ></ion-input>
+            <ion-input formControlName="numeroHistorial"  type="text"  class="inputexto"  style="margin-left:-5px"></ion-input>
           </div>
         </ion-col>
         <ion-col col-4 >

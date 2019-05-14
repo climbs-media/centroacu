@@ -11,7 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ListaCitasPacientesPage implements OnInit {
 
  
-  public  tituhead: String = 'Lista de Citas';
+  public  tituhead: String = 'Próximas Citas';
 
   items: Array<any>;
   searchText = '';

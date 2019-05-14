@@ -1,20 +1,26 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content>
+  <ion-back-button color="primary" defaultHref="/"></ion-back-button>
 <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
-  <button routerLink="/cliente-seguimiento"><img src="../../../assets/imgs/retroceso.png" style="margin-top: 5%; color: red; position: absolute; margin-left: 5%"></button> 
-    <h4>Mi Peso</h4>
+  
+  <h4 text-center style="color:#BB1D1D">Paciente: <b> <ion-input type="text" formControlName="nombreApellido"></ion-input></b></h4>
     <ion-grid>
         <ion-row>
           <ion-col>
             <div class="pesoIni">
+<<<<<<< HEAD
               <p>Peso inicial</p>
               <p class="tconsul"><strong>{{this.item.peso}}</strong> Kg</p>
+=======
+              <p style="margin-top:15px;">Peso inicial</p>
+              <p class="tconsul"><strong>90</strong> Kg</p>
+>>>>>>> d4f21dcfea19f802e313c0d063ebd70b6624296f
               <p>IMC xx</p>
             </div>
             </ion-col>
             <div class="pesoPer">
-                <p>Peso Total</p>
+                <p style="margin-top:15px;">Peso Total</p>
                 <p>Perdido</p>
                 <p class="tconsul"><strong>{{this.item.pesoPerdido}}</strong> Kg</p>
               </div>
@@ -40,25 +46,31 @@
                     <p class="obje1">De tu</p>
                     <p class="obje">Objetivo</p>
                   </div>
+                  
               </ion-row>
               <div *ngFor="let item of items" >
           <!-- <ion-button color="primary" round class="agregar" (click)="openPicker()"> Agregar</ion-button> --> 
             </div>
-              <h4>Indice IMC</h4>
+              <h4 style="color:#BB1D1D"><b>Índice IMC</b></h4>
+              <div class="cont">
+                  <div class="pesoIde" style="background:none;"><p style="color:black; "> 18</p></div>
+                  <div class="pesoIde"  style="background:none;"><p style="color:black; margin-left: -5px;">24.9</p></div>
+                  <div class="pesoIde"  style="background:none;"><p style="color:black; margin-left: -40px;"> 30</p></div>
+                  <div class="pesoIde"  style="background:none;"><p style="color:black; margin-left: -100px;"> > 30</p></div>
+                  </div>
               <div class="cont">
                 <div class="pesoIde">Peso ideal</div>
                 <div class="sobrePe"> Sobre Peso</div>
-                <div class="obe">Obesidad</div>
+                <div class="obe">Obesidad</div>                                                               
               </div>
-              
-
-
+             
                   <div>
-                    <h4 text-center>Tu IMC</h4>
+                      <progress style="margin-top: -3px; width: 85%;" value="{{this.item.imc}}" min="10" max="55"></progress>
+                      <h4 text-center style="color:#BB1D1D"><b>Su IMC:</b></h4>
                     <div text-center>
-                    <ion-label><h5>{{this.item.imc}}</h5></ion-label>
+                    <ion-label><h5 style="color:#BB1D1D">{{this.item.imc}}</h5></ion-label>
                   </div>
-                      <progress style="margin-top: 5px; width: 90%" value="{{this.item.imc}}" min="13" max="50"></progress>
+      
                   </div>
 
             
@@ -69,13 +81,10 @@
 </form>
 
 <div>
-  <h4>Modificar</h4>
+  <h4 style="color:#BB1D1D"><b>Modificar su Peso</b></h4>
 </div>
 <form class="animated fadeIn fast" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
-    <ion-item>
-        <ion-label position="floating" color="primary">Nombre del Paciente</ion-label>
-        <ion-input type="text" formControlName="nombreApellido"></ion-input>
-    </ion-item>
+
     <div class="cajatexto" style="margin-left:18px;">
         <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" padding placeholder="Fecha Consulta" type="date" formControlName="fecha" class="inputexto" done-text="Aceptar" cancel-text="Cancelar"></ion-datetime>
       </div>
@@ -185,7 +194,6 @@
 
 <!--------------------------------------------------------------------------->
 
-
 <ion-item>
     <ion-label position="floating" color="primary">Peso Anterior</ion-label>
     <ion-input placeholder="Peso Anterior" type="number" formControlName="pesoAnterior"></ion-input>
@@ -197,82 +205,30 @@
 <ion-item>
     <div><h5>Formula Peso Perdido</h5></div>
       <form method="POST" oninput="resultado.value=parseInt(valor1.value)-parseInt(valor2.value)">
+
+
         <div>
-      <ion-label>Peso Anterior:</ion-label>
-    </div>
-    <div>
-        <input type="number" id="valor1" value="{{this.item.peso}}">
+        <ion-label style="color:#BB1D1D"> Nuevo Peso:</ion-label>
       </div>
       <div>
-        <ion-label>Peso Actual:</ion-label>
-      </div>
-      <div>
-        <input type="number" id="valor2" value="0"> 
-      </div>
-      <div>
-        <ion-label>Peso Perdido</ion-label>
-      </div>
-        <output name="resultado" for="valor1 valor2"></output>
-    </form>
-</ion-item>
-<ion-item>
-    <ion-label position="floating" color="primary">Peso Perdido</ion-label>
-    <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoPerdido"></ion-input>
-</ion-item>
-<ion-item>
-    <ion-label position="floating" color="primary">Peso Objetivo</ion-label>
-    <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoObjetivo"></ion-input>
-</ion-item>
-<ion-item>
-    <div><h5>Formula estas de tu objetivo</h5></div>
-      <form method="POST" oninput="resultado.value=parseInt(valor1.value)-parseInt(valor2.value)">
+          <input type="number" id="valor1" value="0"  class="cajatexto">
+        </div>
         <div>
-      <ion-label>Peso Actual:</ion-label>
-    </div>
-    <div>
-        <input type="number" id="valor1" value="0">
-      </div>
-      <div>
-        <ion-label>Peso objetivo:</ion-label>
-      </div>
-      <div>
-        <input type="number" id="valor2" value="0"> 
-      </div>
-      <div>
-        <ion-label>Kg de tu objetivo</ion-label>
-      </div>
-        <output name="resultado" for="valor1 valor2"></output>
-    </form>
-</ion-item>
-<ion-item>
-    <ion-label position="floating" color="primary">¿A cuanto estas de tu objetivo?</ion-label>
-    <ion-input placeholder="Nuevo Peso" type="number" formControlName="estasObjetivo"></ion-input>
-</ion-item>
-<ion-item>
-  <div><h5>Formula IMC</h5></div>
-    <form method="POST" oninput="resultado.value=parseInt(valor1.value)*parseInt(valor1.value)/parseInt(valor2.value)">
-      <div>
-    <ion-label>Peso actual:</ion-label>
-  </div>
-  <div>
-      <input type="number" id="valor1" value="0">
-    </div>
-    <div>
-      <ion-label>Altura:</ion-label>
-    </div>
-    <div>
-      <input type="number" id="valor2" value="{{this.item.altura}}"> 
-    </div>
-    <div>
-      <ion-label>IMC</ion-label>
-    </div>
-      <output name="resultado" for="valor1 valor2"></output>
-  </form>
-</ion-item>
-<ion-item>
-    <ion-label position="floating" color="primary">Nuevo IMC</ion-label>
-    <ion-input placeholder="Nuevo IMC" type="number" formControlName="imc"></ion-input>
-</ion-item>
+          <ion-label style="color:#BB1D1D">Altura</ion-label>
+        </div>
+        <div>
+          <input type="number" id="valor2" value="0"  class="cajatexto"> 
+        </div>
+        <div>
+          <ion-label style="color:#BB1D1D">IMC</ion-label>
+        </div>
+          <output name="resultado" for="valor1 valor2"  class="cajatexto"></output>
+      </form>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating" color="primary">Actualice su nuevo IMC</ion-label>
+        <ion-input placeholder="Nuevo IMC" type="number" formControlName="imc" class="cajatexto"></ion-input>
+    </ion-item>
     <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Actualizar Datos</ion-button>
 </form>
 </ion-content>

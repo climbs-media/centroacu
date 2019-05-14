@@ -1,26 +1,21 @@
-<ion-header>
-    <ion-toolbar>
-      <ion-title>
-      
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
+
   
-    <ion-content  padding >
+    <ion-content  padding color="primary" >
      <ion-grid>
+    <ion-back-button style="color:white" defaultHref="/"></ion-back-button>
         <form [formGroup]="validations_form" (ngSubmit)="tryLogin(validations_form.value)">   
   
-      <ion-row  >
-         <ion-col> <img (click)="loginAdmin()" src="../../../assets/imgs/logo.png" alt="" class="logo"></ion-col>
+      <ion-row >
+         <ion-col> <img (click)="loginAdmin()" src="../../../assets/imgs/log2.png" alt="" class="logo"></ion-col>
       </ion-row>
       <ion-row>
-         <ion-col  > <h3 class="subtitulo">Centro<br>Acu 10</h3></ion-col>
+         <ion-col  > <h3 class="subtitulo">Reservar Cita<br>Pacientes</h3></ion-col>
       </ion-row>
       <ion-row>
          <ion-col>
                   <div class="cajatexto">
                      <ion-icon name="person" class="iconocaja" ></ion-icon>
-                     <ion-input formControlName="email" type="text"   class="input_texto" placeholder="  Email" ></ion-input>
+                     <ion-input formControlName="email" type="text"   class="input_texto" placeholder="  Email del Paciente" ></ion-input>
                   </div>
                   <div class="validation-errors">
                     <ng-container *ngFor="let validation of validation_messages.email">
@@ -32,7 +27,7 @@
                     
                      <div class="cajatexto" margin-top>
                      <ion-icon name="lock" class="iconocaja"></ion-icon>
-                     <ion-input  type="password" formControlName="password" class="input_texto" placeholder="  Contraseña"></ion-input>
+                     <ion-input  type="password" formControlName="password" class="input_texto" placeholder="  Contraseña del Paciente"></ion-input>
                     </div>
                     <div class="validation-errors">
                        <ng-container *ngFor="let validation of validation_messages.password">
