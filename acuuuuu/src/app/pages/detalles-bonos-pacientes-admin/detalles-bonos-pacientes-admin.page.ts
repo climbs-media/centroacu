@@ -96,12 +96,13 @@ export class DetallesBonosPacientesAdminPage implements OnInit {
       altura: value.altura,
       referencia: value.referencia,
       imc: value.imc,
+      image:value.image,
       userId: this.userId,
     };
     this.firebaseService.actualizarHistorialClinico(this.item.id, data)
         .then(
             res => {
-              this.router.navigate(['/home-admin']);
+              this.router.navigate(['/lista-pacientes-bonos']);
             }
         );
   }
@@ -123,7 +124,7 @@ export class DetallesBonosPacientesAdminPage implements OnInit {
             this.firebaseService.borrarHistorialClinico(this.item.id)
                 .then(
                     res => {
-                      this.router.navigate(['/home-admin']);
+                      this.router.navigate(['/lista-pacientes-bonos']);
                     },
                     err => console.log(err)
                 );

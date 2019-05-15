@@ -51,7 +51,7 @@
                   <div class="pesoIde" style="background:none;"><p style="color:black; "> 18</p></div>
                   <div class="pesoIde"  style="background:none;"><p style="color:black; margin-left: -5px;">24.9</p></div>
                   <div class="pesoIde"  style="background:none;"><p style="color:black; margin-left: -40px;"> 30</p></div>
-                  <div class="pesoIde"  style="background:none;"><p style="color:black; margin-left: -100px;"> > 30</p></div>
+                  <div class="pesoIde"  style="background:none;"><p style="color:black; margin-left: -50px;"> > 30</p></div>
                   </div>
               <div class="cont">
                 <div class="pesoIde">Peso ideal</div>
@@ -60,7 +60,7 @@
               </div>
              
                   <div>
-                      <progress style="margin-top: -3px; width: 85%;" value="{{this.item.imc}}" min="10" max="55"></progress>
+                      <progress style="margin-top: -3px; width: 85%;" value="{{this.item.imc}}" min="0" max="35"></progress>
                       <h4 text-center style="color:#BB1D1D"><b>Su IMC:</b></h4>
                     <div text-center>
                     <ion-label><h5 style="color:#BB1D1D">{{this.item.imc}}</h5></ion-label>
@@ -192,11 +192,11 @@
 
 <ion-item>
     <ion-label position="floating" color="primary">Peso Anterior</ion-label>
-    <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoAnterior"></ion-input>
+    <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoAnterior"  class="cajatexto"></ion-input>
 </ion-item> 
 <ion-item>
     <ion-label position="floating" color="primary">Peso Actual</ion-label>
-    <ion-input placeholder="Nuevo Peso" type="number" formControlName="peso"></ion-input>
+    <ion-input placeholder="Nuevo Peso" type="number" formControlName="peso"  class="cajatexto"></ion-input>
 </ion-item>
 <ion-item>
     <div><h5>Formula Peso Perdido</h5></div>
@@ -205,13 +205,13 @@
       <ion-label>Peso Anterior:</ion-label>
     </div>
     <div>
-        <input type="number" id="valor1" value="{{this.item.peso}}">
+        <input type="number" id="valor1" value="{{this.item.peso}}"  class="cajatexto">
       </div>
       <div>
         <ion-label>Peso Actual:</ion-label>
       </div>
       <div>
-        <input type="number" id="valor2" value="0"> 
+        <input type="number" id="valor2" value="0"  class="cajatexto"> 
       </div>
       <div>
         <ion-label>Peso Perdido</ion-label>
@@ -220,12 +220,12 @@
     </form>
 </ion-item>
 <ion-item>
-    <ion-label position="floating" color="primary">Peso Perdido</ion-label>
-    <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoPerdido"></ion-input>
+    <ion-label position="floating" color="primary" >Peso Perdido</ion-label>
+    <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoPerdido"  class="cajatexto"></ion-input>
 </ion-item>
 <ion-item>
     <ion-label position="floating" color="primary">Peso Objetivo</ion-label>
-    <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoObjetivo"></ion-input>
+    <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoObjetivo"  class="cajatexto"></ion-input>
 </ion-item>
 <ion-item>
     <div><h5>Formula estas de tu objetivo</h5></div>
@@ -234,13 +234,13 @@
       <ion-label>Peso Actual:</ion-label>
     </div>
     <div>
-        <input type="number" id="valor1" value="{{this.item.peso}}">
+        <input type="number" id="valor1" value="{{this.item.peso}}"  class="cajatexto">
       </div>
       <div>
         <ion-label>Peso objetivo:</ion-label>
       </div>
       <div>
-        <input type="number" id="valor2" value="0"> 
+        <input type="number" id="valor2" value="0"  class="cajatexto"> 
       </div>
       <div>
         <ion-label>Kg de tu objetivo</ion-label>
@@ -249,8 +249,8 @@
     </form>
 </ion-item>
 <ion-item>
-    <ion-label position="floating" color="primary">¿A cuanto estas de tu objetivo?</ion-label>
-    <ion-input placeholder="Nuevo Peso" type="number" formControlName="estasObjetivo"></ion-input>
+    <ion-label position="floating" color="primary">¿A cuanto esta el paciente de su objetivo?</ion-label>
+    <ion-input placeholder="Nuevo Peso" type="number" formControlName="estasObjetivo"  class="cajatexto"></ion-input>
 </ion-item>
 <ion-item>
   <div><h5>Formula IMC</h5></div>
@@ -259,7 +259,7 @@
     <ion-label>Peso actual:</ion-label>
   </div>
   <div>
-      <input type="number" id="valor1" value="{{this.item.peso}}">
+      <input type="number" id="valor1" value="{{this.item.peso}}"  class="cajatexto">
     </div>
     <div>
       <ion-label>Altura:</ion-label>
@@ -268,14 +268,14 @@
       <input type="number" id="valor2" value="0"> 
     </div>
     <div>
-      <ion-label>IMC</ion-label>
+      <ion-label>IMC:</ion-label>
     </div>
       <output name="resultado" for="valor1 valor2"></output>
   </form>
 </ion-item>
 <ion-item>
-    <ion-label position="floating" color="primary">Nuevo IMC</ion-label>
-    <ion-input placeholder="Nuevo IMC" type="number" formControlName="imc"></ion-input>
+    <ion-label position="floating" color="primary"> Coloca su nuevo</ion-label>
+    <ion-input placeholder="Nuevo IMC" type="number" formControlName="imc"  class="cajatexto"></ion-input>
 </ion-item>
     <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Actualizar Datos</ion-button>
 </form>

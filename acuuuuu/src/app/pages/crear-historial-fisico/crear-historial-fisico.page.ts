@@ -13,7 +13,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
   styleUrls: ['./crear-historial-fisico.page.scss'],
 })
 export class CrearHistorialFisicoPage implements OnInit {
-
+  public  tituhead: String = 'Crear Historial Físico';
   validations_form: FormGroup;
   image: any;
   items: Array<any>;

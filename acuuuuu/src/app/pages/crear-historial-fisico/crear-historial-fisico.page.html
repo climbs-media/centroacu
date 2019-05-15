@@ -1,11 +1,6 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>crear-historial-fisico</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
 <ion-content padding>
-
+  <ion-back-button color="primary" defaultHref="/"></ion-back-button>
     <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
       <!--
         <ion-col col-4>
@@ -18,13 +13,13 @@
         <img [src]="image" *ngIf="image" />
       </ion-col>
       <ion-col text-center col-4>
-          <ion-input formControlName="nombre" placeholder="nombre de Paciente"></ion-input>
+          <ion-input formControlName="nombre" placeholder="Nombre de Paciente"></ion-input>
           <hr>
           <div>
-          <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" formControlName="fecha" placeholder="Fecha Consulta" cancel-text="Cancerlar" done-text="Aceptar"></ion-datetime>
+          <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" formControlName="fecha" placeholder="Fecha de Consulta" cancel-text="Cancerlar" done-text="Aceptar"></ion-datetime>
         </div>
           <div text-center>
-              <ion-button type="submit" [disabled]="!validations_form.valid">Agregar</ion-button>
+              <ion-button type="submit" [disabled]="!validations_form.valid">Crear Historial Físico</ion-button>
           </div>   
       </ion-col>
   

@@ -1,7 +1,7 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content padding>
-
+  <ion-back-button color="primary" defaultHref="/"></ion-back-button>
     <form class="animated fadeIn fast" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
         <div class="cajatexto" style="margin-left:18px;">
             <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" padding placeholder="Fecha" type="date" formControlName="fecha" class="inputexto" done-text="Aceptar" cancel-text="Cancelar"></ion-datetime>

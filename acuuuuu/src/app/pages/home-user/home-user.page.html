@@ -1,11 +1,6 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content *ngIf="isPasi === true">
-    <ion-col col-4>
-        <ion-button color="primary"  (click)="onLogout()" class="botones" round>
-        <img src="../../../assets/imgs/bot_cliente_seguimiento/ajustesacu.png" class="boton">Cerrar Sesión
-        </ion-button>
-        </ion-col>
 
     <ion-row margin-top style="margin-top:5%">
         
@@ -57,6 +52,13 @@
               </canvas>
             </div>
           </div>
+
+          <ion-col col-4>
+            <ion-button color="primary"  (click)="onLogout()" class="botones" round>
+            <img src="../../../assets/imgs/bot_cliente_seguimiento/ajustesacu.png" class="boton">Cerrar Sesión
+            </ion-button>
+            </ion-col>
+    
 
           <div *ngIf="isAdmin === true" text-center>
             <ion-button expand="block" class="centrado" routerLink="/tabs/tab1" >Acceder</ion-button>
