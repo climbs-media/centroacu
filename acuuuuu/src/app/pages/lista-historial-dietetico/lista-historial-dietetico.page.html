@@ -24,11 +24,7 @@
     <ion-col>
         <div [routerLink]="['/detalles-historial-dietetico', item.payload.doc.id]"  class="cajabuscador"    >
               <span class="nombreuser"> <strong>Paciente:     </strong>{{item.payload.doc.data().nombreApellido}}</span>
-              <div  class="buscado">
-                  <span class="num_edad" style="font-weight:bold;">Menú: {{item.payload.doc.data().menu}} </span>
-                 
-              </div>
-                <span class="num_edad"> Última Consulta:  {{item.payload.doc.data().fechaConsulta}}</span> 
+                <span class="num_edad"> Última Consulta:  {{item.payload.doc.data().fecha}}</span> 
               
 
       </div>

@@ -3,38 +3,51 @@
 <ion-back-button color="primary" defaultHref="/"></ion-back-button>
   <form class="animated fadeIn fast" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
   
-      <ion-item>
-          <ion-label position="floating" color="ion-color-dark">Nombre del Paciente:</ion-label>
-          <ion-input type="text" formControlName="nombreApellido" [readonly]="false"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label position="floating" color="ion-color-dark">Última Consulta:</ion-label>
-          <ion-input type="text" formControlName="fechaConsulta" [readonly]="false"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label position="floating" color="ion-color-dark"><a>Fecha Último Peso: </a></ion-label>
-          <ion-input type="text" formControlName="fechaUltimoPeso" [readonly]="false"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating" color="ion-color-dark"><a>Menú Actual: </a></ion-label>
-        <ion-input type="text" formControlName="menu" [readonly]="false"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating" color="ion-color-dark"><a>Peso Actual:</a></ion-label>
-      <ion-input type="text" formControlName="pesoActual" [readonly]="false"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating" color="ion-color-dark"><a>Peso Pérdido:</a></ion-label>
-    <ion-input type="text" formControlName="pesoPerdido" [readonly]="false"></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label position="floating" color="ion-color-dark"><a>Semanas Con la Dieta</a></ion-label>
-  <ion-input type="text" formControlName="semanas" [readonly]="false"></ion-input>
-</ion-item>
+      <ion-grid>
+          <ion-row>
+          <ion-col size="12">
+              <h5>Fecha</h5>
+                  <ion-item>
+                    <ion-input  formControlName="fecha" readonly="true"></ion-input>
+                  </ion-item>
+          </ion-col>
+            <ion-col size="12">
+                <h5>Desayuno</h5>
+                  <ion-item>
+                      <ion-input  formControlName="desayuno" readonly="true"></ion-input>
+                    </ion-item>
+              </ion-col>
+            <ion-col size="12">
+                <h5>Media mañana</h5>
+                    <ion-item>
+                        <ion-input  formControlName="mediaManana" readonly="true"></ion-input>
+                      </ion-item>
+          </ion-col>
+                    <ion-col size="12">
+                        <h5>Comida</h5>
+                        <ion-item>
+                            <ion-input  formControlName="comida" readonly="true"></ion-input>
+                          </ion-item>
+                </ion-col>
+                    <ion-col size="12">
+                      <h5>Media tarde</h5>
+                            <ion-item>
+                                <ion-input  formControlName="mediaTarde" readonly="true"></ion-input>
+                              </ion-item>
+                    </ion-col>
+                <ion-col size="12">
+                  <h5>cena</h5>
+                                <ion-item>
+                                  
+                                    <ion-input  formControlName="cena" readonly="true"></ion-input>
+                                  </ion-item>
+                  </ion-col>
+                          </ion-row>
+        </ion-grid>
 
-    
+    <!--
           <ion-button fill="outline" expand="block" style="--border-radius:20px; margin-top:15px;" type="submit" color="primary" [disabled]="!validations_form.valid">Modificar</ion-button>
-
+      -->
       <ion-button class="submit-button" fill="outline" expand="block" color="primary" style="--border-radius:20px"  (click)="delete()">Borrar</ion-button>
   
   </form>

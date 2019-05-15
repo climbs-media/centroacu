@@ -99,7 +99,7 @@ export class MenuProteinaPage implements OnInit {
     this.firebaseService.crearMenuProteina(data)
       .then(
         res => {
-          this.router.navigate(['/dietas-hipocaloricas']);
+          this.router.navigate(['/dietas-proteinas']);
         }
       );
   }

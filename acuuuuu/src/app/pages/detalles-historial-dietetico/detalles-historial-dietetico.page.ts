@@ -49,25 +49,25 @@ export class DetallesHistorialDieteticoPage implements OnInit {
     })
     this.validations_form = this.formBuilder.group({
       nombreApellido: new FormControl(this.item.nombreApellido, Validators.required),
-      fechaConsulta: new FormControl(this.item.fechaConsulta, Validators.required),
-      fechaUltimoPeso: new FormControl(this.item.fechaUltimoPeso, Validators.required),
-      menu: new FormControl(this.item.menu, Validators.required),
-      pesoActual: new FormControl(this.item.pesoActual, Validators.required),
-      pesoPerdido: new FormControl(this.item.pesoPerdido, Validators.required),
-      semanas: new FormControl(this.item.semanas, Validators.required),
+      desayuno: new FormControl(this.item.desayuno, Validators.required),
+      mediaManana: new FormControl(this.item.mediaManana, Validators.required),
+      comida: new FormControl(this.item.comida, Validators.required),
+      mediaTarde: new FormControl(this.item.mediaTarde, Validators.required),
+      cena: new FormControl(this.item.cena, Validators.required),
+      fecha: new FormControl(this.item.fecha, Validators.required),
 
     });
   }
 
   onSubmit(value){
     let data = {
-      nombreApellido: value.nombreApellido,
-        fechaConsulta: value.fechaConsulta,
-        fechaUltimoPeso: value.fechaUltimoPeso,
-        menu: value.menu,
-        pesoActual: value.pesoActual,
-        pesoPerdido: value.pesoPerdido,
-        semanas: value.semanas,
+      desayuno: value.desayuno,
+        nombreApellido: value.nombreApellido,
+        fecha: value.fecha,
+        mediaManana: value.mediaManana,
+        comida: value.comida,
+        mediaTarde: value.mediaTarde,
+        cena: value.cena,
       userId: this.userId,
     }
     this.firebaseService.actualizarDiarioDietetico(this.item.id,data)

@@ -82,6 +82,7 @@ export class DiarioDieteticoService {
       const currentUser = firebase.auth().currentUser;
       this.afs.collection('diario-dietetico').add({
         desayuno: value.desayuno,
+        nombreApellido: value.nombreApellido,
         fecha: value.fecha,
         mediaManana: value.mediaManana,
         comida: value.comida,
