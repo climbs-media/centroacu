@@ -29,7 +29,7 @@
                     <ul>
       <ion-col>
           <div [routerLink]="['/detalles-ejercicios-pacientes-admin', item.payload.doc.id]"  class="cajabuscador"   >
-                <span class="nombreuser">{{item.payload.doc.data().titulo}}</span>
+                <span class="nombreuser">{{item.payload.doc.data().titulo}}<br></span>
                 <div  class="buscado"  >
                     <span class="num_edad">Ejercicio: {{item.payload.doc.data().descripcion}} </span>
                 </div>

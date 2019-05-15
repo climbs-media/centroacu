@@ -1,11 +1,6 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>crear-historial-fisico</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
 <ion-content padding>
-
+  <ion-back-button color="primary" defaultHref="/"></ion-back-button>
     <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
       <!--
         <ion-col col-4>

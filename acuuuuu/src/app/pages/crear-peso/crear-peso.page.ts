@@ -12,7 +12,7 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
 })
 export class CrearPesoPage implements OnInit {
 
-  public  tituhead: String = 'Crear Diario Dietetico';
+  public  tituhead: String = 'Crear Mi peso';
   validations_form: FormGroup;
   image: any;
 
