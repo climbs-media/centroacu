@@ -36,7 +36,6 @@ export class DiarioEjercicioPage implements OnInit {
   calendar = { 
     mode: 'month',
     currentDate: new Date(),
-    locale: 'es'
   }
 
 

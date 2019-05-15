@@ -1,10 +1,9 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
-
+<ion-buttons>
+    <ion-back-button color="primary" defaultHref="/"></ion-back-button>
+</ion-buttons>
 <ion-content padding>
-        <ion-buttons>
-                <ion-back-button defaulHref="/"></ion-back-button>
-        </ion-buttons>
     <ion-card *ngFor="let item of items" style="margin-bottom:220px; margin-top:-200px;">
         <ion-card-header>
           <ion-card-title text-center><h5>Ejercicios de {{item.payload.doc.data().titulo}}</h5></ion-card-title>

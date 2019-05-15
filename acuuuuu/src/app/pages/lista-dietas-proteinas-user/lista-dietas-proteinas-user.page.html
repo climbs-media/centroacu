@@ -8,7 +8,7 @@
     <ion-grid margin-top>
     <ion-row margin-top>
         <ul *ngFor="let item of items" >
-            <ion-col [routerLink]="['/detalles-menu-hipocalorica', item.payload.doc.id]">
+            <ion-col [routerLink]="['/detalles-menu-proteina', item.payload.doc.id]">
                 <div   class="bot bot_irHistoryClinico">
                   <img src="../../../assets/imgs/bot_cliente_seguimiento/menus.png">
                     <p style="font-size:13px; font-weight: bold; margin-top:-20%">{{item.payload.doc.data().nombreMenu}}</p>
