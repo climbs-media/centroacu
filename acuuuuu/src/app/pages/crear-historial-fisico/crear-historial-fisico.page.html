@@ -7,11 +7,15 @@
 <ion-content padding>
 
     <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
-
+      <!--
         <ion-col col-4>
           <ion-button  (click)="openImagePicker()" class="botones" round>
           <img src="../../../assets/imgs/bot_cliente_seguimiento/fotoacu.png" class="boton">Tomar Foto
-        </ion-button>
+        </ion-button> 
+      </ion-col>-->
+      <ion-col col-4>
+        <ion-button expand="block" (click)="getPicture()">Toma una foto</ion-button>
+        <img [src]="image" *ngIf="image" />
       </ion-col>
       <ion-col text-center col-4>
           <ion-input formControlName="nombre" placeholder="Nombre de Paciente"></ion-input>

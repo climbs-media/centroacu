@@ -6,6 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { HistorialFisicoService } from 'src/app/services/historial-fisico.service';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-historial-fisico',
@@ -28,6 +29,8 @@ export class HistorialFisicoPage implements OnInit {
     private firebaseService: HistorialFisicoService,
     private webview: WebView,
     private route: ActivatedRoute,
+    private camera: Camera
+    
   ) { }
 
   ngOnInit() {
@@ -72,6 +75,22 @@ export class HistorialFisicoPage implements OnInit {
           this.router.navigate(['/historial-fisico']);
         }
       );
+  }
+
+  getPicture(){
+    let options: CameraOptions = {
+      destinationType: this.camera.DestinationType.DATA_URL,
+      targetWidth: 1000,
+      targetHeight: 1000,
+      quality: 100
+    }
+    this.camera.getPicture( options )
+    .then(imageData => {
+      this.image = `data:image/jpeg;base64,${imageData}`;
+    })
+    .catch(error =>{
+      console.error( error );
+    });
   }
 
   openImagePicker() {

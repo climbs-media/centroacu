@@ -5,6 +5,7 @@ import { ToastController, LoadingController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HistorialFisicoService } from 'src/app/services/historial-fisico.service';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-crear-historial-fisico',
@@ -26,6 +27,7 @@ export class CrearHistorialFisicoPage implements OnInit {
     private firebaseService: HistorialFisicoService,
     private webview: WebView,
     private route: ActivatedRoute,
+    private camera: Camera
   ) { }
 
   ngOnInit() {
@@ -101,6 +103,22 @@ export class CrearHistorialFisicoPage implements OnInit {
 
   async presentLoading(loading) {
     return await loading.present();
+  }
+
+  getPicture(){
+    let options: CameraOptions = {
+      destinationType: this.camera.DestinationType.DATA_URL,
+      targetWidth: 1000,
+      targetHeight: 1000,
+      quality: 100
+    }
+    this.camera.getPicture( options )
+    .then(imageData => {
+      this.image = `data:image/jpeg;base64,${imageData}`;
+    })
+    .catch(error =>{
+      console.error( error );
+    });
   }
 
 }

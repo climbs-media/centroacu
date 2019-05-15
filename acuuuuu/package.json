@@ -86,7 +86,10 @@
             "cordova-plugin-statusbar": {},
             "cordova-plugin-whitelist": {},
             "cordova-wheel-selector-plugin": {},
-            "cordova-plugin-camera": {},
+            "cordova-plugin-camera": {
+                "CAMERA_USAGE_DESCRIPTION": "the app need the camera",
+                "PHOTOLIBRARY_USAGE_DESCRIPTION": "the app need the photolibrary"
+            },
             "cordova-plugin-telerik-imagepicker": {}
         },
         "platforms": [
