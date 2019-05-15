@@ -119,7 +119,7 @@ export class DestallesPesoPage implements OnInit {
   async delete() {
     const alert = await this.alertCtrl.create({
       header: 'Confirmar',
-      message: 'Quieres Eliminarlo ' + this.item.title + '?',
+      message: 'Quieres Eliminarlo ' + this.item.nombreApellido + '?',
       buttons: [
         {
           text: 'No',

@@ -74,7 +74,7 @@ export class DetallesDiarioPage implements OnInit {
   async delete() {
     const alert = await this.alertCtrl.create({
       header: 'Confirmar',
-      message: 'Quieres Eliminar el Menu' + this.item.nombreMenu + '?',
+      message: 'Quieres Eliminar el Menu' + this.item.fecha + '?',
       buttons: [
         {
           text: 'No',
@@ -89,7 +89,7 @@ export class DetallesDiarioPage implements OnInit {
             this.diarioService.borrarDiarioDietetico(this.item.id)
               .then(
                 res => {
-                  this.router.navigate(['/home']);
+                  this.router.navigate(['/dietas-pacientes']);
                 },
                 err => console.log(err)
               );

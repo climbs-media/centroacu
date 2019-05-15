@@ -32,7 +32,7 @@ export class MenuCenaPage implements OnInit {
   }
 
   resetFields() {
-    this.image = './assets/imgs/foto_cliente.jpg';
+    this.image = './assets/imgs/menu.png';
     this.validations_form = this.formBuilder.group({
       nombreMenu: new FormControl('', Validators.required),
       numeroMenu: new FormControl('', Validators.required),

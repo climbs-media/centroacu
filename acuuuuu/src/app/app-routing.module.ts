@@ -88,6 +88,7 @@ const routes: Routes = [
   { path: 'lista-dietas-cena-user', loadChildren: './pages/lista-dietas-cena-user/lista-dietas-cena-user.module#ListaDietasCenaUserPageModule' },
   { path: 'crear-historial-fisico', loadChildren: './pages/crear-historial-fisico/crear-historial-fisico.module#CrearHistorialFisicoPageModule' },
   { path: 'detalles-historial-fisico/:id', loadChildren: './pages/detalles-historial-fisico/detalles-historial-fisico.module#DetallesHistorialFisicoPageModule' },  { path: 'pagina-dietas-pacientes', loadChildren: './pages/pagina-dietas-pacientes/pagina-dietas-pacientes.module#PaginaDietasPacientesPageModule' },
+  { path: 'ejercicios-del-usuario', loadChildren: './pages/ejercicios-del-usuario/ejercicios-del-usuario.module#EjerciciosDelUsuarioPageModule' },
 
 
 

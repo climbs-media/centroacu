@@ -72,8 +72,10 @@
     <ion-button expand="block" class="centrado" routerLink="/tabs/tab1" >Acceder</ion-button>
 </div>
 
-<ion-col col-4>
-  <ion-button color="primary"  (click)="onLogout()" class="centrado" round>
+<ion-footer *ngIf="isPasi === true">
+<ion-col text-center  col-4>
+  <ion-button color="primary"  (click)="onLogout()" round>
   <img src="../../../assets/imgs/bot_cliente_seguimiento/ajustesacu.png" class="boton">Cerrar Sesión
   </ion-button>
-  </ion-col>
+</ion-col>
+</ion-footer>

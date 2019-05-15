@@ -96,7 +96,7 @@ export class DetallesBonosPacientesAdminPage implements OnInit {
       altura: value.altura,
       referencia: value.referencia,
       imc: value.imc,
-      image:value.image,
+      image: this.image,
       userId: this.userId,
     };
     this.firebaseService.actualizarHistorialClinico(this.item.id, data)
@@ -110,7 +110,7 @@ export class DetallesBonosPacientesAdminPage implements OnInit {
   async delete() {
     const alert = await this.alertCtrl.create({
       header: 'Confirmar',
-      message: 'Quieres Eliminarlo ' + this.item.title + '?',
+      message: 'Quieres Eliminarlo ' + this.item.nombreApellido + '?',
       buttons: [
         {
           text: 'No',
