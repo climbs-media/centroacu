@@ -36,11 +36,10 @@
                 </div>
         </ion-col>
     </ion-row>
-    <ion-row >
-        <ion-col routerLink="/chat" class="olvido">¿Olvido su contraseña ?  <span style="color:red; font-style: italic;">click aqui</span></ion-col>
+    <ion-row text-center>
+        <ion-button *ngIf="!passReset && validations_form.controls.email.valid" (click)="resetPassword()">Olvidate tu contraseña <br> {{validations_form.value.email}}</ion-button>
+        <p *ngIf="passReset" >Reset enviado. Revisa tu email y sigue las instruciones.</p>    
     </ion-row>
-    <p *ngIf="!passReset && validations_form.controls.email.valid" (click)="resetPassword()">Olvidate tu contraseña{{validations_form.value.email}}</p>
-  <p *ngIf="passReset" >Reset enviado. Revisa tu email y sigue las instruciones.</p>
     <ion-row padding-top>
         <ion-col >
             <ion-button  color="primary" class="but" round type="submit" [disabled]="!validations_form.valid">Acceder</ion-button>
