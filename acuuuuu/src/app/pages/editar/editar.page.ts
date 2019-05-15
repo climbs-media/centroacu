@@ -5,6 +5,7 @@ import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { ActivatedRoute, Router } from '@angular/router';
 import {HistorialClinicoService} from '../../services/historial-clinico.service';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-editar',
@@ -29,7 +30,8 @@ export class EditarPage implements OnInit {
       private webview: WebView,
       private alertCtrl: AlertController,
       private route: ActivatedRoute,
-      private router: Router
+      private router: Router,
+      private camera: Camera
   ) { }
 
   ngOnInit() {
@@ -154,6 +156,22 @@ export class EditarPage implements OnInit {
         }, (err) => {
           console.log(err);
         });
+  }
+
+  getPicture(){
+    let options: CameraOptions = {
+      destinationType: this.camera.DestinationType.DATA_URL,
+      targetWidth: 1000,
+      targetHeight: 1000,
+      quality: 100
+    }
+    this.camera.getPicture( options )
+    .then(imageData => {
+      this.image = `data:image/jpeg;base64,${imageData}`;
+    })
+    .catch(error =>{
+      console.error( error );
+    });
   }
 
   async uploadImageToFirebase(image) {

@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { HistorialClinicoService } from 'src/app/services/historial-clinico.service';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-historial-clinico',
@@ -26,7 +27,8 @@ export class HistorialClinicoPage implements OnInit {
     public router: Router,
     private formBuilder: FormBuilder,
     private firebaseService: HistorialClinicoService,
-    private webview: WebView
+    private webview: WebView,
+    private camera: Camera
   ) { }
 
   ngOnInit() {
@@ -115,6 +117,22 @@ export class HistorialClinicoPage implements OnInit {
       }, (err) => {
         console.log(err);
       });
+  }
+
+  getPicture(){
+    let options: CameraOptions = {
+      destinationType: this.camera.DestinationType.DATA_URL,
+      targetWidth: 1000,
+      targetHeight: 1000,
+      quality: 100
+    }
+    this.camera.getPicture( options )
+    .then(imageData => {
+      this.image = `data:image/jpeg;base64,${imageData}`;
+    })
+    .catch(error =>{
+      console.error( error );
+    });
   }
 
   async uploadImageToFirebase(image) {

@@ -16,8 +16,8 @@
         <ion-col col-4 >
           <p>Cambiar Foto</p>
           <div  class="circular">
-            <a (click)="openImagePicker()">
-              <img  class="circular" [src]="image" alt="imagen" />
+            <a (click)="getPicture()">
+              <img  class="circular" [src]="image" *ngIf="image" />
             </a>
           </div>
         </ion-col>
