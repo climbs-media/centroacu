@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { HistorialFisicoPage } from './historial-fisico.page';
 import { HistoricoFisicoResolver } from './historial-fisico.resolver';
 import { ComponentsModule } from '../../componentes/cabecera/components.module';
+import { Camera } from '@ionic-native/camera';
 
 const routes: Routes = [
   {
@@ -29,6 +30,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [HistorialFisicoPage],
-  providers: [HistoricoFisicoResolver]
+  providers: [HistoricoFisicoResolver,]
 })
 export class HistorialFisicoPageModule {}
