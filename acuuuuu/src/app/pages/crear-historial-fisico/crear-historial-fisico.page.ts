@@ -12,7 +12,7 @@ import { HistorialFisicoService } from 'src/app/services/historial-fisico.servic
   styleUrls: ['./crear-historial-fisico.page.scss'],
 })
 export class CrearHistorialFisicoPage implements OnInit {
-
+  public  tituhead: String = 'Crear Historial Físico';
   validations_form: FormGroup;
   image: any;
   items: Array<any>;

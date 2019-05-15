@@ -1,17 +1,17 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content padding>
-    <button routerLink="/cliente-perfil"><img src="../../../assets/imgs/retroceso.png" style="color: red; position: absolute; margin-left: 5%; margin-top:-10px;"></button> 
+  <ion-back-button color="primary" defaultHref="/"></ion-back-button>
         <ion-item *ngFor="let item of items">
         <ion-list>
-          <div [routerLink]="['/detalles-historial-fisico', item.payload.doc.id]">
-          <ion-label>{{item.payload.doc.data().nombre}}</ion-label>
+          <div [routerLink]="['/detalles-historial-fisico', item.payload.doc.id]" class="cajabuscador">
+          <ion-label>Paciente: {{item.payload.doc.data().nombre}}</ion-label>
           </div>
         </ion-list>
       </ion-item>
-</ion-content>
-<ion-footer>
+
+
   <div text-center>
-  <ion-button (click)="goAgregar()" expand="block" size="small">Agregar</ion-button>
+  <ion-button (click)="goAgregar()" expand="block" size="small" class="boton">Agregar Paciente</ion-button>
   </div>
-</ion-footer>
+</ion-content>

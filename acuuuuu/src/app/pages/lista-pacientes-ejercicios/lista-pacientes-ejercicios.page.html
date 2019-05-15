@@ -23,7 +23,7 @@
         </ion-row>
          <div *ngIf="items.length > 0">
           <ion-list>
-              <ion-item *ngFor="let item of items" style="--background:whitesmoke">
+              <ion-item *ngFor="let item of items" >
              <div *ngIf="item.payload.doc.data().titulo && item.payload.doc.data().titulo.length"  class="contenido">
                   <div *ngIf="item.payload.doc.data().titulo.includes(searchText) ">  
                     <ul>
@@ -31,15 +31,15 @@
           <div [routerLink]="['/detalles-ejercicios-pacientes-admin', item.payload.doc.id]"  class="cajabuscador"   >
                 <span class="nombreuser">{{item.payload.doc.data().titulo}}</span>
                 <div  class="buscado"  >
-                    <span class="num_edad">N° {{item.payload.doc.data().descripcion}} </span>
+                    <span class="num_edad">Ejercicio: {{item.payload.doc.data().descripcion}} </span>
                 </div>
                 
                 <div class="circular" >
                         <span class="estado"></span><!-- nos dira si esta activo ,frecuente, no viene -->
-                        <img   class="circular" src="{{item.payload.doc.data().image}}" >
+                        <img   class="circular" src="../../../assets/imgs/ejercicios/alza.png">
                 </div>
                 
-            <span class="bot_bono">{{item.payload.doc.data().bono}}</span>
+            
         </div>
           
           <!-- se pone fuera para que no le afecte el click general -->
