@@ -28,11 +28,7 @@ export class AuthService {
   })
   }
 
-  resetPasswordInit(email: string) { 
-    return this.afAuth.auth.sendPasswordResetEmail(
-      email, 
-      { url: 'https://acu-app-ed220.firebaseapp.com/__/auth/action' }); 
-    } 
+
 
   resetPassword(email: string) {
     var auth = firebase.auth();

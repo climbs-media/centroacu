@@ -13,6 +13,7 @@ export class LoginPacientePage implements OnInit {
 
   validations_form: FormGroup;
   errorMessage = '';
+  passReset: boolean = false;
 
   validation_messages = {
   'email': [
@@ -31,6 +32,8 @@ export class LoginPacientePage implements OnInit {
     private router: Router
   ) { }
 
+ 
+
   ngOnInit() {
     this.validations_form = this.formBuilder.group({
       email: new FormControl('', Validators.compose([
@@ -43,6 +46,12 @@ export class LoginPacientePage implements OnInit {
       ])),
     });
   }
+
+  formErrors = {
+    'email': 'Email Incorrecto',
+    'password': 'Contraseña Incorrecta'
+  };
+
 
   tryLogin(value) {
     this.authService.conectar(value)
@@ -57,8 +66,9 @@ export class LoginPacientePage implements OnInit {
   loginAdmin() {
     this.router.navigate(['/login-admin']);
   }
-  resetPassword(email: string) {
-    this.authService.resetPassword(email)
+  resetPassword() {
+    this.authService.resetPassword(this.validations_form.value['email'])
+    .then(() => this.passReset = true)
   }
 
 }
