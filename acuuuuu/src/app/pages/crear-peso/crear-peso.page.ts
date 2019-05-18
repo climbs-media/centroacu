@@ -16,6 +16,28 @@ export class CrearPesoPage implements OnInit {
   validations_form: FormGroup;
   image: any;
 
+      /*IMC*/
+      peso = 0;
+      altura = 0;
+      /***/
+      //peso perdido//
+      ultimoPeso = 0;
+      pesoActual= 0;
+      /*********** */
+      pesoObjetivo= 0;
+  
+    get bmi() {
+      return this.peso / Math.pow(this.altura, 2);
+    }
+  
+    get pesoPerdido() {
+      return this.ultimoPeso - Math.pow(this.pesoActual, 1);
+    }
+  
+    get pesoObj(){
+      return this.pesoActual - this.pesoObjetivo;
+    }
+
   constructor(
 
     public toastCtrl: ToastController,

@@ -6,93 +6,54 @@
         <div class="cajatexto" style="margin-left:18px;">
             <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" padding placeholder="Fecha" type="date" formControlName="fecha" class="inputexto" done-text="Aceptar" cancel-text="Cancelar"></ion-datetime>
           </div>
-        <ion-item>
-            <ion-label position="floating" color="primary">Peso Anterior</ion-label>
-            <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoAnterior"></ion-input>
-        </ion-item> 
-        <ion-item>
-            <ion-label position="floating" color="primary">Peso Actual</ion-label>
-            <ion-input placeholder="Nuevo Peso" type="number" formControlName="peso"></ion-input>
-        </ion-item>
-        <ion-item>
-            <div><h5>Formula Peso Perdido</h5></div>
-              <form method="POST" oninput="resultado.value=parseInt(valor1.value)-parseInt(valor2.value)">
-                <div>
-              <ion-label>Peso Anterior:</ion-label>
-            </div>
-            <div>
-                <input type="number" id="valor1" value="">
-              </div>
+          <ion-item>
+              <ion-label position="floating" color="primary">Peso Anterior</ion-label>
+              <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoAnterior"></ion-input>
+          </ion-item> 
+          <ion-item>
+              <ion-label position="floating" color="primary">Peso Actual</ion-label>
+              <ion-input placeholder="Nuevo Peso" type="number" formControlName="peso"></ion-input>
+          </ion-item>
+          <ion-item>
+              <div><h5>Formula Peso Perdido</h5></div>
               <div>
-                <ion-label>Peso Actual:</ion-label>
-              </div>
+                  <input [(ngModel)]="ultimoPeso" [ngModelOptions]="{standalone: true}" placeholder="Ultimo Peso" />
+                  <input [(ngModel)]="pesoActual" [ngModelOptions]="{standalone: true}" placeholder="Peso Actual" />
+                  
+                  <div *ngIf="ultimoPeso && pesoActual">
+                    <ion-input type="number" step=".01" formControlName="pesoPerdido"  value="{{ pesoPerdido }}">
+                  </ion-input>
+                </div>
+                </div>
+              
+          </ion-item>
+          <ion-item>
+              <ion-label position="floating" color="primary">Peso Objetivo</ion-label>
+              <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoObjetivo"></ion-input>
+          </ion-item>
+          <ion-item>
+              <div><h5>Formula estas de tu objetivo</h5></div>
               <div>
-                <input type="number" id="valor2" value="0"> 
-              </div>
-              <div>
-                <ion-label>Peso Perdido</ion-label>
-              </div>
-                <output name="resultado" for="valor1 valor2"></output>
-            </form>
-        </ion-item>
-        <ion-item>
-            <ion-label position="floating" color="primary">Peso Perdido</ion-label>
-            <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoPerdido"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label position="floating" color="primary">Peso Objetivo</ion-label>
-            <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoObjetivo"></ion-input>
-        </ion-item>
-        <ion-item>
-            <div><h5>Formula estas de tu objetivo</h5></div>
-              <form method="POST" oninput="resultado.value=parseInt(valor1.value)-parseInt(valor2.value)">
-                <div>
-              <ion-label>Peso Actual:</ion-label>
-            </div>
-            <div>
-                <input type="number" id="valor1" value="0">
-              </div>
-              <div>
-                <ion-label>Peso objetivo:</ion-label>
-              </div>
-              <div>
-                <input type="number" id="valor2" value="0"> 
-              </div>
-              <div>
-                <ion-label>Kg de tu objetivo</ion-label>
-              </div>
-                <output name="resultado" for="valor1 valor2"></output>
-            </form>
-        </ion-item>
-        <ion-item>
-            <ion-label position="floating" color="primary">¿A cuanto estas de tu objetivo?</ion-label>
-            <ion-input placeholder="Nuevo Peso" type="number" formControlName="estasObjetivo"></ion-input>
-        </ion-item>
-        <ion-item>
-          <div><h5>Formula IMC</h5></div>
-            <form method="POST" oninput="resultado.value=parseInt(valor1.value)*parseInt(valor1.value)/parseInt(valor2.value)">
-              <div>
-            <ion-label>Peso actual:</ion-label>
-          </div>
-          <div>
-              <input type="number" id="valor1" value="0">
-            </div>
-            <div>
-              <ion-label>Altura:</ion-label>
-            </div>
-            <div>
-              <input type="number" id="valor2" value=""> 
-            </div>
-            <div>
-              <ion-label>IMC</ion-label>
-            </div>
-              <output name="resultado" for="valor1 valor2"></output>
-          </form>
-        </ion-item>
-        <ion-item>
-            <ion-label position="floating" color="primary">Nuevo IMC</ion-label>
-            <ion-input placeholder="Nuevo IMC" type="number" formControlName="imc"></ion-input>
-        </ion-item>
+                  <input [(ngModel)]="pesoActual" [ngModelOptions]="{standalone: true}" placeholder="Ultimo Peso" />
+                  <input [(ngModel)]="pesoObjetivo" [ngModelOptions]="{standalone: true}" placeholder="Peso Objetivo" />
+                  
+                  <div *ngIf="pesoActual && pesoObjetivo">
+                    <ion-input type="number" step=".01" formControlName="estasObjetivo"  value="{{ pesoObj }}">
+                  </ion-input>
+                </div>
+                </div>
+          </ion-item>
+          
+            <div><h5>Formula IMC</h5></div>
+        <div>
+        <input [(ngModel)]="peso" [ngModelOptions]="{standalone: true}" placeholder="Peso" />
+        <input [(ngModel)]="altura" [ngModelOptions]="{standalone: true}" placeholder="Altura" />
+        
+        <div *ngIf="peso && altura">
+          <ion-input type="number" step="0.01" formControlName="imc"  value="{{ bmi.toFixed(2) }}">
+        </ion-input>
+      </div>
+      </div>
         <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Actualizar Datos</ion-button>
     </form>
 
