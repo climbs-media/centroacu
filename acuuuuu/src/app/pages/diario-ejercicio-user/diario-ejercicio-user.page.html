@@ -1,0 +1,116 @@
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
+<ion-back-button slot="start" color="primary" defaultHref="/tabs/tab1"></ion-back-button>
+<ion-content>
+    <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    <ion-card>
+        <ion-card-header (click)="collapseCard = !collapseCard">
+          <ion-card-title text-center>Añade Ejercicio</ion-card-title>
+        </ion-card-header>
+        <ion-card-content *ngIf="!collapseCard">
+          <ion-item>
+            <ion-input type="text" placeholder="Nombre Apellido"  formControlName="titulo" style="text-transform:lowercase"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Descripción de Ejercicio"  formControlName="descripcion" style="text-transform:lowercase"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Fecha</ion-label>
+              <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD-MM-YYYY" [(ngModel)]="event.horaInicio" [min]="minDate" formControlName="fecha" cancel-text="Cancelar" done-text="Aceptar"></ion-datetime>
+            </ion-item>
+          <ion-item>
+            <ion-label>Hora  de Ejercicio</ion-label>
+            <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"  formControlName="horaInicio" cancel-text="Cancelar" done-text="Aceptar"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label>Finaliza </ion-label>
+            <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"  formControlName="horaFinal" cancel-text="Cancelar" done-text="Aceptar"></ion-datetime>
+          </ion-item>
+          <ion-button type="submit" fill="outline" expand="block" class="asig"  [disabled]="!validations_form.valid">Asignar</ion-button>
+          <!--Funcional
+            <ion-button type="submit" fill="outline" expand="block" class="asig" [disabled]="!validations_form.valid" >Asignar</ion-button>
+-->
+        </ion-card-content>
+      </ion-card>
+      </form>
+
+      <div class="meses">{{viewTitle}}</div>
+      <ion-row margin-top style="margin-top:40px">
+          <ion-col size="6" text-left>
+            <ion-button fill="clear" (click)="back()" class="flechas">
+              <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+          
+          <!-- Move forward one screen of the slides -->
+          <ion-col size="6" text-right>
+            <ion-button fill="clear" (click)="next()" class="flechas">
+              <ion-icon name="arrow-forward" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+
+        <calendar
+        lang="es"
+        [locale]="locale"
+        [eventSource]="eventSource"
+        [calendarMode]="calendar.mode"
+        [currentDate]="calendar.currentDate"
+        (onCurrentDateChanged)="onCurrentDateChanged($event)"
+        (onRangeChanged)="reloadSource(startTime, endTime)"
+        (onEventSelected)="onEventSelected($event)"
+        (onTitleChanged)="onViewTitleChanged($event)"
+        (onTimeSelected)="onTimeSelected($event)"
+        step="5"
+        startingDayWeek="1"
+        >
+      </calendar>
+      <div>
+        <ion-card *ngFor="let item of items" style="margin-bottom:220px; margin-top:-200px;">
+            <ion-card-header>
+              <ion-card-title [routerLink]="['/detalles-ejercicios-pacientes-user', item.payload.doc.id]" text-center><h5>Ejercicios de {{item.payload.doc.data().titulo}}</h5></ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <ul>
+                    <div>
+                        <ion-col size="12">
+                            <h5>Titulo</h5>
+                            <ion-label>{{item.payload.doc.data().titulo}}</ion-label>
+                        </ion-col>
+                    </div>
+                    <div>
+                        <ion-col size="12">
+                            <h5>Descripcion</h5>
+                            <ion-label>{{item.payload.doc.data().descripcion}}</ion-label>
+                        </ion-col>
+            
+                    </div>
+                    <div>
+                        <ion-col size="12">
+                            <h5>Fecha</h5>
+                            <ion-label>{{item.payload.doc.data().fecha}}</ion-label>
+                        </ion-col>
+            
+                    </div>
+                    <div>
+                        <ion-col size="12">
+                            <h5>Hora Inicio</h5>
+                            <ion-label>{{item.payload.doc.data().horaInicio}}</ion-label>
+                        </ion-col>
+            
+                    </div>
+                    <div>
+                        <ion-col size="12">
+                            <h5>Hora Fin</h5>
+                            <ion-label>{{item.payload.doc.data().horaFinal}}</ion-label>
+                        </ion-col>
+                    </div>
+                    <hr>
+                    <hr>
+                </ul>
+            </ion-card-content>
+          </ion-card>
+        </div>
+    
+
+</ion-content>

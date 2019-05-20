@@ -1,0 +1,48 @@
+
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
+
+<ion-content *ngIf="items"  padding-top padding-top>
+<ion-back-button color="primary" defaultHref="/"></ion-back-button>
+  <ion-grid>
+
+  <ion-row class="conteBoton" margin-top>
+<ion-col col-8>
+
+        
+          <div class="tabla"><img src="../../../assets/imgs/bot_cliente_perfil/recuento.png" class="recuento"></div>
+        </ion-col>
+      </ion-row>
+       <div *ngIf="items.length > 0">
+        <ion-list>
+            <ion-item *ngFor="let item of items">
+           <div *ngIf="item.payload.doc.data().nombreApellido && item.payload.doc.data().nombreApellido.length"  class="contenido">
+                <div *ngIf="item.payload.doc.data().nombreApellido.includes(searchText) ">  
+                  <ul>
+    <ion-col>
+        <div [routerLink]="['/editar', item.payload.doc.id]"  class="cajabuscador"   >
+              <span class="nombreuser">{{item.payload.doc.data().nombreApellido}}</span>
+              <div  class="buscado"  >
+                  <span class="num_edad">N° {{item.payload.doc.data().numeroHistorial}} </span>
+                  <span class="num_edad">{{item.payload.doc.data().edad}} Años</span> 
+              </div>
+              
+              <div>
+                      <span class="estado"></span><!-- nos dira si esta activo ,frecuente, no viene -->
+                      <img   class="circular" src="{{item.payload.doc.data().image}}" >
+              </div>
+              
+          <span class="bot_bono">{{item.payload.doc.data().bono}}</span>
+      </div>
+  </ion-col>
+  </ul> 
+  </div>
+  </div>
+  </ion-item>
+  </ion-list>
+    </div>
+    
+  
+
+  </ion-grid>
+</ion-content>
+

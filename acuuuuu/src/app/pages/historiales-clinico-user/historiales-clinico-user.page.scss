@@ -1,0 +1,230 @@
+    
+    *{
+        margin:0px;
+        padding:0px;
+    }
+
+    //CABEZERA
+
+     .contiene .logo{
+       font-size: 30px;
+       position:absolute;
+       bottom: 1px;
+       left:10px;
+       padding-bottom: 5px;
+      }
+
+   .contiene .chat{
+    position: absolute;
+    width:70px;
+    height: 70px;
+    margin-top: -20px;
+    }
+
+   .contiene{
+           padding-top: 5px;
+           padding-bottom: -10px;
+           height: 35px;
+       
+     }
+     //FIN DE LA CABEZERA
+
+
+     //CONTENIDO
+ 
+     
+     .iconos{
+        color:#BB1D1D;
+        font-size:30px;
+        margin-left: 20px;
+        margin-top: 5px;
+        
+     }
+     .busqueda{
+      text-align: justify;
+      outline: none;
+      margin: 0 auto;
+      width: 80%;
+      height: 35px;
+      padding-bottom: 3px;
+      margin-left: -1px;
+
+    background-color: #F9F7F6;
+     box-shadow: 0px 2px rgba(0,0,0,.50);
+
+     }
+
+
+      //  CAJA DE BUSQUEDA  
+      .cajatexto{
+        text-align: justify;
+        outline: none;
+        margin: 0 auto;
+        width: 80%;
+        height: 35px;
+        padding-bottom: 3px;
+
+      background-color: #F9F7F6;
+      
+     
+      border: 0.5px solid rgba(0,0,0,.25);
+      border-radius: 62px 66px 62px 78px;
+     box-shadow: 0px 2px rgba(0,0,0,.50);
+    }
+    
+   
+      .input_texto{
+          margin-left:30px;
+          margin-bottom:5px;
+         padding: 5px;
+          size:50px;
+      }
+      .iconBusca {
+        position: absolute;
+       pointer-events: none;
+         bottom: 5px;
+         right: 35px;
+        font-size:25px;
+      
+      }
+      
+
+  // BOTONES DE BUSQUEDA
+
+  .conteBoton{
+         
+    padding-left:50px;
+    margin-top: 10px;
+}
+     .but{
+         text-decoration: none;
+         height: 25px;
+         font-size:14px;
+         font-size: 10px;
+         text-align: center;
+         border-radius: 5px 5px 5px 5px;
+         margin-left: 10px;
+        
+       
+       }
+       .but2{
+        text-decoration: none;
+        height: 25px;
+        font-size:14px;
+        font-size: 10px;
+        margin-right: 60px;
+        text-align: center;
+        border-radius: 5px 5px 5px 5px;
+       
+      
+      }
+      .tabla{
+          float: right;
+          width: 32px;
+          height: 29px;
+          margin-right: 10px;
+      }
+      .tabla img{
+        width: 30px;
+          height: 30px;
+          background: #BB1D1D;
+          border-radius: 5px;
+      }
+
+        //  *************PERSONA ENCONTRADA *********************
+
+
+        .cajabuscador{
+          background: #BB1D1D;
+          padding:3%;
+          color: WHITE;
+          position: relative;
+          margin-top: 5%;
+          border-radius: 7px 7px 7px 7px;
+
+         
+        }
+
+        .contenido{
+          width: 90%;
+          margin: 0 auto;
+        }
+      .buscado{ // div caja buscado
+   
+  
+        margin-right: 25px;
+        
+        
+        width:60%;
+        display: inline-block;
+        padding-top: 8px;
+        //height: 30px;
+      
+        //margin:0px  auto;
+      } 
+
+
+      .nombreuser{
+      
+        padding: 10px;
+        font-style: bold;
+        font-weight: normal;
+        font-size: 23px;
+        line-height: normal;
+        margin-left: -5%;
+      }
+      .num_edad{
+        margin-right: 20px;
+      }
+      //SPAN BOTON BONO
+      .bot_bono{
+        padding: 2% 4%;
+        position: relative;
+        left: 60%;
+        font-size: 20px;
+        top: -25px;
+        max-height: 100px;
+
+        background: rgb(196, 196, 196);
+        border: 0.5px solid #3B3B3B;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        color: black;
+      }
+       //IMAGEN
+     .circular {
+     position:absolute;
+     right: 5%;
+     bottom: 8px;
+     width: 15%;
+     height: 70%;
+   
+    border-radius: 50% ;
+    }
+
+     .circular img{
+   width: 100%;
+   height: 100%;
+   border:3px solid white;
+ 
+     }
+     //BOTON ESTADO : actual , y no viene , etc
+
+     .estado{
+       padding: 5px;
+        background: green;
+        position: absolute;
+        right: 5%;
+        border-radius: 50% ;
+        margin-top: -10px;
+     }
+
+     //boton paciente
+     .centrado {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+    }

@@ -1,0 +1,37 @@
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
+
+<ion-content padding margin-top>
+    <ion-back-button color="primary" defaultHref="/"></ion-back-button>
+<h4>SEGUIMIENTO</h4>
+<ion-grid margin-top>
+<ion-row margin-top>
+<ion-col>
+    <div  routerLink="/lista-pacientes-peso-user" class="bot bot_irHistoryClinico">
+        <img src="../../../assets/imgs/bot_cliente_seguimiento/pesa.png">
+        <p class="texto">Pesos de Pacientes</p>
+      </div>
+</ion-col>
+<ion-col>
+     <div class="bot bot_irHistoryClinico" (click)="goEjercicios()">
+        <img src="../../../assets/imgs/bot_cliente_seguimiento/ejercicio.png">
+        <p>Diario de Ejercicio</p>
+      </div>
+</ion-col>
+</ion-row>
+<ion-row margin-top>
+  <ion-col>
+        <div  routerLink="/nueva-dieta" class="bot bot_irHistoryClinico">
+            <img src="../../../assets/imgs/icon/nuevadieta.png">
+            <p>Añadir Dieta</p>
+          </div>
+  </ion-col>
+  <ion-col>
+        <div  routerLink="/nueva-cita"class="bot bot_irHistoryClinico">
+            <img src="../../../assets/imgs/bot_cliente_seguimiento/Nueva1-cita.png">
+            <p>Añadir Nueva Cita</p>
+          </div>
+  </ion-col>
+</ion-row>
+
+</ion-grid>
+</ion-content>

@@ -1,0 +1,30 @@
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
+  
+  <ion-content padding-top padding-top>
+      <ion-back-button color="primary" defaultHref="/"></ion-back-button>
+    <ion-grid *ngIf="items">
+  
+
+  <ion-row *ngFor="let item of items" class="conteBoton" margin-top>
+  
+  <ion-col col-8>
+      <ion-col>
+          <div class="cajabuscador"  [routerLink]="['/editar-peso', item.payload.doc.id]" >
+                <span class="nombreuser">{{item.payload.doc.data().nombreApellido}}</span>
+                <div  class="buscado"  >
+                    <span class="num_edad">{{item.payload.doc.data().peso}} </span>
+                </div>
+            </div>
+          
+          <!-- se pone fuera para que no le afecte el click general -->
+      </ion-col>
+    </ion-col>     
+</ion-row> 
+</ion-grid>
+
+
+
+  </ion-content>
+  
+  
+

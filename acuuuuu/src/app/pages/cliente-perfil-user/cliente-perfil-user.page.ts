@@ -5,13 +5,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-cliente-perfil',
-  templateUrl: './cliente-perfil.page.html',
-  styleUrls: ['./cliente-perfil.page.scss'],
+  selector: 'app-cliente-perfil-user',
+  templateUrl: './cliente-perfil-user.page.html',
+  styleUrls: ['./cliente-perfil-user.page.scss'],
 })
-export class ClientePerfilPage implements OnInit {
+export class ClientePerfilUserPage implements OnInit {
 
-  public  tituhead: String = 'Centro ACU 10';
+  public  tituhead: String = 'Centro ACU 10 Pacientes';
   
   items: Array<any>;
   isAdmin: any = null;
@@ -52,16 +52,7 @@ export class ClientePerfilPage implements OnInit {
   async presentLoading(loading) {
     return await loading.present();
   }
-mostrarhisto() {
 
-    this.modalController.create({
-      component: PopoverHistorialDieteticoPage,
-      componentProps: {
-      }
-    }).then(modal => {
-      modal.present();
-    });
-  }
 
   getCurrentUser() {
     this.authService.isAuth().subscribe(auth => {
@@ -92,7 +83,7 @@ mostrarhisto() {
   }
 
 historialesClinicos() {
-    this.router.navigate(['/historiales-clinicos']);
+    this.router.navigate(['/historiales-clinico-user']);
   }
 
   citas() {
@@ -107,10 +98,5 @@ historialesClinicos() {
         console.log(err);
       });
   }
-
-  onAccederUser(){
-    this.router.navigate(['/login-dieta'])
-  }
-  
 
 }

@@ -1,0 +1,55 @@
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
+  <ion-content padding-top padding-top>
+    <ion-buttons>
+      <ion-back-button color="primary" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-grid *ngIf="items">
+      <ion-row  >
+          <ion-col >
+              <div class="busqueda" >
+                <ion-searchbar [(ngModel)]="searchText" placeholder="Buscador..." style="text-transform: lowercase; border-radius: 50px;"></ion-searchbar>
+              </div>
+              
+          </ion-col>
+        </ion-row>
+  
+    <ion-row class="conteBoton" margin-top>
+  <ion-col col-8>
+
+
+          </ion-col>
+        </ion-row>
+         <div *ngIf="items.length > 0">
+          <ion-list>
+              <ion-item *ngFor="let item of items">
+             <div *ngIf="item.payload.doc.data().nombreApellido && item.payload.doc.data().nombreApellido.length"  class="contenido">
+                  <div *ngIf="item.payload.doc.data().nombreApellido.includes(searchText) ">  
+                    <ul>
+      <ion-col>
+          <div [routerLink]="['/detalles-bonos-pacientes-user', item.payload.doc.id]"  class="cajabuscador"   >
+                <span class="nombreuser">{{item.payload.doc.data().nombreApellido}}</span>
+                <div  class="buscado"  >
+                    <span class="num_edad">N° {{item.payload.doc.data().numeroHistorial}} </span>
+                    <span class="num_edad">{{item.payload.doc.data().edad}} Años</span> 
+                </div>
+                
+                <div class="circular" >
+                        <span class="estado"></span><!-- nos dira si esta activo ,frecuente, no viene -->
+                        <img   class="circular" src="{{item.payload.doc.data().image}}" >
+                </div>
+                
+            <span class="bot_bono">{{item.payload.doc.data().bono}}</span>
+        </div>
+          
+          <!-- se pone fuera para que no le afecte el click general -->
+    </ion-col>
+    </ul> 
+    </div>
+    </div>
+    </ion-item>
+    </ion-list>
+    </div>
+    </ion-grid>
+  </ion-content>
+  
+  

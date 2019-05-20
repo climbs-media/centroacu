@@ -47,7 +47,7 @@ export class LoginDietaPage implements OnInit {
   tryLogin(value) {
     this.authService.conectar(value)
     .then(res => {
-      this.router.navigate(['/nueva-dieta']);
+      this.router.navigate(['/cliente-perfil-user']);
     }, err => {
       this.errorMessage = err.message;
       console.log(err);

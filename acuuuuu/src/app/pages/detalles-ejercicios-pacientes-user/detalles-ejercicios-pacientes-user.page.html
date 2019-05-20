@@ -1,0 +1,42 @@
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
+  
+<ion-content padding>
+  <ion-back-button color="primary" defaultHref="/"></ion-back-button>
+<form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    
+        <ion-grid>
+          <ion-row>
+          <ion-col>
+              <h5>Nombre Ejercicio</h5>
+              <ion-input type="text" formControlName="titulo"  class="inputexto2" readonly="true"></ion-input>
+          </ion-col>
+          <ion-col size="12">
+              <h5>Inicio</h5> 
+                  <ion-item>
+                    <ion-input  formControlName="horaInicio" class="inputexto2" readonly="true"></ion-input>
+                  </ion-item>
+          </ion-col>
+            <ion-col size="12">
+                <h5>Finalizó Ejercicio</h5> 
+                  <ion-item>
+                      <ion-input  formControlName="horaFinal"  class="inputexto2" readonly="true"></ion-input>
+                    </ion-item>
+              </ion-col>
+            <ion-col size="12">
+                <h5>Descripción</h5> 
+                    <ion-item>
+                        <ion-input  formControlName="descripcion" class="inputexto2" readonly="true"></ion-input>
+                      </ion-item>
+          </ion-col>
+                          </ion-row>
+        </ion-grid>
+    <!--  <div text-cente> 
+            <ion-button  type="submit" [disabled]="!validations_form.valid">Modificar</ion-button>
+        </div>-->  
+</form>
+
+      <div text-center>
+        <ion-button   (click)="delete()">Borrar</ion-button>
+      </div>
+</ion-content>
+  

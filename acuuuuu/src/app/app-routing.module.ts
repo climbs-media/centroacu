@@ -87,8 +87,19 @@ const routes: Routes = [
   { path: 'lista-dietas-proteinas-user', loadChildren: './pages/lista-dietas-proteinas-user/lista-dietas-proteinas-user.module#ListaDietasProteinasUserPageModule' },
   { path: 'lista-dietas-cena-user', loadChildren: './pages/lista-dietas-cena-user/lista-dietas-cena-user.module#ListaDietasCenaUserPageModule' },
   { path: 'crear-historial-fisico', loadChildren: './pages/crear-historial-fisico/crear-historial-fisico.module#CrearHistorialFisicoPageModule' },
-  { path: 'detalles-historial-fisico/:id', loadChildren: './pages/detalles-historial-fisico/detalles-historial-fisico.module#DetallesHistorialFisicoPageModule' },  { path: 'pagina-dietas-pacientes', loadChildren: './pages/pagina-dietas-pacientes/pagina-dietas-pacientes.module#PaginaDietasPacientesPageModule' },
+  { path: 'detalles-historial-fisico/:id', loadChildren: './pages/detalles-historial-fisico/detalles-historial-fisico.module#DetallesHistorialFisicoPageModule' },
+  { path: 'pagina-dietas-pacientes', loadChildren: './pages/pagina-dietas-pacientes/pagina-dietas-pacientes.module#PaginaDietasPacientesPageModule' },
   { path: 'ejercicios-del-usuario', loadChildren: './pages/ejercicios-del-usuario/ejercicios-del-usuario.module#EjerciciosDelUsuarioPageModule' },
+  { path: 'cliente-perfil-user', loadChildren: './pages/cliente-perfil-user/cliente-perfil-user.module#ClientePerfilUserPageModule' },
+  { path: 'cliente-seguimiento-user', loadChildren: './pages/cliente-seguimiento-user/cliente-seguimiento-user.module#ClienteSeguimientoUserPageModule' },
+  { path: 'diario-ejercicio-user', loadChildren: './pages/diario-ejercicio-user/diario-ejercicio-user.module#DiarioEjercicioUserPageModule' },
+  { path: 'detalles-ejercicios-pacientes-user/:id', loadChildren: './pages/detalles-ejercicios-pacientes-user/detalles-ejercicios-pacientes-user.module#DetallesEjerciciosPacientesUserPageModule' },
+  { path: 'gestion-citas-user', loadChildren: './pages/gestion-citas-user/gestion-citas-user.module#GestionCitasUserPageModule' },
+  { path: 'historiales-clinico-user', loadChildren: './pages/historiales-clinico-user/historiales-clinico-user.module#HistorialesClinicoUserPageModule' },
+  { path: 'lista-pacientes-bonos-user', loadChildren: './pages/lista-pacientes-bonos-user/lista-pacientes-bonos-user.module#ListaPacientesBonosUserPageModule' },
+  { path: 'detalles-bonos-pacientes-user/:id', loadChildren: './pages/detalles-bonos-pacientes-user/detalles-bonos-pacientes-user.module#DetallesBonosPacientesUserPageModule' },  { path: 'lista-pacientes-peso-user', loadChildren: './pages/lista-pacientes-peso-user/lista-pacientes-peso-user.module#ListaPacientesPesoUserPageModule' },
+
+
 
 
 

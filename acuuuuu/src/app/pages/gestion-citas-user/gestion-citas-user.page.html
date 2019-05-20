@@ -1,0 +1,27 @@
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
+
+<ion-content padding margin-top >
+        <ion-back-button color="primary" defaultHref="/"></ion-back-button>
+<ion-grid margin-top text-center>
+ <ion-row >
+    <ion-col col-12>
+        <div  style="text-align: center;"><img width="100" height="105" src="../../../assets/imgs/logo.png" ></div>
+    </ion-col>
+</ion-row>  
+<ion-row margin-top style="margin-top:15%">
+
+      <ion-col col-4 >
+      <div routerLink="/lista-citas-pacientes" class="bot bot_seguimiento">
+      <img src="../../../assets/imgs/bot_cliente_seguimiento/historialDietetico.png">
+       <p style="font-size:12px">Historial</p>
+      </div>
+      </ion-col>
+      <ion-col col-4 >
+      <div routerLink="/nueva-cita" class="bot bot_seguimiento">
+      <img src="../../../assets/imgs/bot_cliente_seguimiento/Nueva1-cita.png">
+      <p style="font-size:12px">Nueva Cita</p>
+      </div>
+      </ion-col>
+</ion-row> 
+</ion-grid>
+</ion-content>

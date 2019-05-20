@@ -1,0 +1,177 @@
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
+
+<ion-content padding>
+  <ion-back-button color="primary" defaultHref="/"></ion-back-button>
+  <ion-grid>
+    <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+      <ion-row  text-center >
+        <ion-col col-4 *ngIf="isAdmin === true">
+          <div style="color:#BB1D1D ;margin-top:15px; font-weight: bold;" >
+            Nº Historia
+          </div>
+          <div class="cajatexto" style="width:55px;"><!-- se le pone estilo propio para no afectar alos demas div-->
+            <ion-input formControlName="numeroHistorial"  type="text"  class="inputexto" ></ion-input>
+          </div>
+        </ion-col>
+        <ion-col *ngIf="isAdmin === true" col-4>
+          <div style="color:#BB1D1D; margin-top:15px; font-weight: bold;">
+            Fecha </div>
+          <div class="cajatexto" style="width:120px; ">
+            <ion-datetime display-format="DD-MM-YYYY" picker-format="DD-MM-YYYY" formControlName="fecha" class="inputexto" cancel-text="Cancelar" done-text="Aceptar"></ion-datetime>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="isAdmin === true" >
+        <ion-col text-center > <div style="color:#BB1D1D; font-size: 20px; font-weight: bold; margin-top: 14px;">Datos </div> </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+            <ion-label>Nombre</ion-label>
+          <ion-input class="cajatexto" formControlName="nombreApellido" value="{{this.item.nombreApellido}}" placeholder="Nombre y Apellido" [readonly]="true">  </ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          
+        <ion-col col-12 *ngIf="isAdmin === true">
+            <ion-label>Fecha Nascimiento</ion-label>
+          <ion-input class="cajatexto" style="margin-left:18px;"  formControlName="fechaNacimiento" value="{{this.item.fechaNacimiento}}" placeholder="Fecha de Nacimiento" [readonly]="true"></ion-input>
+        </ion-col>
+        
+        <ion-col col-12 *ngIf="isAdmin === true">
+            <ion-label>Ciudad</ion-label>
+          <ion-input class="cajatexto" formControlName="ciudad" style="margin-right:16px;" placeholder="Ciudad" value="{{this.item.ciudad}}" [readonly]="true"> </ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row >
+          
+        <ion-col col-12 *ngIf="isAdmin === true">
+            <ion-label>Correo</ion-label>
+          <ion-input class="cajatexto" formControlName="correo"  placeholder=" Nuevo Correo" value="{{this.item.correo}}" [readonly]="true"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          
+        <ion-col col-12 *ngIf="isAdmin === true">
+            <ion-label>Telefono</ion-label>
+          <ion-input class="cajatexto" type="number" formControlName="telefono" value="{{this.item.telefono}}"> </ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          
+        <ion-col col-12 *ngIf="isAdmin === true">
+            <ion-label>Profesion</ion-label>
+          <ion-input class="cajatexto" formControlName="profesion" value="{{this.item.profesion}}" [readonly]="true"> </ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          
+        <ion-col col-12 *ngIf="isAdmin === true">
+            <ion-label>Motivo Consulta</ion-label>
+          <ion-input class="cajatexto" formControlName="motivoConsulta"  value="{{this.item.motivoConsulta}}" [readonly]="true"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 *ngIf="isAdmin === true">
+          <ion-label>Peso</ion-label>
+          <ion-input type="number" class="cajatexto" formControlName="peso" placeholder="Peso" value="{{this.item.peso}}" [readonly]="true"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-12 *ngIf="isAdmin === true">
+            <ion-label>Peso</ion-label>
+            <ion-input type="number" class="cajatexto" formControlName="peso" placeholder="Peso" value="{{this.item.peso}}" [readonly]="true"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12 *ngIf="isAdmin === true">
+              <ion-label>Peso</ion-label>
+              <ion-input type="number" class="cajatexto" formControlName="pesoPerdido" placeholder="Peso" value="{{this.item.pesoPerdido}}" [readonly]="true"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col col-12 *ngIf="isAdmin === true">
+                <ion-label>Peso</ion-label>
+                <ion-input type="number" class="cajatexto" formControlName="pesoAnterior" placeholder="Peso" value="{{this.item.pesoAnterior}}" [readonly]="true"></ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-12 *ngIf="isAdmin === true">
+                  <ion-label>Peso</ion-label>
+                  <ion-input type="number" class="cajatexto" formControlName="pesoObjetivo" placeholder="Peso" value="{{this.item.pesoObjetivo}}" [readonly]="true"></ion-input>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col col-12 *ngIf="isAdmin === true">
+                    <ion-label>Peso</ion-label>
+                    <ion-input type="number" class="cajatexto" formControlName="estasObjetivo" placeholder="Peso" value="{{this.item.estasObjetivo}}" [readonly]="true"></ion-input>
+                  </ion-col>
+                </ion-row>
+      <ion-row>
+        <ion-col col-12 *ngIf="isAdmin === true">
+            <ion-label>Altura</ion-label>
+          <ion-input type="number" class="cajatexto" formControlName="altura" placeholder="Altura" value="{{this.item.altura}}" [readonly]="true"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 *ngIf="isAdmin === true">
+            <ion-label>Edad</ion-label>
+          <ion-input type="number" class="cajatexto" formControlName="edad" placeholder="Edad" value="{{this.item.edad}}" [readonly]="true"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 *ngIf="isAdmin === true">
+            <ion-label>IMC</ion-label>
+          <ion-input type="number" class="cajatexto" formControlName="imc" placeholder="IMC" value="{{this.item.imc}}" [readonly]="true"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+            <ion-label>Bonos</ion-label>
+          <ion-input type="number" class="cajatexto" formControlName="bono" placeholder="Añadir Bonos..." ></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 *ngIf="isAdmin === true">
+            <ion-label>Referencia</ion-label>
+          <ion-input type="text" class="cajatexto" formControlName="referencia" placeholder="Referencia" value="{{this.item.referencia}}" [readonly]="true"></ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="isAdmin === true">
+        <ion-col text-center style="color:#BB1D1D; font-weight: bold; margin-top: 5px">Antecedentes</ion-col>
+      </ion-row>
+      <ion-row *ngIf="isAdmin === true">
+        <ion-col >
+          <div style="font-weight: bold; margin: 5px; margin-left: 10px">Intervenciones : </div>
+          <div class="cajatexto">
+            <ion-input formControlName="interNombre"  type="text" class="inputexto2"  value="{{this.item.interNombre}}" [readonly]="true"></ion-input>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="isAdmin === true">
+        <ion-col >
+          <div  style="font-weight: bold; margin: 5px; margin-left: 10px">Enfermedades Anteriores  : </div>
+          <div class="cajatexto" >
+            <ion-input formControlName="enfermedades"  type="text" class="inputexto2"   value="{{this.item.fechaenfermedades}}" [readonly]="true"></ion-input>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="isAdmin === true">
+        <ion-col >
+          <div style="font-weight: bold; margin: 5px"> Familiares:</div>
+          <ion-input formControlName="familiares" placeholder="Seleccionar" value="{{this.item.familiares}}" readonly="true"></ion-input>
+        </ion-col>
+      </ion-row>
+      <div>
+        <ion-row style="text-align:center;" padding-top >
+          <ion-col size="6">
+            <ion-button type="submit" ion-button class="but" [disabled]="!validations_form.valid" round>Agregar
+              <!-- <ion-icon name="arrow-round-forward" style="color:white;"></ion-icon> -->
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </form>
+  </ion-grid>
+</ion-content>
