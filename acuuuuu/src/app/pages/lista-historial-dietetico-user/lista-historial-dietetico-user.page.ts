@@ -4,11 +4,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-lista-historial-dietetico',
-  templateUrl: './lista-historial-dietetico.page.html',
-  styleUrls: ['./lista-historial-dietetico.page.scss'],
+  selector: 'app-lista-historial-dietetico-user',
+  templateUrl: './lista-historial-dietetico-user.page.html',
+  styleUrls: ['./lista-historial-dietetico-user.page.scss'],
 })
-export class ListaHistorialDieteticoPage implements OnInit {
+export class ListaHistorialDieteticoUserPage implements OnInit {
 
   public  tituhead: String = 'Lista Historial dietetico User';
   personabuscar: string;
@@ -68,6 +68,5 @@ export class ListaHistorialDieteticoPage implements OnInit {
 
 
 }
-
 
 

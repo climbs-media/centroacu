@@ -8,6 +8,6 @@ export class ListaPesoUserResolver implements Resolve<any> {
     constructor(private firebaseService: HistorialClinicoService) {}
 
     resolve(route: ActivatedRouteSnapshot) {
-    return this.firebaseService.getPeso();
+      return this.firebaseService.getPeso();
     }
-}
+  }

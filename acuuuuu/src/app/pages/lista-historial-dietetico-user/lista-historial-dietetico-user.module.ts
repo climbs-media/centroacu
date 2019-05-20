@@ -5,17 +5,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ListaPacientesPesoUserPage } from './lista-pacientes-peso-user.page';
+import { ListaHistorialDieteticoUserPage } from './lista-historial-dietetico-user.page';
 import { ComponentsModule } from 'src/app/componentes/cabecera/components.module';
-import { ListaPesoUserResolver } from './lista-pacientes-peso-user.resolver';
-import { ChartsModule } from 'ng2-charts';
+import { DieteticoUserResolver } from './lista-historial-dietetico-user.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: ListaPacientesPesoUserPage,
-    resolve: {
-      data: ListaPesoUserResolver
+    component: ListaHistorialDieteticoUserPage,
+    resolve:{
+      data: DieteticoUserResolver
     }
   }
 ];
@@ -24,13 +23,12 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    ChartsModule,
     ReactiveFormsModule,
     ComponentsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ListaPacientesPesoUserPage],
-  providers: [ListaPesoUserResolver]
+  declarations: [ListaHistorialDieteticoUserPage],
+  providers: [DieteticoUserResolver]
 })
-export class ListaPacientesPesoUserPageModule {}
+export class ListaHistorialDieteticoUserPageModule {}

@@ -1,30 +1,114 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
-  
-  <ion-content padding-top padding-top>
-      <ion-back-button color="primary" defaultHref="/"></ion-back-button>
-    <ion-grid *ngIf="items">
-  
-
-  <ion-row *ngFor="let item of items" class="conteBoton" margin-top>
-  
-  <ion-col col-8>
-      <ion-col>
-          <div class="cajabuscador"  [routerLink]="['/editar-peso', item.payload.doc.id]" >
-                <span class="nombreuser">{{item.payload.doc.data().nombreApellido}}</span>
-                <div  class="buscado"  >
-                    <span class="num_edad">{{item.payload.doc.data().peso}} </span>
-                </div>
+<ion-back-button defaultHref="/"></ion-back-button>
+<ion-content>
+    <ion-grid *ngFor="let item of items">
+        <ion-row>
+          <ion-col>
+            <div class="pesoIni">
+              <p style="margin-top:15px;">Peso inicial</p>
+              <p class="tconsul"><strong>{{item.payload.doc.data().peso}}</strong> Kg</p>
+           
             </div>
+            </ion-col>
+            <div class="pesoPer">
+                <p style="margin-top:15px;">Peso Total</p>
+                <p>Perdido</p>
+                <p class="tconsul"><strong>{{item.payload.doc.data().pesoPerdido}}</strong> Kg</p>
+              </div>
+            </ion-row>
+            <div class="pesoConsul">
+                <p class="tconsul">Mi peso</p>
+                <p class="tconsul"><strong>{{item.payload.doc.data().peso}}</strong> Kg</p>
+                <p class="tconsul">IMC {{item.payload.doc.data().imc}}</p> 
+              </div>
+            </ion-grid>
+            <ion-grid text-center *ngFor="let item of items">
+              <ion-row style="margin-top: -20px; text-align: center">
+                <ion-col>
+                    <div class="pesoObj">
+                        <p>Peso</p>
+                        <p>Objetivo</p>
+                        <p class="tconsul"><strong>{{item.payload.doc.data().pesoObjetivo}}</strong> Kg</p>
+                      </div>
+                </ion-col>
+                <div class="pesoEst">
+                    <p style="margin-bottom: 5px;">Estás a</p>
+                    <p class="tconsul" style="margin-top:-1px;"><strong>{{item.payload.doc.data().estasObjetivo}}</strong> Kg</p>
+                    <p class="obje1"  style="    margin-top: -0.5px; margin-bottom: 5px;">De tu</p>
+                    <p class="obje">Objetivo</p>
+                  </div>
+              </ion-row>
+              <div *ngFor="let item of items" >
+          <!-- <ion-button color="primary" round class="agregar" (click)="openPicker()"> Agregar</ion-button> --> 
+              <ion-button color="primary" round class="agregar" [routerLink]="['/detalles-peso-pacientes-admin', item.payload.doc.id]"> Agregar</ion-button>
+            </div>
+              <h4>Índice IMC</h4>
+              <div class="cont">
+              <div class="pesoIde" style="background:none;"><p style="color:black; "> 18</p></div>
+              <div class="pesoIde"  style="background:none;"><p style="color:black; margin-left: -5px;">24.9</p></div>
+              <div class="pesoIde"  style="background:none;"><p style="color:black; margin-left: -20px;"> 30</p></div>
+              <div class="pesoIde"  style="background:none;"><p style="color:black; margin-left: -80%;"> > 30</p></div>
+              </div>
+              <div class="cont">
+              
+                <div class="pesoIde">Peso ideal</div>
+                <div class="sobrePe"> Sobre Peso</div>
+                <div class="obe">Obesidad</div>
+              </div>
+
+              <div>
+                  <progress style="margin-top: -3px; width: 87%;" value="{{item.payload.doc.data().imc}}" min="13" max="50"></progress>
+                  <h4 text-center style="color:#BB1D1D"><b>Tú IMC:</b></h4>
+                  <div text-center>
+                  <ion-label><h5>{{item.payload.doc.data().imc}}</h5></ion-label>
+                </div>
+                   
+                </div>
+              
+
+
+            <div>
+                <div>
+                      <hr>
+                      <hr>
+                    </div>
+                    <div style="display: block">
+                      <canvas baseChart
+                              [datasets]="barChartData"
+                              [labels]="barChartLabels"
+                              [options]="barChartOptions"
+                              [legend]="barChartLegend"
+                              [chartType]="barChartType">
+                      </canvas>
+                    </div>
+                  </div>
+           
+
+            </ion-grid> 
+            <div *ngIf="items" >
+            <div *ngIf="items.length == 0" class="empty-list">
+                <ion-button color="primary" round class="agregar" (click)="crearPeso()"> Agregar</ion-button>
+            </div>
+          </div>
           
-          <!-- se pone fuera para que no le afecte el click general -->
-      </ion-col>
-    </ion-col>     
-</ion-row> 
-</ion-grid>
+            
+<!--<form method="POST" oninput="resultado.value=parseInt(valor1.value)*2/parseInt(valor2.value)">
+    <div>
+  <ion-label>Altura</ion-label>
+</div>
+<div>
+    <input type="number" id="valor1" value="0">
+  </div>
+  <div>
+    <ion-label>Peso</ion-label>
+  </div>
+  <div>
+    <input type="number" id="valor2" value="0"> 
+  </div>
+  <div>
+    <ion-label>IMC</ion-label>
+  </div>
+    <output name="resultado" for="valor1 valor2"></output>
+</form>-->
 
-
-
-  </ion-content>
-  
-  
-
+</ion-content>

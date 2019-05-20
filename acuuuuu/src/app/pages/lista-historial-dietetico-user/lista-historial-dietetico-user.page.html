@@ -1,0 +1,33 @@
+<app-cabecera [titulohead]="tituhead"></app-cabecera>
+
+<ion-content padding-top padding-top>
+  <ion-back-button color="primary" defaultHref="/"></ion-back-button>
+  <ion-grid *ngIf="items">
+
+  <ion-row class="conteBoton" margin-top>
+      </ion-row>
+       <div *ngIf="items.length > 0">
+        <ion-list>
+            <ion-item *ngFor="let item of items">
+           <div *ngIf="item.payload.doc.data().nombreApellido && item.payload.doc.data().nombreApellido.length"  class="contenido">
+                <div *ngIf="item.payload.doc.data().nombreApellido.includes(searchText) ">  
+                  <ul>
+    <ion-col>
+        <div [routerLink]="['/detalles-historial-dietetico', item.payload.doc.id]"  class="cajabuscador"    >
+              <span class="nombreuser"> <strong>Paciente:     </strong>{{item.payload.doc.data().nombreApellido}}</span>
+                <span class="num_edad"> Última Consulta:  {{item.payload.doc.data().fecha}}</span> 
+              
+
+      </div>
+        
+        <!-- se pone fuera para que no le afecte el click general -->
+  </ion-col>
+  </ul> 
+  </div>
+  </div>
+  </ion-item>
+  </ion-list>
+  </div>
+  </ion-grid>
+</ion-content>
+
