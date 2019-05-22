@@ -5,13 +5,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-cliente-perfil',
-  templateUrl: './cliente-perfil.page.html',
-  styleUrls: ['./cliente-perfil.page.scss'],
+  selector: 'app-cliente-admin-principal',
+  templateUrl: './cliente-admin-principal.page.html',
+  styleUrls: ['./cliente-admin-principal.page.scss'],
 })
-export class ClientePerfilPage implements OnInit {
+export class ClienteAdminPrincipalPage implements OnInit {
 
-  public  tituhead: String = 'Centro ACU Admin Accesos';
+  public  tituhead: String = 'Centro ACU 10 ';
   
   items: Array<any>;
   isAdmin: any = null;
@@ -95,6 +95,9 @@ historialesClinicos() {
     this.router.navigate(['/historiales-clinicos']);
   }
 
+  citas() {
+    this.router.navigate(['/citas-admin']);
+  }
 
   onLogout() {
     this.authService.doLogout()
@@ -109,6 +112,6 @@ historialesClinicos() {
     this.router.navigate(['/login-dieta'])
   }
   
- 
 
 }
+

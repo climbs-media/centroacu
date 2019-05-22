@@ -99,6 +99,7 @@ const routes: Routes = [
   { path: 'lista-pacientes-bonos-user', loadChildren: './pages/lista-pacientes-bonos-user/lista-pacientes-bonos-user.module#ListaPacientesBonosUserPageModule' },
   { path: 'detalles-bonos-pacientes-user/:id', loadChildren: './pages/detalles-bonos-pacientes-user/detalles-bonos-pacientes-user.module#DetallesBonosPacientesUserPageModule' },  { path: 'lista-pacientes-peso-user', loadChildren: './pages/lista-pacientes-peso-user/lista-pacientes-peso-user.module#ListaPacientesPesoUserPageModule' },
   { path: 'lista-historial-dietetico-user', loadChildren: './pages/lista-historial-dietetico-user/lista-historial-dietetico-user.module#ListaHistorialDieteticoUserPageModule' },
+  { path: 'cliente-admin-principal', loadChildren: './pages/cliente-admin-principal/cliente-admin-principal.module#ClienteAdminPrincipalPageModule' },
 
 
 
