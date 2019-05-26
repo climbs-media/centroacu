@@ -1,12 +1,12 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 <ion-content *ngIf="items" class="fondo" style="font-family: Comfortaa">
     <ion-back-button color="primary" defaultHref="/"></ion-back-button> 
-  <ion-searchbar [(ngModel)]="searchText" placeholder="Buscador..." style="text-transform: lowercase"></ion-searchbar>
-    <div text-center>
-        <hr>
-        <div class="card" *ngIf="items.length > 0" class="list-mini animated fadeIn fast font-family: Comfortaa">
-            <ion-list>
-                <ion-item *ngFor="let item of items">
+  <ion-searchbar [(ngModel)]="searchText" placeholder="Buscador..."></ion-searchbar>
+                <div *ngFor="let item of items">
+                    <div class="card" *ngIf="items.length > 0" class="list-mini animated fadeIn fast font-family: Comfortaa">
+                        <ion-list>
+                          <ul style="list-style-type: none;">
+                            <li>
                     <!--[routerLink]="['/admin-contact', item.payload.doc.id]" no funciona-->
                   <div *ngIf="item.payload.doc.data().title && item.payload.doc.data().title.length" >
                     <div *ngIf="item.payload.doc.data().title.includes(searchText) ">
@@ -33,13 +33,12 @@
                   </ion-card>
                     </div>
                   </div>
-                </ion-item>
-
-
-            </ion-list>
+                </li>
+                </ul>
+                </ion-list>
+                </div>
         </div>
         <div *ngIf="items.length == 0" class="empty-list">
             Sin Mensajes en este Momento
         </div>
-    </div>
 </ion-content>

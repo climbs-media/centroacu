@@ -6,29 +6,34 @@
     <div class="titulo">
         <h2 style="color: #BB1D1D; font-weight: bold;">¡Próximas Citas!</h2>
     </div>
-    <ion-list *ngIf="items">
-            <div >
-                        <ion-item *ngFor="let item of items">
+        <div *ngFor="let item of items">
+            <div *ngIf="items.length > 0">
                        <div *ngIf="item.payload.doc.data().titulo && item.payload.doc.data().titulo.length"  class="contenido">
                             <div *ngIf="item.payload.doc.data().titulo.includes(searchText) ">  
+            <ion-list>
+                <ul style="list-style-type: none;">
+                    <li>
         <ion-card [routerLink]="['/detalles-citas', item.payload.doc.id]">
             <ion-card-header>
                     <ion-item color="primary">
-                           ¡Hola!,<span style="font-weight: bold; color: white; margin-left: 3px;">{{item.payload.doc.data().titulo}}</span>
+                        ¡Hola!,<span style="font-weight: bold; color: white; margin-left: 3px;">{{item.payload.doc.data().titulo}}</span>
                     </ion-item>
             </ion-card-header>
             <ion-card-content>
                 <ion-item color="primary"><span>Tú próxima cita es:</span></ion-item>
                     <ion-item color="primary">
-                       <span style="margin-left: 10px; font-weight: bold; color: white;">{{item.payload.doc.data().fecha}}</span>
+                    <span style="margin-left: 10px; font-weight: bold; color: white;">{{item.payload.doc.data().fecha}}</span>
                     </ion-item>
                 </ion-card-content>
                 </ion-card>
+            </li>
+            </ul>
+            </ion-list>
                     <hr>
                     <hr>
                 </div>
                 </div>
-                </ion-item>
+                
                 </div>
                 
     </ion-list>
