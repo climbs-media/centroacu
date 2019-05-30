@@ -26,14 +26,14 @@
       </ion-row>
       <ion-row>
         <ion-col col-12>
-            <ion-label>Nombre</ion-label>
-          <ion-input class="cajatexto" formControlName="nombreApellido" value="{{this.item.nombreApellido}}" placeholder="Nombre y Apellido" [readonly]="true">  </ion-input>
+            <ion-label style="color: #BB1D1D; font-weight: bold;">Nombre</ion-label>
+          <ion-input class="cajatexto" style="color: #BB1D1D;" formControlName="nombreApellido" value="{{this.item.nombreApellido}}" placeholder="Nombre y Apellido" [readonly]="true">  </ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
           
         <ion-col col-12 *ngIf="isAdmin === true">
-            <ion-label>Fecha Nascimiento</ion-label>
+            <ion-label>Fecha Nacimiento</ion-label>
           <ion-input class="cajatexto" style="margin-left:18px;"  formControlName="fechaNacimiento" value="{{this.item.fechaNacimiento}}" placeholder="Fecha de Nacimiento" [readonly]="true"></ion-input>
         </ion-col>
         
@@ -127,7 +127,7 @@
       </ion-row>
       <ion-row>
         <ion-col col-12>
-            <ion-label>Bonos</ion-label>
+            <ion-label style="color: #BB1D1D; font-weight: bold;">Actualizar Bonos</ion-label>
           <ion-input type="number" class="cajatexto" formControlName="bono" placeholder="Añadir Bonos..." ></ion-input>
         </ion-col>
       </ion-row>
@@ -165,8 +165,8 @@
       </ion-row>
       <div>
         <ion-row style="text-align:center;" padding-top >
-          <ion-col size="6">
-            <ion-button type="submit" ion-button class="but" [disabled]="!validations_form.valid" round>Agregar
+          <ion-col col-12>
+            <ion-button type="submit" ion-button class="but" [disabled]="!validations_form.valid" round>Actualizar
               <!-- <ion-icon name="arrow-round-forward" style="color:white;"></ion-icon> -->
             </ion-button>
           </ion-col>

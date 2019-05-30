@@ -11,7 +11,7 @@
                 Nº Historial
             </div>
             <div class="cajatexto" style="width:55px;"><!-- se le pone estilo propio para no afectar alos demas div-->
-                <ion-input formControlName="numeroHistorial"  type="text"  class="inputexto2" placeholder="Añadir" style="margin-left:-10px" style="text-transform= lowercase"></ion-input>
+                <ion-input formControlName="numeroHistorial"  type="text"  class="inputexto2" placeholder="Añadir" style="margin-left:-10px" style="text-transform: lowercase; margin-left: -5px"></ion-input>
             </div> 
         </ion-col>
         <ion-col col-4 >
@@ -34,7 +34,7 @@
   <ion-row>
       <ion-col col-12>
           <div class="cajatexto">    
-          <ion-input placeholder="Nombre Apellido" style="text-transform:lowercase" type="text" formControlName="nombreApellido" class="inputexto2"></ion-input>
+          <ion-input placeholder="Nombre y Apellido" style="text-transform:lowercase" type="text" formControlName="nombreApellido" class="inputexto2"></ion-input>
         </div> 
       </ion-col>
   </ion-row>
@@ -99,7 +99,7 @@
         <ion-row>
           <ion-col col-12>
                   <div class="cajatexto" > 
-                  <ion-input placeholder="Altura en CM" type="number" formControlName="altura" class="inputexto2"></ion-input> 
+                  <ion-input placeholder="Altura en Metros" type="number" formControlName="altura" class="inputexto2"></ion-input> 
                   </div>
           </ion-col>
         </ion-row>
@@ -108,35 +108,50 @@
             <div class="cajatexto" > 
             <ion-input placeholder="Añade Peso" type="number" formControlName="peso" class="inputexto2"></ion-input> 
             </div>
-            <ion-item>
-              <ion-label position="floating" color="primary">Peso Anterior</ion-label>
-              <ion-input placeholder="Peso Anterior" type="number" formControlName="pesoAnterior"></ion-input>
-          </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12>
+            <div class="cajatexto">
+              <ion-input placeholder="Peso Anterior" type="number" formControlName="pesoAnterior" class="inputexto2"></ion-input>
+            </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
 
-            <ion-item>
-                <ion-label position="floating" color="primary">Peso Perdido</ion-label>
-                <ion-input placeholder="Peso Perdido" type="number" formControlName="pesoPerdido"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label position="floating" color="primary">Peso Objetivo</ion-label>
-                <ion-input placeholder="Peso Objetivo" type="number" formControlName="pesoObjetivo"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label position="floating" color="primary">¿A cuanto estas de tu Objetivo?</ion-label>
-                <ion-input placeholder="¿A cuanto estas de tu Objetivo?" type="number" formControlName="estasObjetivo"></ion-input>
-            </ion-item>
-            
-    </ion-col>
-  </ion-row>
+          <ion-col col-12> 
+              <div class="cajatexto">
+                <ion-input placeholder="Peso Perdido" type="number" formControlName="pesoPerdido" class="inputexto2"></ion-input>
+              </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+            <ion-col col-12>
+                <div class="cajatexto">
+                <ion-input placeholder="Peso Objetivo" type="number" formControlName="pesoObjetivo" class="inputexto2"></ion-input>
+              </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+            <ion-col col-12>
+             <div class="cajatexto">
+                <ion-input class="inputexto2" placeholder="¿A cuánto estás de tu Objetivo?" type="number" formControlName="estasObjetivo"></ion-input>
+              </div>
+              </ion-col>
+              </ion-row>
   <ion-row>
     <ion-col col-12>
-        <div><h5>Formula IMC</h5></div>
+        <div style="margin-top: 20px; margin-left: 33%"><h5 style="color:#BB1D1D ">Formula IMC</h5></div>
         <div>
-        <input [(ngModel)]="peso" [ngModelOptions]="{standalone: true}" placeholder="Peso" />
-        <input [(ngModel)]="altura" [ngModelOptions]="{standalone: true}" placeholder="Altura" />
-        
+
+            <div style="margin-top: 20px"><p style="color:#BB1D1D "> Añade peso:</p></div>            
+        <input class="inputexto2" [(ngModel)]="peso" [ngModelOptions]="{standalone: true}" placeholder="Peso" />
+        <div style="margin-top: 20px;"><p style="color:#BB1D1D "> Añade Altura en Metros:</p></div>
+        <input class="inputexto2" [(ngModel)]="altura" [ngModelOptions]="{standalone: true}" placeholder="Altura" />
+
         <div *ngIf="peso && altura">
-          <ion-input type="number" step="0.01" formControlName="imc"  value="{{ bmi.toFixed(2) }}">
+            <div style="margin-top: 20px;"><p style="color:#BB1D1D ">Su IMC es: </p></div>
+          <ion-input type="number" step="0.01" formControlName="imc" class="inputexto2"  value="{{ bmi.toFixed(2) }}">
         </ion-input>
       </div>
       </div>
@@ -146,8 +161,10 @@
 </ion-row>
         <ion-row>
           <ion-col col-12>
-            <div class="bono"  style="margin-left:16px;"> 
-            <ion-input placeholder="BONOS" type="number" formControlName="bono"></ion-input> 
+              <div style="margin-top: 20px; margin-left: 33%"><h5 style="color:#BB1D1D ">Añade sus bonos</h5></div>
+            <div class="bono"  style="margin-left:16px;">
+            
+            <ion-input placeholder="Bonos" type="number" formControlName="bono"></ion-input> 
             </div>  
           </ion-col>
           </ion-row>
@@ -159,7 +176,7 @@
                 <ion-col >
                     <div style="font-weight: bold; margin: 5px; margin-left: 10px">Intervenciones : </div>
                     <div class="cajatexto">
-                      <ion-input placeholder="" type="text" formControlName="interNombre" style="text-transform= lowercase"></ion-input>
+                      <ion-input placeholder="" type="text" formControlName="interNombre" style="text-transform: lowercase"></ion-input>
                   </div> 
                 </ion-col>
       </ion-row>
@@ -167,7 +184,7 @@
                   <ion-col >
                     <div  style="font-weight: bold; margin: 5px; margin-left: 10px">Enfermedades Anteriores  : </div>
                       <div class="cajatexto" >
-                        <ion-input placeholder="" type="text" formControlName="enfermedades" style="text-transform= lowercase"></ion-input>
+                        <ion-input placeholder="" type="text" formControlName="enfermedades" style="text-transform: lowercase"></ion-input>
                     </div> 
                   </ion-col>
       </ion-row>

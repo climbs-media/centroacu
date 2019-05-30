@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./lista-dietas-proteinas-user.page.scss'],
 })
 export class ListaDietasProteinasUserPage implements OnInit {
-
+  public  tituhead: string = 'Mis Dietas';
   items: Array<any>;
   searchText = '';
   isAdmin: any = null;

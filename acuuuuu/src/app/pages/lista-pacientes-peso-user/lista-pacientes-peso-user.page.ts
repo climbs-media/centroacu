@@ -15,7 +15,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ListaPacientesPesoUserPage implements OnInit {
 
-  public  tituhead: String = 'Peso Pacinente';
+  public  tituhead: String = 'Peso Paciente';
   items: Array<any>;
 
   @ViewChild('barCanvas') barCanvas;

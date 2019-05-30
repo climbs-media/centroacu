@@ -1,5 +1,6 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 <ion-content padding margin-top>
+    <ion-back-button color="primary" defaultHref="/"></ion-back-button>
     <ion-grid margin-top>
     <ion-row margin-top>
     <ion-col>
@@ -24,7 +25,4 @@
     </ion-grid>
 </ion-content>
 
-<ion-footer>
-  <ion-button text-center expand="block" (click)="onLogout()">Salir</ion-button>
-</ion-footer>
 

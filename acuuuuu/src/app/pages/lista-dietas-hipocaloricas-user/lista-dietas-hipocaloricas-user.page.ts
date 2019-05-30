@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./lista-dietas-hipocaloricas-user.page.scss'],
 })
 export class ListaDietasHipocaloricasUserPage implements OnInit {
-
+  public  tituhead: string = 'Mis Dietas';
   items: Array<any>;
   searchText = '';
   isAdmin: any = null;

@@ -16,11 +16,6 @@
       </ion-row>
 
   <ion-row class="conteBoton" margin-top>
-<ion-col col-8>
-
-        
-          <div class="tabla"><img src="../../../assets/imgs/bot_cliente_perfil/recuento.png" class="recuento"></div>
-        </ion-col>
       </ion-row>
             <div *ngFor="let item of items">
                 <div *ngIf="items.length > 0">
@@ -36,9 +31,9 @@
                                     <span class="num_edad">N° {{item.payload.doc.data().numeroHistorial}} </span>
                                     <span class="num_edad">{{item.payload.doc.data().edad}} Años</span> 
                                 </div>
-                                <div>
-                                      <span class="estado"></span><!-- nos dira si esta activo ,frecuente, no viene -->
-                                      <img   class="circular" src="{{item.payload.doc.data().image}}" >
+                                <div class="circular">
+                                     <!--  <span class="estado"></span> nos dira si esta activo ,frecuente, no viene -->
+                                      <img class="imagen" src="{{item.payload.doc.data().image}}" >
                               </div>     
                                 <span class="bot_bono">{{item.payload.doc.data().bono}}</span>
                               </div>

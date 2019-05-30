@@ -1,28 +1,25 @@
-<ion-header>
+
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
-<ion-buttons slot="start">
-    <ion-back-button></ion-back-button>
-</ion-buttons>
-</ion-header>
-<hr>
-<hr>
+
+<ion-back-button color="primary" defaultHref="/"></ion-back-button>
 <ion-content padding>
-  <div>
-    <ion-card *ngFor="let item of items" style="margin-bottom:220px; margin-top:-200px;">
-        <ion-card-header>
-          <ion-card-title text-center><h5>Ejercicios de {{item.payload.doc.data().titulo}}</h5></ion-card-title>
+    
+  <div class="fondo">
+    <ion-card *ngFor="let item of items" style="margin-bottom:50px; margin-top:10px; border-radius: 20px; height: 400px;">
+        <ion-card-header style="background:#BB1D1D">
+          <ion-card-title text-center><h5 style="color:white; font-weight: bold">Ejercicios de {{item.payload.doc.data().titulo}}</h5></ion-card-title>
         </ion-card-header>
         <ion-card-content>
             <ul>
                 <div>
                     <ion-col size="12">
-                        <h5>Titulo</h5>
+                        <h5>Mi Nombre</h5>
                         <ion-label>{{item.payload.doc.data().titulo}}</ion-label>
                     </ion-col>
                 </div>
                 <div>
                     <ion-col size="12">
-                        <h5>Descripcion</h5>
+                        <h5>Descripción</h5>
                         <ion-label>{{item.payload.doc.data().descripcion}}</ion-label>
                     </ion-col>
         

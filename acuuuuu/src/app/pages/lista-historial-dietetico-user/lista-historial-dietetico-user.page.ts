@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ListaHistorialDieteticoUserPage implements OnInit {
 
-  public  tituhead: String = 'Lista Historial dietetico User';
+  public  tituhead: String = 'Historiales Dieteticos';
   personabuscar: string;
   encontrado = false;
   items: Array<any>;

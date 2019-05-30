@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DietasPacientesPage implements OnInit {
 
-  public  tituhead: string = 'Seguimiento';
+  public  tituhead: string = 'Mis Dietas';
   
   constructor() { }
 

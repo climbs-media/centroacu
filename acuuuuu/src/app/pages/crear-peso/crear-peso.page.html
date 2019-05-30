@@ -6,55 +6,91 @@
         <div class="cajatexto" style="margin-left:18px;">
             <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" padding placeholder="Fecha" type="date" formControlName="fecha" class="inputexto" done-text="Aceptar" cancel-text="Cancelar"></ion-datetime>
           </div>
+          <ion-row>
+            <ion-col col-12>
+                <div class="cajatexto">    
+                <ion-input placeholder="Nombre y Apellido" style="text-transform:lowercase" type="text" formControlName="nombreApellido" class="inputexto2"></ion-input>
+              </div> 
+            </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+          <p color="primary">Peso Anterior</p>
+          <div class="cajatexto">
+              <ion-input placeholder="Peso Anterior" type="number" formControlName="pesoAnterior" class="inputexto2"></ion-input>
+          </div> 
+        </ion-col>
+        </ion-row>
+        <ion-row> 
+          <ion-col col-12>
+            <p color="primary">Nuevo Peso</p>
+            <div class="cajatexto">
+              
+              <ion-input placeholder="Nuevo Peso" type="number" formControlName="peso"  class="inputexto2"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+          <ion-row>
+              <ion-col col-12>
+                  <p color="primary">Mi Peso Objetivo</p>
+                  <div class="cajatexto">
+                <ion-input placeholder="Objetivo" type="number" formControlName="pesoObjetivo" class="inputexto2"></ion-input>
+              </div>
+          </ion-col>
+          </ion-row> 
+          <div style="margin-top: 20px; margin-left: 25%"><h5 style="color:#BB1D1D ">Fórmula Peso Perdido</h5></div>
           <ion-item>
-              <ion-label position="floating" color="primary">Peso Anterior</ion-label>
-              <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoAnterior"></ion-input>
-          </ion-item> 
-          <ion-item>
-              <ion-label position="floating" color="primary">Peso Actual</ion-label>
-              <ion-input placeholder="Nuevo Peso" type="number" formControlName="peso"></ion-input>
-          </ion-item>
-          <ion-item>
-              <div><h5>Formula Peso Perdido</h5></div>
               <div>
+                <p>Tú último Peso:</p>
                   <input [(ngModel)]="ultimoPeso" [ngModelOptions]="{standalone: true}" placeholder="Ultimo Peso" />
+              </div>
+            </ion-item>
+            <ion-item>
+              <div>
+                  <p>Tú Peso Actual:</p>
                   <input [(ngModel)]="pesoActual" [ngModelOptions]="{standalone: true}" placeholder="Peso Actual" />
-                  
+                </div>
+              </ion-item>
+
                   <div *ngIf="ultimoPeso && pesoActual">
+                    <p>Felicidades has Bajado:</p>
                     <ion-input type="number" step=".01" formControlName="pesoPerdido"  value="{{ pesoPerdido }}">
                   </ion-input>
                 </div>
-                </div>
+                
               
-          </ion-item>
+          
+                <div style="margin-top: 20px; margin-left: 25%"><h5 style="color:#BB1D1D;">Fórmula estás de tú objetivo</h5></div>
           <ion-item>
-              <ion-label position="floating" color="primary">Peso Objetivo</ion-label>
-              <ion-input placeholder="Nuevo Peso" type="number" formControlName="pesoObjetivo"></ion-input>
-          </ion-item>
-          <ion-item>
-              <div><h5>Formula estas de tu objetivo</h5></div>
+            <p>Tu Nuevo Objetivo:</p>
               <div>
-                  <input [(ngModel)]="pesoActual" [ngModelOptions]="{standalone: true}" placeholder="Ultimo Peso" />
                   <input [(ngModel)]="pesoObjetivo" [ngModelOptions]="{standalone: true}" placeholder="Peso Objetivo" />
-                  
+                </div>
+
+                </ion-item>
                   <div *ngIf="pesoActual && pesoObjetivo">
+                    <p>Tu Objetivo es bajar:</p>
                     <ion-input type="number" step=".01" formControlName="estasObjetivo"  value="{{ pesoObj }}">
                   </ion-input>
                 </div>
-                </div>
-          </ion-item>
+                
+         
           
-            <div><h5>Formula IMC</h5></div>
+                <div style="margin-top: 20px; margin-left: 15%"><h5 style="color:#BB1D1D ">Formula IMC</h5></div>
+
+      <ion-item>
         <div>
-        <input [(ngModel)]="peso" [ngModelOptions]="{standalone: true}" placeholder="Peso" />
+            <p>Añade Tu Altura en Metros</p>
         <input [(ngModel)]="altura" [ngModelOptions]="{standalone: true}" placeholder="Altura" />
-        
-        <div *ngIf="peso && altura">
+      </div>
+        </ion-item>
+        <div *ngIf="ultimoPeso && altura">
+            <p>Tu Nuevo IMC:</p>
           <ion-input type="number" step="0.01" formControlName="imc"  value="{{ bmi.toFixed(2) }}">
         </ion-input>
       </div>
-      </div>
-        <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Actualizar Datos</ion-button>
+
+        <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">Crear Mi Peso</ion-button>
     </form>
 
 </ion-content>

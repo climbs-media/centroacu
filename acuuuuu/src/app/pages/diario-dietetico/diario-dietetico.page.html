@@ -4,11 +4,12 @@
         <ion-list>
           <ion-item *ngFor="let item of items">
             <!--[routerLink]="['/admin-contact', item.payload.doc.id]" no funciona-->
-            <div class="card mb-3" style="max-width: 540px; background: #BB1D1D">
+            <div class="card mb-3" style="max-width: 600px; background: #BB1D1D;width: 95%; margin: 0 auto">
+              <div><p style="margin-left: 33%; color: white; ">Mi dieta del dia</p></div>
               <div class="row no-gutters">
                 <div class="col-md-4">
-                  <ion-item [routerLink]="['/detalles-diario', item.payload.doc.id]">
-                    <ion-label>{{item.payload.doc.data().fecha}}</ion-label>
+                  <ion-item  [routerLink]="['/detalles-diario', item.payload.doc.id]">
+                    <ion-label style="margin-left: 33%; font-weight: 400">{{item.payload.doc.data().fecha}}</ion-label>
                   </ion-item>
                 </div>
               </div>

@@ -27,7 +27,7 @@ export class CrearPesoPage implements OnInit {
       pesoObjetivo= 0;
   
     get bmi() {
-      return this.peso / Math.pow(this.altura, 2);
+      return this.ultimoPeso / Math.pow(this.altura, 2);
     }
   
     get pesoPerdido() {
@@ -78,7 +78,7 @@ export class CrearPesoPage implements OnInit {
     this.firebaseService.crearPeso(data)
       .then(
         res => {
-          this.router.navigate(['/mipeso']);
+          this.router.navigate(['/tabs/tab4']);
         }
       );
   }

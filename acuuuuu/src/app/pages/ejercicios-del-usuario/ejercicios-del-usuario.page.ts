@@ -12,7 +12,7 @@ export class EjerciciosDelUsuarioPage implements OnInit {
 
   items: Array<any>;
 
-  public  tituhead: String = 'Centro ACU 10';
+  public  tituhead: String = 'Mis Ejercicios';
   constructor(
     private toastCtrl: ToastController,
     private http: HttpClient,

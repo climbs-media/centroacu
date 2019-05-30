@@ -1,6 +1,6 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 <ion-content padding>
-    <button routerLink="/home-admin"><img src="../../../assets/imgs/retroceso.png" style=" position: absolute; margin-left: 2%"></button>
+    <ion-back-button color="primary" defaultHref="/"></ion-back-button>
 <form padding [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
 
     <ion-grid margin-bottom>

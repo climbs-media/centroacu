@@ -10,6 +10,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ListaDietasCenaUserPage implements OnInit {
 
+  public  tituhead: string = 'Mis Dietas';
+
   items: Array<any>;
   searchText = '';
   isAdmin: any = null;

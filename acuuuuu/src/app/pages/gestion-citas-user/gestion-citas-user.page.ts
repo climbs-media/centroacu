@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class GestionCitasUserPage implements OnInit {
 
 
-  public  tituhead: String = 'Gestión de Citas Paciente';
+  public  tituhead: String = 'Gestión de Citas';
   constructor() { }
 
   ngOnInit() {

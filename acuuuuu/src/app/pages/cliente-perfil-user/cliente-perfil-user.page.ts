@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ClientePerfilUserPage implements OnInit {
 
-  public  tituhead: String = 'Centro ACU 10 Pacientes';
+  public  tituhead: String = 'Administrar Paciente';
   
   items: Array<any>;
   isAdmin: any = null;
