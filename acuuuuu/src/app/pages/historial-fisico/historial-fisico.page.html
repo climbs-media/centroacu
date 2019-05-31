@@ -2,13 +2,37 @@
 
 <ion-content padding>
   <ion-back-button color="primary" defaultHref="/"></ion-back-button>
-        <ion-item *ngFor="let item of items">
-        <ion-list>
-          <div [routerLink]="['/detalles-historial-fisico', item.payload.doc.id]" class="cajabuscador">
-          <ion-label>Paciente: {{item.payload.doc.data().nombre}}</ion-label>
+
+  <div class="busqueda" >
+      <ion-searchbar [(ngModel)]="searchText" placeholder="Buscador..." style="text-transform: lowercase; border-radius: 50px;"></ion-searchbar>
+    </div>
+        <div *ngFor="let item of items">
+            <div *ngIf="items.length > 0">
+       <div *ngIf="item.payload.doc.data().nombre && item.payload.doc.data().nombre.length"  class="contenido">
+            <div *ngIf="item.payload.doc.data().nombre.includes(searchText) ">  
+                <ion-list>
+              <ul style="list-style-type: none;">
+                <li>
+<ion-col>
+    <div [routerLink]="['/detalles-historial-fisico', item.payload.doc.id]"  class="cajabuscador"   >
+          <div  class="buscado"  >
+              <ion-label>Paciente: {{item.payload.doc.data().nombre}}</ion-label>
           </div>
-        </ion-list>
-      </ion-item>
+          
+      
+          
+   
+  </div>
+    
+
+</ion-col>
+</li>
+</ul> 
+</ion-list>
+</div>
+</div>
+</div>
+</div>
 
 
   <div text-center>

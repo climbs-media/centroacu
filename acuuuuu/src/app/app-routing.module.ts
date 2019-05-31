@@ -97,9 +97,11 @@ const routes: Routes = [
   { path: 'gestion-citas-user', loadChildren: './pages/gestion-citas-user/gestion-citas-user.module#GestionCitasUserPageModule' },
   { path: 'historiales-clinico-user', loadChildren: './pages/historiales-clinico-user/historiales-clinico-user.module#HistorialesClinicoUserPageModule' },
   { path: 'lista-pacientes-bonos-user', loadChildren: './pages/lista-pacientes-bonos-user/lista-pacientes-bonos-user.module#ListaPacientesBonosUserPageModule' },
-  { path: 'detalles-bonos-pacientes-user/:id', loadChildren: './pages/detalles-bonos-pacientes-user/detalles-bonos-pacientes-user.module#DetallesBonosPacientesUserPageModule' },  { path: 'lista-pacientes-peso-user', loadChildren: './pages/lista-pacientes-peso-user/lista-pacientes-peso-user.module#ListaPacientesPesoUserPageModule' },
+  { path: 'detalles-bonos-pacientes-user/:id', loadChildren: './pages/detalles-bonos-pacientes-user/detalles-bonos-pacientes-user.module#DetallesBonosPacientesUserPageModule' },
+  { path: 'lista-pacientes-peso-user', loadChildren: './pages/lista-pacientes-peso-user/lista-pacientes-peso-user.module#ListaPacientesPesoUserPageModule' },
   { path: 'lista-historial-dietetico-user', loadChildren: './pages/lista-historial-dietetico-user/lista-historial-dietetico-user.module#ListaHistorialDieteticoUserPageModule' },
   { path: 'cliente-admin-principal', loadChildren: './pages/cliente-admin-principal/cliente-admin-principal.module#ClienteAdminPrincipalPageModule' },
+  { path: 'detalles-peso-usuario-administrador/:id', loadChildren: './pages/detalles-peso-usuario-administrador/detalles-peso-usuario-administrador.module#DetallesPesoUsuarioAdministradorPageModule' },
 
 
 

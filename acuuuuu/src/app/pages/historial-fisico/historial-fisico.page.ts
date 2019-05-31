@@ -19,6 +19,7 @@ export class HistorialFisicoPage implements OnInit {
   validations_form: FormGroup;
   image: any;
   items: Array<any>;
+  searchText = '';
 
   constructor(
     private imagePicker: ImagePicker,

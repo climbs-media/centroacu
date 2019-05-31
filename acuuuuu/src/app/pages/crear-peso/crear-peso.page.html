@@ -6,13 +6,13 @@
         <div class="cajatexto" style="margin-left:18px;">
             <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" padding placeholder="Fecha" type="date" formControlName="fecha" class="inputexto" done-text="Aceptar" cancel-text="Cancelar"></ion-datetime>
           </div>
-          <ion-row>
+         <!--<ion-row>
             <ion-col col-12>
                 <div class="cajatexto">    
                 <ion-input placeholder="Nombre y Apellido" style="text-transform:lowercase" type="text" formControlName="nombreApellido" class="inputexto2"></ion-input>
               </div> 
             </ion-col>
-        </ion-row>
+        </ion-row>--> 
         <ion-row>
           <ion-col col-12>
           <p color="primary">Peso Anterior</p>
@@ -81,10 +81,12 @@
       <ion-item>
         <div>
             <p>Añade Tu Altura en Metros</p>
-        <input [(ngModel)]="altura" [ngModelOptions]="{standalone: true}" placeholder="Altura" />
+        <input [(ngModel)]="altura" [ngModelOptions]="{standalone: true}" placeholder="Altura M" />
+        <input [(ngModel)]="pesoActual" [ngModelOptions]="{standalone: true}" placeholder="Tu peso Actual" />
+
       </div>
         </ion-item>
-        <div *ngIf="ultimoPeso && altura">
+        <div *ngIf="pesoActual && altura">
             <p>Tu Nuevo IMC:</p>
           <ion-input type="number" step="0.01" formControlName="imc"  value="{{ bmi.toFixed(2) }}">
         </ion-input>

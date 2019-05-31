@@ -29,18 +29,17 @@ export class DetallesPesoPacientesAdminPage implements OnInit {
     /*********** */
     pesoObjetivo= 0;
 
-  get bmi() {
-    return this.peso / Math.pow(this.altura, 2);
-  }
-
-  get pesoPerdido() {
-    return this.ultimoPeso - Math.pow(this.pesoActual, 1);
-  }
-
-  get pesoObj(){
-    return this.pesoActual - this.pesoObjetivo;
-  }
-
+    get bmi() {
+        return this.pesoActual / Math.pow(this.altura, 2);
+      }
+  
+    get pesoPerdido() {
+      return this.ultimoPeso - Math.pow(this.pesoActual, 1);
+    }
+  
+    get pesoObj(){
+      return this.pesoActual - this.pesoObjetivo;
+    }
     
     constructor(
         public toastCtrl: ToastController,
@@ -93,7 +92,7 @@ export class DetallesPesoPacientesAdminPage implements OnInit {
         (this.item.id, data)
             .then(
                 res => {
-                    this.router.navigate(['/mipeso']);
+                    this.router.navigate(['/tabs/tab4']);
                 }
             );
     }

@@ -26,9 +26,9 @@ export class CrearPesoPage implements OnInit {
       /*********** */
       pesoObjetivo= 0;
   
-    get bmi() {
-      return this.ultimoPeso / Math.pow(this.altura, 2);
-    }
+      get bmi() {
+        return this.pesoActual / Math.pow(this.altura, 2);
+      }
   
     get pesoPerdido() {
       return this.ultimoPeso - Math.pow(this.pesoActual, 1);
