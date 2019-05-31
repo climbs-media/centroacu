@@ -142,7 +142,7 @@ export class ListaPacientesPesoUserPage implements OnInit {
   }
 
   crearPeso() {
-    this.router.navigate(['/crear-peso'])
+    this.router.navigate(['/crear-peso-usuario-admin'])
   }
 
     openPicker() {

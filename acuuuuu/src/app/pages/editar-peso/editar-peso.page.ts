@@ -106,7 +106,7 @@ export class EditarPesoPage implements OnInit {
     this.firebaseService.actualizarHistorialClinico(this.item.id, data)
         .then(
             res => {
-              this.router.navigate(['/mipeso']);
+              this.router.navigate(['/lista-pacientes-peso-user']);
             }
         );
   }

@@ -101,7 +101,8 @@ const routes: Routes = [
   { path: 'lista-pacientes-peso-user', loadChildren: './pages/lista-pacientes-peso-user/lista-pacientes-peso-user.module#ListaPacientesPesoUserPageModule' },
   { path: 'lista-historial-dietetico-user', loadChildren: './pages/lista-historial-dietetico-user/lista-historial-dietetico-user.module#ListaHistorialDieteticoUserPageModule' },
   { path: 'cliente-admin-principal', loadChildren: './pages/cliente-admin-principal/cliente-admin-principal.module#ClienteAdminPrincipalPageModule' },
-  { path: 'detalles-peso-usuario-administrador/:id', loadChildren: './pages/detalles-peso-usuario-administrador/detalles-peso-usuario-administrador.module#DetallesPesoUsuarioAdministradorPageModule' },
+  { path: 'detalles-peso-usuario-administrador/:id', loadChildren: './pages/detalles-peso-usuario-administrador/detalles-peso-usuario-administrador.module#DetallesPesoUsuarioAdministradorPageModule' },  { path: 'crear-peso-usuario-admin', loadChildren: './pages/crear-peso-usuario-admin/crear-peso-usuario-admin.module#CrearPesoUsuarioAdminPageModule' },
+
 
 
 
