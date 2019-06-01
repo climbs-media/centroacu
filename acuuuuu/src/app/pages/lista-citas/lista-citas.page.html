@@ -11,11 +11,15 @@
     <div class="titulo">
         <h2 style="color: #BB1D1D; font-weight: bold;">Lista de Citas</h2>
     </div>
-    <ion-list *ngIf="items">
-            <div *ngIf="items.length > 0">
-                        <ion-item *ngFor="let item of items" >
+    <div *ngIf="items">
+            
+                        <div *ngFor="let item of items" >
+                                <div *ngIf="items.length > 0">
                        <div *ngIf="item.payload.doc.data().titulo && item.payload.doc.data().titulo.length"  class="contenido">
-                            <div *ngIf="item.payload.doc.data().titulo.includes(searchText) ">  
+                            <div *ngIf="item.payload.doc.data().titulo.includes(searchText) "> 
+                                <ion-list>
+                                    <ul>
+                                        <li style="list-style-type: none"> 
         <ion-card [routerLink]="['/detalles-citas', item.payload.doc.id]">
             <ion-card-header>
                     <ion-item color="primary">
@@ -28,11 +32,13 @@
                     </ion-item>
                 </ion-card-content>
                 </ion-card>
-
+            </li>
+            </ul>
+            </ion-list> 
                 </div>
                 </div>
-                </ion-item>
+            </div>
                 </div>
                 
-    </ion-list>
+            </div>
 </ion-content>
