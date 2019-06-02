@@ -1,7 +1,7 @@
 <app-cabecera [titulohead]="tituhead"></app-cabecera>
 
 <ion-content padding>
-
+  <ion-back-button color="primary" defaultHref="/"></ion-back-button>
   <form  [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
     <ion-grid>
       <ion-row>
